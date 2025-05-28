@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Origin | Интернет-магазин крепежа</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<style>
+    .row {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 30px 0;
+        gap: 10px;
+    }
+
+    .col {
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="col">
+            <h1>Заголовок H1</h1>
+            <h2>Заголовок H2</h2>
+        </div>
+        <div class="row">
+            <h2>btn</h2>
+            <button class="btn btn-primary">
+                <svg>
+                    <use href="#cart"></use>
+                </svg>
+                primary
+            </button>
+            <button class="btn btn-secondary">secondary</button>
+            <button class="btn btn-success">secondary</button>
+        </div>
+        <div class="row">
+            <h2>btn-outline</h2>
+            <button class="btn btn-outline-primary">
+                <svg>
+                    <use href="#cart"></use>
+                </svg>
+                primary
+            </button>
+            <button class="btn btn-outline-secondary">
+                <svg>
+                    <use href="#cart"></use>
+                </svg>
+                outline-secondary</button>
+            <button class="btn btn-outline-success">outline-secondary</button>
+        </div>
+        <div class="row">
+            <h2>btn-icon</h2>
+            <button class="btn btn-primary btn-icon">
+                <svg>
+                    <use href="#lightning"></use>
+                </svg>
+            </button>
+            <button class="btn btn-secondary btn-icon">
+                <svg>
+                    <use href="#cart"></use>
+                </svg>
+            </button>
+            <!-- <button class="btn btn-outline-secondary">outline-secondary</button>
+            <button class="btn btn-outline-success">outline-secondary</button> -->
+        </div>
+
+        <div class="row">
+            <h2>btn-md</h2>
+            <button class="btn btn-md btn-primary">sm primary</button>
+            <button class="btn btn-md btn-secondary">sm secondary</button>
+            <button class="btn btn-md btn-success">sm secondary</button>
+
+            <button class="btn btn-icon btn-md btn-primary">
+                <svg>
+                    <use href="#lightning"></use>
+                </svg>
+            </button>
+
+            <button class="btn btn-md btn-secondary btn-icon">
+                <svg>
+                    <use href="#cart"></use>
+                </svg>
+            </button>
+        </div>
+
+        <div class="row">
+            <h2>btn-sm</h2>
+
+            <button class="btn btn-icon btn-sm btn-primary">
+                <svg>
+                    <use href="#lightning"></use>
+                </svg>
+            </button>
+
+            <button class="btn btn-sm btn-secondary btn-icon">
+                <svg>
+                    <use href="#cart"></use>
+                </svg>
+            </button>
+        </div>
+
+        <div class="row">
+            <h2>Badges</h2>
+            <span class="badge badge-success">Badg success</span>
+            <span class="badge badge-primary">Badg primary</span>
+            <span class="badge badge-secondary">Badg secondary</span>
+        </div>
+
+
+
+
+    </div>
+
+    <section class="bg-gray">
+        <div class="container">
+            <div class="card-wraper">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-badges">
+                            <span class="badge badge-success">хит</span>
+                            <span class="badge badge-primary">новинка</span>
+                        </div>
+                        <img src="img/poduct.jpg" class="card__img" alt="i" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card__heading">
+                            DIN 6921 000000000000000000 000000000000000000000000
+                        </h3>
+                        <ul class="card-list">
+                            <li class="card-list__item">
+                                <span class="card-list__label">Диаметр:</span>
+                                <span class="card-list__text">10 мм</span>
+                            </li>
+                            <li class="card-list__item">
+                                <span class="card-list__label">Длина:</span>
+                                <span class="card-list__text">35 мм</span>
+                            </li>
+                            <li class="card-list__item">
+                                <span class="card-list__label">Материал:</span>
+                                <span class="card-list__text">Сталь</span>
+                            </li>
+                        </ul>
+                        <h4 class="card__price">18.50 ₽/шт</h4>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-action">
+                            <button class="btn btn-md btn-secondary">
+                                <svg>
+                                    <use href="#cart"></use>
+                                </svg> В корзину
+                            </button>
+                        </div>
+                        <button class="btn btn-icon btn-md btn-primary">
+                            <svg>
+                                <use href="#lightning"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-badges">
+                            <span class="badge badge-success">хит</span>
+                            <span class="badge badge-primary">новинка</span>
+                        </div>
+                        <img src="img/poduct.jpg" class="card__img" alt="i" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card__heading">
+                            DIN 6921 000000000000000000 000000000000000000000000
+                        </h3>
+                        <ul class="card-list">
+                            <li class="card-list__item">
+                                <span class="card-list__label">Диаметр:</span>
+                                <span class="card-list__text">10 мм</span>
+                            </li>
+                            <li class="card-list__item">
+                                <span class="card-list__label">Длина:</span>
+                                <span class="card-list__text">35 мм</span>
+                            </li>
+                            <li class="card-list__item">
+                                <span class="card-list__label">Материал:</span>
+                                <span class="card-list__text">Сталь</span>
+                            </li>
+                        </ul>
+                        <h4 class="card__price">18.50 ₽/шт</h4>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-action">
+                            <button class="btn btn-md btn-secondary">
+                                <svg>
+                                    <use href="#cart"></use>
+                                </svg> В корзину
+                            </button>
+                        </div>
+                        <button class="btn btn-icon btn-md btn-primary">
+                            <svg>
+                                <use href="#lightning"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-badges">
+                            <span class="badge badge-success">хит</span>
+                            <span class="badge badge-primary">новинка</span>
+                        </div>
+                        <img src="img/poduct.jpg" class="card__img" alt="i" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card__heading">
+                            DIN 6921 000000000000000000 000000000000000000000000
+                        </h3>
+                        <ul class="card-list">
+                            <li class="card-list__item">
+                                <span class="card-list__label">Диаметр:</span>
+                                <span class="card-list__text">10 мм</span>
+                            </li>
+                            <li class="card-list__item">
+                                <span class="card-list__label">Длина:</span>
+                                <span class="card-list__text">35 мм</span>
+                            </li>
+                            <li class="card-list__item">
+                                <span class="card-list__label">Материал:</span>
+                                <span class="card-list__text">Сталь</span>
+                            </li>
+                        </ul>
+                        <h4 class="card__price">18.50 ₽/шт</h4>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-action">
+                            <button class="btn btn-md btn-secondary">
+                                <svg>
+                                    <use href="#cart"></use>
+                                </svg> В корзину
+                            </button>
+                        </div>
+                        <button class="btn btn-icon btn-md btn-primary">
+                            <svg>
+                                <use href="#lightning"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-badges">
+                            <span class="badge badge-success">хит</span>
+                            <span class="badge badge-primary">новинка</span>
+                        </div>
+                        <img src="img/poduct.jpg" class="card__img" alt="i" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card__heading">
+                            DIN 6921 000000000000000000 000000 00000 0000000000000
+                        </h3>
+                        <ul class="card-list">
+                            <li class="card-list__item">
+                                <span class="card-list__label">Диаметр:</span>
+                                <span class="card-list__text">10 мм</span>
+                            </li>
+                            <li class="card-list__item">
+                                <span class="card-list__label">Длина:</span>
+                                <span class="card-list__text">35 мм</span>
+                            </li>
+                            <li class="card-list__item">
+                                <span class="card-list__label">Материал:</span>
+                                <span class="card-list__text">Сталь</span>
+                            </li>
+                        </ul>
+                        <h4 class="card__price">18.50 ₽/шт</h4>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-action">
+                            <button class="btn btn-md btn-secondary">
+                                <svg>
+                                    <use href="#cart"></use>
+                                </svg> В корзину
+                            </button>
+                        </div>
+                        <button class="btn btn-icon btn-md btn-primary">
+                            <svg>
+                                <use href="#lightning"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-badges">
+                            <span class="badge badge-success">хит</span>
+                            <span class="badge badge-primary">новинка</span>
+                        </div>
+                        <img src="img/poduct.jpg" class="card__img" alt="i" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card__heading">
+                            DIN 6921 000000000000000000 000000000000000000000000
+                        </h3>
+                        <ul class="card-list">
+                            <li class="card-list__item">
+                                <span class="card-list__label">Диаметр:</span>
+                                <span class="card-list__text">10 мм</span>
+                            </li>
+                            <li class="card-list__item">
+                                <span class="card-list__label">Длина:</span>
+                                <span class="card-list__text">35 мм</span>
+                            </li>
+                            <li class="card-list__item">
+                                <span class="card-list__label">Материал:</span>
+                                <span class="card-list__text">Сталь</span>
+                            </li>
+                        </ul>
+                        <h4 class="card__price">18.50 ₽/шт</h4>
+                    </div>
+                    <div class="card-footer">
+                        <div class="card-action">
+                            <button class="btn btn-md btn-secondary">
+                                <svg>
+                                    <use href="#cart"></use>
+                                </svg> В корзину
+                            </button>
+                        </div>
+                        <button class="btn btn-icon btn-md btn-primary">
+                            <svg>
+                                <use href="#lightning"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <svg>
+        <symbol id="lightning" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M10.2891 1.03644C10.5282 0.829905 10.8686 0.774042 11.1656 0.902977C11.5048 1.05035 11.7062 1.4035 11.6604 1.77049L10.9442 7.50047H17.5002C17.8236 7.50047 18.1175 7.68779 18.2546 7.98061C18.3745 8.23679 18.356 8.53346 18.2107 8.77L18.1407 8.86766L9.80734 18.8677C9.57051 19.1518 9.17416 19.2453 8.83485 19.098C8.49566 18.9506 8.29418 18.5974 8.34006 18.2304L9.0562 12.5005H2.50021C2.17687 12.5005 1.88297 12.3131 1.74582 12.0203C1.60874 11.7275 1.65278 11.3817 1.85975 11.1333L10.1931 1.13328L10.2891 1.03644ZM4.28 10.8338H10.0002C10.2392 10.8338 10.467 10.9362 10.6252 11.1154C10.7834 11.2946 10.8567 11.5333 10.827 11.7705L10.3461 15.6157L15.7204 9.16714H10.0002C9.76119 9.16714 9.5334 9.06475 9.37521 8.88556C9.21703 8.70637 9.14374 8.46763 9.17339 8.23045L9.65353 4.38442L4.28 10.8338Z" />
+        </symbol>
+
+        <symbol id="cart" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M6.25 16.25C6.25 15.5596 6.80964 15 7.5 15C8.19036 15 8.75 15.5596 8.75 16.25C8.75 16.9404 8.19036 17.5 7.5 17.5C6.80964 17.5 6.25 16.9404 6.25 16.25Z" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M13.125 16.25C13.125 15.5596 13.6846 15 14.375 15C15.0654 15 15.625 15.5596 15.625 16.25C15.625 16.9404 15.0654 17.5 14.375 17.5C13.6846 17.5 13.125 16.9404 13.125 16.25Z" />
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M1.875 3.75C1.875 3.40482 2.15482 3.125 2.5 3.125H5C5.29789 3.125 5.55438 3.33524 5.61285 3.62734L6.13777 6.25H16.25C16.4363 6.25 16.6128 6.33308 16.7316 6.4766C16.8503 6.62011 16.8988 6.80911 16.8639 6.99208L15.863 12.2405C15.7773 12.6721 15.5425 13.0598 15.1997 13.3358C14.8586 13.6104 14.4323 13.7569 13.9946 13.75H7.9304C7.49273 13.7569 7.06638 13.6104 6.7253 13.3358C6.38265 13.06 6.1479 12.6725 6.06208 12.241C6.06205 12.2409 6.06212 12.2412 6.06208 12.241L5.01799 7.0245C5.01376 7.00725 5.01024 6.98971 5.00747 6.97192L4.4877 4.375H2.5C2.15482 4.375 1.875 4.09518 1.875 3.75ZM6.38796 7.5L7.28802 11.997C7.3166 12.1409 7.39487 12.2701 7.50913 12.3621C7.62339 12.4541 7.76637 12.5029 7.91302 12.5001L7.925 12.5H14L14.012 12.5001C14.1586 12.5029 14.3016 12.4541 14.4159 12.3621C14.5296 12.2705 14.6077 12.1421 14.6366 11.999L15.4945 7.5H6.38796Z" />
+        </symbol>
+    </svg>
+
+</body>
+
+</html>

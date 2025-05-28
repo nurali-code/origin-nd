@@ -1,0 +1,140 @@
+.btn
+    display: flex
+    align-items: center
+    justify-content: center
+    min-height: 44px
+    white-space: nowrap
+    background-color: $light
+    gap: 8px
+    padding: 0 20px
+    border-radius: $b-rad
+    transition: .3s all ease
+    &:active
+        transform: scale(.98)
+
+    svg
+        width: 20px
+        height: 20px
+        fill: $dark
+        transition: .3s ease all
+
+    &-primary
+        background-color: $primary
+        color: $light
+        svg
+            fill: $light
+
+        &:hover
+            background-color: $primary-hover
+
+        &:active
+            background-color: $primary-active
+
+    &-secondary
+        background-color: $secondary
+        color: $primary
+        svg
+            fill: $primary-active
+        &:hover
+            background-color: $secondary-hover
+        &:active
+            background-color: $secondary-active
+
+    &-success
+        background-color: $success
+        color: $light
+        &:hover
+            background-color: $success-hover
+        &:active
+            background-color: $success-active
+
+    &-outline
+        &-primary
+            background-color: #fff
+            border: 1px solid $primary
+            &:hover
+                color: $light
+                background-color: $primary
+                svg
+                    fill: $light
+
+            &:active
+                color: $light
+                background-color: $primary-active
+                svg
+                    fill: $light
+
+        &-secondary
+            background-color: #fff
+            border: 1px solid $secondary
+            &:hover
+                color: $primary
+                background-color: $secondary
+                svg
+                    fill: $primary
+            &:active
+                color: $primary
+                background-color: $secondary-active
+                svg
+                    fill: $primary
+
+        &-success
+            background-color: #fff
+            border: 1px solid $success
+            &:hover
+                color: $light
+                background-color: $success
+                svg
+                    fill: $light
+
+            &:active
+                color: $light
+                background-color: $success-active
+                svg
+                    fill: $light
+
+    &-icon
+        padding: 0 12px
+
+    &-md
+        min-height: 40px
+
+        &.btn-icon
+            padding: 0 10px
+
+    &-sm
+        min-height: 40px
+        svg
+            width: 16px
+            height: 16px
+
+        &.btn-icon
+            min-height: 24px
+            padding: 0 4px
+
+.badge
+    display: inline-block
+    padding: 5px 16.6px
+    font-weight: 700
+    text-transform: uppercase
+    font-size: var(--font-sm)
+    line-height: 100%
+    border-radius: $b-rad
+    &-success
+        background-color: $success
+        color: $light
+    &-primary
+        color: $light
+        background-color: $primary
+    &-secondary
+        color: $primary
+        background-color: $secondary
+
+@media screen and ( max-width: 992px )
+    .btn 
+        padding: 0 16px
+        
+    .badge
+        font-size: var(--font-sm)
+        padding: 6px 8.5px
+
