@@ -147,25 +147,33 @@ $('.card-slider').slick({
 });
 
 $(function () {
-    const $defaultTab = $('.tab-nav__btn.active_line');
+    const $defaultTab = $('[data-tab].active_line, [data-tab].btn-primary');
     if ($defaultTab.length) {
-        const targetTab = $defaultTab.data('tab');
-        const $targetContent = $(`[data-tab-content="${targetTab}"]`);
-        $targetContent.addClass('active');
-        if ($targetContent.hasClass('card-slider')) {
-            $targetContent.slick('setPosition');
-        }
+        $defaultTab.each(function () {
+            const targetTab = $(this).data('tab');
+            const $targetContent = $(`[data-tab-content="${targetTab}"]`);
+            $targetContent.addClass('active');
+            if ($targetContent.hasClass('card-slider')) {
+                $targetContent.slick('setPosition');
+            }
+        });
     }
     
-    $(document).on('click', '.tab-nav__btn', function () {
+    $(document).on('click', '[data-tab]', function () {
         const $this = $(this);
+        const activeClass = $this.hasClass('btn') ? 'btn-primary' : 'active_line';
         const targetTab = $this.data('tab');
-        $this.addClass('active_line').siblings().removeClass('active_line');
-        $('[data-tab-content]').removeClass('active');
-        const $targetContent = $(`[data-tab-content="${targetTab}"]`);
-        $targetContent.addClass('active');
-        if ($targetContent.hasClass('card-slider')) {
-            $targetContent.slick('setPosition');
+        $this.addClass(activeClass).siblings().removeClass(activeClass);
+        $this.parents('section').find('[data-tab-content]').removeClass('active');
+
+        if (targetTab === 'all') {
+            $this.parents('section').find('[data-tab-content]').addClass('active');
+        } else {
+            const $targetContent = $(`[data-tab-content="${targetTab}"]`);
+            $targetContent.addClass('active');
+            if ($targetContent.hasClass('card-slider')) {
+                $targetContent.slick('setPosition');
+            }
         }
     });
 });

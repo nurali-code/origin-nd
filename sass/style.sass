@@ -32,7 +32,7 @@
         width: 100%
         padding: 12px
 
-    &__img
+    &-img
         width: 100%
         aspect-ratio: 1
         object-fit: cover
@@ -40,6 +40,7 @@
         z-index: 1
 
     &-body
+        color: $dark
         padding: 4px 4px 0 4px
 
     &__heading
@@ -97,6 +98,9 @@
         flex-wrap: wrap
         --amaunt: 5
         gap: 16px
+        margin-bottom: 20px
+        &:last-of-type
+            margin-bottom: 0
         &>*
             width: calc( (100% - (16px *( var(--amaunt) - 1))) / var(--amaunt) )
 
@@ -107,6 +111,15 @@
             overflow-x: scroll
             padding-bottom: 10px
 
+    &--sm 
+        .card
+            &-header
+            &-body 
+                padding: 0 12px 14px
+
+            &-img
+                aspect-ratio: 245/260
+
     @media screen and ( max-width: 1400px )
         &-wraper
             --amaunt: 4
@@ -115,9 +128,6 @@
         &-wraper
             --amaunt: 3
 
-        &-list
-            &__label
-                font-size: var
 
     @media screen and ( max-width: 768px )
         &-wraper
@@ -130,6 +140,7 @@
     &-navbar
         display: flex
         align-items: start
+        flex-wrap: wrap
         margin: 0 0 24px
     &-nav
         gap: 40px

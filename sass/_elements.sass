@@ -21,6 +21,9 @@ body
 a, button
     text-decoration: none
     background: none
+    transition: all ease .3s
+    &:hover
+        opacity: .7
 
 h1
     font-size: var(--h1)
@@ -378,3 +381,8 @@ textarea
 @media (min-width: 1400px)
     .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container
         max-width: 1321px
+
+@media screen and ( max-width: 546px )
+    h2 
+        margin-bottom: 16px
+    

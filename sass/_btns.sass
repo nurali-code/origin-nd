@@ -12,6 +12,8 @@
     font-size: var(--font-md)
     transition: .3s all ease
     text-overflow: ellipsis
+    &:hover
+        opacity: 1
     &:active
         transform: scale(.98)
 
@@ -37,7 +39,7 @@
 
     &-primary
         background-color: $primary
-        color: $light
+        color: $light !important
         svg
             fill: $light
 
