@@ -3,6 +3,8 @@
 @import 'var'
 @import 'elements'
 @import 'btns'
+@import 'slick'
+@import 'modal'
 
 .card,
 .card-body,
@@ -68,12 +70,27 @@
 
     &-action
         flex: 1
+        border-radius: $b-rad
+        background-color: $secondary
         .btn
             width: 100%
 
     &-footer
         padding: 4px 4px 0 4px
         flex-direction: row
+        .btn
+            &-light
+                padding: 0 2px
+
+    &-amaunt
+        max-width: 150px
+        margin: 0 auto
+        &:not(.active)
+            display: none
+
+        &.active
+            animation: fadeIn .3s ease forwards
+            
 
     &-wraper
         display: flex
@@ -83,17 +100,49 @@
         &>*
             width: calc( (100% - (16px *( var(--amaunt) - 1))) / var(--amaunt) )
 
+    &-tabs
+        display: flex
+        align-items: center
+        gap: 40px
+        margin: 0 0 24px
+        & > *
+            margin: 0
+        &__btn
+            font-size: var(--h2)
+            color: $dark
+            padding: 0 0 8px
+            border-bottom: 2px solid rgba(0, 0, 0, 0)
+            font-weight: 700
+            &.active
+                border-color: $primary
+
+    &-slider
+        &:not(.slick-initialized)
+            display: flex
+            gap: 16px
+            overflow-x: scroll
+            padding-bottom: 10px
+
     @media screen and ( max-width: 1400px )
         &-wraper
             --amaunt: 4
+
     @media screen and ( max-width: 992px )
         &-wraper
             --amaunt: 3
 
-        &-list 
-            &__label 
+        &-list
+            &__label
                 font-size: var
 
     @media screen and ( max-width: 768px )
         &-wraper
             --amaunt: 2
+
+        &-tabs
+            gap: 16px
+            margin-bottom: 16px
+            &__btn
+                font-size: $font-md-fx
+
+    @media screen and ( max-width: 576px )

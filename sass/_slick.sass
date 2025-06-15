@@ -1,0 +1,154 @@
+/* Slider */
+
+.slick
+    &-list
+        position: relative
+        overflow: hidden
+        display: block
+        margin: 0
+        padding: 0
+
+        &:focus
+            outline: none
+        &.dragging
+            cursor: pointer
+            cursor: hand
+
+    &-slider
+        position: relative
+        // overflow: hidden
+        display: block
+        box-sizing: border-box
+        -webkit-touch-callout: none
+        user-select: none
+        touch-action: pan-y
+        -webkit-tap-highlight-color: transparent
+        left: 0
+
+        width: calc( 100% + 16px )
+        left: -8px
+        position: relative
+
+        .slick-track,
+        .slick-list
+            -webkit-transform: translate3d(0, 0, 0)
+            -moz-transform: translate3d(0, 0, 0)
+            -ms-transform: translate3d(0, 0, 0)
+            -o-transform: translate3d(0, 0, 0)
+            transform: translate3d(0, 0, 0)
+
+    &-track
+        position: relative
+        left: 0
+        top: 0
+        // height: 100%
+        display: block
+        margin-left: auto
+        margin-right: auto
+
+        &:before,
+        &:after
+            content: ""
+            display: table
+
+        &:after
+            clear: both
+
+        .slick-loading &
+            visibility: hidden
+
+    &-slide
+        float: left
+        height: 100%
+        margin: 0
+        min-height: 1px
+        margin: 0 8px
+        // [dir="rtl"] &
+        //     float: right
+
+        img
+            display: block
+
+        &.slick-loading img
+            display: none
+
+            display: none
+
+        &.dragging img
+            pointer-events: none
+
+
+        .slick-loading &
+            visibility: hidden
+
+        .slick-vertical &
+            display: block
+            height: auto
+
+    &-arrow.slick-hidden
+        display: none
+
+    &-arrow
+        display: block
+        color: rgba(0, 0, 0, 0)
+        width: 40px
+        height: 40px
+        border-radius: 50%
+        position: absolute
+        top: 50%
+        margin-top: -20px
+        z-index: 111
+        background-color: $light
+        &.slick-disabled
+            opacity: 0
+
+        .ic 
+            width: 24px
+            height: 20px
+
+    &-next 
+        right: -16px
+    &-prev 
+        left: -16px
+        .ic 
+            transform: scaleX(-1)
+
+    &-dots
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 18px 0 0
+        li
+            padding: 0 3.5px
+            line-height: 4px
+
+        button
+            width: 4px
+            height: 4px
+            font-size: 0
+            border-radius: 50%
+            background-color: #fff
+            opacity: .3
+            color: rgba(0, 0, 0, 0)
+
+        .slick-active button
+            opacity: 1
+            transform: scale(1.2)
+
+    &-disabled
+        cursor: no-drop
+        border: 3px solid var(--white)
+        pointer-events: none
+        &::after
+            opacity: 0
+
+    @media screen and ( max-width: 576px )
+        &-slider
+            width: 100vw
+            left: calc( 0px - var(--bs-gutter-x) )
+
+        &-slide
+            margin: 0 4px
+
+        &-list
+            padding: 0 23px 0 calc( var(--bs-gutter-x) - 4px )

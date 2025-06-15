@@ -1,0 +1,84 @@
+.modal
+    position: fixed
+    top: 0
+    left: 0
+    height: 100%
+    width: 100vw
+    z-index: 99999
+    background-color: rgba(var(--dark), .2)
+    padding: 20px calc(var(--bs-gutter-x) * 0.5)
+    box-sizing: border-box
+    overflow-y: scroll
+    display: flex
+    align-items: center
+    justify-content: center
+
+    transition: all ease .3s
+    opacity: 0
+    visibility: hidden
+
+    &-content
+        width: 100%
+        max-width: 400px
+        padding: 32px 20px
+        display: block
+        background-color: #fff
+        transition: transform ease .3s
+        color: #000
+        text-align: left
+        margin: auto !important
+        transform: translateY(10%)
+        position: relative
+        z-index: 1
+
+        // top: 50%
+        // left: 50%
+        // transform: translate(-50%, -50%)
+        // overflow-y: scroll
+        // -ms-overflow-style: none
+        // scrollbar-width: none
+        // &::-webkit-scrollbar
+        //     display: none
+        //     width: 0
+        //     height: 0
+
+    &-heading
+        text-align: center
+        color: $primary
+
+    &-close
+        position: absolute
+        top: 32px
+        right: 20px
+        .ic
+            fill: $text-gray
+            width: 24px
+            height: 24px
+
+    &-product
+        display: flex
+        align-items: center
+        gap: 8px
+        &__img 
+            min-width: 80px
+            width: 80px
+            height: 80px
+            &>* 
+                width: 100%
+                height: 100%
+                object-fit: cover
+
+        &__name 
+            font-size: $font-md
+            font-weight: 700
+
+        &__text 
+            font-size: $font-sm 
+            margin-top: 8px
+
+
+    &.active
+        opacity: 1
+        visibility: visible
+        &>*
+            transform: translateY(0%)

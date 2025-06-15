@@ -8,7 +8,10 @@
     gap: 8px
     padding: 0 20px
     border-radius: $b-rad
+    color: $dark
+    font-size: var(--font-md)
     transition: .3s all ease
+    text-overflow: ellipsis
     &:active
         transform: scale(.98)
 
@@ -17,6 +20,18 @@
         height: 20px
         fill: $dark
         transition: .3s ease all
+
+    &-light
+        background-color: $main
+        color: $primary
+        svg
+            fill: $primary
+
+        &:hover
+            background-color: $primary-hover
+
+        &:active
+            background-color: $primary-active
 
     &-primary
         background-color: $primary
@@ -52,11 +67,14 @@
         &-primary
             background-color: #fff
             border: 1px solid $primary
+            svg
+                stroke: $dark
             &:hover
                 color: $light
                 background-color: $primary
                 svg
                     fill: $light
+                    stroke: $light
 
             &:active
                 color: $light
@@ -131,10 +149,9 @@
         background-color: $secondary
 
 @media screen and ( max-width: 992px )
-    .btn 
+    .btn
         padding: 0 16px
-        
+
     .badge
         font-size: var(--font-sm)
         padding: 6px 8.5px
-
