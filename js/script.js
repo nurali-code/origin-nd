@@ -49,8 +49,7 @@ $(document).on('change', '.inp-file input[type="file"]', function () {
     const $clearIcon = $('<svg class="ic inp-file__clear"><use href="#close"></use></svg>');
 
     if (file) {
-        const fileName = file.name;
-        $label.children('span').text(fileName);
+        $label.children('span').text(file.name);
         $label.after($clearIcon);
     } else { $label.text(`Прикрепить файл`); }
 
@@ -102,7 +101,7 @@ $(document).on('click input', '.amaunt-subtract, .amaunt-add, .amaunt-input', fu
     const $input = $amaunt.find('.amaunt-input');
     const hasDataAttributes = $amaunt.is('[data-change][data-price-val]');
     let currentValue = parseInt($input.val(), 10) || 0;
-    
+
     if ($(this).hasClass('amaunt-add')) currentValue++;
     if ($(this).hasClass('amaunt-subtract') && currentValue > 0) currentValue--;
     if ($(this).is('.amaunt-input') && currentValue < 0) currentValue = 0;
@@ -114,13 +113,11 @@ $(document).on('click input', '.amaunt-subtract, .amaunt-add, .amaunt-input', fu
         const pricePerUnit = parseFloat($amaunt.data('price-val').replace(' ₽', ''));
         $priceElement.text((currentValue * pricePerUnit).toFixed(2) + ' ₽');
     }
-    
-    console.log($amaunt.data('card-amaunt'), currentValue);
+
     if ($amaunt.is('[data-card-amaunt]') && currentValue === 0) {
-        
         const $cardAction = $amaunt.closest('[data-card-catcher]');
-        $cardAction.find('[data-card-add]').show(); // Show the "add" button
-        $amaunt.removeClass('active'); // Remove the "active" class from "amaunt"
+        $cardAction.find('[data-card-add]').show();
+        $amaunt.removeClass('active');
     }
 });
 
@@ -149,23 +146,33 @@ $('.card-slider').slick({
     ]
 });
 
+$(function () {
+    const $defaultTab = $('.tab-nav__btn.active_line');
+    if ($defaultTab.length) {
+        const targetTab = $defaultTab.data('tab');
+        const $targetContent = $(`[data-tab-content="${targetTab}"]`);
+        $targetContent.addClass('active');
+        if ($targetContent.hasClass('card-slider')) {
+            $targetContent.slick('setPosition');
+        }
+    }
+    
+    $(document).on('click', '.tab-nav__btn', function () {
+        const $this = $(this);
+        const targetTab = $this.data('tab');
+        $this.addClass('active_line').siblings().removeClass('active_line');
+        $('[data-tab-content]').removeClass('active');
+        const $targetContent = $(`[data-tab-content="${targetTab}"]`);
+        $targetContent.addClass('active');
+        if ($targetContent.hasClass('card-slider')) {
+            $targetContent.slick('setPosition');
+        }
+    });
+});
+
 $(document).on('click', '[data-card-add]', function (e) {
     e.preventDefault();
     const $cardAction = $(this).closest('[data-card-catcher]');
-    $(this).hide(); 
-    $cardAction.find('[data-card-amaunt]').addClass('active').find('.amaunt-input').val(1); 
+    $(this).hide();
+    $cardAction.find('[data-card-amaunt]').addClass('active').find('.amaunt-input').val(1);
 });
-
-function applySlickFilter() {
-    const activeFilterId = $('button[data-slick-filter].active').data('slick-filter') || '*';
-    $('.card-slider').slick('slickUnfilter');
-    $('.card-slider').slick('slickFilter', '[data-slick-filter="' + activeFilterId + '"]');
-}
-
-$('button[data-slick-filter]').on('click', function () {
-    $('button[data-slick-filter]').removeClass('active');
-    $(this).addClass('active');
-    applySlickFilter();
-});
-
-$('.card-slider').on('afterChange', function () { applySlickFilter(); });

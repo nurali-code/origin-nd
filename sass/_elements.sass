@@ -28,6 +28,12 @@ h1
 h2
     font-size: var(--h2)
     line-height: 100%
+    margin: 0 0 24px
+
+.active_line
+    width: fit-content
+    padding: 0 0 8px
+    border-bottom: 2px solid $primary
 
 img
     display: block
@@ -52,12 +58,12 @@ section
     margin-right: auto
     margin-left: auto
 
-.sm 
+.sm
     @media screen and ( min-width: 576px )
         &-show
             display: none !important
     @media screen and ( max-width: 576px )
-        &-hide 
+        &-hide
             display: none !important
 
 .c
@@ -287,7 +293,7 @@ textarea
                 width: calc( var(--fild-width) + 4px )
                 height: calc( var(--fild-width) + 4px )
                 position: absolute
-                
+
                 background-repeat: no-repeat
                 background-size: contain
                 background-image: url('../img/icon-check.svg')
@@ -352,7 +358,6 @@ textarea
     100%
         opacity: 1
         transform: translateY(0%)
-        
 
 @media (min-width: 576px)
     .container-sm, .container
