@@ -68,8 +68,15 @@
             background-color: $success-active
 
     &-outline
+        &-main 
+            background-color: rgba(0, 0, 0, 0)
+            border: 1px solid var(--main-secondary)
+        &-light
+            background-color: rgba(0, 0, 0, 0)
+            border: 1px solid $main
+
         &-primary
-            background-color: #fff
+            background-color: rgba(0, 0, 0, 0)
             border: 1px solid $primary
             svg
                 stroke: $dark
@@ -87,7 +94,7 @@
                     fill: $light
 
         &-secondary
-            background-color: #fff
+            background-color: rgba(0, 0, 0, 0)
             border: 1px solid $secondary
             &:hover
                 color: $primary
@@ -101,7 +108,7 @@
                     fill: $primary
 
         &-success
-            background-color: #fff
+            background-color: rgba(0, 0, 0, 0)
             border: 1px solid $success
             &:hover
                 color: $light
