@@ -1,8 +1,7 @@
 // custom select 
 $('select').each(function () {
     const $this = $(this).hide().wrap('<div class="select-wrap"></div>');
-    const $wrapper = $this.parent();
-    $wrapper.addClass($this.attr('class'));
+    $this.parent().addClass($this.attr('class'));
 
     const $selectedOption = $this.find('option[selected]');
     const hasSelected = $selectedOption.length > 0;
@@ -24,7 +23,6 @@ $('select').each(function () {
     });
     $customSelect.click(function (e) {
         e.stopPropagation();
-        const $parent = $(this).parent();
         $('.select-wrap').css('z-index', '');
         $('.select.active').not(this).removeClass('active').next('.select-options').hide();
         $(this).toggleClass('active').next('.select-options').slideToggle(300);
@@ -62,26 +60,26 @@ $(document).on('change', '.inp-file input[type="file"]', function () {
 });
 
 
-function showModal(id) {
-    hideModals()
-    compensateForScrollbar()
-    $(id).addClass('active');
-    $('body').addClass('overflow')
-}
-
-function hideModals() {
-    $('.modal.active').removeClass('active');
-    $('body').removeClass('overflow')
-    compensateForScrollbar(0)
-};
-
-function compensateForScrollbar(inst) {
-    var scrollbarWidth = window.innerWidth - $(document).width();
-    if (inst == 0) { $('body').css('margin-right', ''); }
-    else if (scrollbarWidth > 0) { $('body').css('margin-right', scrollbarWidth + 'px'); }
-}
 
 $(function () {
+    function showModal(id) {
+        hideModals()
+        compensateForScrollbar()
+        $(id).addClass('active');
+        $('body').addClass('overflow')
+    }
+
+    function hideModals() {
+        $('.modal.active').removeClass('active');
+        $('body').removeClass('overflow')
+        compensateForScrollbar(0)
+    };
+
+    function compensateForScrollbar(inst) {
+        var scrollbarWidth = window.innerWidth - $(document).width();
+        if (inst == 0) { $('body').css('margin-right', ''); }
+        else if (scrollbarWidth > 0) { $('body').css('margin-right', scrollbarWidth + 'px'); }
+    }
     $('a[href*="#modal-"]').on('click', function (e) {
         e.preventDefault()
         showModal($(this).attr("href"));
@@ -158,7 +156,7 @@ $(function () {
             }
         });
     }
-    
+
     $(document).on('click', '[data-tab]', function () {
         const $this = $(this);
         const activeClass = $this.hasClass('btn') ? 'btn-primary' : 'active_line';

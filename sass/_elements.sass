@@ -33,6 +33,10 @@ h2
     line-height: 100%
     margin: 0 0 24px
 
+p 
+    font-size: $font-md 
+    line-height: 100%
+
 .active_line
     width: fit-content
     padding: 0 0 8px
@@ -65,7 +69,7 @@ section
     @media screen and ( min-width: 577px )
         &-show
             display: none !important
-            
+
     @media screen and ( max-width: 576px )
         &-hide
             display: none !important
@@ -191,6 +195,11 @@ textarea
             cursor: pointer
             font-size: 14px
             line-height: 18px
+            &:hover
+                background-color: var(--light-gray)
+
+            &[selected]
+                background-color: $secondary
 
         .hidden
             display: none
@@ -384,6 +393,5 @@ textarea
         max-width: 1322px
 
 @media screen and ( max-width: 546px )
-    h2 
+    h2
         margin-bottom: 16px
-    
