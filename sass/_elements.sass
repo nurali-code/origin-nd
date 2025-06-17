@@ -19,6 +19,7 @@ body
         overflow: hidden
 
 a, button
+    color: $dark
     text-decoration: none
     background: none
     transition: all ease .3s
@@ -33,9 +34,17 @@ h2
     line-height: 100%
     margin: 0 0 24px
 
-p 
+p, ul, ol
     font-size: $font-md 
-    line-height: 100%
+    line-height: 110%
+
+ul, ol 
+    padding-left: 40px
+    li 
+        margin-bottom: 10px
+        &:last-child
+            margin-bottom: 0
+    
 
 .active_line
     width: fit-content
@@ -205,8 +214,12 @@ textarea
             display: none
 
 .ic
+    vertical-align: middle
     width: 16px
     height: 16px
+    &-md 
+        width: 20px
+        height: 20px
 
 .ml
     &-auto
@@ -338,7 +351,7 @@ textarea
                 .ic
                     fill: $light
 
-.amaunt
+.amount
     display: flex
     max-width: 180px
     &-input
@@ -357,8 +370,8 @@ textarea
 
             -moz-appearance: textfield
 
-    &-subtract,
-    &-add
+    &-dec,
+    &-inc
         padding: 12px
         width: 40px
         height: 40px

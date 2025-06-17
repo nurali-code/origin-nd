@@ -93,40 +93,61 @@ $(function () {
     });
 });
 
-$(document).on('click input', '.amaunt-subtract, .amaunt-add, .amaunt-input', function (e) {
+$(document).on('click input', '.amount-dec, .amount-inc, .amount-input', function (e) {
     e.preventDefault();
-    const $amaunt = $(this).closest('.amaunt');
-    const $input = $amaunt.find('.amaunt-input');
-    const hasDataAttributes = $amaunt.is('[data-change][data-price-val]');
+    const $amount = $(this).closest('.amount');
+    const $input = $amount.find('.amount-input');
+    const hasDataAttributes = $amount.is('[data-change][data-price-val]');
     let currentValue = parseInt($input.val(), 10) || 0;
 
-    if ($(this).hasClass('amaunt-add')) currentValue++;
-    if ($(this).hasClass('amaunt-subtract') && currentValue > 0) currentValue--;
-    if ($(this).is('.amaunt-input') && currentValue < 0) currentValue = 0;
+    if ($(this).hasClass('amount-inc')) currentValue++;
+    if ($(this).hasClass('amount-dec') && currentValue > 0) currentValue--;
+    if ($(this).is('.amount-input') && currentValue < 0) currentValue = 0;
 
     $input.val(currentValue);
 
     if (hasDataAttributes) {
-        const $priceElement = $(`[data-price="${$amaunt.data('change')}"]`);
-        const pricePerUnit = parseFloat($amaunt.data('price-val').replace(' ₽', ''));
+        const $priceElement = $(`[data-price="${$amount.data('change')}"]`);
+        const pricePerUnit = parseFloat($amount.data('price-val').replace(' ₽', ''));
         $priceElement.text((currentValue * pricePerUnit).toFixed(2) + ' ₽');
     }
 
-    if ($amaunt.is('[data-card-amaunt]') && currentValue === 0) {
-        const $cardAction = $amaunt.closest('[data-card-catcher]');
+    if ($amount.is('[data-card-amount]') && currentValue === 0) {
+        const $cardAction = $amount.closest('[data-card-catcher]');
         $cardAction.find('[data-card-add]').show();
-        $amaunt.removeClass('active');
+        $amount.removeClass('active');
     }
 });
 
+
+const slickArrows = {
+    prevArrow: '<button class="slick-prev"><svg class="ic"><use href="#arrow-right"></use></svg></button>',
+    nextArrow: '<button class="slick-next"><svg class="ic"><use href="#arrow-right"></use></svg></button>',
+};
+
+$('.info-slider').slick({
+    slidesToShow: 1,
+    arrows: true,
+    swipeToSlide: true,
+    ...slickArrows,
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 576,
+            settings: {
+                infinite: false,
+                arrows: false,
+                dots: true,
+            }
+        },
+    ]
+});
 
 $('.card-slider').slick({
     infinite: false,
     slidesToShow: 5,
     arrows: true,
-    // swipeToSlide: true,
-    prevArrow: '<button type="button" class="slick-prev"><svg class="ic"><use href="#arrow-right"></use></svg></button>',
-    nextArrow: '<button type="button" class="slick-next"><svg class="ic"><use href="#arrow-right"></use></svg></button>',
+    ...slickArrows,
     slidesToScroll: 1,
     responsive: [
         {
@@ -134,7 +155,7 @@ $('.card-slider').slick({
             settings: { slidesToShow: 4, }
         },
         {
-            breakpoint: 992,
+            breakpoint: 991,
             settings: { slidesToShow: 3, }
         },
         {
@@ -180,5 +201,5 @@ $(document).on('click', '[data-card-add]', function (e) {
     e.preventDefault();
     const $cardAction = $(this).closest('[data-card-catcher]');
     $(this).hide();
-    $cardAction.find('[data-card-amaunt]').addClass('active').find('.amaunt-input').val(1);
+    $cardAction.find('[data-card-amount]').addClass('active').find('.amount-input').val(1);
 });

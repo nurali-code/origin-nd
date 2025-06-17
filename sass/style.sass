@@ -84,7 +84,7 @@
             &-light
                 padding: 0 2px
 
-    &-amaunt
+    &-amount
         max-width: 150px
         margin: 0 auto
         &:not(.active)
@@ -96,13 +96,13 @@
     &-wraper
         display: flex
         flex-wrap: wrap
-        --amaunt: 5
+        --amount: 5
         gap: $gap
         margin-bottom: 20px
         &:last-of-type
             margin-bottom: 0
         &>*
-            width: calc( (100% - (16px *( var(--amaunt) - 1))) / var(--amaunt) )
+            width: calc( (100% - (16px *( var(--amount) - 1))) / var(--amount) )
 
     &-slider
         &:not(.slick-initialized)
@@ -122,15 +122,15 @@
 
     @media screen and ( max-width: 1400px )
         &-wraper
-            --amaunt: 4
+            --amount: 4
 
     @media screen and ( max-width: 992px )
         &-wraper
-            --amaunt: 3
+            --amount: 3
 
     @media screen and ( max-width: 768px )
         &-wraper
-            --amaunt: 2
+            --amount: 2
 
     @media screen and ( max-width: 576px )
 
@@ -188,6 +188,7 @@
 .delivery-partners,
 .delivery-partner,
 .delivery-list,
+.info-wrap,
 .delivery-wrap
     display: flex
 
@@ -393,6 +394,7 @@
         counter-reset: custom-counter
         padding: 0
         &>*
+            margin: 0
             width: calc( (100% - $gap * 3) / 4 )
 
     &-item
@@ -414,10 +416,9 @@
             margin: 0 0 4px
 
     @media screen and ( max-width: 991px )
-        &-list 
+        &-list
             &>*
-                width: calc( (100% - 8px) / 2 )
-
+                width: calc( (100% - $gap) / 2 )
 
     @media screen and ( max-width: 767px )
         &-wrap
@@ -436,8 +437,91 @@
         &-partner
             padding: 0 $gap
 
-        &-list 
+        &-list
             gap: 8px
-        &-item 
+        &-item
             text-transform: none
             padding: 8px
+
+.info
+    &-title
+        &>*
+            margin-bottom: 20px
+            &:last-child
+                margin-bottom: 0
+
+    &-wrap
+        gap: 24px
+        align-items: center
+        &>*
+            &:first-child
+                width: calc(100% - 355px)
+
+            &:last-child
+                width: 355px
+
+    &-slider
+        padding: 12px 0
+        background-color: var(--light-gray)
+        &:not(.slick-initialized)
+            &>*
+                display: none
+                &:first-child
+                    display: block
+
+        .slick
+            &-slide
+                margin: 0 25px
+            &-list
+                padding: 0 25px
+
+    &-slide
+        &__img
+            width: 100%
+            aspect-ratio: 250/353
+            display: block
+            margin: 0 auto 
+
+        &__link
+            display: block
+            width: fit-content
+            margin: 8px 0 0 auto 
+            .ic
+                margin-left: 8px
+
+    @media screen and ( max-width: 991px )
+        &-wrap
+            flex-wrap: wrap
+            &>*
+                width: 100% !important
+
+        &-title 
+            &>*
+                margin-bottom: 16px
+
+        &-slider
+            max-width: 400px
+            margin: 0 auto
+
+        &-slide
+            width: 290px
+            // max-width: 330px
+
+    @media screen and ( max-width: 576px )
+        &-title 
+            &>*
+                margin-bottom: 8px
+        &-slider
+            max-width: unset
+            padding: $gap 0
+            width: calc( 100% + var(--bs-gutter-x) * 2 ) !important
+            .slick
+                &-slide
+                    margin: 0 5px
+
+                &-list 
+                    padding: 0 20px
+
+        &-slide
+            &__link 
+                display: none
