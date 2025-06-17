@@ -3,16 +3,13 @@ $('select').each(function () {
     const $this = $(this).hide().wrap('<div class="select-wrap"></div>');
     $this.parent().addClass($this.attr('class'));
 
-    const $selectedOption = $this.find('option[selected]');
-    const hasSelected = $selectedOption.length > 0;
-    const defaultOption = hasSelected ? $selectedOption : $this.find('option').eq(0);
+    const defaultOption = $this.find('option').eq(0);
     const defaultText = defaultOption.text();
-    const defaultClass = hasSelected ? '' : 'c-gray';
     const $customSelect = $('<div class="select"></div>')
         .addClass($this.attr('class'))
         .insertAfter($this)
-        .html(`<span class="${defaultClass}">${defaultText}</span> <svg class="ic"><use href="#arrow-down"></use></svg>`);
-    const $optionlist = $('<ul class="select-options"></ul>').insertAfter($customSelect);
+        .html(`<span>${defaultText}</span> <svg class="ic ic-lg"><use href="#arrow-down"></use></svg>`);
+    const $optionlist = $('<ul class="select-options"><li class="select-heading">Выберите</li></ul>').insertAfter($customSelect);
     $this.children('option').each(function () {
         $('<li />', {
             text: $(this).text(),
@@ -24,19 +21,21 @@ $('select').each(function () {
     $customSelect.click(function (e) {
         e.stopPropagation();
         $('.select-wrap').css('z-index', '');
-        $('.select.active').not(this).removeClass('active').next('.select-options').hide();
+        $('.select.active').not(this).removeClass('active').next('.select-options').slideUp(300);
         $(this).toggleClass('active').next('.select-options').slideToggle(300);
     });
     $optionlist.on('click', 'li', function (e) {
         e.stopPropagation();
         $customSelect.find('span').html($(this).text());
-        $customSelect.removeClass('active');
         $this.val($(this).attr('rel')).trigger('change');
-        $optionlist.hide();
-    });
-    $(document).click(function () {
         $customSelect.removeClass('active');
-        $optionlist.hide();
+        $optionlist.slideUp(300);
+    });
+    $(document).click(function (e) {
+        if (!$(e.target).closest($optionlist).length) {
+            $customSelect.removeClass('active');
+            $optionlist.slideUp(300);
+        }
     });
 });
 

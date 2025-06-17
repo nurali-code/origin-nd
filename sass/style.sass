@@ -6,10 +6,31 @@
 @import 'slick'
 @import 'modal'
 
+.partner,
+.service,
+.partner-wrap,
+.partner-info,
+.partner-title,
+.service-list,
+.delivery-partners,
+.delivery-partner,
+.delivery-list,
+.contact-wrap,
+.info-wrap,
+.delivery-wrap,
 .card,
 .card-body,
+.contact-title,
+.contact-box,
 .card-footer
     display: flex
+
+.card,
+.card-body,
+.delivery-partners,
+.partner-title,
+.contact-title,
+.card-footer
     flex-direction: column
     gap: 4px
 
@@ -179,19 +200,6 @@
     &.active
         animation: fadeIn .3s ease forwards
 
-.partner,
-.service,
-.partner-wrap,
-.partner-info,
-.partner-title,
-.service-list,
-.delivery-partners,
-.delivery-partner,
-.delivery-list,
-.info-wrap,
-.delivery-wrap
-    display: flex
-
 .partner
     align-items: center
     justify-content: center
@@ -225,7 +233,6 @@
         aspect-ratio: 311/200
 
     &-title
-        flex-direction: column
         justify-content: center
         padding: $gap
 
@@ -360,10 +367,6 @@
         &>*
             width: calc( 100% - $gap / 2 )
 
-    &-partners
-        flex-direction: column
-        gap: 4px
-
     &-partner
         align-items: center
         width: 100%
@@ -480,12 +483,12 @@
             width: 100%
             aspect-ratio: 250/353
             display: block
-            margin: 0 auto 
+            margin: 0 auto
 
         &__link
             display: block
             width: fit-content
-            margin: 8px 0 0 auto 
+            margin: 8px 0 0 auto
             .ic
                 margin-left: 8px
 
@@ -495,7 +498,7 @@
             &>*
                 width: 100% !important
 
-        &-title 
+        &-title
             &>*
                 margin-bottom: 16px
 
@@ -508,7 +511,7 @@
             // max-width: 330px
 
     @media screen and ( max-width: 576px )
-        &-title 
+        &-title
             &>*
                 margin-bottom: 8px
         &-slider
@@ -519,9 +522,58 @@
                 &-slide
                     margin: 0 5px
 
-                &-list 
+                &-list
                     padding: 0 20px
 
         &-slide
-            &__link 
+            &__link
                 display: none
+
+.contact
+    &-wrap
+        gap: $gap
+        &>*
+            width: calc(100% - $gap / 2)
+
+    &-col
+        position: relative
+        z-index: 1
+        overflow: hiddin
+        border-radius: $b-rad
+
+    &-img
+        width: 100%
+        height: 100%
+        object-fit: cover
+        object-position: center center
+
+    &-title
+        gap: 12px
+        &>*
+            margin: 0
+
+    @media screen and ( min-width: 768px )
+        &-box
+            padding: 20px
+            width: 100%
+            position: absolute
+            top: 0
+            left: 0
+            z-index: 11
+            backdrop-filter: blur(10px)
+            background-color: rgba(255, 255, 255, .4)
+
+    @media screen and ( max-width: 767px )
+        &-box 
+            gap: 12px
+
+        &-wrap
+            display: block
+            &>*
+                width: 100%
+
+        &-col 
+            margin-bottom: 16px
+
+        &-img
+            display: none

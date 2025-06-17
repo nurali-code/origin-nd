@@ -35,16 +35,15 @@ h2
     margin: 0 0 24px
 
 p, ul, ol
-    font-size: $font-md 
+    font-size: $font-md
     line-height: 110%
 
-ul, ol 
+ul, ol
     padding-left: 40px
-    li 
+    li
         margin-bottom: 10px
         &:last-child
             margin-bottom: 0
-    
 
 .active_line
     width: fit-content
@@ -80,6 +79,15 @@ section
             display: none !important
 
     @media screen and ( max-width: 576px )
+        &-hide
+            display: none !important
+
+.md
+    @media screen and ( min-width: 768px )
+        &-show
+            display: none !important
+
+    @media screen and ( max-width: 767px )
         &-hide
             display: none !important
 
@@ -133,6 +141,8 @@ section
         color: $text-gray
     &-group
         gap: 8px
+        &--md
+            gap: 12px
         &--lg
             gap: 16px
 
@@ -167,8 +177,6 @@ textarea
     text-align: left
     color: $dark
     .ic
-        width: 16px
-        height: 16px
         fill: $dark
         margin-left: auto
 
@@ -199,11 +207,11 @@ textarea
         border-radius: $b-rad
         box-shadow: 0px 4px 30px 0px rgba(0,0,0,.1)
         li
-            white-space: nowrap
-            padding: 7px 18px
+            padding: 7px var(--input-padding)
             cursor: pointer
-            font-size: 14px
-            line-height: 18px
+            font-size: $font-md
+            line-height: 120%
+            margin: 0
             &:hover
                 background-color: var(--light-gray)
 
@@ -213,13 +221,29 @@ textarea
         .hidden
             display: none
 
+    &-heading
+        color: var(--text-gray)
+        pointer-events: none
+
+    &.active
+        .ic
+            transform: scaleY(-1)
+
 .ic
     vertical-align: middle
     width: 16px
     height: 16px
-    &-md 
+    fill: $dark
+    stroke: $dark
+    &-md
+        min-width: 20px
         width: 20px
         height: 20px
+
+    &-lg
+        min-width: 24px
+        width: 24px
+        height: 24px
 
 .ml
     &-auto
@@ -255,6 +279,10 @@ textarea
                 &::after
                     content: '*'
                     color: $primary
+
+    &-textarea
+        &--lg
+            height: 161px
 
     &-group
         position: relative
@@ -405,6 +433,26 @@ textarea
     .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container
         max-width: 1322px
 
-@media screen and ( max-width: 546px )
+@media screen and ( max-width: 991px )
+    section
+        padding: 24px 0
+        &.bg-gray
+            padding: 30px 0
+            margin: 24px 0
+
+@media screen and ( max-width: 767px )
+    section
+        padding: 16px 0
+        &.bg-gray
+            padding: 20px 0
+            margin: 16px 0
+
+@media screen and ( max-width: 576px )
+    section
+        padding: 12px 0
+        &.bg-gray
+            padding: 16px 0
+            margin: 12px 0
+
     h2
         margin-bottom: 16px
