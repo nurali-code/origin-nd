@@ -1,38 +1,12 @@
 @import 'normolize'
-@import 'font'
 @import 'var'
-@import 'elements'
+@import 'font'
+@import 'base'
 @import 'btns'
+@import 'elements'
 @import 'slick'
-@import 'modal'
-
-.partner,
-.service,
-.partner-wrap,
-.partner-info,
-.partner-title,
-.service-list,
-.delivery-partners,
-.delivery-partner,
-.delivery-list,
-.contact-wrap,
-.info-wrap,
-.delivery-wrap,
-.card,
-.card-body,
-.contact-title,
-.contact-box,
-.card-footer
-    display: flex
-
-.card,
-.card-body,
-.delivery-partners,
-.partner-title,
-.contact-title,
-.card-footer
-    flex-direction: column
-    gap: 4px
+@import 'flex'
+@import 'header'
 
 .card
     width: 245px
@@ -75,6 +49,7 @@
 
     &-list
         list-style: none
+        padding: 0
         &__item
             padding: 5.5px 0
 
@@ -577,3 +552,6 @@
 
         &-img
             display: none
+
+@import 'footer'
+@import 'modal'

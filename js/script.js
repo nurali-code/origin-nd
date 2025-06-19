@@ -8,7 +8,7 @@ $('select').each(function () {
     const $customSelect = $('<div class="select"></div>')
         .addClass($this.attr('class'))
         .insertAfter($this)
-        .html(`<span>${defaultText}</span> <svg class="ic ic-lg"><use href="#arrow-down"></use></svg>`);
+        .html(`<span>${defaultText}</span> <svg class="ic ic-lg"><use href="img/ic.svg#arrow-down"></use></svg>`);
     const $optionlist = $('<ul class="select-options"><li class="select-heading">Выберите</li></ul>').insertAfter($customSelect);
     $this.children('option').each(function () {
         $('<li />', {
@@ -43,7 +43,7 @@ $('select').each(function () {
 $(document).on('change', '.inp-file input[type="file"]', function () {
     const file = this.files && this.files[0];
     const $label = $(this).siblings('.inp-file__label');
-    const $clearIcon = $('<svg class="ic inp-file__clear"><use href="#close"></use></svg>');
+    const $clearIcon = $('<svg class="ic inp-file__clear"><use href="img/ic.svg#close"></use></svg>');
 
     if (file) {
         $label.children('span').text(file.name);
@@ -86,7 +86,7 @@ $(function () {
 
     $('.modal-close, [data-modal-close]').on('click', () => { hideModals(); });
     $(document).on('click', function (e) {
-        if (!$(e.target).closest('.modal-content, .btn, .btn-link, .mod-link').length && $('body').closest('.overflow').length) {
+        if (!$(e.target).closest('.modal-content, .btn, .ic-btn').length && $('body').closest('.overflow').length) {
             hideModals();
         }
     });
@@ -120,8 +120,8 @@ $(document).on('click input', '.amount-dec, .amount-inc, .amount-input', functio
 
 
 const slickArrows = {
-    prevArrow: '<button class="slick-prev"><svg class="ic"><use href="#arrow-right"></use></svg></button>',
-    nextArrow: '<button class="slick-next"><svg class="ic"><use href="#arrow-right"></use></svg></button>',
+    prevArrow: '<button class="slick-prev"><svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg></button>',
+    nextArrow: '<button class="slick-next"><svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg></button>',
 };
 
 $('.info-slider').slick({

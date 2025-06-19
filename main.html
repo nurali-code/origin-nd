@@ -6,116 +6,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Origin | Интернет-магазин крепежа</title>
     <meta name="robots" content="noindex, nofollow">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"> -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<style>
-    .row {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        padding: 30px 0;
-        gap: 10px;
-    }
-
-    .col {
-        gap: 10px;
-        display: flex;
-        flex-direction: column;
-        width: 30%;
-    }
-</style>
-
 <body>
 
-    <div class="container">
-        <div class="col">
-            <h1>Заголовок H1</h1>
-            <h2>Заголовок H2</h2>
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <p class="header-top__text">
+                    Свяжитесь с нами удобным способом — ответим на все ваши вопросы!
+                </p>
+                <div class="header-contact">
+                    <a href="tel:+74951832333" class="link-contact">
+                        <svg class="ic ic-md"><use href="img/ic.svg#call"></use></svg>
+                        +7 495 183-23-33
+                    </a>
+                    <a href="mailto:info@originkrepeg.ru" class="link-contact">
+                        <svg class="ic ic-md"><use href="img/ic.svg#email"></use></svg>
+                        info@originkrepeg.ru
+                    </a>
+                    <div class="social">
+                        <a href="#" class="social-link">
+                            <svg class="ic ic-lg"><use href="img/ic.svg#telegram"></use></svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg class="ic ic-lg"><use href="img/ic.svg#whatsapp"></use></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="header-middle">
+                <a href="#" class="logo"><img src="img/origin-logo.svg" alt="i"></a>
+                <nav class="header-nav">
+                    <ul class="header-menu">
+                        <li class="header-menu__item">
+                            <a href="#" class="header-menu__link">О компании</a>
+                        </li>
+                        <li class="header-menu__item">
+                            <a href="#" class="header-menu__link">Производство</a>
+                        </li>
+                        <li class="header-menu__item">
+                            <a href="#" class="header-menu__link">Услуги</a>
+                        </li>
+                        <li class="header-menu__item">
+                            <a href="#" class="header-menu__link">Оплата и доставка</a>
+                        </li>
+                        <li class="header-menu__item">
+                            <a href="#" class="header-menu__link">Вакансии</a>
+                        </li>
+                        <li class="header-menu__item">
+                            <a href="#" class="header-menu__link">Поставщикам</a>
+                        </li>
+                        <li class="header-menu__item">
+                            <a href="#" class="header-menu__link">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header-bottom">
+                <span class="btn btn-primary catalog-btn">
+                    <svg class="ic"><use href="img/ic.svg#list"></use></svg> Каталог
+                </span>
+                <a href="#" class="logo header-bottom__logo"><img src="img/origin-logo.svg" alt="i"></a>
+                <button class="header-menu__btn"><span></span></button>
+                <form class="search-bar">
+                    <input type="search" required placeholder="Найти товар" class="search-bar__input">
+                    <button class="search-bar__btn"><svg class="ic ic-md"><use href="img/ic.svg#search"></use></svg></button>
+                </form>
+                <a href="#modal-req-2" class="btn btn-outline-primary">Запросить расчет
+                    <svg class="ic"><use href="img/ic.svg#calc"></use></svg>
+                </a>
+                <a href="#modal-call_request" class="btn btn-outline-primary">Заказать звонок
+                    <svg class="ic"><use href="img/ic.svg#phone"></use></svg>
+                </a>
+                <a href="#modal-login" class="ic-btn">
+                    <span class="badge badge-sm badge-primary">0</span>
+                    <svg class="ic ic-xl"><use href="img/ic.svg#user"></use></svg>
+                    Корзина
+                </a>
+                <a href="#modal-login" class="ic-btn">
+                    <svg class="ic ic-xl"><use href="img/ic.svg#user"></use></svg> Войти
+                </a>
+                
+            </div>
         </div>
-        <div class="row">
-            <h2>btn</h2>
-            <button class="btn btn-primary">
-                <svg><use href="img/ic.svg#cart"></use></svg>
-                primary
-            </button>
-            <button class="btn btn-secondary">secondary</button>
-            <button class="btn btn-success">secondary</button>
-        </div>
-        <div class="row">
-            <h2>btn-outline</h2>
-            <button class="btn btn-outline-primary">
-                <svg>
-                    <use href="img/ic.svg#cart"></use>
-                </svg>
-                primary
-            </button>
-            <button class="btn btn-outline-secondary">
-                <svg>
-                    <use href="img/ic.svg#cart"></use>
-                </svg>
-                outline-secondary</button>
-            <button class="btn btn-outline-success">outline-secondary</button>
-        </div>
-        <div class="row">
-            <h2>btn-icon</h2>
-            <button class="btn btn-primary btn-icon">
-                <svg>
-                    <use href="img/ic.svg#lightning"></use>
-                </svg>
-            </button>
-            <button class="btn btn-secondary btn-icon">
-                <svg>
-                    <use href="img/ic.svg#cart"></use>
-                </svg>
-            </button>
-            <!-- <button class="btn btn-outline-secondary">outline-secondary</button>
-            <button class="btn btn-outline-success">outline-secondary</button> -->
-        </div>
-
-        <div class="row">
-            <h2>btn-md</h2>
-            <button class="btn btn-md btn-primary">sm primary</button>
-            <button class="btn btn-md btn-secondary">sm secondary</button>
-            <button class="btn btn-md btn-success">sm secondary</button>
-
-            <button class="btn btn-icon btn-md btn-primary">
-                <svg>
-                    <use href="img/ic.svg#lightning"></use>
-                </svg>
-            </button>
-
-            <button class="btn btn-md btn-secondary btn-icon">
-                <svg>
-                    <use href="img/ic.svg#cart"></use>
-                </svg>
-            </button>
-        </div>
-
-        <div class="row">
-            <h2>btn-sm</h2>
-
-            <button class="btn btn-icon btn-sm btn-primary">
-                <svg>
-                    <use href="img/ic.svg#lightning"></use>
-                </svg>
-            </button>
-
-            <button class="btn btn-sm btn-secondary btn-icon">
-                <svg>
-                    <use href="img/ic.svg#cart"></use>
-                </svg>
-            </button>
-        </div>
-
-        <div class="row">
-            <h2>Badges</h2>
-            <span class="badge badge-success">Badg success</span>
-            <span class="badge badge-primary">Badg primary</span>
-            <span class="badge badge-secondary">Badg secondary</span>
-        </div>
-    </div>
+    </header>
 
     <section class="bg-gray">
         <div class="container">
@@ -1593,24 +1569,110 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-title">
-                <p>ООО «КОМПАНИЯ ОРИДЖИН»</p>
-                <p>
-                    Почтовый адрес: 123100, <br>
-                    Москва, ул. Мантулинская, д. 9,  <br>
-                    к. 4, этаж 1, помещение 9н, офис 1.
-                </p>
-                <p>
-                    Самовывоз возможен только <br>
-                    по предварительному согласованию  <br>
-                    по адресу: Московская область,  <br>
-                    г. Долгопрудный, Береговой проезд, 9.
-                </p>
-                <p>
-                    <span class="footer__heading">Режим работы:</span>
-                    Понедельник – пятница: 09:00–18:00 <br>
-                    Суббота, воскресенье – выходные.
-                </p>
+            <div class="footer-wrap">
+                <div class="footer-title">
+                    <p class="footer-text">ООО «КОМПАНИЯ ОРИДЖИН»</p>
+                    <p class="footer-text">
+                        Почтовый адрес: 123100, <br>
+                        Москва, ул. Мантулинская, д. 9,  <br>
+                        к. 4, этаж 1, помещение 9н, офис 1.
+                    </p>
+                    <p class="footer-text">
+                        Самовывоз возможен только <br>
+                        по предварительному согласованию  <br>
+                        по адресу: Московская область,  <br>
+                        г. Долгопрудный, Береговой проезд, 9.
+                    </p>
+                    <p class="footer-text">
+                        <span class="footer-heading">Режим работы:</span>
+                        Понедельник – пятница: 09:00–18:00 <br>
+                        Суббота, воскресенье – выходные.
+                    </p>
+                    <div class="footer-contact md-show">
+                        <div class="footer-contact__col">
+                            <a href="tel:+74951832333" class="link-contact">
+                                <svg class="ic ic-md"><use href="img/ic.svg#call"></use></svg>
+                                +7 495 183-23-33
+                            </a>
+                            <a href="mailto:info@originkrepeg.ru" class="link-contact">
+                                <svg class="ic ic-md"><use href="img/ic.svg#email"></use></svg>
+                                info@originkrepeg.ru
+                            </a>
+                        </div>
+                        <div class="social">
+                            <a href="#" class="social-link">
+                                <svg class="ic ic-lg"><use href="img/ic.svg#telegram"></use></svg>
+                            </a>
+                            <a href="#" class="social-link">
+                                <svg class="ic ic-lg"><use href="img/ic.svg#whatsapp"></use></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-btns lg-hide">
+                        <a href="#modal-req-2" class="btn btn-primary">Запросить расчет
+                            <svg class="ic"><use href="img/ic.svg#calc"></use></svg>
+                        </a>
+                        <a href="#modal-call_request" class="btn btn-primary">Заказать звонок
+                            <svg class="ic"><use href="img/ic.svg#phone"></use></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Каталог</h3>
+                    <nav class="footer-nav">
+                        <a href="#" class="footer-nav__link">Болты</a>
+                        <a href="#" class="footer-nav__link">Винты</a>
+                        <a href="#" class="footer-nav__link">Гайки</a>
+                        <a href="#" class="footer-nav__link">Заклепки</a>
+                        <a href="#" class="footer-nav__link sm-show">Кольца стопорные</a>
+                        <a href="#" class="footer-nav__link sm-show">Саморезы</a>
+                        <a href="#" class="footer-nav__link sm-show">Хомуты, скобы и стяжки</a>
+                        <a href="#" class="footer-nav__link sm-show">Шайбы</a>
+                        <a href="#" class="footer-nav__link sm-show">Шпильки резьбовые</a>
+                        <a href="#" class="footer-nav__link sm-show">Шплинты</a>    
+                        <a href="#" class="footer-nav__link c-gray sm-show">Шпонки</a>    
+                        <a href="#" class="footer-nav__link c-gray sm-show">Шурупы</a>    
+                        <a href="#" class="footer-nav__link c-gray sm-show">Штифты</a>    
+                        <a href="#" class="footer-nav__link c-gray sm-show">Приварной крепёж</a>    
+                    </nav>
+
+                    <div class="footer-contact sm-hide">
+                        <a href="tel:+74951832333" class="link-contact">
+                            <svg class="ic ic-md"><use href="img/ic.svg#call"></use></svg>
+                            +7 495 183-23-33
+                        </a>
+                        <a href="mailto:info@originkrepeg.ru" class="link-contact">
+                            <svg class="ic ic-md"><use href="img/ic.svg#email"></use></svg>
+                            info@originkrepeg.ru
+                        </a>
+                        <div class="social">
+                            <a href="#" class="social-link">
+                                <svg class="ic ic-lg"><use href="img/ic.svg#telegram"></use></svg>
+                            </a>
+                            <a href="#" class="social-link">
+                                <svg class="ic ic-lg"><use href="img/ic.svg#whatsapp"></use></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="#modal-req-2" class="btn btn-primary lg-show">Запросить расчет
+                        <svg class="ic"><use href="img/ic.svg#calc"></use></svg>
+                    </a>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Меню</h3>
+                    <nav class="footer-nav footer-nav--menu">
+                        <a href="#" class="footer-nav__link">О компании</a>
+                        <a href="#" class="footer-nav__link">Производство</a>
+                        <a href="#" class="footer-nav__link">Услуги</a>
+                        <a href="#" class="footer-nav__link">Оплата и доставка</a>
+                        <a href="#" class="footer-nav__link">Вакансии</a>
+                        <a href="#" class="footer-nav__link">Поставщикам</a>
+                        <a href="#" class="footer-nav__link">Контакты</a>
+                    </nav>
+                    <a href="#modal-call_request" class="btn btn-primary lg-show">Заказать звонок
+                        <svg class="ic"><use href="img/ic.svg#phone"></use></svg>
+                    </a>
+                </div>
             </div>
             <p class="footer-bottom">
                 <span class="footer-bottom__text">© 2025, origin. Все права защищены</span>
@@ -1619,29 +1681,6 @@
             </p>
         </div>
     </footer>
-
-    <section>
-        <div class="container">
-            <div class="row">
-                <a href="#modal-login" class="btn btn-primary">Вход</a>
-                <a href="#modal-signup" class="btn btn-secondary">Регистрация</a>
-                <a href="#modal-call_request" class="btn btn-outline-primary">Заказать звонок</a>
-            </div>
-            <div class="row">
-                <a href="#modal-oneclick" class="btn btn-primary">Купить в 1 клик</a>
-                <a href="#modal-oneclick_2" class="btn btn-outline-secondary">Купить в 1 клик</a>
-                <a href="#modal-oneclick_3" class="btn btn-outline-primary">Купить в 1 клик</a>
-            </div>
-
-            <div class="row">
-                <a href="#modal-req" class="btn btn-primary">Запросить расчет</a>
-                <a href="#modal-req-2" class="btn btn-outline-primary">Запросить расчет
-                    <svg class="ic"><use href="img/ic.svg#calc"></use></svg>
-                </a>
-                <a href="#modal-req-3" class="btn btn-outline-secondary">Запросить расчет</a>
-            </div>
-        </div>
-    </section>
 
 
     <div class="modal" id="modal-oneclick">

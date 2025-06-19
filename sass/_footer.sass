@@ -1,0 +1,118 @@
+.footer
+    padding: 60px 0 20px
+    background-color: var(--light-gray)
+
+    &-wrap,
+    &-bottom
+        gap: $gap
+        display: flex
+
+        &>*
+            width: calc( (100% - $gap) / 3 )
+            &:first-child
+                width: calc( (100% - $gap) / 2 )
+    &-wrap
+        margin-bottom: 60px
+        gap: 24px $gap
+
+    &-bottom
+        &__text,
+        &__link
+            color: $text-gray
+            font-size: $font-sm-fx
+
+    &-col
+        gap: 20px
+
+    &-text
+        font-size: $font-md-fx
+
+    &-nav
+        gap: 20px
+        &--menu
+            &>*
+                text-transform: uppercase
+
+    &-title
+        &>*
+            margin-bottom: 24px
+            &:last-child
+                margin-bottom: 0
+    &-heading
+        font-weight: normal
+        display: block
+        font-size: $font-md
+        color: $text-gray
+
+    &-btns
+        gap: $gap
+        &>*
+            // padding: 0
+            // width: calc( (100% - $gap) / 2 )
+
+    &-contact
+        gap: 21px
+        margin-top: auto
+
+    @media screen and ( max-width: 991px )
+        &-wrap,
+        &-bottom
+            flex-wrap: wrap
+            &>*
+                width: calc( (100% - $gap) / 2 )
+                &:first-child
+                    width: 100%
+
+        &-nav
+            gap: 8px
+            &--menu
+                justify-content: space-between
+                flex: 1
+                &>*
+
+        &-col
+            .btn
+                margin-top: auto
+
+            &:last-child
+                margin-left: auto
+
+    @media screen and ( max-width: 576px )
+        padding: 32px 0
+        &-title
+            order: 1
+
+        &-wrap
+            margin-bottom: 24px
+        &-contact
+            gap: 21px 50px
+            margin: 0
+            flex-direction: row
+            align-items: flex-end
+            .link-contact
+                margin-bottom: 21px
+                &:last-child
+                    margin-bottom: 0
+
+            .social
+                gap: 24px
+
+        &-bottom
+            flex-direction: column-reverse
+            &>*
+                width: unset
+        &-col
+            order: 3
+            &:last-child
+                order: 2
+
+            .btn
+                width: 100%
+                padding: 0
+
+    @media screen and ( max-width: 370px )
+        &-col
+            .btn
+                width: 100%
+                .ic
+                    display: none

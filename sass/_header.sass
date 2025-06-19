@@ -1,0 +1,115 @@
+.header
+    &-top
+        padding: 8px 0
+        background-color: var(--light-gray)
+        box-shadow: 0 0 0 100vmax var(--light-gray)
+        clip-path: inset(0 -100vmax)
+        &>*
+            margin: 0
+
+        &__text
+            font-size: $font-sm
+
+    &-contact
+        gap: 40px
+        margin-left: auto
+        .social
+            gap: 4px
+
+    &-middle
+        padding: 8px 0
+
+    &-bottom
+        padding: 4px 0
+        &__logo
+            display: none
+
+    &-middle,
+    &-bottom
+        align-items: center
+        gap: $gap
+        &>*
+            &:first-child
+                width: calc( (311 / 1290) * 100% )
+
+    &-nav
+        margin-left: auto
+        flex: 1
+
+    &-menu
+        padding: 0
+        justify-content: space-between
+        list-style: none
+        &__link
+            text-transform: uppercase
+            font-size: $font-md-fx
+            display: block
+
+        &__item
+            margin: 0
+
+        &__btn
+            display: none
+            width: 44px
+            height: 44px
+            border-radius: $b-rad
+            background-color: $primary
+            span
+                position: relative
+                z-index: 1
+                display: block
+                height: 1.5px
+                width: 16px
+                margin: 0 auto
+                background-color: $light
+                border-radius: $b-rad
+
+                &::before,
+                &::after
+                    content: ''
+                    transition: inherit
+                    display: block
+                    height: 1.5px
+                    width: 100%
+                    position: absolute
+                    top: -5px
+                    left: 0
+                    border-radius: $b-rad
+                    background-color: $light
+
+                &::after
+                    top: 5px
+
+            &.active
+                span
+                    &::before,
+                    &::after
+                        top: 50%
+                        transform: rotate(45deg)
+
+                    &::after
+                        transform: rotate(-45deg)
+
+    @media screen and ( max-width: 1200px )
+        &-contact
+            gap: 24px
+
+        &-menu
+            &__btn 
+                display: block        
+
+        &-middle
+            display: none
+
+        &-bottom
+            &__logo
+                display: block
+
+        .catalog
+            &-btn
+                display: none
+
+.catalog
+    &-btn
+        justify-content: flex-start
+        text-transform: uppercase

@@ -1,170 +1,3 @@
-*
-    padding: 0
-    margin: 0
-    box-sizing: border-box
-    border: none
-    outline: none
-
-html, body
-    font-family: var(--font-famaly)
-    font-weight: 400
-    line-height: 100%
-    font-style: normal
-    font-optical-sizing: auto
-    background-color: $light
-    color: $dark
-
-body
-    &.overflow
-        overflow: hidden
-
-a, button
-    color: $dark
-    text-decoration: none
-    background: none
-    transition: all ease .3s
-    &:hover
-        opacity: .7
-
-h1
-    font-size: var(--h1)
-    line-height: 100%
-h2
-    font-size: var(--h2)
-    line-height: 100%
-    margin: 0 0 24px
-
-p, ul, ol
-    font-size: $font-md
-    line-height: 110%
-
-ul, ol
-    padding-left: 40px
-    li
-        margin-bottom: 10px
-        &:last-child
-            margin-bottom: 0
-
-.active_line
-    width: fit-content
-    padding: 0 0 8px
-    border-bottom: 2px solid $primary !important
-
-img
-    display: block
-    max-width: 100%
-
-.bg-gray
-    background-color: var(--light-gray)
-
-section
-    padding: 40px 0
-
-.container,
-.container-fluid,
-.container-xxl,
-.container-xl,
-.container-lg,
-.container-md,
-.container-sm
-    width: 100%
-    padding-right: var(--bs-gutter-x)
-    padding-left: var(--bs-gutter-x)
-    margin-right: auto
-    margin-left: auto
-
-.sm
-    @media screen and ( min-width: 577px )
-        &-show
-            display: none !important
-
-    @media screen and ( max-width: 576px )
-        &-hide
-            display: none !important
-
-.md
-    @media screen and ( min-width: 768px )
-        &-show
-            display: none !important
-
-    @media screen and ( max-width: 767px )
-        &-hide
-            display: none !important
-
-.c
-    &-gray
-        color: $text-gray !important
-        svg
-            fill: $text-gray !important
-            stroke: $text-gray !important
-
-    &-dark
-        color: $dark !important
-        svg
-            stroke: $dark !important
-            fill: $dark !important
-    &-danger
-        color: $primary !important
-        svg
-            stroke: $primary !important
-            fill: $primary !important
-
-.form,
-.form-group,
-.form-row
-    display: flex
-    flex-direction: column
-    &>*
-        margin: 0
-.form
-    gap: 32px
-    &-link
-        text-decoration: underline
-        color: $primary
-        font-size: $font-sm-fx
-
-    &-descr
-        font-size: $font-sm-fx
-        text-align: center
-
-    &-label
-        display: block
-    &-row
-        gap: 8px
-        justify-content: space-between
-        align-items: center
-        flex-direction: row
-        flex-wrap: wrap
-        & > *
-            font-size: $font-sm-fx
-    &-info
-        color: $text-gray
-    &-group
-        gap: 8px
-        &--md
-            gap: 12px
-        &--lg
-            gap: 16px
-
-input, textarea, select, .select
-    display: block
-    width: 100%
-    font-size: var(--font-sm-fx)
-    padding: 0 var(--input-padding)
-    min-height: 46px
-    border: 1px solid $b-color
-    border-radius: $b-rad
-    background-color: var(--light)
-    &:-webkit-autofill
-        -webkit-box-shadow: 0 0 0 1000px var(--light) inset !important
-        -webkit-text-fill-color: $dark !important
-        background-color: var(--light) !important
-
-textarea
-    height: 100px
-    resize: none
-    padding-top: 12px
-
 .select
     display: flex
     align-items: center
@@ -229,25 +62,45 @@ textarea
         .ic
             transform: scaleY(-1)
 
+.active_line
+    width: fit-content
+    padding: 0 0 8px
+    border-bottom: 2px solid $primary !important
+
 .ic
+    --ic-width: 16px
     vertical-align: middle
-    width: 16px
-    height: 16px
+    min-width: var(--ic-width)
+    width: var(--ic-width)
+    height: var(--ic-width)
     fill: $dark
     stroke: $dark
     &-md
-        min-width: 20px
-        width: 20px
-        height: 20px
+        --ic-width: 20px
 
     &-lg
-        min-width: 24px
-        width: 24px
-        height: 24px
+        --ic-width: 24px
 
-.ml
-    &-auto
-        margin-left: auto
+    &-xl
+        --ic-width: 32px
+
+    &-btn
+        font-size: $font-xsm
+        font-weight: bold
+        line-height: 16px
+        position: relative
+        z-index: 1
+        .badge 
+            position: absolute
+            top: 3px
+            right: 9px
+            &:empty
+                display: none
+                
+        .ic
+            display: block
+            margin: 0 auto
+            fill: $primary
 
 .inp
     &-label
@@ -256,6 +109,7 @@ textarea
         color: $text-gray
         padding: 0 5px
         font-size: var(--font-sm-fx)
+        line-height: 131%
         pointer-events: none
         top: 50%
         transform: translateY(-50%)
@@ -295,6 +149,7 @@ textarea
 
     &-file,
     &-file__label
+        line-height: 131%
         gap: 8px
         display: flex
         align-items: center
@@ -329,7 +184,7 @@ textarea
         &__label
             display: block
             font-size: var(--font-sm-fx)
-            line-height: calc( var(--font-sm-fx) + 4px )
+            line-height: 131%
             width: fit-content
             cursor: pointer
             color: $dark
@@ -405,54 +260,71 @@ textarea
         height: 40px
         cursor: pointer
 
-@keyframes fadeIn
-    0%
-        opacity: 0
-        transform: translateY(10%)
-    100%
-        opacity: 1
-        transform: translateY(0%)
+.social
+    gap: 8px
 
-@media (min-width: 576px)
-    .container-sm, .container
-        max-width: 540px
+.link-contact
+    width: fit-content
+    gap: 8px
+    font-size: $font-md-fx
 
-@media (min-width: 768px)
-    .container-md, .container-sm, .container
-        max-width: 720px
+.form,
+.form-group,
+.form-row
+    display: flex
+    flex-direction: column
+    &>*
+        margin: 0
 
-@media (min-width: 992px)
-    .container-lg, .container-md, .container-sm, .container
-        max-width: 960px
+.form
+    gap: 32px
+    &-link
+        text-decoration: underline
+        color: $primary
+        font-size: $font-sm-fx
 
-@media (min-width: 1200px)
-    .container-xl, .container-lg, .container-md, .container-sm, .container
-        max-width: 1140px
+    &-descr
+        font-size: $font-sm-fx
+        text-align: center
 
-@media (min-width: 1400px)
-    .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container
-        max-width: 1322px
+    &-label
+        display: block
+    &-row
+        gap: 8px
+        justify-content: space-between
+        align-items: center
+        flex-direction: row
+        flex-wrap: wrap
+        & > *
+            font-size: $font-sm-fx
+    &-info
+        color: $text-gray
+    &-group
+        gap: 8px
+        &>*
+            width: 100%
 
-@media screen and ( max-width: 991px )
-    section
-        padding: 24px 0
-        &.bg-gray
-            padding: 30px 0
-            margin: 24px 0
+        &--md
+            gap: 12px
+        &--lg
+            gap: 16px
 
-@media screen and ( max-width: 767px )
-    section
-        padding: 16px 0
-        &.bg-gray
-            padding: 20px 0
-            margin: 16px 0
+.search-bar
+    position: relative
+    z-index: 1
+    flex: 1
+    &__input
+        width: 100%
+        padding-right: 60px
+        margin: 0
 
-@media screen and ( max-width: 576px )
-    section
-        padding: 12px 0
-        &.bg-gray
-            padding: 16px 0
-            margin: 12px 0
-
-    h2
-        margin-bottom: 16px
+    &__btn
+        top: 0
+        right: 0
+        position: absolute
+        width: 60px
+        height: 100%
+        z-index: 11
+        .ic
+            margin: 0 auto
+            display: block

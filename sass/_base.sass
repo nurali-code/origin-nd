@@ -1,0 +1,186 @@
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    border: none
+    outline: none
+
+html, body
+    font-family: var(--font-famaly)
+    font-weight: 400
+    line-height: 100%
+    font-style: normal
+    font-optical-sizing: auto
+    background-color: $light
+    color: $dark
+
+body
+    &.overflow
+        overflow: hidden
+
+a, button
+    color: $dark
+    line-height: 131%
+    text-decoration: none
+    background: none
+    transition: all ease .3s
+    &:hover
+        opacity: .7
+
+h1
+    font-size: var(--h1)
+    line-height: 131%
+h2
+    font-size: var(--h2)
+    line-height: 131%
+    margin: 0 0 24px
+
+p, ul, ol
+    font-size: $font-md
+    line-height: 131%
+
+ul, ol
+    padding-left: 40px
+    li
+        margin-bottom: 10px
+        &:last-child
+            margin-bottom: 0
+
+img
+    display: block
+    max-width: 100%
+
+.bg-gray
+    background-color: var(--light-gray)
+
+section
+    padding: 40px 0
+
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm
+    width: 100%
+    padding-right: var(--bs-gutter-x)
+    padding-left: var(--bs-gutter-x)
+    margin-right: auto
+    margin-left: auto
+
+.sm
+    @media screen and ( min-width: 577px )
+        &-show
+            display: none !important
+
+    @media screen and ( max-width: 576px )
+        &-hide
+            display: none !important
+
+.md
+    @media screen and ( min-width: 768px )
+        &-show
+            display: none !important
+
+    @media screen and ( max-width: 767px )
+        &-hide
+            display: none !important
+
+.lg
+    @media screen and ( min-width: 992px )
+        &-show
+            display: none !important
+
+    @media screen and ( max-width: 991px )
+        &-hide
+            display: none !important
+
+.c
+    &-gray
+        color: $text-gray !important
+        svg
+            fill: $text-gray !important
+            stroke: $text-gray !important
+
+    &-dark
+        color: $dark !important
+        svg
+            stroke: $dark !important
+            fill: $dark !important
+    &-danger
+        color: $primary !important
+        svg
+            stroke: $primary !important
+            fill: $primary !important
+
+input, textarea, select, .select
+    display: block
+    width: 100%
+    font-size: var(--font-sm-fx)
+    padding: 0 var(--input-padding)
+    min-height: 46px
+    border: 1px solid $b-color
+    border-radius: $b-rad
+    background-color: var(--light)
+    &:-webkit-autofill
+        -webkit-box-shadow: 0 0 0 1000px var(--light) inset !important
+        -webkit-text-fill-color: $dark !important
+        background-color: var(--light) !important
+
+textarea
+    height: 100px
+    resize: none
+    padding-top: 12px
+
+@keyframes fadeIn
+    0%
+        opacity: 0
+        transform: translateY(10%)
+    100%
+        opacity: 1
+        transform: translateY(0%)
+
+@media (min-width: 576px)
+    .container-sm, .container
+        max-width: 540px
+
+@media (min-width: 768px)
+    .container-md, .container-sm, .container
+        max-width: 720px
+
+@media (min-width: 992px)
+    .container-lg, .container-md, .container-sm, .container
+        max-width: 960px
+
+@media (min-width: 1200px)
+    .container-xl, .container-lg, .container-md, .container-sm, .container
+        max-width: 1140px
+
+@media (min-width: 1400px)
+    .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container
+        max-width: 1322px
+
+@media screen and ( max-width: 991px )
+    section
+        padding: 24px 0
+        &.bg-gray
+            padding: 30px 0
+            margin: 24px 0
+
+@media screen and ( max-width: 767px )
+    section
+        padding: 16px 0
+        &.bg-gray
+            padding: 20px 0
+            margin: 16px 0
+
+@media screen and ( max-width: 576px )
+    section
+        padding: 12px 0
+        &.bg-gray
+            padding: 16px 0
+            margin: 12px 0
+
+    h2
+        margin-bottom: 16px
