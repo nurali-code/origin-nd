@@ -84,19 +84,55 @@
     &-xl
         --ic-width: 32px
 
+    &-menu
+        position: relative
+        z-index: 1
+        display: block
+        height: 1.5px
+        width: 16px
+        margin: 0 2px
+        background-color: $light
+        border-radius: $b-rad
+
+        &::before,
+        &::after
+            content: ''
+            transition: inherit
+            display: block
+            height: 1.5px
+            width: 100%
+            position: absolute
+            top: -6px
+            left: 0
+            border-radius: $b-rad
+            background-color: $light
+
+        &::after
+            top: 6px
+
+        &.active
+            &::before,
+            &::after
+                top: 50%
+                transform: rotate(45deg)
+
+            &::after
+                transform: rotate(-45deg)
+
     &-btn
         font-size: $font-xsm
         font-weight: bold
         line-height: 16px
         position: relative
         z-index: 1
-        .badge 
+        border-radius: $b-rad
+        .badge
             position: absolute
             top: 3px
             right: 9px
             &:empty
                 display: none
-                
+
         .ic
             display: block
             margin: 0 auto
@@ -309,7 +345,7 @@
         &--lg
             gap: 16px
 
-.search-bar
+.searchbar
     position: relative
     z-index: 1
     flex: 1
@@ -328,3 +364,13 @@
         .ic
             margin: 0 auto
             display: block
+
+@media screen and ( max-width: 767px )
+    .ic
+        &-btn
+            padding: 5px
+            width: 44px
+            height: 44px
+            border: 1px solid var(--border-color)
+            &__text
+                display: none

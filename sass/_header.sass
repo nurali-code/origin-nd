@@ -16,6 +16,13 @@
         .social
             gap: 4px
 
+    &-logo 
+        margin-right: auto
+        img 
+            max-width: 145px
+            display: block
+            margin: 0 auto 
+
     &-middle
         padding: 8px 0
 
@@ -50,46 +57,7 @@
 
         &__btn
             display: none
-            width: 44px
-            height: 44px
-            border-radius: $b-rad
-            background-color: $primary
-            span
-                position: relative
-                z-index: 1
-                display: block
-                height: 1.5px
-                width: 16px
-                margin: 0 auto
-                background-color: $light
-                border-radius: $b-rad
-
-                &::before,
-                &::after
-                    content: ''
-                    transition: inherit
-                    display: block
-                    height: 1.5px
-                    width: 100%
-                    position: absolute
-                    top: -5px
-                    left: 0
-                    border-radius: $b-rad
-                    background-color: $light
-
-                &::after
-                    top: 5px
-
-            &.active
-                span
-                    &::before,
-                    &::after
-                        top: 50%
-                        transform: rotate(45deg)
-
-                    &::after
-                        transform: rotate(-45deg)
-
+           
     @media screen and ( max-width: 1200px )
         &-contact
             gap: 24px
@@ -108,6 +76,37 @@
         .catalog
             &-btn
                 display: none
+
+        &-logo 
+
+    
+    @media screen and ( max-width: 991px )
+        &-top 
+            display: none
+
+        &-bottom
+            flex-wrap: wrap
+            gap: 8px $gap
+            padding: 12px 0 8px
+            &>* 
+                order: 1
+
+            .searchbar
+                width: 100%
+                order: 8
+                flex: none
+
+        &-logo 
+
+    @media screen and ( max-width: 767px )
+        &-bottom
+            gap: 8px 4px
+            .btn-outline-primary
+                display: none
+
+        &-logo 
+            margin: 0 auto 
+        
 
 .catalog
     &-btn

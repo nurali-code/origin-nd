@@ -156,7 +156,7 @@
         color: $primary
         background-color: $secondary
 
-    &-sm
+    &--sm
         font-size: 10px
         text-align: center
         border-radius: 50%
@@ -166,8 +166,10 @@
 
 @media screen and ( max-width: 992px )
     .btn
-        padding: 0 16px
+        &:not(.btn-icon)
+            padding: 0 16px
 
     .badge
-        font-size: var(--font-sm)
-        padding: 6px 8.5px
+        &:not(.badge--sm)
+            font-size: var(--font-sm)
+            padding: 6px 8.5px
