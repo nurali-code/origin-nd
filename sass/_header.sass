@@ -16,12 +16,12 @@
         .social
             gap: 4px
 
-    &-logo 
+    &-logo
         margin-right: auto
-        img 
+        img
             max-width: 145px
             display: block
-            margin: 0 auto 
+            margin: 0 auto
 
     &-middle
         padding: 8px 0
@@ -33,7 +33,6 @@
 
     &-middle,
     &-bottom
-        align-items: center
         gap: $gap
         &>*
             &:first-child
@@ -57,14 +56,48 @@
 
         &__btn
             display: none
-           
+
+    &-fixed
+        padding: 16px 0
+        position: fixed
+        top: 0
+        left: 0
+        width: 100vw
+        z-index: 99999
+        background-color: var(--light)
+        transition: all ease .3s
+        opacity: 0
+        visibility: hidden
+        transform: translateY(-30px)
+        &.active
+            opacity: 1
+            visibility: visible
+            transform: translateY(0px)
+
+        .header-logo
+            margin: 0
+
+        &__row
+            margin-right: auto
+            gap: $gap
+
+        &__container
+            gap: 40px
+
+        &__contact
+
+    @media screen and ( max-width: 1400px )
+        &-fixed
+            .btn-outline-primary
+                display: none
+
     @media screen and ( max-width: 1200px )
         &-contact
             gap: 24px
 
         &-menu
-            &__btn 
-                display: block        
+            &__btn
+                display: block
 
         &-middle
             display: none
@@ -73,22 +106,20 @@
             &__logo
                 display: block
 
-        .catalog
-            &-btn
+            &__catalog
                 display: none
 
-        &-logo 
+        &-logo
 
-    
     @media screen and ( max-width: 991px )
-        &-top 
+        &-top
             display: none
 
         &-bottom
             flex-wrap: wrap
             gap: 8px $gap
             padding: 12px 0 8px
-            &>* 
+            &>*
                 order: 1
 
             .searchbar
@@ -96,7 +127,12 @@
                 order: 8
                 flex: none
 
-        &-logo 
+        &-fixed
+            &__container
+                gap: 30px
+
+            &__contact
+                display: none
 
     @media screen and ( max-width: 767px )
         &-bottom
@@ -104,11 +140,33 @@
             .btn-outline-primary
                 display: none
 
-        &-logo 
-            margin: 0 auto 
-        
+        &-logo
+            margin: 0 auto
+
+        &-fixed
+            .header-logo
+                margin-right: auto
+
+            &__container
+                gap: $gap
+
+            &__row
+                display: none
+
+    @media screen and ( max-width: 576px )
+        &-fixed
+            .header-logo
+                margin: 0 auto
+            &__container
+                gap: 4px
+                &>*
+                    order: 2
+
+            &__menu
+                order: 1
 
 .catalog
     &-btn
         justify-content: flex-start
         text-transform: uppercase
+        min-width: 211px

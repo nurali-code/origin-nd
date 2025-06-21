@@ -1,3 +1,14 @@
+$(function () {
+    $(window).on('scroll', function () {
+        const headerHeight = $('header').outerHeight();
+        const scrollTop = $(this).scrollTop();
+        const $headerFixed = $('.header-fixed');
+
+        if (scrollTop > headerHeight) { $headerFixed.addClass('active'); }
+        else { $headerFixed.removeClass('active'); }
+    });
+});
+
 // custom select 
 $('select').each(function () {
     const $this = $(this).hide().wrap('<div class="select-wrap"></div>');
@@ -57,7 +68,6 @@ $(document).on('change', '.inp-file input[type="file"]', function () {
         $clearIcon.remove();
     });
 });
-
 
 
 $(function () {
