@@ -8,6 +8,35 @@ $(function () {
         else { $headerFixed.removeClass('active'); }
     });
 });
+$(function () {
+    const $menuContent = $('[data-menu-content]');
+
+    $(document).on('click', '[data-menu-btn]', function () {
+        $(this).find('.ic-menu').addClass('active')
+        $menuContent.addClass('active');
+    });
+
+    $(document).on('click', '[data-menu-close]', function () {
+        $('[data-menu-btn] .ic-menu').removeClass('active')
+        $menuContent.removeClass('active');
+    });
+
+    $(document).on('click', function (e) {
+        if (!$(e.target).closest('.menu, [data-menu-btn]').length) {
+            $('[data-menu-btn] .ic-menu').removeClass('active')
+            $menuContent.removeClass('active');
+        }
+    });
+});
+
+$(document).on('click', '[data-toggle]', function (e) {
+    e.preventDefault();
+    const $this = $(this);
+    if ($this.data('toggle') == 'next') {
+        $this.toggleClass('active').next().slideToggle(300);
+    }
+});
+
 
 // custom select 
 $('select').each(function () {

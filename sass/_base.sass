@@ -71,11 +71,11 @@ section
 
 .sm
     @media screen and ( min-width: 577px )
-        &-show
+        &-hide
             display: none !important
 
     @media screen and ( max-width: 576px )
-        &-hide
+        &-show
             display: none !important
 
 .md
@@ -89,11 +89,20 @@ section
 
 .lg
     @media screen and ( min-width: 992px )
-        &-show
+        &-hide
             display: none !important
 
     @media screen and ( max-width: 991px )
+        &-show
+            display: none !important
+
+.xxl
+    @media screen and ( min-width: 1400px )
         &-hide
+            display: none !important
+
+    @media screen and ( max-width: 1399px )
+        &-show
             display: none !important
 
 .c

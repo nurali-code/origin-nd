@@ -40,8 +40,21 @@
                 <a href="#" class="header-logo"><img src="img/origin-logo.svg" alt="i"></a>
                 <nav class="header-nav">
                     <ul class="header-menu">
-                        <li class="header-menu__item">
-                            <a href="#" class="header-menu__link">О компании</a>
+                        <li class="header-menu__item header-submenu__wrap">
+                            <button class="header-submenu__btn"> О компании
+                                <svg class="ic"><use href="img/ic.svg#arrow-down"></use></svg>
+                            </button>
+                            <ul class="header-submenu">
+                                <li class="header-submenu__item">
+                                    <a href="#" class="header-submenu__link">Производство</a>
+                                </li>
+                                <li class="header-submenu__item">
+                                    <a href="#" class="header-submenu__link">Оплата и доставка</a>
+                                </li>
+                                <li class="header-submenu__item">
+                                    <a href="#" class="header-submenu__link">Вакансии</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="header-menu__item">
                             <a href="#" class="header-menu__link">Производство</a>
@@ -90,6 +103,7 @@
                     <span class="ic-btn__text">Войти</span> 
                 </a>
             </div>
+
         </div>
 
         <div class="header-fixed">
@@ -102,10 +116,10 @@
                     <a href="#" class="btn btn-outline btn-icon">
                         <svg class="ic"><use href="img/ic.svg#search"></use></svg>
                     </a>
-                    <a href="#modal-req-2" class="btn btn-outline-primary">Запросить расчет
+                    <a href="#modal-req-2" class="btn btn-outline-primary xxl-show">Запросить расчет
                         <svg class="ic"><use href="img/ic.svg#calc"></use></svg>
                     </a>
-                    <a href="#modal-call_request" class="btn btn-outline-primary">Заказать звонок
+                    <a href="#modal-call_request" class="btn btn-outline-primary xxl-show">Заказать звонок
                         <svg class="ic"><use href="img/ic.svg#phone"></use></svg>
                     </a>
                 </div>
@@ -118,6 +132,24 @@
                         <svg class="ic ic-md"><use href="img/ic.svg#email"></use></svg>
                         info@originkrepeg.ru
                     </a>
+                    <div class="header-fixed__info">
+                        <p class="header-fixed__text">
+                            Свяжитесь с нами удобным способом — ответим на все ваши вопросы!
+                        </p>
+                        <div class="social">
+                            <a href="#" class="social-link">
+                                <svg class="ic ic-lg"><use href="img/ic.svg#telegram"></use></svg>
+                            </a>
+                            <a href="#" class="social-link">
+                                <svg class="ic ic-lg"><use href="img/ic.svg#whatsapp"></use></svg>
+                            </a>
+                        </div>
+                        <p class="header-fixed__text">
+                            <span class="c-gray">Режим работы:</span> <br>
+                            Понедельник – пятница: 09:00–18:00  <br>
+                            Суббота, воскресенье – выходные.
+                        </p>
+                    </div>
                 </div>
                 <a href="#" class="ic-btn">
                     <span class="badge badge--sm badge-primary">0</span>
@@ -128,7 +160,297 @@
                     <svg class="ic ic-xl"><use href="img/ic.svg#user"></use></svg> 
                     <span class="ic-btn__text">Войти</span> 
                 </a>
-                <button class="btn btn-icon btn-gray header-fixed__menu"><span class="ic-menu"></span></button>
+                <button data-menu-btn class="btn btn-icon btn-gray header-fixed__menu"><span class="ic-menu"></span></button>
+            </div>
+        </div>
+
+        <div class="menu-wrap" data-menu-content>
+            <div class="menu" data-menu-content>
+                <div class="menu-header">
+                    <h3 class="menu-heading">Меню</h3>
+                    <button class="menu-close" data-menu-close title="Закрыть меню">
+                        <svg class="ic"><use href="img/ic.svg#close"></use></svg>
+                    </button>
+                </div>
+                <ul class="menu-list">
+                    <li class="menu-list__item">
+                        <button class="menu-list__link" data-toggle="next">Каталог <svg class="ic"><use href="img/ic.svg#arrow-down"></use></svg></button>
+                        <ul class="catalog-list catalog-list--light">
+                            <li class="catalog-list__item">
+                                <button class="catalog-list__btn">Болты</button>
+                                <ul class="catalog-underlist">
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="catalog-list__item">
+                                <button class="catalog-list__btn">Винты</button>
+                                <ul class="catalog-underlist">
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="catalog-list__item">
+                                <button class="catalog-list__btn">Гайки</button>
+                                <ul class="catalog-underlist">
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="catalog-list__item">
+                                <button class="catalog-list__btn">Заклепки</button>
+                                <ul class="catalog-underlist">
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="catalog-list__item">
+                                <button class="catalog-list__btn">Кольца стопорные</button>
+                                <ul class="catalog-underlist">
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="catalog-list__item">
+                                <button class="catalog-list__btn">Саморезы</button>
+                                <ul class="catalog-underlist">
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="catalog-list__item">
+                                <button class="catalog-list__btn">Хомуты, скобы и стяжки</button>
+                                <ul class="catalog-underlist">
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="catalog-list__item">
+                                <button class="catalog-list__btn">Шайбы</button>
+                                <ul class="catalog-underlist">
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="catalog-list__item">
+                                <button class="catalog-list__btn">Шпильки резьбовые</button>
+                                <ul class="catalog-underlist">
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="catalog-list__item">
+                                <button class="catalog-list__btn">Шплинты</button>
+                                <ul class="catalog-underlist">
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                    <li class="catalog-underlist__item">
+                                        <a href="#" class="catalog-underlist__link">DIN 315</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-list__item">
+                        <button class="menu-list__link" data-toggle="next"> О компании
+                            <svg class="ic"><use href="img/ic.svg#arrow-down"></use></svg>
+                        </button>
+                        <ul class="menu-submenu">
+                            <li class="menu-submenu__item">
+                                <a href="#" class="menu-submenu__link">Производство</a>
+                            </li>
+                            <li class="menu-submenu__item">
+                                <a href="#" class="menu-submenu__link">Оплата и доставка</a>
+                            </li>
+                            <li class="menu-submenu__item">
+                                <a href="#" class="menu-submenu__link">Вакансии</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-list__item">
+                        <a href="#" class="menu-list__link">Производство</a>
+                    </li>
+                    <li class="menu-list__item">
+                        <a href="#" class="menu-list__link">Услуги</a>
+                    </li>
+                    <li class="menu-list__item">
+                        <a href="#" class="menu-list__link">Оплата и доставка</a>
+                    </li>
+                    <li class="menu-list__item">
+                        <a href="#" class="menu-list__link">Вакансии</a>
+                    </li>
+                    <li class="menu-list__item">
+                        <a href="#" class="menu-list__link">Поставщикам</a>
+                    </li>
+                    <li class="menu-list__item">
+                        <a href="#" class="menu-list__link">Контакты</a>
+                    </li>
+                </ul>
+                <div class="menu-footer">
+                    <a href="#modal-req-2" class="btn btn-outline-primary xxl-hide">Запросить расчет
+                        <svg class="ic"><use href="img/ic.svg#calc"></use></svg>
+                    </a>
+                    <a href="#modal-call_request" class="btn btn-outline-primary xxl-hide">Заказать звонок
+                        <svg class="ic"><use href="img/ic.svg#phone"></use></svg>
+                    </a>
+                </div>
             </div>
         </div>
     </header>
@@ -139,7 +461,7 @@
                 <button class="tab-nav__btn active_line" data-tab="popular">Популярные товары</button>
                 <button class="tab-nav__btn" data-tab="new">Новинки</button>
                 <button class="tab-nav__btn" data-tab="sale">
-                    Акции <span class="sm-hide">и предложения</span>
+                    Акции <span class="sm-show">и предложения</span>
                 </button>
             </div>
 
@@ -171,13 +493,13 @@
                         </ul>
                         <h4 class="card__price">18.50 ₽/шт</h4>
                     </div>
-                    <div class="card-footer sm-show">
+                    <div class="card-footer sm-hide">
                         <div class="card-action">
                             <a href="#modal-oneclick_2" class="btn btn-md btn-light">Купить в 1 клик</a>
                         </div>
                         <button class="btn btn-icon btn-md btn-primary"><svg><use href="img/ic.svg#cart"></use></svg></button>
                     </div>
-                    <div class="card-footer sm-hide">
+                    <div class="card-footer sm-show">
                         <div class="card-action" data-card-catcher>
                             <button class="btn btn-md btn-secondary" data-card-add><svg><use href="img/ic.svg#cart"></use></svg> В корзину</button>
                             <div class="card-amount amount" data-card-amount>
@@ -216,13 +538,13 @@
                         </ul>
                         <h4 class="card__price">18.50 ₽/шт</h4>
                     </div>
-                    <div class="card-footer sm-show">
+                    <div class="card-footer sm-hide">
                         <div class="card-action">
                             <a href="#modal-oneclick_2" class="btn btn-md btn-light">Купить в 1 клик</a>
                         </div>
                         <button class="btn btn-icon btn-md btn-primary"><svg><use href="img/ic.svg#cart"></use></svg></button>
                     </div>
-                    <div class="card-footer sm-hide">
+                    <div class="card-footer sm-show">
                         <div class="card-action" data-card-catcher>
                             <button class="btn btn-md btn-secondary" data-card-add><svg><use href="img/ic.svg#cart"></use></svg> В корзину</button>
                             <div class="card-amount amount" data-card-amount>
@@ -261,13 +583,13 @@
                         </ul>
                         <h4 class="card__price">18.50 ₽/шт</h4>
                     </div>
-                    <div class="card-footer sm-show">
+                    <div class="card-footer sm-hide">
                         <div class="card-action">
                             <a href="#modal-oneclick_2" class="btn btn-md btn-light">Купить в 1 клик</a>
                         </div>
                         <button class="btn btn-icon btn-md btn-primary"><svg><use href="img/ic.svg#cart"></use></svg></button>
                     </div>
-                    <div class="card-footer sm-hide">
+                    <div class="card-footer sm-show">
                         <div class="card-action" data-card-catcher>
                             <button class="btn btn-md btn-secondary" data-card-add><svg><use href="img/ic.svg#cart"></use></svg> В корзину</button>
                             <div class="card-amount amount" data-card-amount>
@@ -306,13 +628,13 @@
                         </ul>
                         <h4 class="card__price">18.50 ₽/шт</h4>
                     </div>
-                    <div class="card-footer sm-show">
+                    <div class="card-footer sm-hide">
                         <div class="card-action">
                             <a href="#modal-oneclick_2" class="btn btn-md btn-light">Купить в 1 клик</a>
                         </div>
                         <button class="btn btn-icon btn-md btn-primary"><svg><use href="img/ic.svg#cart"></use></svg></button>
                     </div>
-                    <div class="card-footer sm-hide">
+                    <div class="card-footer sm-show">
                         <div class="card-action" data-card-catcher>
                             <button class="btn btn-md btn-secondary" data-card-add><svg><use href="img/ic.svg#cart"></use></svg> В корзину</button>
                             <div class="card-amount amount" data-card-amount>
@@ -351,13 +673,13 @@
                         </ul>
                         <h4 class="card__price">18.50 ₽/шт</h4>
                     </div>
-                    <div class="card-footer sm-show">
+                    <div class="card-footer sm-hide">
                         <div class="card-action">
                             <a href="#modal-oneclick_2" class="btn btn-md btn-light">Купить в 1 клик</a>
                         </div>
                         <button class="btn btn-icon btn-md btn-primary"><svg><use href="img/ic.svg#cart"></use></svg></button>
                     </div>
-                    <div class="card-footer sm-hide">
+                    <div class="card-footer sm-show">
                         <div class="card-action" data-card-catcher>
                             <button class="btn btn-md btn-secondary" data-card-add><svg><use href="img/ic.svg#cart"></use></svg> В корзину</button>
                             <div class="card-amount amount" data-card-amount>
@@ -396,13 +718,13 @@
                         </ul>
                         <h4 class="card__price">18.50 ₽/шт</h4>
                     </div>
-                    <div class="card-footer sm-show">
+                    <div class="card-footer sm-hide">
                         <div class="card-action">
                             <a href="#modal-oneclick_2" class="btn btn-md btn-light">Купить в 1 клик</a>
                         </div>
                         <button class="btn btn-icon btn-md btn-primary"><svg><use href="img/ic.svg#cart"></use></svg></button>
                     </div>
-                    <div class="card-footer sm-hide">
+                    <div class="card-footer sm-show">
                         <div class="card-action" data-card-catcher>
                             <button class="btn btn-md btn-secondary" data-card-add><svg><use href="img/ic.svg#cart"></use></svg> В корзину</button>
                             <div class="card-amount amount" data-card-amount>
@@ -444,13 +766,13 @@
                         </ul>
                         <h4 class="card__price">18.50 ₽/шт</h4>
                     </div>
-                    <div class="card-footer sm-show">
+                    <div class="card-footer sm-hide">
                         <div class="card-action">
                             <a href="#modal-oneclick_2" class="btn btn-md btn-light">Купить в 1 клик</a>
                         </div>
                         <button class="btn btn-icon btn-md btn-primary"><svg><use href="img/ic.svg#cart"></use></svg></button>
                     </div>
-                    <div class="card-footer sm-hide">
+                    <div class="card-footer sm-show">
                         <div class="card-action" data-card-catcher>
                             <button class="btn btn-md btn-secondary" data-card-add><svg><use href="img/ic.svg#cart"></use></svg> В корзину</button>
                             <div class="card-amount amount" data-card-amount>
@@ -489,13 +811,13 @@
                         </ul>
                         <h4 class="card__price">18.50 ₽/шт</h4>
                     </div>
-                    <div class="card-footer sm-show">
+                    <div class="card-footer sm-hide">
                         <div class="card-action">
                             <a href="#modal-oneclick_2" class="btn btn-md btn-light">Купить в 1 клик</a>
                         </div>
                         <button class="btn btn-icon btn-md btn-primary"><svg><use href="img/ic.svg#cart"></use></svg></button>
                     </div>
-                    <div class="card-footer sm-hide">
+                    <div class="card-footer sm-show">
                         <div class="card-action" data-card-catcher>
                             <button class="btn btn-md btn-secondary" data-card-add><svg><use href="img/ic.svg#cart"></use></svg> В корзину</button>
                             <div class="card-amount amount" data-card-amount>
@@ -534,13 +856,13 @@
                         </ul>
                         <h4 class="card__price">18.50 ₽/шт</h4>
                     </div>
-                    <div class="card-footer sm-show">
+                    <div class="card-footer sm-hide">
                         <div class="card-action">
                             <a href="#modal-oneclick_2" class="btn btn-md btn-light">Купить в 1 клик</a>
                         </div>
                         <button class="btn btn-icon btn-md btn-primary"><svg><use href="img/ic.svg#cart"></use></svg></button>
                     </div>
-                    <div class="card-footer sm-hide">
+                    <div class="card-footer sm-show">
                         <div class="card-action" data-card-catcher>
                             <button class="btn btn-md btn-secondary" data-card-add><svg><use href="img/ic.svg#cart"></use></svg> В корзину</button>
                             <div class="card-amount amount" data-card-amount>
@@ -579,13 +901,13 @@
                         </ul>
                         <h4 class="card__price">18.50 ₽/шт</h4>
                     </div>
-                    <div class="card-footer sm-show">
+                    <div class="card-footer sm-hide">
                         <div class="card-action">
                             <a href="#modal-oneclick_2" class="btn btn-md btn-light">Купить в 1 клик</a>
                         </div>
                         <button class="btn btn-icon btn-md btn-primary"><svg><use href="img/ic.svg#cart"></use></svg></button>
                     </div>
-                    <div class="card-footer sm-hide">
+                    <div class="card-footer sm-show">
                         <div class="card-action" data-card-catcher>
                             <button class="btn btn-md btn-secondary" data-card-add><svg><use href="img/ic.svg#cart"></use></svg> В корзину</button>
                             <div class="card-amount amount" data-card-amount>
@@ -624,13 +946,13 @@
                         </ul>
                         <h4 class="card__price">18.50 ₽/шт</h4>
                     </div>
-                    <div class="card-footer sm-show">
+                    <div class="card-footer sm-hide">
                         <div class="card-action">
                             <a href="#modal-oneclick_2" class="btn btn-md btn-light">Купить в 1 клик</a>
                         </div>
                         <button class="btn btn-icon btn-md btn-primary"><svg><use href="img/ic.svg#cart"></use></svg></button>
                     </div>
-                    <div class="card-footer sm-hide">
+                    <div class="card-footer sm-show">
                         <div class="card-action" data-card-catcher>
                             <button class="btn btn-md btn-secondary" data-card-add><svg><use href="img/ic.svg#cart"></use></svg> В корзину</button>
                             <div class="card-amount amount" data-card-amount>
@@ -669,13 +991,13 @@
                         </ul>
                         <h4 class="card__price">18.50 ₽/шт</h4>
                     </div>
-                    <div class="card-footer sm-show">
+                    <div class="card-footer sm-hide">
                         <div class="card-action">
                             <a href="#modal-oneclick_2" class="btn btn-md btn-light">Купить в 1 клик</a>
                         </div>
                         <button class="btn btn-icon btn-md btn-primary"><svg><use href="img/ic.svg#cart"></use></svg></button>
                     </div>
-                    <div class="card-footer sm-hide">
+                    <div class="card-footer sm-show">
                         <div class="card-action" data-card-catcher>
                             <button class="btn btn-md btn-secondary" data-card-add><svg><use href="img/ic.svg#cart"></use></svg> В корзину</button>
                             <div class="card-amount amount" data-card-amount>
@@ -717,13 +1039,13 @@
                         </ul>
                         <h4 class="card__price">18.50 ₽/шт</h4>
                     </div>
-                    <div class="card-footer sm-show">
+                    <div class="card-footer sm-hide">
                         <div class="card-action">
                             <a href="#modal-oneclick_2" class="btn btn-md btn-light">Купить в 1 клик</a>
                         </div>
                         <button class="btn btn-icon btn-md btn-primary"><svg><use href="img/ic.svg#cart"></use></svg></button>
                     </div>
-                    <div class="card-footer sm-hide">
+                    <div class="card-footer sm-show">
                         <div class="card-action" data-card-catcher>
                             <button class="btn btn-md btn-secondary" data-card-add><svg><use href="img/ic.svg#cart"></use></svg> В корзину</button>
                             <div class="card-amount amount" data-card-amount>
@@ -762,13 +1084,13 @@
                         </ul>
                         <h4 class="card__price">18.50 ₽/шт</h4>
                     </div>
-                    <div class="card-footer sm-show">
+                    <div class="card-footer sm-hide">
                         <div class="card-action">
                             <a href="#modal-oneclick_2" class="btn btn-md btn-light">Купить в 1 клик</a>
                         </div>
                         <button class="btn btn-icon btn-md btn-primary"><svg><use href="img/ic.svg#cart"></use></svg></button>
                     </div>
-                    <div class="card-footer sm-hide">
+                    <div class="card-footer sm-show">
                         <div class="card-action" data-card-catcher>
                             <button class="btn btn-md btn-secondary" data-card-add><svg><use href="img/ic.svg#cart"></use></svg> В корзину</button>
                             <div class="card-amount amount" data-card-amount>
@@ -807,13 +1129,13 @@
                         </ul>
                         <h4 class="card__price">18.50 ₽/шт</h4>
                     </div>
-                    <div class="card-footer sm-show">
+                    <div class="card-footer sm-hide">
                         <div class="card-action">
                             <a href="#modal-oneclick_2" class="btn btn-md btn-light">Купить в 1 клик</a>
                         </div>
                         <button class="btn btn-icon btn-md btn-primary"><svg><use href="img/ic.svg#cart"></use></svg></button>
                     </div>
-                    <div class="card-footer sm-hide">
+                    <div class="card-footer sm-show">
                         <div class="card-action" data-card-catcher>
                             <button class="btn btn-md btn-secondary" data-card-add><svg><use href="img/ic.svg#cart"></use></svg> В корзину</button>
                             <div class="card-amount amount" data-card-amount>
@@ -852,13 +1174,13 @@
                         </ul>
                         <h4 class="card__price">18.50 ₽/шт</h4>
                     </div>
-                    <div class="card-footer sm-show">
+                    <div class="card-footer sm-hide">
                         <div class="card-action">
                             <a href="#modal-oneclick_2" class="btn btn-md btn-light">Купить в 1 клик</a>
                         </div>
                         <button class="btn btn-icon btn-md btn-primary"><svg><use href="img/ic.svg#cart"></use></svg></button>
                     </div>
-                    <div class="card-footer sm-hide">
+                    <div class="card-footer sm-show">
                         <div class="card-action" data-card-catcher>
                             <button class="btn btn-md btn-secondary" data-card-add><svg><use href="img/ic.svg#cart"></use></svg> В корзину</button>
                             <div class="card-amount amount" data-card-amount>
@@ -897,13 +1219,13 @@
                         </ul>
                         <h4 class="card__price">18.50 ₽/шт</h4>
                     </div>
-                    <div class="card-footer sm-show">
+                    <div class="card-footer sm-hide">
                         <div class="card-action">
                             <a href="#modal-oneclick_2" class="btn btn-md btn-light">Купить в 1 клик</a>
                         </div>
                         <button class="btn btn-icon btn-md btn-primary"><svg><use href="img/ic.svg#cart"></use></svg></button>
                     </div>
-                    <div class="card-footer sm-hide">
+                    <div class="card-footer sm-show">
                         <div class="card-action" data-card-catcher>
                             <button class="btn btn-md btn-secondary" data-card-add><svg><use href="img/ic.svg#cart"></use></svg> В корзину</button>
                             <div class="card-amount amount" data-card-amount>
@@ -942,13 +1264,13 @@
                         </ul>
                         <h4 class="card__price">18.50 ₽/шт</h4>
                     </div>
-                    <div class="card-footer sm-show">
+                    <div class="card-footer sm-hide">
                         <div class="card-action">
                             <a href="#modal-oneclick_2" class="btn btn-md btn-light">Купить в 1 клик</a>
                         </div>
                         <button class="btn btn-icon btn-md btn-primary"><svg><use href="img/ic.svg#cart"></use></svg></button>
                     </div>
-                    <div class="card-footer sm-hide">
+                    <div class="card-footer sm-show">
                         <div class="card-action" data-card-catcher>
                             <button class="btn btn-md btn-secondary" data-card-add><svg><use href="img/ic.svg#cart"></use></svg> В корзину</button>
                             <div class="card-amount amount" data-card-amount>
@@ -1002,8 +1324,8 @@
                 <button class="btn" data-tab="2">Винты</button>
                 <button class="btn" data-tab="3">Гайки</button>
                 <button class="btn" data-tab="4">Шайбы</button>
-                <a href="#" class="btn c-danger sm-hide">Смотреть все</a>
-                <a href="#" class="btn btn-outline-main c-danger sm-show">Смотреть все</a>
+                <a href="#" class="btn c-danger sm-show">Смотреть все</a>
+                <a href="#" class="btn btn-outline-main c-danger sm-hide">Смотреть все</a>
             </div>
 
             <div class="card-wraper" data-tab-content="1">
@@ -1452,7 +1774,7 @@
 
     <section>
         <div class="container">
-            <h2>Доставка по России: <br class="sm-show"> Москва, область, регионы</h2>
+            <h2>Доставка по России: <br class="sm-hide"> Москва, область, регионы</h2>
             <div class="delivery-wrap">
                 <div class="delivery-img">
                     <p class="delivery-text">
@@ -1553,7 +1875,7 @@
             <div class="contact-wrap">
                 <div class="contact-col">
                     <div class="contact-box">
-                        <svg class="ic ic-lg md-show"><use href="img/ic.svg#contact"></use></svg>
+                        <svg class="ic ic-lg lg-hide"><use href="img/ic.svg#contact"></use></svg>
                         <div class="contact-title">
                             <h2>Не нашли нужную информацию?</h2>
                             <p>Оставьте свой запрос, и мы подберём для вас оптимальное решение.</p>
@@ -1628,7 +1950,7 @@
                         Понедельник – пятница: 09:00–18:00 <br>
                         Суббота, воскресенье – выходные.
                     </p>
-                    <div class="footer-contact md-show">
+                    <div class="footer-contact sm-hide">
                         <div class="footer-contact__col">
                             <a href="tel:+74951832333" class="link-contact">
                                 <svg class="ic ic-md"><use href="img/ic.svg#call"></use></svg>
@@ -1648,7 +1970,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="footer-btns lg-hide">
+                    <div class="footer-btns lg-show">
                         <a href="#modal-req-2" class="btn btn-primary">Запросить расчет
                             <svg class="ic"><use href="img/ic.svg#calc"></use></svg>
                         </a>
@@ -1664,19 +1986,19 @@
                         <a href="#" class="footer-nav__link">Винты</a>
                         <a href="#" class="footer-nav__link">Гайки</a>
                         <a href="#" class="footer-nav__link">Заклепки</a>
-                        <a href="#" class="footer-nav__link sm-show">Кольца стопорные</a>
-                        <a href="#" class="footer-nav__link sm-show">Саморезы</a>
-                        <a href="#" class="footer-nav__link sm-show">Хомуты, скобы и стяжки</a>
-                        <a href="#" class="footer-nav__link sm-show">Шайбы</a>
-                        <a href="#" class="footer-nav__link sm-show">Шпильки резьбовые</a>
-                        <a href="#" class="footer-nav__link sm-show">Шплинты</a>    
-                        <a href="#" class="footer-nav__link c-gray sm-show">Шпонки</a>    
-                        <a href="#" class="footer-nav__link c-gray sm-show">Шурупы</a>    
-                        <a href="#" class="footer-nav__link c-gray sm-show">Штифты</a>    
-                        <a href="#" class="footer-nav__link c-gray sm-show">Приварной крепёж</a>    
+                        <a href="#" class="footer-nav__link sm-hide">Кольца стопорные</a>
+                        <a href="#" class="footer-nav__link sm-hide">Саморезы</a>
+                        <a href="#" class="footer-nav__link sm-hide">Хомуты, скобы и стяжки</a>
+                        <a href="#" class="footer-nav__link sm-hide">Шайбы</a>
+                        <a href="#" class="footer-nav__link sm-hide">Шпильки резьбовые</a>
+                        <a href="#" class="footer-nav__link sm-hide">Шплинты</a>    
+                        <a href="#" class="footer-nav__link c-gray sm-hide">Шпонки</a>    
+                        <a href="#" class="footer-nav__link c-gray sm-hide">Шурупы</a>    
+                        <a href="#" class="footer-nav__link c-gray sm-hide">Штифты</a>    
+                        <a href="#" class="footer-nav__link c-gray sm-hide">Приварной крепёж</a>    
                     </nav>
 
-                    <div class="footer-contact sm-hide">
+                    <div class="footer-contact sm-show">
                         <a href="tel:+74951832333" class="link-contact">
                             <svg class="ic ic-md"><use href="img/ic.svg#call"></use></svg>
                             +7 495 183-23-33
@@ -1694,7 +2016,7 @@
                             </a>
                         </div>
                     </div>
-                    <a href="#modal-req-2" class="btn btn-primary lg-show">Запросить расчет
+                    <a href="#modal-req-2" class="btn btn-primary lg-hide">Запросить расчет
                         <svg class="ic"><use href="img/ic.svg#calc"></use></svg>
                     </a>
                 </div>
@@ -1709,7 +2031,7 @@
                         <a href="#" class="footer-nav__link">Поставщикам</a>
                         <a href="#" class="footer-nav__link">Контакты</a>
                     </nav>
-                    <a href="#modal-call_request" class="btn btn-primary lg-show">Заказать звонок
+                    <a href="#modal-call_request" class="btn btn-primary lg-hide">Заказать звонок
                         <svg class="ic"><use href="img/ic.svg#phone"></use></svg>
                     </a>
                 </div>
@@ -1725,9 +2047,9 @@
 
     <div class="modal" id="modal-oneclick">
         <div class="modal-content">
-            <button class="modal-close"><svg class="ic">
-                    <use href="img/ic.svg#close"></use>
-                </svg></button>
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
+            </button>
 
             <h2 class="modal-heading">Купить в 1 клик</h2>
             <form class="form">
@@ -1769,9 +2091,9 @@
 
     <div class="modal" id="modal-oneclick_2">
         <div class="modal-content">
-            <button class="modal-close"><svg class="ic">
-                    <use href="img/ic.svg#close"></use>
-                </svg></button>
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
+            </button>
 
             <h2 class="modal-heading">Купить в 1 клик</h2>
             <form class="form">
@@ -1823,13 +2145,11 @@
 
     <div class="modal" id="modal-call_request">
         <div class="modal-content">
-            <button class="modal-close">
-                <svg class="ic">
-                    <use href="img/ic.svg#close"></use>
-                </svg>
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
             </button>
-
-        <h2 class="modal-heading">Заказать звонок</h2>
+    
+            <h2 class="modal-heading">Заказать звонок</h2>
             <form class="form">
                 <div class="form-group form-group--lg">
                     <div class="inp-group">
@@ -1867,13 +2187,11 @@
 
     <div class="modal" id="modal-login">
         <div class="modal-content">
-            <button class="modal-close">
-                <svg class="ic">
-                    <use href="img/ic.svg#close"></use>
-                </svg>
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
             </button>
 
-        <h2 class="modal-heading">Вход</h2>
+            <h2 class="modal-heading">Вход</h2>
             <form class="form">
                 <p class="form-descr">
                     Нет аккаунта?
@@ -1915,13 +2233,11 @@
 
     <div class="modal" id="modal-signup">
         <div class="modal-content">
-            <button class="modal-close">
-                <svg class="ic">
-                    <use href="img/ic.svg#close"></use>
-                </svg>
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
             </button>
 
-        <h2 class="modal-heading">Регистрация</h2>
+            <h2 class="modal-heading">Регистрация</h2>
             <form class="form">
                 <p class="form-descr">
                     Есть регистрация?
@@ -1960,10 +2276,8 @@
 
     <div class="modal" id="modal-req">
         <div class="modal-content">
-            <button class="modal-close">
-                <svg class="ic">
-                    <use href="img/ic.svg#close"></use>
-                </svg>
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
             </button>
 
             <h2 class="modal-heading">Запросить расчет</h2>
@@ -2016,13 +2330,11 @@
 
     <div class="modal" id="modal-req-2">
         <div class="modal-content">
-            <button class="modal-close">
-                <svg class="ic">
-                    <use href="img/ic.svg#close"></use>
-                </svg>
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
             </button>
 
-        <h2 class="modal-heading">Запросить расчет</h2>
+            <h2 class="modal-heading">Запросить расчет</h2>
             <form class="form">
                 <div class="form-group">
                     <div class="form-row">
@@ -2110,13 +2422,11 @@
 
     <div class="modal" id="modal-req-3">
         <div class="modal-content">
-            <button class="modal-close">
-                <svg class="ic">
-                    <use href="img/ic.svg#close"></use>
-                </svg>
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
             </button>
 
-        <h2 class="modal-heading">Запросить расчет</h2>
+            <h2 class="modal-heading">Запросить расчет</h2>
             <form class="form">
                 <div class="form-group">
                     <div class="form-row">
