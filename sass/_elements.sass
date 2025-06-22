@@ -70,9 +70,9 @@
 .ic
     --ic-width: 16px
     vertical-align: middle
-    min-width: var(--ic-width)
-    width: var(--ic-width)
-    height: var(--ic-width)
+    min-width: var(--ic-width) !important
+    width: var(--ic-width) !important
+    height: var(--ic-width) !important
     fill: $dark
     stroke: $dark
     &-md
@@ -112,6 +112,7 @@
             top: 6px
 
         &.active
+            background-color: rgba(0, 0, 0, 0)
             &::before,
             &::after
                 top: 50%
@@ -155,6 +156,7 @@
             color: $danger
 
     &-field
+        min-height: 46px
         &::placeholder
             color: rgba(0, 0, 0, 0)
 
@@ -302,6 +304,16 @@
 
 .social
     gap: 8px
+    &-link
+        &__tg 
+            color: $light
+            background-color: #3390EC
+        &__wa 
+            color: $light
+            background-color: #33CF6A
+            .ic 
+                width: 24px
+                height: 24px
 
 .link-contact
     width: fit-content
@@ -375,6 +387,10 @@
             padding: 5px
             width: 44px
             height: 44px
-            border: 1px solid var(--border-color)
+            border: 1px solid var(--dark-gray)
             &__text
                 display: none
+
+            .badge 
+                top: 6px 
+                right: 8px

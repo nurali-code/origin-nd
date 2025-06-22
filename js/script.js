@@ -8,26 +8,6 @@ $(function () {
         else { $headerFixed.removeClass('active'); }
     });
 });
-$(function () {
-    const $menuContent = $('[data-menu-content]');
-
-    $(document).on('click', '[data-menu-btn]', function () {
-        $(this).find('.ic-menu').addClass('active')
-        $menuContent.addClass('active');
-    });
-
-    $(document).on('click', '[data-menu-close]', function () {
-        $('[data-menu-btn] .ic-menu').removeClass('active')
-        $menuContent.removeClass('active');
-    });
-
-    $(document).on('click', function (e) {
-        if (!$(e.target).closest('.menu, [data-menu-btn]').length) {
-            $('[data-menu-btn] .ic-menu').removeClass('active')
-            $menuContent.removeClass('active');
-        }
-    });
-});
 
 $(document).on('click', '[data-toggle]', function (e) {
     e.preventDefault();
@@ -99,6 +79,36 @@ $(document).on('change', '.inp-file input[type="file"]', function () {
 });
 
 
+function compensateForScrollbar(inst) {
+    var scrollbarWidth = window.innerWidth - $(document).width();
+    if (inst == 0) { $('body').css('margin-right', ''); }
+    else if (scrollbarWidth > 0) { $('body').css('margin-right', scrollbarWidth + 'px'); }
+}
+
+$(function () {
+    const $menuContent = $('[data-menu-content]');
+
+    $(document).on('click', '[data-menu-btn]', function () {
+        compensateForScrollbar();
+        $('body').addClass('overflow')
+        $menuContent.addClass('active');
+    });
+
+    $(document).on('click', '[data-menu-close]', function () {
+        $menuContent.removeClass('active');
+        compensateForScrollbar(0)
+        $('body').removeClass('overflow')
+    });
+
+    $(document).on('click', function (e) {
+        if (!$(e.target).closest('.menu, [data-menu-btn], a[href*="#modal-"]').length && $('.menu').hasClass('active')) {
+            $menuContent.removeClass('active');
+            compensateForScrollbar(0)
+            $('body').removeClass('overflow')
+        }
+    });
+});
+
 $(function () {
     function showModal(id) {
         hideModals()
@@ -113,19 +123,15 @@ $(function () {
         compensateForScrollbar(0)
     };
 
-    function compensateForScrollbar(inst) {
-        var scrollbarWidth = window.innerWidth - $(document).width();
-        if (inst == 0) { $('body').css('margin-right', ''); }
-        else if (scrollbarWidth > 0) { $('body').css('margin-right', scrollbarWidth + 'px'); }
-    }
     $('a[href*="#modal-"]').on('click', function (e) {
         e.preventDefault()
         showModal($(this).attr("href"));
     });
 
     $('.modal-close, [data-modal-close]').on('click', () => { hideModals(); });
+
     $(document).on('click', function (e) {
-        if (!$(e.target).closest('.modal-content, .btn, .ic-btn').length && $('body').closest('.overflow').length) {
+        if (!$(e.target).closest('.modal-content, .btn, .ic-btn, .menu, [data-menu-btn]').length && $('body').hasClass('overflow')) {
             hideModals();
         }
     });

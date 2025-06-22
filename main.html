@@ -36,6 +36,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="header-middle">
                 <a href="#" class="header-logo"><img src="img/origin-logo.svg" alt="i"></a>
                 <nav class="header-nav">
@@ -77,11 +78,12 @@
                     </ul>
                 </nav>
             </div>
+
             <div class="header-bottom">
-                <button class="btn btn-primary catalog-btn header-bottom__catalog">
+                <a href="#modal-catalog" class="btn btn-primary catalog-btn header-bottom__catalog">
                     <svg class="ic"><use href="img/ic.svg#list"></use></svg> Каталог
-                </button>
-                <button class="btn btn-icon btn-primary header-menu__btn"><span class="ic-menu"></span></button>
+                </a>
+                <button class="btn btn-icon btn-primary header-menu__btn" data-menu-btn><svg class="ic ic-lg"><use href="img/ic.svg#menu"></use></svg></button>
                 <a href="#" class="logo header-logo header-bottom__logo"><img src="img/origin-logo.svg" alt="i"></a>
                 <form class="searchbar">
                     <input type="search" required placeholder="Найти товар" class="searchbar__input">
@@ -95,7 +97,7 @@
                 </a>
                 <a href="#" class="ic-btn">
                     <span class="badge badge--sm badge-primary">0</span>
-                    <svg class="ic ic-xl"><use href="img/ic.svg#user"></use></svg>
+                    <svg class="ic ic-xl"><use href="img/ic.svg#cart"></use></svg>
                     <span class="ic-btn__text">Корзина</span> 
                 </a>
                 <a href="#modal-login" class="ic-btn">
@@ -103,16 +105,15 @@
                     <span class="ic-btn__text">Войти</span> 
                 </a>
             </div>
-
         </div>
 
         <div class="header-fixed">
             <div class="container header-fixed__container">
                 <a href="#" class="header-logo"><img src="img/origin-logo.svg" alt="i"></a>
                 <div class="header-fixed__row">
-                    <button class="btn btn-primary catalog-btn">
+                    <a href="#modal-catalog" class="btn btn-primary catalog-btn">
                         <svg class="ic"><use href="img/ic.svg#list"></use></svg> Каталог
-                    </button>
+                    </a>
                     <a href="#" class="btn btn-outline btn-icon">
                         <svg class="ic"><use href="img/ic.svg#search"></use></svg>
                     </a>
@@ -153,14 +154,14 @@
                 </div>
                 <a href="#" class="ic-btn">
                     <span class="badge badge--sm badge-primary">0</span>
-                    <svg class="ic ic-xl"><use href="img/ic.svg#user"></use></svg>
+                    <svg class="ic ic-xl"><use href="img/ic.svg#cart"></use></svg>
                     <span class="ic-btn__text">Корзина</span> 
                 </a>
                 <a href="#modal-login" class="ic-btn">
                     <svg class="ic ic-xl"><use href="img/ic.svg#user"></use></svg> 
                     <span class="ic-btn__text">Войти</span> 
                 </a>
-                <button data-menu-btn class="btn btn-icon btn-gray header-fixed__menu"><span class="ic-menu"></span></button>
+                <button data-menu-btn class="btn btn-icon btn-gray header-fixed__menu"><svg class="ic ic-lg"><use href="img/ic.svg#menu"></use></svg></button>
             </div>
         </div>
 
@@ -449,6 +450,22 @@
                     </a>
                     <a href="#modal-call_request" class="btn btn-outline-primary xxl-hide">Заказать звонок
                         <svg class="ic"><use href="img/ic.svg#phone"></use></svg>
+                    </a>
+                    <a href="tel:+74951832333" class="btn link-contact lg-hide">
+                        <svg class="ic ic-md"><use href="img/ic.svg#call"></use></svg>
+                        +7 495 183-23-33
+                    </a>
+                    <a href="mailto:info@originkrepeg.ru" class="btn link-contact lg-hide">
+                        <svg class="ic ic-md"><use href="img/ic.svg#email"></use></svg>
+                        info@originkrepeg.ru
+                    </a>
+                    <a href="#" class="btn social-link__tg lg-hide">
+                        <svg class="ic ic-lg"><use href="img/ic.svg#telegram"></use></svg>
+                        Напишите в чат
+                    </a>
+                    <a href="#" class="btn social-link__wa lg-hide">
+                        <svg class="ic ic-lg"><use href="img/ic.svg#whatsapp"></use></svg>
+                        Напишите в чат
                     </a>
                 </div>
             </div>
@@ -2044,6 +2061,15 @@
         </div>
     </footer>
 
+
+    <div class="modal" id="modal-catalog">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
+            </button>
+            
+        </div>
+    </div>
 
     <div class="modal" id="modal-oneclick">
         <div class="modal-content">

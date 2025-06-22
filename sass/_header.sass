@@ -239,19 +239,10 @@
             margin: 0 auto
 
         &-fixed
-            .header-logo
-                margin-right: auto
-
-            &__container
-                gap: $gap
-
-            &__row
-                display: none
-
-    @media screen and ( max-width: 576px )
-        &-fixed
+            padding: 8px 0
             .header-logo
                 margin: 0 auto
+
             &__container
                 gap: 4px
                 &>*
@@ -260,13 +251,19 @@
             &__menu
                 order: 1
 
+            &__row
+                display: none
+
+    @media screen and ( max-width: 576px )
+        &-fixed
+
 .menu
     position: fixed
     top: 0
     right: 0
     width: 328px
     background-color: var(--light-gray)
-    border-radius: $b-rad
+    border-radius: $b-rad 0 0 $b-rad
     gap: calc( $gap * 2 )
     padding: 20px
     overflow-y: scroll
@@ -303,7 +300,6 @@
             margin-bottom: 16px
 
         &__link
-            display: block
             width: 100%
             text-align: left
             font-size: $font-md
@@ -344,6 +340,37 @@
     .catalog
         &-list
             display: none
+
+    &-footer
+        &>*
+            width: 100%
+            margin: 0
+
+    @media screen and ( max-width: 767px )
+        right: auto
+        max-width: 96%
+        gap: 4px
+        background-color: var(--light)
+        left: 0
+        border-radius: 0 $b-rad $b-rad 0
+        top: 12px
+        transform: translateX(-100%)
+        height: unset
+        max-height: calc( 100% - 24px )
+        &-header
+            margin-bottom: 12px
+        .catalog
+            &-list
+                --btn-bg: var(--light-gray)
+
+        &-list
+            &__item
+                margin-bottom: 4px
+            &__link
+                padding: 9.5px 0
+                text-transform: none
+                .ic
+                    margin-left: auto
 
 .catalog
     &-list
