@@ -8,6 +8,72 @@
 @import 'slick'
 @import 'header'
 
+.hero
+    padding-top: 0
+    &-wrap
+        &>*
+            &:last-child
+                flex: 1
+
+            &:first-child
+                width: calc( (311 / 1290) * 100% )
+
+    &-products
+        &:not(.slick-initialized)
+            &>*:not(:first-child)
+                display: none
+
+    &-product
+        height: 100%
+        &__img
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+    &-slider
+        box-shadow: var(--card-shadow)
+        &:not(.slick-initialized)
+            &>*:not(:first-child)
+                display: none
+
+    &-slide
+        &__heading
+            font-size: var(--h1)
+            margin: 0 0 12px
+
+        &__text
+            margin: 0 0 20px
+
+        &>*
+            width: 30%
+            &:last-child
+                width: 70%
+
+        &__content
+            padding: 50px 60px
+            position: relative
+            z-index: 1
+            justify-content: center
+            &>*
+                max-width: 428px
+
+        &__bg
+            max-width: 100%
+            width: 100%
+            height: 100%
+            object-fit: cover
+            position: absolute
+            top: 0
+            left: 0
+            z-index: -1
+
+        &__btns
+            gap: $gap
+
+    @media screen and ( max-width: 1200px )
+        &-catalog
+            display: none
+
 .card
     width: 245px
     padding-bottom: 4px
@@ -540,7 +606,7 @@
             background-color: rgba(255, 255, 255, .4)
 
     @media screen and ( max-width: 767px )
-        &-box 
+        &-box
             gap: 12px
 
         &-wrap
@@ -548,7 +614,7 @@
             &>*
                 width: 100%
 
-        &-col 
+        &-col
             margin-bottom: 16px
 
         &-img
