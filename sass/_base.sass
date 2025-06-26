@@ -51,9 +51,6 @@ img
     display: block
     max-width: 100%
 
-.bg-gray
-    background-color: var(--light-gray)
-
 section
     padding: 40px 0
 
@@ -133,6 +130,9 @@ input, textarea, select, .select
     border: 1px solid $b-color
     border-radius: $b-rad
     background-color: var(--light)
+    &.bg-gray
+        border-color: $text-gray
+        
     &:-webkit-autofill
         -webkit-box-shadow: 0 0 0 1000px var(--light) inset !important
         -webkit-text-fill-color: $dark !important

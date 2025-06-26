@@ -11,6 +11,7 @@
 .hero
     padding-top: 0
     &-wrap
+        gap: $gap
         &>*
             &:last-child
                 flex: 1
@@ -18,7 +19,8 @@
             &:first-child
                 width: calc( (311 / 1290) * 100% )
 
-    &-products
+    &-products,
+    &-slider
         &:not(.slick-initialized)
             &>*:not(:first-child)
                 display: none
@@ -32,11 +34,14 @@
 
     &-slider
         box-shadow: var(--card-shadow)
-        &:not(.slick-initialized)
-            &>*:not(:first-child)
-                display: none
+        margin-bottom: 24px
 
     &-slide
+        &>*
+            width: 30%
+            &:last-child
+                width: 70%
+
         &__heading
             font-size: var(--h1)
             margin: 0 0 12px
@@ -44,25 +49,22 @@
         &__text
             margin: 0 0 20px
 
-        &>*
-            width: 30%
-            &:last-child
-                width: 70%
-
         &__content
+            gap: 0
+            z-index: 1
             padding: 50px 60px
             position: relative
-            z-index: 1
             justify-content: center
             &>*
                 max-width: 428px
 
         &__bg
-            max-width: 100%
+            max-width: 100% !important
             width: 100%
             height: 100%
             object-fit: cover
             position: absolute
+            pointer-events: none
             top: 0
             left: 0
             z-index: -1
@@ -70,9 +72,152 @@
         &__btns
             gap: $gap
 
+    &-feature
+        &__icon
+            width: 60px
+            min-width: 60px
+            aspect-ratio: 1
+
+        &__title
+            gap: 12px
+            margin: 0 0 12px
+
+            &>*
+                margin: 0
+
+        &__heading
+            font-weight: bold
+            font-size: $font-md
+            line-height: 120%
+
+        &__text
+            font-size: $font-md
+            line-height: 100%
+
+    &-search
+        margin: 16px 0 0
+        background-color: var(--light-gray)
+        border-radius: $b-rad
+        padding: 16px
+        &__heading
+            margin-bottom: 16px
+
+        &__form
+            --input-padding: 12px
+            &>*
+                &:nth-child(-n+4)
+                    width: 120px
+
+                &:nth-child(4)
+                    flex: 1
+
+    @media screen and ( min-width: 576px )
+        &-features
+            list-style-type: none
+            counter-reset: features-counter 0
+            &:not(.slick-initialized)
+                gap: 8px
+                &>*
+                    width: calc( (100% - 16px) / 3 )
+
+                &>*:nth-child(n+4)
+                    display: none
+
+        &-feature
+            &__heading
+                text-transform: uppercase
+                &::before
+                    content: "0" counter(features-counter) "."
+                    counter-increment: features-counter 1
+                    font-weight: normal
+                    color: var(--text-gray)
+                    display: block
+                    width: 100%
+                    font-size: $font-md
+                    line-height: 21px
+
     @media screen and ( max-width: 1200px )
         &-catalog
             display: none
+
+    @media screen and ( max-width: 991px )
+        &-slide
+            &__content
+                padding: 30px 40px
+                &>*
+                    max-width: 330px
+
+        &-search
+            &__form
+                flex-wrap: wrap
+                gap: 16px 8px
+                &>*:nth-child(-n+4)
+                    width: calc( (100% - 8px) / 2 )
+            
+                &>*:nth-child(4)
+                    flex: none
+
+                .btn 
+                    &.btn-primary 
+                        flex: 1
+
+    @media screen and ( max-width: 767px )
+        &-slide
+            &__heading
+                margin-bottom: 16px
+
+            &__text
+                display: none
+
+            &__content
+                padding: 20px 30px
+
+        &-features
+            &:not(.slick-initialized)
+                @media screen and ( min-width: 576px )
+                    &>*
+                        width: calc( (100% - 8px) / 2 )
+
+                    &>*:nth-child(n+3)
+                        display: none
+
+    @media screen and ( max-width: 576px )
+        &-slider
+            margin-bottom: 8px
+        &-slide
+            &>*
+                width: 48%
+                &:last-child
+                    width: 52%
+
+            &__content
+                padding: 10px
+
+        &-features
+            flex-direction: column
+            gap: 4px
+            &>*
+
+        &-feature
+            position: relative
+            z-index: 1
+            background-color: var(--light-gray)
+            padding: 4px 4px 4px 61px
+            border-radius: $b-rad
+            &__icon
+                width: 53px
+                min-width: 53px
+                position: absolute
+                left: 4px
+                top: 50%
+                transform: translateY(-50%)
+
+            &__title
+                margin-bottom: 4px
+
+            &__heading
+                br
+                    display: none
 
 .card
     width: 245px

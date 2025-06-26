@@ -13,7 +13,12 @@
         fill: $dark
         margin-left: auto
 
+    &.bg-gray
+        .ic 
+            fill: $text-gray
+
     & > span
+        max-width: 85%
         overflow: hidden
         text-overflow: ellipsis
         white-space: nowrap
@@ -273,6 +278,14 @@
                 .ic
                     fill: $light
 
+    &-wrap
+        &__label
+            font-size: var(--font-sm-fx)
+            line-height: 100%
+            display: block
+            width: 100%
+            margin: 0 0 4px
+
 .amount
     display: flex
     max-width: 180px
@@ -298,20 +311,20 @@
         width: 40px
         height: 40px
         cursor: pointer
-        .ic 
+        .ic
             display: block
             margin: 0 auto
 
 .social
     gap: 8px
     &-link
-        &__tg 
+        &__tg
             color: $light
             background-color: #3390EC
-        &__wa 
+        &__wa
             color: $light
             background-color: #33CF6A
-            .ic 
+            .ic
                 width: 24px
                 height: 24px
 
@@ -361,6 +374,11 @@
         &--lg
             gap: 16px
 
+    &--horizontal
+        gap: 4px
+        flex-direction: row
+        align-items: flex-end
+
 .searchbar
     position: relative
     z-index: 1
@@ -381,6 +399,9 @@
             margin: 0 auto
             display: block
 
+.bg-gray
+    background-color: var(--light-gray)
+
 @media screen and ( max-width: 767px )
     .ic
         &-btn
@@ -391,6 +412,6 @@
             &__text
                 display: none
 
-            .badge 
-                top: 6px 
+            .badge
+                top: 6px
                 right: 8px

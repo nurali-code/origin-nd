@@ -373,6 +373,29 @@
                     margin-left: auto
 
 .catalog
+    &-underlist
+        display: none
+        list-style: none
+        padding: 0
+        &>*
+            margin: 0 0 4px
+
+        &__link
+            display: block
+            padding: 9.5px 15px
+            border-radius: $b-rad
+            &:hover
+                opacity: 1
+                background-color: var(--secondary-hover)
+
+            &:active
+                background-color: var(--secondary-active)
+
+    &-btn
+        justify-content: flex-start
+        text-transform: uppercase
+        min-width: 211px
+
     &-list
         list-style: none
         padding: 0
@@ -388,13 +411,81 @@
             text-align: left
             background-color: var(--btn-bg)
             border-radius: $b-rad
+            position: relative
+            z-index: 1
+            &::after
+                content: ''
+                display: block
+                width: 4px
+                top: 0
+                right: -4px
+                height: 100%
+                position: absolute
+                z-index: 1
+                overflow: hidden
+                opacity: 1
+
         &--light
             --btn-bg: var(--light)
 
-    &-underlist
-        display: none
+        &--hover
+            position: relative
+            z-index: 111
+            .catalog
+                &-underlist
+                    display: block
+                    column-count: 2
 
-    &-btn
-        justify-content: flex-start
-        text-transform: uppercase
-        min-width: 211px
+                    background-color: var(--light-gray)
+                    z-index: 111
+                    position: absolute
+                    top: 0
+                    left: calc( 100% + 4px )
+                    min-width: 100%
+                    height: 100%
+                    gap: $gap
+                    padding: 16px
+                    border-radius: $b-rad
+                    transition: all ease .3s
+                    opacity: 0
+                    visibility: hidden
+                    transform: translateX(-10%)
+
+                &-list
+                    &__item
+                        &:hover
+                            .catalog
+                                &-list__btn
+                                    color: $primary
+                                    background-color: var(--secondary)
+                                    opacity: 1
+                                    &::after
+                                        visibility: visible
+
+                                    .ic
+                                        transform: translateX(0px)
+                                        opacity: 1
+                                        fill: $primary
+
+                                &-underlist
+                                    opacity: 1
+                                    visibility: visible
+                                    transform: translateX(0%)
+
+                    &__btn
+                        .ic
+                            margin-left: auto
+                            opacity: 0
+                            transform: translateX(-5px)
+                            transition: .3s ease all
+
+                        &:hover
+
+                            color: $primary
+                            background-color: var(--secondary)
+                            opacity: 1
+
+                            .ic
+                                transform: translateX(0px)
+                                opacity: 1
+                                fill: $primary
