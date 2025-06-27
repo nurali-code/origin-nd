@@ -19,45 +19,69 @@ $(document).on('click', '[data-toggle]', function (e) {
 
 
 // custom select 
-$('select').each(function () {
-    const $this = $(this).hide().wrap('<div class="select-wrap"></div>');
-    $this.parent().addClass($this.attr('class'));
+$(document).ready(function () {
+    $('select').each(function () {
+        const $this = $(this).hide().wrap('<div class="select-wrap"></div>');
+        $this.parent().addClass($this.attr('class'));
 
-    const defaultOption = $this.find('option').eq(0);
-    const defaultText = defaultOption.text();
-    const $customSelect = $('<div class="select"></div>')
-        .addClass($this.attr('class'))
-        .insertAfter($this)
-        .html(`<span>${defaultText}</span> <svg class="ic ic-lg"><use href="img/ic.svg#arrow-down"></use></svg>`);
-    const $optionlist = $('<ul class="select-options"><li class="select-heading">Выберите</li></ul>').insertAfter($customSelect);
-    $this.children('option').each(function () {
-        $('<li />', {
-            text: $(this).text(),
-            rel: $(this).val(),
-            class: $(this).attr('hidden'),
-            selected: $(this).attr('selected')
-        }).appendTo($optionlist);
-    });
-    $customSelect.click(function (e) {
-        e.stopPropagation();
-        $('.select-wrap').css('z-index', '');
-        $('.select.active').not(this).removeClass('active').next('.select-options').slideUp(300);
-        $(this).toggleClass('active').next('.select-options').slideToggle(300);
-    });
-    $optionlist.on('click', 'li', function (e) {
-        e.stopPropagation();
-        $customSelect.find('span').html($(this).text());
-        $this.val($(this).attr('rel')).trigger('change');
-        $customSelect.removeClass('active');
-        $optionlist.slideUp(300);
-    });
-    $(document).click(function (e) {
-        if (!$(e.target).closest($optionlist).length) {
+        const defaultOption = $this.find('option').eq(0);
+        const defaultText = defaultOption.text();
+
+        const $customSelect = $('<div class="select"></div>')
+            .addClass($this.attr('class'))
+            .insertAfter($this)
+            .html(`<span>${defaultText}</span> <svg class="ic ic-lg"><use href="img/ic.svg#arrow-down"></use></svg>`);
+
+        const $optionlist = $('<ul class="select-options"><li class="select-heading">Выберите</li></ul>').insertAfter($customSelect);
+
+        $this.children('option').each(function () {
+            $('<li />', {
+                text: $(this).text(),
+                rel: $(this).val(),
+                class: $(this).attr('hidden'),
+                selected: $(this).attr('selected')
+            }).appendTo($optionlist);
+        });
+
+        $customSelect.click(function (e) {
+            e.stopPropagation();
+            $('.select-wrap').css('z-index', '');
+            $('.select.active').not(this).removeClass('active').next('.select-options').slideUp(300);
+            $(this).toggleClass('active').next('.select-options').slideToggle(300);
+        });
+
+        $optionlist.on('click', 'li', function (e) {
+            e.stopPropagation();
+            $customSelect.find('span').html($(this).text());
+            $this.val($(this).attr('rel')).trigger('change');
             $customSelect.removeClass('active');
             $optionlist.slideUp(300);
-        }
+        });
+
+        $(document).click(function (e) {
+            if (!$(e.target).closest($optionlist).length) {
+                $customSelect.removeClass('active');
+                $optionlist.slideUp(300);
+            }
+        });
+
+        $this.on('reset-happened', function () {
+            const defaultText = $this.find('option').eq(0).text();
+            $this.val('');
+            $customSelect.find('span').html(defaultText);
+        });
+    });
+
+    $('form').on('reset', function () {
+        const $thisform = $(this)
+        setTimeout(function () {
+            $thisform.find('select').each(function () {
+                $(this).trigger('reset-happened');
+            });
+        }, 0);
     });
 });
+
 
 // Вывод имени файла и расширения в .inp-file__label с добавлением иконки закрытия
 $(document).on('change', '.inp-file input[type="file"]', function () {

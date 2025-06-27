@@ -1,8 +1,8 @@
 .header
     &-top
         padding: 8px 0
-        background-color: var(--light-gray)
-        box-shadow: 0 0 0 100vmax var(--light-gray)
+        background-color: var(--lighter-gray)
+        box-shadow: 0 0 0 100vmax var(--lighter-gray)
         clip-path: inset(0 -100vmax)
         &>*
             margin: 0
@@ -409,7 +409,7 @@
             font-size: $font-md
             width: 100%
             text-align: left
-            background-color: var(--btn-bg)
+            background-color: var(--lighter-gray)
             border-radius: $b-rad
             position: relative
             z-index: 1
@@ -435,12 +435,12 @@
                 &-underlist
                     display: block
                     column-count: 2
+                    background-color: var(--lighter-gray)
 
-                    background-color: var(--light-gray)
-                    z-index: 111
-                    position: absolute
                     top: 0
+                    position: absolute
                     left: calc( 100% + 4px )
+                    z-index: 111
                     min-width: 100%
                     height: 100%
                     gap: $gap

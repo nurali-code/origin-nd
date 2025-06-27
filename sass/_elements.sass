@@ -13,9 +13,9 @@
         fill: $dark
         margin-left: auto
 
-    &.bg-gray
-        .ic 
-            fill: $text-gray
+    &.bg-grayish
+        .ic
+            fill: var(--lighter-gray)
 
     & > span
         max-width: 85%
@@ -374,11 +374,6 @@
         &--lg
             gap: 16px
 
-    &--horizontal
-        gap: 4px
-        flex-direction: row
-        align-items: flex-end
-
 .searchbar
     position: relative
     z-index: 1
@@ -399,8 +394,11 @@
             margin: 0 auto
             display: block
 
-.bg-gray
-    background-color: var(--light-gray)
+.bg
+    &-gray
+        background-color: var(--light-gray)
+    &-grayish
+        background-color: var(--lighter-gray)
 
 @media screen and ( max-width: 767px )
     .ic
