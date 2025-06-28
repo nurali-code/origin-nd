@@ -193,6 +193,45 @@ const slickArrows = {
     nextArrow: '<button class="slick-next"><svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg></button>',
 };
 
+$('.hero-slider, .hero-products').slick({
+    slidesToShow: 1,
+    dots: true,
+    arrows: false,
+    swipeToSlide: true,
+    // autoplay: true,
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 576,
+            settings: {
+                infinite: false,
+                arrows: false,
+                dots: true,
+            }
+        },
+    ]
+});
+
+
+$('.hero-features').slick({
+    infinite: false,
+    slidesToShow: 3,
+    arrows: true,
+    ...slickArrows,
+    swipeToSlide: true,
+    slidesToScroll: 3,
+    responsive: [
+        {
+            breakpoint: 576,
+            settings: {
+                infinite: false,
+                arrows: false,
+                dots: true,
+            }
+        },
+    ]
+});
+
 $('.info-slider').slick({
     slidesToShow: 1,
     arrows: true,

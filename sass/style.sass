@@ -15,9 +15,22 @@
         &>*
             &:last-child
                 flex: 1
+                width: calc( (931 / 1290) * 100% )
 
             &:first-child
                 width: calc( (311 / 1290) * 100% )
+
+    &-content
+        gap: $gap
+        justify-content: space-between
+
+    &-products
+        .slick
+            &-dots
+                position: absolute
+                bottom: 12px
+                left: 0
+                width: 100%
 
     &-products,
     &-slider
@@ -27,16 +40,21 @@
 
     &-product
         height: 100%
+        margin: 0
         &__img
             width: 100%
             height: 100%
             object-fit: cover
 
     &-slider
+        left: 0
         box-shadow: var(--card-shadow)
-        margin-bottom: 24px
+        margin-bottom: 8px
+        .slick-dots:not(.hero-products .slick-dots)
+            display: none !important
 
     &-slide
+        margin: 0
         &>*
             width: 30%
             &:last-child
@@ -72,6 +90,14 @@
         &__btns
             gap: $gap
 
+    &-features
+        width: 100%
+        left: 0
+        .slick
+            &-arrow 
+                
+                background-color: rgba(0, 0, 0, 0)
+
     &-feature
         justify-content: center
         gap: 0
@@ -97,7 +123,6 @@
             line-height: 100%
 
     &-search
-        margin: 16px 0 0
         background-color: var(--lighter-gray)
         border-radius: $b-rad
         padding: 16px
@@ -189,6 +214,7 @@
     @media screen and ( max-width: 576px )
         &-slider
             margin-bottom: 8px
+
         &-slide
             &>*
                 width: 48%
@@ -225,6 +251,16 @@
                 margin: 0
                 br
                     display: none
+
+        &-search
+            padding: 16px 0
+            border-radius: 0
+            box-shadow: 0 0 0 100vmax var(--lighter-gray)
+            clip-path: inset(0 -100vmax)
+            &__form
+                gap: 8px
+                &>*:nth-child(-n+4)
+                    width: 100%
 
 .card
     width: 245px

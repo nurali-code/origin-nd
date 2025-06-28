@@ -413,17 +413,21 @@
             border-radius: $b-rad
             position: relative
             z-index: 1
-            &::after
-                content: ''
-                display: block
-                width: 4px
-                top: 0
-                right: -4px
-                height: 100%
-                position: absolute
-                z-index: 1
-                overflow: hidden
-                opacity: 1
+            &:not([disabled])
+                &::after
+                    content: ''
+                    display: block
+                    width: 4px
+                    top: 0
+                    right: -4px
+                    height: 100%
+                    position: absolute
+                    z-index: 1
+                    overflow: hidden
+                    opacity: 1
+
+            &[disabled]
+                color: $text-gray
 
         &--light
             --btn-bg: var(--light)
@@ -453,19 +457,22 @@
 
                 &-list
                     &__item
-                        &:hover
+                        &:hover,
+                        &:active
                             .catalog
                                 &-list__btn
-                                    color: $primary
-                                    background-color: var(--secondary)
-                                    opacity: 1
+                                    &:not([disabled])
+                                        color: $primary
+                                        background-color: var(--secondary)
+                                        opacity: 1
+                                        .ic
+                                            transform: translateX(0px)
+                                            opacity: 1
+                                            fill: $primary
+
                                     &::after
                                         visibility: visible
 
-                                    .ic
-                                        transform: translateX(0px)
-                                        opacity: 1
-                                        fill: $primary
 
                                 &-underlist
                                     opacity: 1
@@ -479,13 +486,3 @@
                             transform: translateX(-5px)
                             transition: .3s ease all
 
-                        &:hover
-
-                            color: $primary
-                            background-color: var(--secondary)
-                            opacity: 1
-
-                            .ic
-                                transform: translateX(0px)
-                                opacity: 1
-                                fill: $primary
