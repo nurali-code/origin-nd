@@ -25,7 +25,12 @@
         justify-content: space-between
 
     &-products
+        left: 0
         .slick
+            &-list,
+            &-track
+                padding: 0 !important
+                height: 100%
             &-dots
                 position: absolute
                 bottom: 12px
@@ -39,21 +44,23 @@
                 display: none
 
     &-product
-        height: 100%
+        height: 100% !important
         margin: 0
+        left: 0
         &__img
             width: 100%
             height: 100%
             object-fit: cover
 
     &-slider
-        left: 0
+        border-radius: $b-rad
         box-shadow: var(--card-shadow)
         margin-bottom: 8px
         .slick-dots:not(.hero-products .slick-dots)
             display: none !important
 
     &-slide
+        border-radius: $b-rad
         margin: 0
         &>*
             width: 30%
@@ -93,13 +100,31 @@
     &-features
         width: 100%
         left: 0
+        padding-bottom: 28px
         .slick
-            &-arrow 
-                
+            &-arrow
+                width: 20px
+                height: 20px
+                bottom: 0
+                top: auto
                 background-color: rgba(0, 0, 0, 0)
+                .ic
+                    --ic-width: 20px
+                    fill: var(--text-gray)
+
+                &.slick-disabled
+                    opacity: .5
+
+            &-prev
+                left: calc( 50% - 30px )
+                transform: translateX(-50%)
+
+            &-next
+                right: auto
+                left: calc( 50% + 30px )
+                transform: translateX(-50%)
 
     &-feature
-        justify-content: center
         gap: 0
         &__icon
             width: 60px
@@ -142,6 +167,9 @@
                     flex: 1
 
     @media screen and ( min-width: 576px )
+        &-slider
+            left: 0
+
         &-features
             list-style-type: none
             counter-reset: features-counter 0
@@ -177,19 +205,10 @@
                 &>*
                     max-width: 330px
 
-        &-search
-            &__form
-                flex-wrap: wrap
-                gap: 16px 8px
-                &>*:nth-child(-n+4)
-                    width: calc( (100% - 8px) / 2 )
-
-                &>*:nth-child(4)
-                    flex: none
-
-                .btn
-                    &.btn-primary
-                        flex: 1
+        &-products
+            .slick
+                &-dots
+                    bottom: 8px
 
     @media screen and ( max-width: 767px )
         &-slide
@@ -212,10 +231,21 @@
                         display: none
 
     @media screen and ( max-width: 576px )
+        &-content 
+            gap: 8px
         &-slider
-            margin-bottom: 8px
+            box-shadow: none
+            margin-bottom: 0px
+            border-radius: 0
+
+            .slick
+                &-list
+                    padding: 0 calc(var(--bs-gutter-x) - 2px)
 
         &-slide
+            margin: 0 2px
+            overflow: hidden
+            border-radius: $b-rad
             &>*
                 width: 48%
                 &:last-child
@@ -227,9 +257,11 @@
         &-features
             flex-direction: column
             gap: 4px
+            padding: 0
             &>*
 
         &-feature
+            justify-content: center
             min-height: 61px
             position: relative
             z-index: 1
@@ -251,16 +283,6 @@
                 margin: 0
                 br
                     display: none
-
-        &-search
-            padding: 16px 0
-            border-radius: 0
-            box-shadow: 0 0 0 100vmax var(--lighter-gray)
-            clip-path: inset(0 -100vmax)
-            &__form
-                gap: 8px
-                &>*:nth-child(-n+4)
-                    width: 100%
 
 .card
     width: 245px
