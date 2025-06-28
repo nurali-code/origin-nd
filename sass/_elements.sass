@@ -413,11 +413,31 @@
             &:nth-child(4)
                 flex: 1
 
+[data-shop]
+    &.active
+        overflow: hidden
+        background-color: var(--secondary)
+        svg
+            fill: var(--primary)
+            animation: cart 1.5s forwards
+
 .bg
     &-gray
         background-color: var(--light-gray)
     &-grayish
         background-color: var(--lighter-gray)
+
+@keyframes cart
+    0%, 100%
+        transform: translateX(0%) rotate(0deg)
+
+    10%, 15%
+        transform: translateX(-15%) rotate(-5deg)
+
+    50%
+        transform: translateX(150%) rotate(-26deg)
+    50.01%
+        transform: translateX(-150%) rotate(-16deg)
 
 @media screen and ( max-width: 991px )
     .quicksearch
