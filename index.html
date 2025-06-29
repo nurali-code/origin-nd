@@ -2367,7 +2367,6 @@
         </div>
     </section>
 
-
     <div class="modal modal-lg" id="modal-search">
         <div class="modal-content">
             <button class="modal-close" title="Закрыть">
@@ -2717,9 +2716,9 @@
 
     <div class="modal" id="modal-oneclick">
         <div class="modal-content">
-            <button class="modal-close"><svg class="ic">
-                    <use href="img/ic.svg#close"></use>
-                </svg></button>
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
+            </button>
 
             <h2 class="modal-heading">Купить в 1 клик</h2>
             <form class="form">
@@ -2761,9 +2760,9 @@
 
     <div class="modal" id="modal-oneclick_2">
         <div class="modal-content">
-            <button class="modal-close"><svg class="ic">
-                    <use href="img/ic.svg#close"></use>
-                </svg></button>
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
+            </button>
 
             <h2 class="modal-heading">Купить в 1 клик</h2>
             <form class="form">
@@ -2815,13 +2814,11 @@
 
     <div class="modal" id="modal-call_request">
         <div class="modal-content">
-            <button class="modal-close">
-                <svg class="ic">
-                    <use href="img/ic.svg#close"></use>
-                </svg>
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
             </button>
-
-        <h2 class="modal-heading">Заказать звонок</h2>
+    
+            <h2 class="modal-heading">Заказать звонок</h2>
             <form class="form">
                 <div class="form-group form-group--lg">
                     <div class="inp-group">
@@ -2859,13 +2856,11 @@
 
     <div class="modal" id="modal-login">
         <div class="modal-content">
-            <button class="modal-close">
-                <svg class="ic">
-                    <use href="img/ic.svg#close"></use>
-                </svg>
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
             </button>
 
-        <h2 class="modal-heading">Вход</h2>
+            <h2 class="modal-heading">Вход</h2>
             <form class="form">
                 <p class="form-descr">
                     Нет аккаунта?
@@ -2907,13 +2902,11 @@
 
     <div class="modal" id="modal-signup">
         <div class="modal-content">
-            <button class="modal-close">
-                <svg class="ic">
-                    <use href="img/ic.svg#close"></use>
-                </svg>
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
             </button>
 
-        <h2 class="modal-heading">Регистрация</h2>
+            <h2 class="modal-heading">Регистрация</h2>
             <form class="form">
                 <p class="form-descr">
                     Есть регистрация?
@@ -2952,10 +2945,8 @@
 
     <div class="modal" id="modal-req">
         <div class="modal-content">
-            <button class="modal-close">
-                <svg class="ic">
-                    <use href="img/ic.svg#close"></use>
-                </svg>
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
             </button>
 
             <h2 class="modal-heading">Запросить расчет</h2>
@@ -2974,14 +2965,14 @@
                         <label for="message_2" class="inp-label">Ваше сообщение</label>
                     </div>
                     <select>
-                        <option selected>Предпочтительный вариант ответа</option>
+                        <option hidden>Предпочтительный вариант ответа</option>
                         <option value="Предпочтительный вариант ответа">Предпочтительный вариант ответа</option>
                         <option value="Предпочтительный вариант ответа">Предпочтительный вариант ответа</option>
                     </select>
 
                     <div class="inp-file">
-                        <input type="file" name="file" id="file_1">
-                        <label for="file_1" class="inp-file__label">
+                        <input type="file" name="file" id="file">
+                        <label for="file" class="inp-file__label">
                             <svg class="ic">
                                 <use href="img/ic.svg#paperclip"></use>
                             </svg>
@@ -3008,13 +2999,11 @@
 
     <div class="modal" id="modal-req-2">
         <div class="modal-content">
-            <button class="modal-close">
-                <svg class="ic">
-                    <use href="img/ic.svg#close"></use>
-                </svg>
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
             </button>
 
-        <h2 class="modal-heading">Запросить расчет</h2>
+            <h2 class="modal-heading">Запросить расчет</h2>
             <form class="form">
                 <div class="form-group">
                     <div class="form-row">
@@ -3049,9 +3038,10 @@
                         </div>
                     </div>
                     <select>
-                        <option selected>Выбрать тип крепежа</option>
-                        <option value="Выбрать тип крепежа">Выбрать тип крепежа</option>
-                        <option value="Выбрать тип крепежа">Выбрать тип крепежа</option>
+                        <option hidden>Выбрать тип крепежа</option>
+                        <option value="Тип крепежа 1">Тип крепежа 1</option>
+                        <option value="Тип крепежа 2">Тип крепежа 2</option>
+                        <option value="Тип крепежа 3">Тип крепежа 3</option>
                     </select>
                     <div class="inp-group">
                         <input type="text" id="amount_1" placeholder="Введите количество" class="inp-field">
@@ -3067,9 +3057,10 @@
                         </label>
                     </div>
                     <select>
-                        <option selected>Способ доставки</option>
-                        <option value="Способ доставки">Способ доставки</option>
-                        <option value="Способ доставки">Способ доставки</option>
+                        <option hidden>Способ доставки</option>
+                        <option value="Способ доставки">Способ 1</option>
+                        <option value="Способ доставки">Способ 2</option>
+                        <option value="Способ доставки">Способ 3</option>
                     </select>
                 </div>
 
@@ -3079,9 +3070,10 @@
                         <label for="message_3" class="inp-label">Ваш комментарий</label>
                     </div>
                     <select>
-                        <option selected>Предпочтительный вариант ответа</option>
-                        <option value="Предпочтительный вариант ответа">Предпочтительный вариант ответа</option>
-                        <option value="Предпочтительный вариант ответа">Предпочтительный вариант ответа</option>
+                        <option hidden>Предпочтительный вариант ответа</option>
+                        <option value="Вариант ответа 1">Вариант ответа 1</option>
+                        <option value="Вариант ответа 2">Вариант ответа 2</option>
+                        <option value="Вариант ответа 3">Вариант ответа 3</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -3102,13 +3094,11 @@
 
     <div class="modal" id="modal-req-3">
         <div class="modal-content">
-            <button class="modal-close">
-                <svg class="ic">
-                    <use href="img/ic.svg#close"></use>
-                </svg>
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
             </button>
 
-        <h2 class="modal-heading">Запросить расчет</h2>
+            <h2 class="modal-heading">Запросить расчет</h2>
             <form class="form">
                 <div class="form-group">
                     <div class="form-row">
@@ -3124,9 +3114,10 @@
                         </div>
                     </div>
                     <select>
-                        <option selected>Выбрать тип крепежа</option>
-                        <option value="Выбрать тип крепежа">Выбрать тип крепежа</option>
-                        <option value="Выбрать тип крепежа">Выбрать тип крепежа</option>
+                        <option hidden>Выбрать тип крепежа</option>
+                        <option value="Тип крепежа 1">Тип крепежа 1</option>
+                        <option value="Тип крепежа 2">Тип крепежа 2</option>
+                        <option value="Тип крепежа 3">Тип крепежа 3</option>
                     </select>
                     <div class="inp-group">
                         <input type="text" id="amount" placeholder="Введите количество" class="inp-field">
@@ -3151,9 +3142,10 @@
                         </label>
                     </div>
                     <select>
-                        <option selected>Способ доставки</option>
-                        <option value="Способ доставки">Способ доставки</option>
-                        <option value="Способ доставки">Способ доставки</option>
+                        <option hidden>Способ доставки</option>
+                        <option value="Способ 1">Способ 1</option>
+                        <option value="Способ 2">Способ 2</option>
+                        <option value="Способ 3">Способ 3</option>
                     </select>
                 </div>
 
@@ -3163,9 +3155,10 @@
                         <label for="message_1" class="inp-label">Ваш комментарий</label>
                     </div>
                     <select>
-                        <option selected>Предпочтительный вариант ответа</option>
-                        <option value="Предпочтительный вариант ответа">Предпочтительный вариант ответа</option>
-                        <option value="Предпочтительный вариант ответа">Предпочтительный вариант ответа</option>
+                        <option hidden>Предпочтительный вариант ответа</option>
+                        <option value="Вариант ответа 1">Вариант ответа 1</option>
+                        <option value="Вариант ответа 2">Вариант ответа 2</option>
+                        <option value="Вариант ответа 3">Вариант ответа 3</option>
                     </select>
                 </div>
                 <div class="form-group">

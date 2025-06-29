@@ -32,7 +32,7 @@ $(document).ready(function () {
             .insertAfter($this)
             .html(`<span>${defaultText}</span> <svg class="ic ic-lg"><use href="img/ic.svg#arrow-down"></use></svg>`);
 
-        const $optionlist = $('<ul class="select-options"><li class="select-heading">Выберите</li></ul>').insertAfter($customSelect);
+        const $optionlist = $('<ul class="select-options"></ul>').insertAfter($customSelect);
 
         $this.children('option').each(function () {
             $('<li />', {
