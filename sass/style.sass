@@ -460,6 +460,14 @@
     border-radius: $b-rad
     aspect-ratio: 311/140
     cursor: pointer
+    transition: .3s ease all 
+    &.active
+
+    &:not(.active)
+        filter: grayscale(1) 
+        img
+            opacity: .4
+
     &-wrap
         gap: $gap
         margin: 0 0 8px

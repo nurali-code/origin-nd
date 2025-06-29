@@ -281,10 +281,11 @@ $('.card-slider').slick({
 });
 
 $(function () {
-    const $defaultTab = $('[data-tab].active_line, [data-tab].btn-primary');
+    const $defaultTab = $('[data-tab-active]');
     if ($defaultTab.length) {
         $defaultTab.each(function () {
-            const targetTab = $(this).data('tab');
+            const thisId = $(this).data('tab-active')
+            const targetTab = $(this).find(`[data-tab].${thisId}`).data('tab');
             const $targetContent = $(`[data-tab-content="${targetTab}"]`);
             $targetContent.addClass('active');
             if ($targetContent.hasClass('card-slider')) {
@@ -295,7 +296,7 @@ $(function () {
 
     $(document).on('click', '[data-tab]', function () {
         const $this = $(this);
-        const activeClass = $this.hasClass('btn') ? 'btn-primary' : 'active_line';
+        const activeClass = $this.parents('[data-tab-active]').data('tab-active');
         const targetTab = $this.data('tab');
         $this.addClass(activeClass).siblings().removeClass(activeClass);
         $this.parents('section').find('[data-tab-content]').removeClass('active');
