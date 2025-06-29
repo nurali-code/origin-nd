@@ -16,6 +16,7 @@
     transition: all ease .3s
     opacity: 0
     visibility: hidden
+    animation: modalHide .3s ease forwards
 
     &-content
         width: 100%
@@ -82,12 +83,14 @@
 
     .catalog-list
         max-width: 50%
-        
+
     &-lg
         .modal
             &-content
                 max-width: 700px
 
+    &:not(.active)
+        pointer-events: none
 
     &.active
         opacity: 1
