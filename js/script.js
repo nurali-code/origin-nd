@@ -284,12 +284,19 @@ $(function () {
     const $defaultTab = $('[data-tab-active]');
     if ($defaultTab.length) {
         $defaultTab.each(function () {
-            const thisId = $(this).data('tab-active')
-            const targetTab = $(this).find(`[data-tab].${thisId}`).data('tab');
+            const $this = $(this);
+            const thisId = $this.data('tab-active');
+            const targetTab = $this.find(`[data-tab].${thisId}`).data('tab');
             const $targetContent = $(`[data-tab-content="${targetTab}"]`);
             $targetContent.addClass('active');
             if ($targetContent.hasClass('card-slider')) {
                 $targetContent.slick('setPosition');
+            }
+
+            // Remove active state on mobile if data-tab-mob="none"
+            if (window.innerWidth < 576 && $this.data('tabMob') === 'none') {
+                $this.find(`[data-tab].${thisId}`).removeClass(thisId);
+                $targetContent.removeClass('active');
             }
         });
     }
