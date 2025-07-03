@@ -294,7 +294,7 @@ $(function () {
             }
 
             // Remove active state on mobile if data-tab-mob="none"
-            if (window.innerWidth < 576 && $this.data('tabMob') === 'none') {
+            if (window.innerWidth < 991.99 && $this.data('tabMob') === 'none') {
                 $this.find(`[data-tab].${thisId}`).removeClass(thisId);
                 $targetContent.removeClass('active');
             }

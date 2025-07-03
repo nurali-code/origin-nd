@@ -91,7 +91,16 @@ section
         &-hide
             display: none !important
 
-    @media screen and ( max-width: 991px )
+    @media screen and ( max-width: 991.99px )
+        &-show
+            display: none !important
+
+.xl
+    @media screen and ( min-width: 1200px )
+        &-hide
+            display: none !important
+
+    @media screen and ( max-width: 1199.99px )
         &-show
             display: none !important
 
@@ -100,7 +109,7 @@ section
         &-hide
             display: none !important
 
-    @media screen and ( max-width: 1399px )
+    @media screen and ( max-width: 1399.99px )
         &-show
             display: none !important
 
@@ -133,7 +142,7 @@ input, textarea, select, .select
     background-color: var(--light)
     &.bg-grayish
         border-color: $text-gray
-        
+
     &:-webkit-autofill
         -webkit-box-shadow: 0 0 0 1000px var(--light) inset !important
         -webkit-text-fill-color: $dark !important

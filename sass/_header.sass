@@ -31,6 +31,9 @@
         &__logo
             display: none
 
+        .searchbar
+            &-toggler
+
     &-middle,
     &-bottom
         gap: $gap
@@ -136,7 +139,7 @@
             gap: $gap
 
         &__container
-            gap: 40px
+            gap: 20px
 
         &__text
             font-size: $font-sm
@@ -182,12 +185,20 @@
                     visibility: visible
                     transform: translate(-50%, 0px)
 
-    @media screen and ( max-width: 1400px )
-        &-fixed
-            &__container
-                gap: 30px
+        .catalog-btn
+            justify-content: center
+            min-width: 200px
 
-    @media screen and ( max-width: 1200px )
+    @media screen and ( min-width: 1199.99px )
+        &-bottom
+            .searchbar
+                &-toggler
+                    display: none
+
+    @media screen and ( max-width: 1399.99px )
+        &-fixed            
+
+    @media screen and ( max-width: 1199.99px )
         &-contact
             gap: 24px
 
@@ -205,9 +216,18 @@
             &__catalog
                 display: none
 
-        &-logo
+            @media screen and ( min-width: 992px )
+                .searchbar
+                    display: none
 
-    @media screen and ( max-width: 991px )
+        &-logo
+            margin: 0 auto
+
+        &-fixed            
+            .catalog-btn            
+                min-width: 170px
+
+    @media screen and ( max-width: 991.99px )
         &-top
             display: none
 
@@ -222,22 +242,16 @@
                 width: 100%
                 order: 8
                 flex: none
+                &-toggler 
+                    display: none
 
         &-fixed
-            &__container
-                gap: 30px
-
             &__contact
                 display: none
 
     @media screen and ( max-width: 767px )
         &-bottom
             gap: 8px 4px
-            .btn-outline-primary
-                display: none
-
-        &-logo
-            margin: 0 auto
 
         &-fixed
             padding: 8px 0
@@ -256,7 +270,11 @@
                 display: none
 
     @media screen and ( max-width: 576px )
-        &-fixed
+        &-logo 
+            width: 35vw
+            max-width: 145px
+            img 
+                max-width: 100%
 
 .menu
     position: fixed
@@ -365,7 +383,7 @@
             display: none
             width: 0
             height: 0
-            
+
         &-header
             margin-bottom: 12px
         .catalog
