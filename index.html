@@ -270,6 +270,43 @@
                 </div>
             </div>
         </div>
+
+        <nav class="navbar">
+            <ul class="navbar-list">
+                <li>
+                    <a href="main.html" class="ic-btn">
+                        <svg class="ic ic-xl"><use href="img/ic.svg#home"></use></svg> Главная
+                    </a>
+                </li>
+                <li>
+                    <button class="ic-btn" data-menu-btn>
+                        <svg class="ic ic-xl"><use href="img/ic.svg#menu"></use></svg> Меню
+                    </button>
+                </li>
+                <li>
+                    <a href="#modal-catalog" class="ic-btn">
+                        <svg class="ic ic-xl"><use href="img/ic.svg#list"></use></svg> Каталог
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="ic-btn">
+                        <span class="badge badge--sm badge-primary">0</span>
+                        <svg class="ic ic-xl"><use href="img/ic.svg#fav"></use></svg> Избранное
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="ic-btn">
+                        <span class="badge badge--sm badge-primary">0</span>
+                        <svg class="ic ic-xl"><use href="img/ic.svg#cart"></use></svg> Корзина
+                    </a>
+                </li>
+                <li>
+                    <a href="#modal-login" class="ic-btn">
+                        <svg class="ic ic-xl"><use href="img/ic.svg#user"></use></svg>  Кабинет
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <section class="hero">
@@ -552,20 +589,6 @@
                 <div class="hero-content">
                     <div class="hero-slider">
                         <div class="hero-slide">
-                            <div class="hero-products">
-                                <div class="hero-product">
-                                    <img src="img/product.jpg" alt="i" class="hero-product__img">
-                                </div>
-                                <div class="hero-product">
-                                    <img src="img/product.jpg" alt="i" class="hero-product__img">
-                                </div>
-                                <div class="hero-product">
-                                    <img src="img/product.jpg" alt="i" class="hero-product__img">
-                                </div>
-                                <div class="hero-product">
-                                    <img src="img/product.jpg" alt="i" class="hero-product__img">
-                                </div>
-                            </div>
                             <div class="hero-slide__content">
                                 <h1 class="hero-slide__heading">Микровинты с нестандартной шаговой резьбой</h1>
                                 <p class="hero-slide__text">Подписи, объясняющие, почему этот товар уникален.</p>
@@ -575,27 +598,15 @@
                                     <a href="#" class="btn btn-secondary">Подробнее</a>
                                 </div>
                                 <a href="#" class="btn btn-primary sm-hide">Подробнее</a>
-
-                                <img src="img/hero-banners/banner-1.jpg" alt="banner" class="hero-slide__bg">
+                                <picture>
+                                    <source media="(min-width: 577px)" srcset="img/hero-banners/banner-1.jpg">
+                                    <img src="img/hero-banners/banner-mob-1.jpg" alt="banner" class="hero-slide__bg">
+                                </picture>
                             </div>
                         </div>
                         <div class="hero-slide">
-                            <div class="hero-products">
-                                <div class="hero-product">
-                                    <img src="img/product.jpg" alt="i" class="hero-product__img">
-                                </div>
-                                <div class="hero-product">
-                                    <img src="img/product.jpg" alt="i" class="hero-product__img">
-                                </div>
-                                <div class="hero-product">
-                                    <img src="img/product.jpg" alt="i" class="hero-product__img">
-                                </div>
-                                <div class="hero-product">
-                                    <img src="img/product.jpg" alt="i" class="hero-product__img">
-                                </div>
-                            </div>
                             <div class="hero-slide__content">
-                                <h1 class="hero-slide__heading">Микровинты с нестандартной шаговой резьбой</h1>
+                                <h2 class="hero-slide__heading">Микровинты с нестандартной шаговой резьбой</h2>
                                 <p class="hero-slide__text">Подписи, объясняющие, почему этот товар уникален.</p>
 
                                 <div class="hero-slide__btns sm-show">
@@ -604,7 +615,78 @@
                                 </div>
                                 <a href="#" class="btn btn-primary sm-hide">Подробнее</a>
 
-                                <img src="img/hero-banners/banner-1.jpg" alt="banner" class="hero-slide__bg">
+                                <picture>
+                                    <source media="(min-width: 577px)" srcset="img/hero-banners/banner-2.jpg">
+                                    <img src="img/hero-banners/banner-mob-2.jpg" alt="banner" class="hero-slide__bg">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="hero-slide">
+                            <div class="hero-slide__content">
+                                <h2 class="hero-slide__heading">Микровинты с нестандартной шаговой резьбой</h2>
+                                <p class="hero-slide__text">Подписи, объясняющие, почему этот товар уникален.</p>
+
+                                <div class="hero-slide__btns sm-show">
+                                    <a href="#" class="btn btn-primary">Заказать</a>
+                                    <a href="#" class="btn btn-secondary">Подробнее</a>
+                                </div>
+                                <a href="#" class="btn btn-primary sm-hide">Подробнее</a>
+
+                                <picture>
+                                    <source media="(min-width: 577px)" srcset="img/hero-banners/banner-3.jpg">
+                                    <img src="img/hero-banners/banner-mob-3.jpg" alt="banner" class="hero-slide__bg">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="hero-slide">
+                            <div class="hero-slide__content">
+                                <h2 class="hero-slide__heading">Микровинты с нестандартной шаговой резьбой</h2>
+                                <p class="hero-slide__text">Подписи, объясняющие, почему этот товар уникален.</p>
+
+                                <div class="hero-slide__btns sm-show">
+                                    <a href="#" class="btn btn-primary">Заказать</a>
+                                    <a href="#" class="btn btn-secondary">Подробнее</a>
+                                </div>
+                                <a href="#" class="btn btn-primary sm-hide">Подробнее</a>
+
+                                <picture>
+                                    <source media="(min-width: 577px)" srcset="img/hero-banners/banner-4.jpg">
+                                    <img src="img/hero-banners/banner-mob-4.jpg" alt="banner" class="hero-slide__bg">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="hero-slide">
+                            <div class="hero-slide__content">
+                                <h2 class="hero-slide__heading">Микровинты с нестандартной шаговой резьбой</h2>
+                                <p class="hero-slide__text">Подписи, объясняющие, почему этот товар уникален.</p>
+
+                                <div class="hero-slide__btns sm-show">
+                                    <a href="#" class="btn btn-primary">Заказать</a>
+                                    <a href="#" class="btn btn-secondary">Подробнее</a>
+                                </div>
+                                <a href="#" class="btn btn-primary sm-hide">Подробнее</a>
+
+                                <picture>
+                                    <source media="(min-width: 577px)" srcset="img/hero-banners/banner-5.jpg">
+                                    <img src="img/hero-banners/banner-mob-5.jpg" alt="banner" class="hero-slide__bg">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="hero-slide">
+                            <div class="hero-slide__content">
+                                <h2 class="hero-slide__heading">Микровинты с нестандартной шаговой резьбой</h2>
+                                <p class="hero-slide__text">Подписи, объясняющие, почему этот товар уникален.</p>
+
+                                <div class="hero-slide__btns sm-show">
+                                    <a href="#" class="btn btn-primary">Заказать</a>
+                                    <a href="#" class="btn btn-secondary">Подробнее</a>
+                                </div>
+                                <a href="#" class="btn btn-primary sm-hide">Подробнее</a>
+
+                                <picture>
+                                    <source media="(min-width: 577px)" srcset="img/hero-banners/banner-6.jpg">
+                                    <img src="img/hero-banners/banner-mob-6.jpg" alt="banner" class="hero-slide__bg">
+                                </picture>
                             </div>
                         </div>
                     </div>

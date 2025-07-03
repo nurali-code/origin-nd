@@ -17,7 +17,6 @@ $(document).on('click', '[data-toggle]', function (e) {
     }
 });
 
-
 // custom select 
 $(document).ready(function () {
     $('select').each(function () {
@@ -82,7 +81,6 @@ $(document).ready(function () {
     });
 });
 
-
 // Вывод имени файла и расширения в .inp-file__label с добавлением иконки закрытия
 $(document).on('change', '.inp-file input[type="file"]', function () {
     const file = this.files && this.files[0];
@@ -101,7 +99,6 @@ $(document).on('change', '.inp-file input[type="file"]', function () {
         $clearIcon.remove();
     });
 });
-
 
 function compensateForScrollbar(inst) {
     var scrollbarWidth = window.innerWidth - $(document).width();
@@ -211,13 +208,12 @@ $(function () {
     });
 })
 
-
 const slickArrows = {
     prevArrow: '<button class="slick-prev"><svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg></button>',
     nextArrow: '<button class="slick-next"><svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg></button>',
 };
 
-$('.hero-slider, .hero-products').slick({
+$('.hero-slider').slick({
     slidesToShow: 1,
     infinite: false,
     dots: true,
@@ -226,7 +222,6 @@ $('.hero-slider, .hero-products').slick({
     // autoplay: true,
     slidesToScroll: 1,
 });
-
 
 $('.hero-features').slick({
     infinite: false,

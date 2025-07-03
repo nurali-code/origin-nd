@@ -24,27 +24,27 @@
         gap: $gap
         justify-content: space-between
 
-    &-products
-        left: 0
+    &-slider
+        border-radius: $b-rad
+        box-shadow: var(--card-shadow)
+        margin-bottom: 8px
+        &:not(.slick-initialized)
+            &>*:not(:first-child)
+                display: none
+
         .slick
             &-list,
             &-track
                 padding: 0 !important
                 height: 100%
+
             &-dots
                 position: absolute
                 bottom: 12px
                 left: 0
                 width: 100%
 
-    &-products,
-    &-slider
-        &:not(.slick-initialized)
-            &>*:not(:first-child)
-                display: none
-
     &-product
-        height: 100% !important
         margin: 0
         left: 0
         &__img
@@ -52,20 +52,15 @@
             height: 100%
             object-fit: cover
 
-    &-slider
-        border-radius: $b-rad
-        box-shadow: var(--card-shadow)
-        margin-bottom: 8px
-        .slick-dots:not(.hero-products .slick-dots)
-            display: none !important
-
     &-slide
         border-radius: $b-rad
         margin: 0
         &>*
-            width: 30%
+            &:first-child
+                width: 30%
+
             &:last-child
-                width: 70%
+                flex: 1
 
         &__heading
             font-size: var(--h1)
@@ -205,10 +200,10 @@
                 &>*
                     max-width: 330px
 
-        &-products
+        &-slider
             .slick
                 &-dots
-                    bottom: 8px
+                    bottom: 6px
 
     @media screen and ( max-width: 767px )
         &-slide
@@ -231,8 +226,9 @@
                         display: none
 
     @media screen and ( max-width: 576px )
-        &-content 
+        &-content
             gap: 8px
+
         &-slider
             box-shadow: none
             margin-bottom: 0px
@@ -247,9 +243,8 @@
             overflow: hidden
             border-radius: $b-rad
             &>*
-                width: 48%
-                &:last-child
-                    width: 52%
+                &:first-child
+                    width: 48%
 
             &__content
                 padding: 10px
@@ -317,7 +312,7 @@
     &__heading
         font-weight: 700
         font-size: var(--font-md)
-        min-height: calc( var(--font-md) * 2  )
+        min-height: calc( var(--font-md) * 2 )
         overflow: hidden
         text-overflow: ellipsis
         display: -webkit-box
@@ -407,7 +402,7 @@
             --amount: 2
 
     @media screen and ( max-width: 576px )
-        &-wraper 
+        &-wraper
             &>*:nth-child(n+5)
                 display: none
 
@@ -463,11 +458,11 @@
     border-radius: $b-rad
     aspect-ratio: 311/140
     cursor: pointer
-    transition: .3s ease all 
+    transition: .3s ease all
     &.active
 
     &:not(.active)
-        filter: grayscale(1) 
+        filter: grayscale(1)
         img
             opacity: .4
 
