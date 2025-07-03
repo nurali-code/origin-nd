@@ -113,6 +113,7 @@ $(function () {
     const $menuContent = $('[data-menu-content]');
 
     $(document).on('click', '[data-menu-btn]', function () {
+        $(this).addClass('active');
         compensateForScrollbar();
         $('body').addClass('overflow')
         $menuContent.addClass('active');
@@ -120,12 +121,14 @@ $(function () {
 
     $(document).on('click', '[data-menu-close]', function () {
         $menuContent.removeClass('active');
+        $('[data-menu-btn]').removeClass('active');
         compensateForScrollbar(0)
         $('body').removeClass('overflow')
     });
 
     $(document).on('click', function (e) {
         if (!$(e.target).closest('.menu, [data-menu-btn], .modal').length && $('.menu').hasClass('active')) {
+            $('[data-menu-btn]').removeClass('active');
             $menuContent.removeClass('active');
             compensateForScrollbar(0)
             $('body').removeClass('overflow')
@@ -143,7 +146,7 @@ $(function () {
 
     function hideModals() {
         if ($('.modal.active').length) {
-            $('.modal.active').removeClass('active');
+            $('.modal.active, a[href*="#modal-"]').removeClass('active');
             $('body').removeAttr('data-modal-show');
             if (!$('body').hasClass('overflow')) {
                 compensateForScrollbar(0);
@@ -152,6 +155,7 @@ $(function () {
     };
 
     $('a[href*="#modal-"]').on('click', function (e) {
+        $(this).addClass('active')
         e.preventDefault()
         showModal($(this).attr("href"));
 
@@ -201,7 +205,7 @@ $(function () {
     $(document).on('click', '[data-catalog-hover] .catalog-list__btn', function () {
         $(this).parent().addClass('active').siblings().removeClass('active');
     });
-    
+
     $(document).on('click', '.catalog-underlist__item--back', function () {
         $(this).parents('.catalog-list__item').removeClass('active');
     });
