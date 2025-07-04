@@ -219,7 +219,8 @@ $('.hero-slider').slick({
     dots: true,
     arrows: false,
     swipeToSlide: true,
-    // autoplay: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
     slidesToScroll: 1,
 });
 
