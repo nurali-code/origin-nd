@@ -53,8 +53,9 @@
 
     &-close
         position: absolute
-        top: 32px
-        right: 20px
+        padding: 10px
+        top: 22px
+        right: 10px
         .ic
             fill: $text-gray
             width: 24px
@@ -99,7 +100,7 @@
             transform: translateY(0%)
 
     @media screen and ( max-width: 991px )
-        &-catalog
+        &-lg
             .modal
-                &-content
-                    max-width: 400px
+                &-close
+                    right: 20px
