@@ -100,7 +100,7 @@
         background-color: $light
 
         &.slick-disabled
-            opacity: 0
+            opacity: .3
 
         .ic
             --ic-width: 24px
@@ -138,10 +138,20 @@
 
     &-disabled
         cursor: no-drop
-        border: 3px solid var(--white)
         pointer-events: none
         &::after
-            opacity: 0
+            opacity: .3
+
+    @media screen and ( max-width: 768px )
+        &-arrow 
+            svg 
+                fill: var(--link-color)
+
+        &-prev
+            left: 0
+
+        &-next 
+            right: 0
 
     @media screen and ( max-width: 576px )
         &-slider

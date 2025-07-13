@@ -1,13 +1,70 @@
-$(function () {
+$(document).ready(function () {
     $(window).on('scroll', function () {
         const headerHeight = $('header').outerHeight();
         const scrollTop = $(this).scrollTop();
         const $headerFixed = $('.header-fixed');
+        var $scrollbarWidth = window.innerWidth - $(document).width();
 
-        if (scrollTop > headerHeight) { $headerFixed.addClass('active'); }
-        else { $headerFixed.removeClass('active'); }
+        if (scrollTop > headerHeight) {
+            $headerFixed.addClass('active');
+            $($headerFixed).css('padding-right', $scrollbarWidth);
+        }
+        else {
+            $headerFixed.removeClass('active');
+            $($headerFixed).css('padding-right', '0');
+        }
     });
 });
+
+$(document).ready(function () {
+    $('.info').on('mouseenter', function () {
+        const $info = $(this).addClass('--show');
+        const $tooltip = $info.find('.info__text');
+
+        // Сброс позиции
+        $tooltip.css({
+            left: '',
+            right: '',
+            top: '100%',
+            bottom: '',
+            position: 'absolute'
+        });
+
+        // Считаем координаты
+        const rect = $tooltip[0].getBoundingClientRect();
+        const winW = $(window).width();
+        const winH = $(window).height();
+
+        let offsetLeft = 0;
+        let offsetTop = 0;
+
+        const overflowX = rect.right - winW;
+        const overflowY = rect.bottom - winH;
+
+        if (overflowX > 0) {
+            offsetLeft = -overflowX - 20; // 10px запас от края
+        }
+
+        if (overflowY > 0) {
+            offsetTop = -overflowY - 20;
+        }
+
+        // Получаем текущее значение left и top в числах
+        const currentLeft = parseFloat($tooltip.css('left')) || 0;
+        const currentTop = parseFloat($tooltip.css('top')) || 0;
+
+        // Смещаем
+        $tooltip.css({
+            left: currentLeft + offsetLeft + 'px',
+            top: currentTop + offsetTop + 'px'
+        });
+    });
+
+    $('.info').on('mouseleave', function () {
+        $(this).removeClass('--show');
+    });
+});
+
 
 $(document).on('click', '[data-toggle]', function (e) {
     e.preventDefault();
@@ -15,6 +72,12 @@ $(document).on('click', '[data-toggle]', function (e) {
     if ($this.data('toggle') == 'next') {
         $this.toggleClass('active').next().slideToggle(300);
     }
+});
+
+$(document).on('click', '[data-hiding]', function (e) {
+    e.preventDefault();
+    $(this).hide()
+    $(`[data-hiding-item="${$(this).data('hiding')}"]`).addClass('--show')
 });
 
 // custom select 
@@ -106,7 +169,7 @@ function compensateForScrollbar(inst) {
     else if (scrollbarWidth > 0) { $('body').css('margin-right', scrollbarWidth + 'px'); }
 }
 
-$(function () {
+$(document).ready(function () {
     const $menuContent = $('[data-menu-content]');
 
     $(document).on('click', '[data-menu-btn]', function () {
@@ -133,7 +196,7 @@ $(function () {
     });
 });
 
-$(function () {
+$(document).ready(function () {
     function showModal(id) {
         hideModals()
         compensateForScrollbar()
@@ -183,7 +246,12 @@ $(document).on('click input', '.amount-dec, .amount-inc, .amount-input', functio
     if (hasDataAttributes) {
         const $priceElement = $(`[data-price="${$amount.data('change')}"]`);
         const pricePerUnit = parseFloat($amount.data('price-val').replace(' ₽', ''));
-        $priceElement.text((currentValue * pricePerUnit).toFixed(2) + ' ₽');
+        const priceTotal = (currentValue * pricePerUnit).toFixed(2);
+        if (priceTotal > pricePerUnit) {
+            $priceElement.text(priceTotal + ' ₽');
+        } else {
+            $priceElement.text(pricePerUnit.toFixed(2) + ' ₽');
+        }
     }
 
     if ($amount.is('[data-card-amount]') && currentValue === 0) {
@@ -193,7 +261,7 @@ $(document).on('click input', '.amount-dec, .amount-inc, .amount-input', functio
     }
 });
 
-$(function () {
+$(document).ready(function () {
     $(document).on('mouseenter', '[data-catalog-hover] .catalog-list__btn', function () {
         if (window.innerWidth >= 992) {
             $(this).parent().addClass('active').siblings().removeClass('active');
@@ -208,79 +276,165 @@ $(function () {
     });
 })
 
-const slickArrows = {
-    prevArrow: '<button class="slick-prev"><svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg></button>',
-    nextArrow: '<button class="slick-next"><svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg></button>',
-};
+// Слайдеры
+$(document).ready(function () {
+    const slickArrows = {
+        prevArrow: '<button class="slick-prev"><svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg></button>',
+        nextArrow: '<button class="slick-next"><svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg></button>',
+    };
 
-$('.hero-slider').slick({
-    slidesToShow: 1,
-    infinite: false,
-    dots: true,
-    arrows: false,
-    swipeToSlide: true,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    slidesToScroll: 1,
-});
-
-$('.hero-features').slick({
-    infinite: false,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-    arrows: true,
-    ...slickArrows,
-    swipeToSlide: true,
-    responsive: [
-        {
-            breakpoint: 767,
-            settings: "unslick"
-
-        },
-    ]
-});
-
-$('.info-slider').slick({
-    slidesToShow: 1,
-    arrows: true,
-    swipeToSlide: true,
-    ...slickArrows,
-    slidesToScroll: 1,
-    responsive: [
-        {
-            breakpoint: 576,
-            settings: {
-                infinite: false,
-                arrows: false,
-                dots: true,
+    $('.product-slider').slick({
+        infinite: false,
+        speed: 300,
+        arrows: false,
+        dots: false,
+        swipeToSlide: true,
+        slidesToShow: 1,
+        asNavFor: '.product-nav',
+        touchThreshold: 9,
+        fade: true,
+        responsive: [
+            {
+                breakpoint: 1199,
+                settings: {
+                    fade: false,
+                    infinite: true,
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    fade: false,
+                    dots: true,
+                }
             }
-        },
-    ]
-});
+        ]
+    });
 
-$('.card-slider').slick({
-    infinite: false,
-    slidesToShow: 5,
-    arrows: true,
-    ...slickArrows,
-    slidesToScroll: 1,
-    responsive: [
-        {
-            breakpoint: 1400,
-            settings: { slidesToShow: 4, }
+    $('.product-nav').slick({
+        vertical: true,
+        infinite: false,
+        draggable: true,
+        swipeToSlide: () => {
+            $('.product-nav-item').lenght >= 4 ? ret = true : ret = false;
+            return ret;
         },
-        {
-            breakpoint: 991,
-            settings: { slidesToShow: 3, }
-        },
-        {
-            breakpoint: 768,
-            settings: { slidesToShow: 2, arrows: false, }
-        }
-    ]
-});
+        dots: false,
+        focusOnSelect: true,
+        verticalSwiping: true,
+        prevArrow: '<button class="slick-next"><svg class="ic"><use href="img/ic.svg#arrow-up"></use></svg></button>',
+        nextArrow: '<button class="slick-prev"><svg class="ic"><use href="img/ic.svg#arrow-down"></use></svg></button>',
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        asNavFor: '.product-slider',
+        responsive: [
+            {
+                breakpoint: 1199,
+                settings: {
+                    verticalSwiping: false,
+                    // ...slickArrows,
+                    slidesToShow: 4,
+                    vertical: false,
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: "unslick"
+            }
+        ]
+    });
 
-$(function () {
+    $('.hero-slider').slick({
+        slidesToShow: 1,
+        infinite: false,
+        dots: true,
+        arrows: false,
+        swipeToSlide: true,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        slidesToScroll: 1,
+    });
+
+    $('.hero-features').slick({
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        arrows: true,
+        ...slickArrows,
+        swipeToSlide: true,
+        responsive: [
+            {
+                breakpoint: 767,
+                settings: "unslick"
+
+            },
+        ]
+    });
+
+    $('.info-slider').slick({
+        slidesToShow: 1,
+        arrows: true,
+        swipeToSlide: true,
+        ...slickArrows,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 576,
+                settings: {
+                    infinite: false,
+                    arrows: false,
+                    dots: true,
+                }
+            },
+        ]
+    });
+
+    $('.card-slider').slick({
+        infinite: false,
+        slidesToShow: 5,
+        arrows: true,
+        ...slickArrows,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1400,
+                settings: { slidesToShow: 4, }
+            },
+            {
+                breakpoint: 991,
+                settings: { slidesToShow: 3, }
+            },
+            {
+                breakpoint: 768,
+                settings: { slidesToShow: 2, arrows: false, }
+            }
+        ]
+    });
+
+    $('.card-slider--md').slick({
+        infinite: false,
+        slidesToShow: 6,
+        arrows: true,
+        ...slickArrows,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1400,
+                settings: { slidesToShow: 5, }
+            },
+            {
+                breakpoint: 991,
+                settings: { slidesToShow: 4, }
+            },
+            {
+                breakpoint: 768,
+                settings: { slidesToShow: 2, }
+            }
+        ]
+    });
+})
+
+$(document).ready(function () {
     const $defaultTab = $('[data-tab-active]');
     if ($defaultTab.length) {
         $defaultTab.each(function () {
@@ -306,7 +460,11 @@ $(function () {
         const activeClass = $this.parents('[data-tab-active]').data('tab-active');
         const targetTab = $this.data('tab');
         $this.addClass(activeClass).siblings().removeClass(activeClass);
-        $this.parents('section').find('[data-tab-content]').removeClass('active');
+        // Сначала ищем родителя с data-tab-parent, если нет — section
+        const $parent = $this.closest('[data-tab-parent]').length
+            ? $this.closest('[data-tab-parent]')
+            : $this.parents('section');
+        $parent.find('[data-tab-content]').removeClass('active');
 
         if (targetTab === 'all') {
             $this.parents('section').find('[data-tab-content]').addClass('active');
@@ -336,4 +494,45 @@ $(document).on('click', '[data-card-add]', function (e) {
     $cardAction.find('[data-card-amount]').addClass('active').find('.amount-input').val(1);
 });
 
-$('input[type="tel"]').mask("+7-(999)-999-99-99", { placeholder: "+7-(___)-___-__-__" });
+$(document).ready(function () {
+    $('input[type="tel"]').mask("+7-(999)-999-99-99", { placeholder: "+7-(___)-___-__-__" });
+})
+
+$(document).ready(function () {
+    function setBodyPaddingForNavbar() {
+        if (window.innerWidth < 992) {
+            const navbarHeight = $('header .navbar').outerHeight();
+            $('body').css('padding-bottom', navbarHeight);
+        } else { $('body').css('padding-bottom', ''); }
+    }
+
+    setBodyPaddingForNavbar();
+    $(window).on('resize', setBodyPaddingForNavbar);
+});
+
+function badgeCounter(badge, action) {
+    $(`[data-badge="${badge}"]`).each(function () {
+        let count = parseInt($(this).text(), 10) || 0;
+        if (action === 'add') { count += 1; }
+        else { count -= 1; }
+        $(this).text(count);
+
+        if (count === 0) { $(this).hide(); }
+        else { $(this).show(); }
+    });
+}
+
+$(document).on('click', '.product-fav', function (e) {
+    e.preventDefault();
+    const $btn = $(this);
+    const $icon = $btn.find('use');
+    if ($btn.attr('data-fav') === 'add') {
+        $btn.attr('data-fav', 'remove');
+        $icon.attr('href', 'img/ic.svg#fav-fill');
+        badgeCounter('fav', 'add')
+    } else {
+        $btn.attr('data-fav', 'add');
+        $icon.attr('href', 'img/ic.svg#fav');
+        badgeCounter('fav', 'remove')
+    }
+});

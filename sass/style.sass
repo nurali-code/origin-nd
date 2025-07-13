@@ -7,6 +7,7 @@
 @import 'flex'
 @import 'slick'
 @import 'header'
+@import 'product'
 
 .hero
     padding-top: 0
@@ -25,6 +26,8 @@
         justify-content: space-between
 
     &-slider
+        width: 100%
+        left: 0
         border-radius: $b-rad
         box-shadow: var(--card-shadow)
         margin-bottom: 8px
@@ -309,6 +312,10 @@
         color: $dark
         padding: 4px 4px 0 4px
 
+    &-subbody
+        color: $dark
+        padding: 4px 4px 0 4px
+
     &__heading
         font-weight: 700
         font-size: var(--font-md)
@@ -356,11 +363,6 @@
     &-amount
         max-width: 150px
         margin: 0 auto
-        &:not(.active)
-            display: none
-
-        &.active
-            animation: fadeIn .3s ease forwards
 
     &-wraper
         display: flex
@@ -373,7 +375,8 @@
         &>*
             width: calc( (100% - (16px *( var(--amount) - 1))) / var(--amount) )
 
-    &-slider
+    &-slider,
+    &-slider--md
         &:not(.slick-initialized)
             display: flex
             gap: $gap
@@ -388,6 +391,27 @@
 
             &-img
                 aspect-ratio: 245/260
+
+    &--md
+        gap: 0
+        padding-bottom: 0
+        .card
+            &-header
+            &-body
+                padding: 8px
+                gap: 8px
+
+            &-img
+
+            &__heading
+                font-weight: normal
+                font-size: $font-sm
+                line-height: 120%
+                min-height: calc(var(--font-sm) * 2.2857)
+
+            &__price
+                padding: 0
+                line-height: 113%
 
     @media screen and ( max-width: 1400px )
         &-wraper
@@ -834,6 +858,38 @@
 
         &-img
             display: none
+
+.breadcumbs
+    list-style: none
+    padding: 0
+    gap: 8px $gap
+    flex-wrap: wrap
+    margin: 0 0 12px
+    &-link
+        font-size: $font-sm
+        color: $text-gray
+
+    &-li
+        margin: 0
+        gap: $gap
+        &>*
+            vertical-align: middle
+            display: inline-block
+
+        &:last-child
+            .ic
+                display: none
+
+    .ic
+        fill: $text-gray
+
+    @media screen and ( max-width: 1199px )
+        --base-gap: 8px
+
+    @media screen and ( max-width: 991px )
+        --base-gap: 4px
+        margin: 0 0 16px
+
 
 @import 'footer'
 @import 'modal'

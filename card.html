@@ -1,0 +1,1756 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Origin | Интернет-магазин крепежа</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script defer src="js/jquery.min.js"></script>
+    <script defer src="js/slick.min.js"></script>
+    <script defer src="js/jquery.maskedinput.min.js"></script>
+    <script defer src="js/script.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <p class="header-top__text">
+                    Свяжитесь с нами удобным способом — ответим на все ваши вопросы!
+                </p>
+                <div class="header-contact">
+                    <a href="tel:+74951832333" class="link-contact">
+                        <svg class="ic ic-md"><use href="img/ic.svg#call"></use></svg>
+                        +7 495 183-23-33
+                    </a>
+                    <a href="mailto:info@originkrepeg.ru" class="link-contact">
+                        <svg class="ic ic-md"><use href="img/ic.svg#email"></use></svg>
+                        info@originkrepeg.ru
+                    </a>
+                    <div class="social">
+                        <a href="#" class="social-link">
+                            <svg class="ic ic-lg"><use href="img/ic.svg#telegram"></use></svg>
+                        </a>
+                        <a href="#" class="social-link">
+                            <svg class="ic ic-lg"><use href="img/ic.svg#whatsapp"></use></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-middle">
+                <a href="#" class="header-logo"><img src="img/origin-logo.svg" alt="i"></a>
+                <nav class="header-nav">
+                    <ul class="header-menu">
+                        <li class="header-menu__item header-submenu__wrap">
+                            <button class="header-submenu__btn"> О компании
+                                <svg class="ic"><use href="img/ic.svg#arrow-down"></use></svg>
+                            </button>
+                            <ul class="header-submenu">
+                                <li class="header-submenu__item">
+                                    <a href="#" class="header-submenu__link">Производство</a>
+                                </li>
+                                <li class="header-submenu__item">
+                                    <a href="#" class="header-submenu__link">Оплата и доставка</a>
+                                </li>
+                                <li class="header-submenu__item">
+                                    <a href="#" class="header-submenu__link">Вакансии</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="header-menu__item">
+                            <a href="#" class="header-menu__link">Производство</a>
+                        </li>
+                        <li class="header-menu__item">
+                            <a href="#" class="header-menu__link">Услуги</a>
+                        </li>
+                        <li class="header-menu__item">
+                            <a href="#" class="header-menu__link">Оплата и доставка</a>
+                        </li>
+                        <li class="header-menu__item">
+                            <a href="#" class="header-menu__link">Вакансии</a>
+                        </li>
+                        <li class="header-menu__item">
+                            <a href="#" class="header-menu__link">Поставщикам</a>
+                        </li>
+                        <li class="header-menu__item">
+                            <a href="#" class="header-menu__link">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-bottom">
+                <a href="#modal-catalog" class="btn btn-primary catalog-btn header-bottom__catalog">
+                    <svg class="ic"><use href="img/ic.svg#list"></use></svg> Каталог
+                </a>
+                <button class="btn btn-icon btn-primary header-menu__btn" data-menu-btn><svg class="ic ic-lg"><use href="img/ic.svg#menu"></use></svg></button>
+                <a href="#" class="logo header-logo header-bottom__logo"><img src="img/origin-logo.svg" alt="i"></a>
+                <form class="searchbar">
+                    <input type="search" required placeholder="Найти товар" class="searchbar__input">
+                    <button class="searchbar__btn"><svg class="ic ic-md"><use href="img/ic.svg#search"></use></svg></button>
+                </form>
+                <a href="#modal-req-2" class="btn btn-outline-primary lg-show">Запросить расчет
+                    <svg class="ic"><use href="img/ic.svg#calc"></use></svg>
+                </a>
+                <a href="#modal-call_request" class="btn btn-outline-primary lg-show">Заказать звонок
+                    <svg class="ic"><use href="img/ic.svg#phone"></use></svg>
+                </a>
+                <a href="#modal-search" class="btn btn-outline btn-icon searchbar-toggler">
+                    <svg class="ic"><use href="img/ic.svg#search"></use></svg>
+                </a>
+                <a href="#" class="ic-btn">
+                    <span class="badge badge--sm badge-primary" data-badge="fav">0</span>
+                    <svg class="ic ic-xl"><use href="img/ic.svg#fav"></use></svg>
+                    <span class="ic-btn__text">Избранное</span> 
+                </a>
+                <a href="#" class="ic-btn">
+                    <span class="badge badge--sm badge-primary" data-badge="cart">0</span>
+                    <svg class="ic ic-xl"><use href="img/ic.svg#cart"></use></svg>
+                    <span class="ic-btn__text">Корзина</span> 
+                </a>
+                <a href="#modal-login" class="ic-btn">
+                    <svg class="ic ic-xl"><use href="img/ic.svg#user"></use></svg> 
+                    <span class="ic-btn__text">Войти</span> 
+                </a>
+            </div>
+        </div>
+
+        <div class="header-fixed">
+            <div class="container header-fixed__container">
+                <a href="#" class="header-logo"><img src="img/origin-logo.svg" alt="i"></a>
+                <div class="header-fixed__row">
+                    <a href="#modal-catalog" class="btn btn-primary catalog-btn">
+                        <svg class="ic"><use href="img/ic.svg#list"></use></svg> Каталог
+                    </a>
+                    <a href="#modal-search" class="btn btn-outline btn-icon">
+                        <svg class="ic"><use href="img/ic.svg#search"></use></svg>
+                    </a>
+                    <a href="#modal-req-2" class="btn btn-outline-primary xxl-show">Запросить расчет
+                        <svg class="ic"><use href="img/ic.svg#calc"></use></svg>
+                    </a>
+                    <a href="#modal-call_request" class="btn btn-outline-primary xxl-show">Заказать звонок
+                        <svg class="ic"><use href="img/ic.svg#phone"></use></svg>
+                    </a>
+                </div>
+                <div class="header-fixed__contact">
+                    <a href="tel:+74951832333" class="link-contact">
+                        <svg class="ic ic-md"><use href="img/ic.svg#call"></use></svg>
+                        +7 495 183-23-33
+                    </a>
+                    <a href="mailto:info@originkrepeg.ru" class="link-contact">
+                        <svg class="ic ic-md"><use href="img/ic.svg#email"></use></svg>
+                        info@originkrepeg.ru
+                    </a>
+                    <div class="header-fixed__info">
+                        <p class="header-fixed__text">
+                            Свяжитесь с нами удобным способом — ответим на все ваши вопросы!
+                        </p>
+                        <div class="social">
+                            <a href="#" class="social-link">
+                                <svg class="ic ic-lg"><use href="img/ic.svg#telegram"></use></svg>
+                            </a>
+                            <a href="#" class="social-link">
+                                <svg class="ic ic-lg"><use href="img/ic.svg#whatsapp"></use></svg>
+                            </a>
+                        </div>
+                        <p class="header-fixed__text">
+                            <span class="c-gray">Режим работы:</span> <br>
+                            Понедельник – пятница: 09:00–18:00  <br>
+                            Суббота, воскресенье – выходные.
+                        </p>
+                    </div>
+                </div>
+                <a href="#" class="ic-btn">
+                    <span class="badge badge--sm badge-primary" data-badge="fav">0</span>
+                    <svg class="ic ic-xl"><use href="img/ic.svg#fav"></use></svg>
+                    <span class="ic-btn__text">Избранное</span> 
+                </a>
+                <a href="#" class="ic-btn">
+                    <span class="badge badge--sm badge-primary" data-badge="cart">0</span>
+                    <svg class="ic ic-xl"><use href="img/ic.svg#cart"></use></svg>
+                    <span class="ic-btn__text">Корзина</span> 
+                </a>
+                <a href="#modal-login" class="ic-btn">
+                    <svg class="ic ic-xl"><use href="img/ic.svg#user"></use></svg> 
+                    <span class="ic-btn__text">Войти</span> 
+                </a>
+                <button data-menu-btn class="btn btn-icon btn-gray header-fixed__menu"><svg class="ic ic-lg"><use href="img/ic.svg#menu"></use></svg></button>
+            </div>
+        </div>
+
+        <div class="menu-wrap" data-menu-content>
+            <div class="menu" data-menu-content>
+                <div class="menu-header">
+                    <h3 class="menu-heading">Меню</h3>
+                    <button class="menu-close" data-menu-close title="Закрыть меню">
+                        <svg class="ic"><use href="img/ic.svg#close"></use></svg>
+                    </button>
+                </div>
+                <ul class="menu-list">
+                    <li class="menu-list__item">
+                        <a href="#modal-catalog" class="menu-list__link" data-toggle="next"> Каталог 
+                            <svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg>
+                        </a>
+                    </li>
+                    <li class="menu-list__item">
+                        <button class="menu-list__link" data-toggle="next"> О компании
+                            <svg class="ic"><use href="img/ic.svg#arrow-down"></use></svg>
+                        </button>
+                        <ul class="menu-submenu">
+                            <li class="menu-submenu__item">
+                                <a href="#" class="menu-submenu__link">Производство</a>
+                            </li>
+                            <li class="menu-submenu__item">
+                                <a href="#" class="menu-submenu__link">Оплата и доставка</a>
+                            </li>
+                            <li class="menu-submenu__item">
+                                <a href="#" class="menu-submenu__link">Вакансии</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-list__item">
+                        <a href="#" class="menu-list__link">Производство</a>
+                    </li>
+                    <li class="menu-list__item">
+                        <a href="#" class="menu-list__link">Услуги</a>
+                    </li>
+                    <li class="menu-list__item">
+                        <a href="#" class="menu-list__link">Оплата и доставка</a>
+                    </li>
+                    <li class="menu-list__item">
+                        <a href="#" class="menu-list__link">Вакансии</a>
+                    </li>
+                    <li class="menu-list__item">
+                        <a href="#" class="menu-list__link">Поставщикам</a>
+                    </li>
+                    <li class="menu-list__item">
+                        <a href="#" class="menu-list__link">Контакты</a>
+                    </li>
+                </ul>
+                <div class="menu-footer">
+                    <a href="#modal-req-2" class="btn btn-outline-primary xxl-hide">Запросить расчет
+                        <svg class="ic"><use href="img/ic.svg#calc"></use></svg>
+                    </a>
+                    <a href="#modal-call_request" class="btn btn-outline-primary xxl-hide">Заказать звонок
+                        <svg class="ic"><use href="img/ic.svg#phone"></use></svg>
+                    </a>
+                    <a href="tel:+74951832333" class="btn link-contact lg-hide">
+                        <svg class="ic ic-md"><use href="img/ic.svg#call"></use></svg>
+                        +7 495 183-23-33
+                    </a>
+                    <a href="mailto:info@originkrepeg.ru" class="btn link-contact lg-hide">
+                        <svg class="ic ic-md"><use href="img/ic.svg#email"></use></svg>
+                        info@originkrepeg.ru
+                    </a>
+                    <a href="#" class="btn social-link__tg lg-hide">
+                        <svg class="ic ic-lg"><use href="img/ic.svg#telegram"></use></svg>
+                        Напишите в чат
+                    </a>
+                    <a href="#" class="btn social-link__wa lg-hide">
+                        <svg class="ic ic-lg"><use href="img/ic.svg#whatsapp"></use></svg>
+                        Напишите в чат
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="navbar-order">
+                <span class="navbar-order__price" data-price="navbar__val">13.00 ₽</span>
+                <span class="navbar-order__stock">
+                    <svg class="ic">
+                        <use href="img/ic.svg#instock"></use>
+                    </svg>
+                    <span class="navbar-order__text">В наличии: <br> 1 000 шт</span>
+                </span>
+                <div class="navbar-order__action" data-card-catcher>
+                    <button class="btn btn-secondary" data-card-add>
+                        <svg><use href="img/ic.svg#cart"></use></svg> В корзину
+                    </button>
+
+                    <div class="navbar-order__amount amount" data-price-val="13.00 ₽" data-card-amount data-change="navbar__val">
+                        <a href="#" class="amount-dec">
+                            <svg class="ic"><use href="img/ic.svg#subtract"></use></svg>
+                        </a>
+                        <input type="number" inputmode="numeric" value="1" min="0" class="amount-input">
+                        <a href="#" class="amount-inc">
+                            <svg class="ic"><use href="img/ic.svg#add"></use></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <ul class="navbar-list">
+                <li>
+                    <a href="main.html" class="ic-btn">
+                        <svg class="ic ic-xl"><use href="img/ic.svg#home"></use></svg> Главная
+                    </a>
+                </li>
+                <li>
+                    <button class="ic-btn" data-menu-btn>
+                        <svg class="ic ic-xl"><use href="img/ic.svg#menu"></use></svg> Меню
+                    </button>
+                </li>
+                <li>
+                    <a href="#modal-catalog" class="ic-btn">
+                        <svg class="ic ic-xl"><use href="img/ic.svg#list"></use></svg> Каталог
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="ic-btn">
+                        <span class="badge badge--sm badge-primary" data-badge="fav">0</span>
+                        <svg class="ic ic-xl"><use href="img/ic.svg#fav"></use></svg> Избранное
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="ic-btn">
+                        <span class="badge badge--sm badge-primary" data-badge="cart">0</span>
+                        <svg class="ic ic-xl"><use href="img/ic.svg#cart"></use></svg> Корзина
+                    </a>
+                </li>
+                <li>
+                    <a href="#modal-login" class="ic-btn">
+                        <svg class="ic ic-xl"><use href="img/ic.svg#user"></use></svg>  Кабинет
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="product">
+        <div class="container">
+            <ul class="breadcumbs">
+                <li class="breadcumbs-li">
+                    <a href="#" class="breadcumbs-link">Главная</a>
+                    <svg class="ic">
+                        <use href="img/ic.svg#arrow-right"></use>
+                    </svg>
+                </li>
+                <li class="breadcumbs-li">
+                    <a href="#" class="breadcumbs-link">Каталог</a>
+                    <svg class="ic">
+                        <use href="img/ic.svg#arrow-right"></use>
+                    </svg>
+                </li>
+                <li class="breadcumbs-li">
+                    <a href="#" class="breadcumbs-link">Болты</a>
+                    <svg class="ic">
+                        <use href="img/ic.svg#arrow-right"></use>
+                    </svg>
+                </li>
+                <li class="breadcumbs-li">
+                    <a href="#" class="breadcumbs-link">DIN 561 A Болт установочный</a>
+                    <svg class="ic">
+                        <use href="img/ic.svg#arrow-right"></use>
+                    </svg>
+                </li>
+            </ul>
+            <h1>DIN 561 A Болт установочный</h1>
+            <div class="product-wrap">
+                <div class="product-img">
+                    <div class="product-nav">
+                        <div class="product-nav-item">
+                            <img src="img/poduct.jpg" alt="i">
+                        </div>
+                        <div class="product-nav-item">
+                            <img src="img/poduct.jpg" alt="i">
+                        </div>
+                        <div class="product-nav-item">
+                            <img src="img/poduct.jpg" alt="i">
+                        </div>
+                        <div class="product-nav-item">
+                            <img src="img/poduct.jpg" alt="i">
+                        </div>
+                        <div class="product-nav-item">
+                            <img src="img/poduct.jpg" alt="i">
+                        </div>
+                    </div>
+                    <div class="product-slider">
+                        <div class="product-slider-item">
+                            <img src="img/poduct.jpg" alt="i">
+                        </div>
+                        <div class="product-slider-item">
+                            <img src="img/poduct.jpg" alt="i">
+                        </div>
+                        <div class="product-slider-item">
+                            <img src="img/poduct.jpg" alt="i">
+                        </div>
+                        <div class="product-slider-item">
+                            <img src="img/poduct.jpg" alt="i">
+                        </div>
+                        <div class="product-slider-item">
+                            <img src="img/poduct.jpg" alt="i">
+                        </div>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <div class="product-row">
+                        <div class="product-main">
+                            <p class="product-art">
+                                <span>Артикул: <b class="product-art__id">12944</b></span>
+                                <button class="product-fav" data-fav="add">
+                                    <svg class="ic ic-lg">
+                                        <use href="img/ic.svg#fav"></use>
+                                    </svg>
+                                </button>
+                            </p>
+                            <div class="product-price">
+                                <h2 class="product-price__val">13.00 ₽/шт
+                                    <span class="info">
+                                        <svg class="ic ic-md">
+                                            <use href="img/ic.svg#info"></use>
+                                        </svg>
+                                        <span class="info__text">   
+                                            Цена указана за минимальную партию. При заказе на сумму более 50 000 руб. действует индивидуальная скидка. Для товаров "под заказ" указана последняя продажная цена.
+                                        </span>
+                                    </span>
+                                </h2>
+                                <p class="product-price__descr">
+                                    Цена действует только при заказе на сайте и может отличаться от цен, выставленных
+                                    менеджером по заявке.
+                                </p>
+                            </div>
+                            <p class="product-stock">
+                                <svg class="ic">
+                                    <use href="img/ic.svg#instock"></use>
+                                </svg>
+                                <span class="product-stock__text">В наличии:
+                                    <span class="product-stock__descr">1 000 шт</span>
+                                </span>
+                            </p>
+                            <div class="product-btns">
+                                <div class="card-action" data-card-catcher>
+                                    <button class="btn btn-primary" data-card-add>
+                                        <svg>
+                                            <use href="img/ic.svg#cart"></use>
+                                        </svg> В корзину
+                                    </button>
+
+                                    <div class="card-amount amount" data-card-amount>
+                                        <a href="#" class="amount-dec">
+                                            <svg class="ic">
+                                                <use href="img/ic.svg#subtract"></use>
+                                            </svg>
+                                        </a>
+                                        <input type="number" value="1" min="0" class="amount-input">
+                                        <a href="#" class="amount-inc">
+                                            <svg class="ic">
+                                                <use href="img/ic.svg#add"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                                <a href="#modal-oneclick_2" class="btn btn-secondary">
+                                    <svg>
+                                        <use href="img/ic.svg#lightning"></use>
+                                    </svg> Купить в 1 клик
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="product-delivery">
+                            <div class="product-delivery__item">
+                                <h3 class="product-delivery__heading">
+                                    <svg class="ic ic-lg">
+                                        <use href="img/ic.svg#packege"></use>
+                                    </svg>
+                                    <span>Способы получения заказа:</span>
+                                </h3>
+
+                                <div class="product-delivery__list list-disc">
+                                    <li>Самовывоз со склада — сегодня.</li>
+                                    <li class="c-gray">Доставка по Москве курьером — на следующий день.</li>
+                                    <li>Доставка по России.
+                                        <span class="info">
+                                        <svg class="ic ic-md">
+                                            <use href="img/ic.svg#info"></use>
+                                        </svg>
+                                        <span class="info__text">   
+                                            <ul class="list-disc">
+                                                <li>До Москвы и Московской области — от 612 ₽.</li>
+                                                <li>До терминала транспортной компании — бесплатно.</li>
+                                                <li>До пункта отправки СДЭК — бесплатно.</li>
+                                                <li>По Ленинградской области — точную стоимость уточняйте у консультанта.</li>
+                                                <li>Доставка по России выбранной вами транспортной компанией.</li>
+                                            </ul>
+                                        </span>
+                                    </span>
+                                    </li>
+                                </div>
+                            </div>
+
+                            <div class="product-delivery__item">
+                                <h3 class="product-delivery__heading">
+                                    <svg class="ic ic-lg">
+                                        <use href="img/ic.svg#help"></use>
+                                    </svg>
+                                    <span>Поможем выбрать</span>
+                                </h3>
+                                <p class="product-delivery__text">
+                                    Не можете определиться с выбором?
+                                    Позвоните нам или напишите в чат — мы поможем!
+                                </p>
+
+                                <div class="product-delivery__contact">
+                                    <a href="tel:+74951832333" class="link-contact">
+                                        <svg class="ic ic-md">
+                                            <use href="img/ic.svg#call"></use>
+                                        </svg>
+                                        +7 495 183-23-33
+                                    </a>
+                                    <div class="social">
+                                        <a href="#" class="social-link">
+                                            <svg class="ic ic-lg">
+                                                <use href="img/ic.svg#telegram"></use>
+                                            </svg>
+                                        </a>
+                                        <a href="#" class="social-link">
+                                            <svg class="ic ic-lg">
+                                                <use href="img/ic.svg#whatsapp"></use>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-features">
+                        <div class="product-feature">
+                            <img src="img/hero-features/icon-card-1.svg" alt="i" class="product-feature__icon">
+                            <div class="product-feature__title">
+                                <h3 class="product-feature__heading">Оплата и доставка</h3>
+                                <p class="product-feature__text">Все виды оплаты и удобная логистика.</p>
+                            </div>
+                        </div>
+                        <div class="product-feature">
+                            <img src="img/hero-features/icon-card-4.svg" alt="i" class="product-feature__icon">
+                            <div class="product-feature__title">
+                                <h3 class="product-feature__heading">Услуги</h3>
+                                <p class="product-feature__text">Гальваническое покрытие, доработка и многое другое.</p>
+                            </div>
+                        </div>
+                        <div class="product-feature">
+                            <img src="img/hero-features/icon-card-5.svg" alt="i" class="product-feature__icon">
+                            <div class="product-feature__title">
+                                <h3 class="product-feature__heading">Сертификаты качества</h3>
+                                <p class="product-feature__text">Только качественный товар!</p>
+                            </div>
+                        </div>
+                        <div class="product-feature">
+                            <img src="img/hero-features/icon-card-3.svg" alt="i" class="product-feature__icon">
+                            <div class="product-feature__title">
+                                <h3 class="product-feature__heading">Любовь и уважение</h3>
+                                <p class="product-feature__text">Гибкие условия сотрудничества и скидки на объем.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-description">
+                <div class="product-info" data-tab-parent>
+                    <div class="product-tab" data-tab-active="active_line" data-tab-diactivate="767">
+                        <button class="product-subheading active_line"
+                            data-tab="characteristics">Характеристики</button>
+                        <button class="product-subheading" data-tab="description">Описание</button>
+                    </div>
+
+                    <div class="product-tab__content" data-tab-content="characteristics">
+                        <h3 class="product-subheading active_line md-show">Характеристики</h3>
+                        <ul class="product-list">
+                            <li class="product-list__li">
+                                <span class="product-list__heading">Длина, мм</span>
+                                <span class="product-list__text">16</span>
+                            </li>
+                            <li class="product-list__li">
+                                <span class="product-list__heading">Класс прочности</span>
+                                <span class="product-list__text">8.8</span>
+                            </li>
+                            <li class="product-list__li">
+                                <span class="product-list__heading">Диаметр, мм</span>
+                                <span class="product-list__text">М5</span>
+                            </li>
+                            <li class="product-list__li">
+                                <span class="product-list__heading">Материал</span>
+                                <span class="product-list__text">Сталь</span>
+                            </li>
+                            <li class="product-list__li">
+                                <span class="product-list__heading">Исполнение</span>
+                                <span class="product-list__text">Американский тип (АТ)</span>
+                            </li>
+                            <li class="product-list__li">
+                                <span class="product-list__heading">Базовая единица</span>
+                                <span class="product-list__text">шт</span>
+                            </li>
+                            <li class="product-list__li">
+                                <span class="product-list__heading">Покрытие</span>
+                                <span class="product-list__text">Белый цинк</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="product-tab__content" data-tab-content="description">
+                        <h3 class="product-subheading active_line md-show">Описание</h3>
+                        <p>
+                            Установочный болт DIN 561 A представляет собой крепёжный элемент с квадратной головкой и
+                            полной метрической резьбой, соответствующий требованиям стандарта DIN 561. Применяется в
+                            узлах, где необходима жёсткая фиксация деталей в определённом положении без возможности их
+                            смещения в процессе эксплуатации.
+                            <br><br>
+                            Болты данного типа широко используются в машиностроении, станкостроении, приборостроении, а
+                            также при сборке металлоконструкций <span data-hiding-item="description">и различных
+                                промышленных механизмов. Конструкция болта
+                                обеспечивает надёжную установку в крепёжное отверстие с плотной посадкой, что позволяет
+                                выдерживать как статические, так и переменные нагрузки. Квадратная головка исключает
+                                проворачивание при монтаже и демонтаже, обеспечивая устойчивое положение крепёжного
+                                элемента
+                                в корпусе изделия или конструкции.</span>
+                            <button class="hiding" data-hiding="description">Читать далее</button>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="product-contact" data-tab-parent>
+                    <div class="product-tab" data-tab-active="active_line">
+                        <button class="product-subheading active_line" data-tab="product_contact">Где получить
+                            товар</button>
+                        <button class="product-subheading" data-tab="product_form">Задать вопрос</button>
+                    </div>
+
+                    <div class="product-contact__content" data-tab-content="product_contact">
+                        <p class="product-contact__text">
+                            Самовывоз доступен после предварительного согласования по адресу: <br>
+                            <strong>Московская область, г. Долгопрудный, Береговой проезд, 9.</strong>
+                        </p>
+
+                        <div class="product-contact__wrap">
+                            <p class="product-contact__col">
+                                <span class="c-gray">Режим работы:</span> <br>
+                                Понедельник – пятница: 09:00–18:00; <br>
+                                Суббота, воскресенье – выходные.
+                            </p>
+
+                            <div class="product-contact__links">
+                                <div class="social">
+                                    <a href="#" class="social-link">
+                                        <svg class="ic ic-lg">
+                                            <use href="img/ic.svg#telegram"></use>
+                                        </svg>
+                                    </a>
+                                    <a href="#" class="social-link">
+                                        <svg class="ic ic-lg">
+                                            <use href="img/ic.svg#whatsapp"></use>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <a href="tel:+74951832333" class="link-contact">
+                                    <svg class="ic ic-md">
+                                        <use href="img/ic.svg#call"></use>
+                                    </svg> +7 495 183-23-33
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-contact__form md-hide" data-tab-content="product_form">
+                        <form action="#" class="form form--sm">
+                            <div class="form-group">
+                                <label for="question" class="form-label">Оставьте свой вопрос, и мы подберём для вас
+                                    оптимальное решение</label>
+                                <textarea name="question" id="question" class="bg-ligth"
+                                    placeholder="Ваше обращение" required></textarea>
+                            </div>
+                            <div class="form-row">
+                                <div class="inp-file">
+                                    <input type="file" name="product_file" id="product_file">
+                                    <label for="product_file" class="inp-file__label">
+                                        <svg class="ic">
+                                            <use href="img/ic.svg#paperclip"></use>
+                                        </svg>
+                                        <span>Прикрепить файл</span>
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Отправить</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="contact-wrap md-show">
+                        <div class="contact-col">
+                            <div class="contact-box">
+                                <svg class="ic ic-lg md-show">
+                                    <use href="img/ic.svg#contact"></use>
+                                </svg>
+                                <div class="contact-title">
+                                    <h2>Не нашли нужную информацию?</h2>
+                                    <p>Оставьте свой запрос, и мы подберём для вас оптимальное решение.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <form class="form contact-form">
+                            <div class="form-group form-group--md">
+                                <div class="inp-group">
+                                    <input type="text" id="contact-name" placeholder="Ваше имя" class="inp-field">
+                                    <label for="contact-name" class="inp-label">Ваше имя</label>
+                                </div>
+                                <div class="inp-group">
+                                    <input type="email" id="contact-email" placeholder="Ваша почта" class="inp-field">
+                                    <label for="contact-email" class="inp-label">Ваша почта</label>
+                                </div>
+                                <div class="inp-group">
+                                    <input type="tel" id="contact-tel" placeholder="Ваш телефон" class="inp-field">
+                                    <label for="contact-tel" class="inp-label">Ваш телефон</label>
+                                </div>
+                                <select>
+                                    <option hidden>Предпочтительный вариант ответа</option>
+                                    <option value="Вариант ответа 1">Вариант ответа 1</option>
+                                    <option value="Вариант ответа 2">Вариант ответа 2</option>
+                                </select>
+                                <div class="inp-group">
+                                    <textarea placeholder="Ваше обращение" id="contact-msg"
+                                        class="inp-field inp-textarea--lg"></textarea>
+                                    <label for="contact-msg" class="inp-label">Ваше обращение</label>
+                                </div>
+
+                                <div class="inp-file">
+                                    <input type="file" name="file" id="file">
+                                    <label for="file" class="inp-file__label">
+                                        <svg class="ic">
+                                            <use href="img/ic.svg#paperclip"></use>
+                                        </svg>
+                                        <span>Прикрепить файл</span>
+                                    </label>
+                                </div>
+
+                                <div class="inp-checkbox inp-checkbox--sm">
+                                    <input type="checkbox" required name="checkbox" id="checkbox_33">
+                                    <label for="checkbox_33" class="inp-checkbox__label">
+                                        Я согласен(а) с обработкой персональных данных в соответствии с
+                                        <a href="#" class="c-danger">политикой конфиденциальности.</a>
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Отправить</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Ранее вы смотрели</h2>
+
+            <div class="card-slider--md">
+                <div class="card card--md">
+                    <a href="#" class="card-header">
+                        <img src="img/poduct.jpg" class="card-img" alt="i" loading="lazy">
+                    </a>
+                    <a href="#" class="card-body">
+                        <h3 class="card__heading">
+                            Болт М6х12 8.8 бел. цинк DIN 6921
+                        </h3>
+                        <h4 class="card__price">18.50 ₽/шт</h4>
+                    </a>
+                </div>
+                <div class="card card--md">
+                    <a href="#" class="card-header">
+                        <img src="img/poduct.jpg" class="card-img" alt="i" loading="lazy">
+                    </a>
+                    <a href="#" class="card-body">
+                        <h3 class="card__heading">
+                            Болт М6х12 8.8 бел. цинк DIN 6921
+                        </h3>
+                        <h4 class="card__price">18.50 ₽/шт</h4>
+                    </a>
+                </div>
+                <div class="card card--md">
+                    <a href="#" class="card-header">
+                        <img src="img/poduct.jpg" class="card-img" alt="i" loading="lazy">
+                    </a>
+                    <a href="#" class="card-body">
+                        <h3 class="card__heading">
+                            Болт М6х12 8.8 бел. цинк DIN 6921
+                        </h3>
+                        <h4 class="card__price">18.50 ₽/шт</h4>
+                    </a>
+                </div>
+                <div class="card card--md">
+                    <a href="#" class="card-header">
+                        <img src="img/poduct.jpg" class="card-img" alt="i" loading="lazy">
+                    </a>
+                    <a href="#" class="card-body">
+                        <h3 class="card__heading">
+                            Болт М6х12 8.8 бел. цинк DIN 6921
+                        </h3>
+                        <h4 class="card__price">18.50 ₽/шт</h4>
+                    </a>
+                </div>
+                <div class="card card--md">
+                    <a href="#" class="card-header">
+                        <img src="img/poduct.jpg" class="card-img" alt="i" loading="lazy">
+                    </a>
+                    <a href="#" class="card-body">
+                        <h3 class="card__heading">
+                            Болт М6х12 8.8 бел. цинк DIN 6921
+                        </h3>
+                        <h4 class="card__price">18.50 ₽/шт</h4>
+                    </a>
+                </div>
+                <div class="card card--md">
+                    <a href="#" class="card-header">
+                        <img src="img/poduct.jpg" class="card-img" alt="i" loading="lazy">
+                    </a>
+                    <a href="#" class="card-body">
+                        <h3 class="card__heading">
+                            Болт М6х12 8.8 бел. цинк DIN 6921
+                        </h3>
+                        <h4 class="card__price">18.50 ₽/шт</h4>
+                    </a>
+                </div>
+                <div class="card card--md">
+                    <a href="#" class="card-header">
+                        <img src="img/poduct.jpg" class="card-img" alt="i" loading="lazy">
+                    </a>
+                    <a href="#" class="card-body">
+                        <h3 class="card__heading">
+                            Болт М6х12 8.8 бел. цинк DIN 6921
+                        </h3>
+                        <h4 class="card__price">18.50 ₽/шт</h4>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <footer class="footer">
+        <div class="container">
+            <div class="footer-wrap">
+                <div class="footer-title">
+                    <p class="footer-text">ООО «КОМПАНИЯ ОРИДЖИН»</p>
+                    <p class="footer-text">
+                        Почтовый адрес: 123100, <br>
+                        Москва, ул. Мантулинская, д. 9,  <br>
+                        к. 4, этаж 1, помещение 9н, офис 1.
+                    </p>
+                    <p class="footer-text">
+                        Самовывоз возможен только <br>
+                        по предварительному согласованию  <br>
+                        по адресу: Московская область,  <br>
+                        г. Долгопрудный, Береговой проезд, 9.
+                    </p>
+                    <p class="footer-text">
+                        <span class="footer-heading">Режим работы:</span>
+                        Понедельник – пятница: 09:00–18:00 <br>
+                        Суббота, воскресенье – выходные.
+                    </p>
+                    <div class="footer-contact sm-hide">
+                        <div class="footer-contact__col">
+                            <a href="tel:+74951832333" class="link-contact">
+                                <svg class="ic ic-md"><use href="img/ic.svg#call"></use></svg>
+                                +7 495 183-23-33
+                            </a>
+                            <a href="mailto:info@originkrepeg.ru" class="link-contact">
+                                <svg class="ic ic-md"><use href="img/ic.svg#email"></use></svg>
+                                info@originkrepeg.ru
+                            </a>
+                        </div>
+                        <div class="social">
+                            <a href="#" class="social-link">
+                                <svg class="ic ic-lg"><use href="img/ic.svg#telegram"></use></svg>
+                            </a>
+                            <a href="#" class="social-link">
+                                <svg class="ic ic-lg"><use href="img/ic.svg#whatsapp"></use></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-btns lg-show">
+                        <a href="#modal-req-2" class="btn btn-primary">Запросить расчет
+                            <svg class="ic"><use href="img/ic.svg#calc"></use></svg>
+                        </a>
+                        <a href="#modal-call_request" class="btn btn-primary">Заказать звонок
+                            <svg class="ic"><use href="img/ic.svg#phone"></use></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Каталог</h3>
+                    <nav class="footer-nav">
+                        <a href="#" class="footer-nav__link">Болты</a>
+                        <a href="#" class="footer-nav__link">Винты</a>
+                        <a href="#" class="footer-nav__link">Гайки</a>
+                        <a href="#" class="footer-nav__link">Заклепки</a>
+                        <a href="#" class="footer-nav__link sm-hide">Кольца стопорные</a>
+                        <a href="#" class="footer-nav__link sm-hide">Саморезы</a>
+                        <a href="#" class="footer-nav__link sm-hide">Хомуты, скобы и стяжки</a>
+                        <a href="#" class="footer-nav__link sm-hide">Шайбы</a>
+                        <a href="#" class="footer-nav__link sm-hide">Шпильки резьбовые</a>
+                        <a href="#" class="footer-nav__link sm-hide">Шплинты</a>    
+                        <a href="#" class="footer-nav__link c-gray sm-hide">Шпонки</a>    
+                        <a href="#" class="footer-nav__link c-gray sm-hide">Шурупы</a>    
+                        <a href="#" class="footer-nav__link c-gray sm-hide">Штифты</a>    
+                        <a href="#" class="footer-nav__link c-gray sm-hide">Приварной крепёж</a>    
+                    </nav>
+
+                    <div class="footer-contact sm-show">
+                        <a href="tel:+74951832333" class="link-contact">
+                            <svg class="ic ic-md"><use href="img/ic.svg#call"></use></svg>
+                            +7 495 183-23-33
+                        </a>
+                        <a href="mailto:info@originkrepeg.ru" class="link-contact">
+                            <svg class="ic ic-md"><use href="img/ic.svg#email"></use></svg>
+                            info@originkrepeg.ru
+                        </a>
+                        <div class="social">
+                            <a href="#" class="social-link">
+                                <svg class="ic ic-lg"><use href="img/ic.svg#telegram"></use></svg>
+                            </a>
+                            <a href="#" class="social-link">
+                                <svg class="ic ic-lg"><use href="img/ic.svg#whatsapp"></use></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <a href="#modal-req-2" class="btn btn-primary lg-hide">Запросить расчет
+                        <svg class="ic"><use href="img/ic.svg#calc"></use></svg>
+                    </a>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-heading">Меню</h3>
+                    <nav class="footer-nav footer-nav--menu">
+                        <a href="#" class="footer-nav__link">О компании</a>
+                        <a href="#" class="footer-nav__link">Производство</a>
+                        <a href="#" class="footer-nav__link">Услуги</a>
+                        <a href="#" class="footer-nav__link">Оплата и доставка</a>
+                        <a href="#" class="footer-nav__link">Вакансии</a>
+                        <a href="#" class="footer-nav__link">Поставщикам</a>
+                        <a href="#" class="footer-nav__link">Контакты</a>
+                    </nav>
+                    <a href="#modal-call_request" class="btn btn-primary lg-hide">Заказать звонок
+                        <svg class="ic"><use href="img/ic.svg#phone"></use></svg>
+                    </a>
+                </div>
+            </div>
+            <p class="footer-bottom">
+                <span class="footer-bottom__text">© 2025, origin. Все права защищены</span>
+                <a href="#" class="footer-bottom__link">Политика конфиденциальности</a>
+                <a href="#" class="footer-bottom__link">Пользовательское соглашение</a>
+            </p>
+        </div>
+    </footer>
+
+    <div class="modal modal-lg" id="modal-search">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
+            </button>
+
+            <h2 class="modal-heading modal-heading--alt">Поиск товара</h2>
+            <form class="searchbar">
+                <input type="search" required placeholder="Найти товар" class="searchbar__input">
+                <button class="searchbar__btn"><svg class="ic ic-md"><use href="img/ic.svg#search"></use></svg></button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal modal-lg" id="modal-catalog">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
+            </button>
+
+            <h2 class="modal-heading modal-heading--alt">Каталог</h2>
+
+            <ul class="catalog-list catalog-list--hover" data-catalog-hover>
+                <li class="catalog-list__item">
+                    <button class="catalog-list__btn">Болты
+                        <svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg>
+                    </button>
+                    <ul class="catalog-underlist">
+                        <li class="catalog-underlist__item catalog-underlist__item--back">
+                            <button class="catalog-underlist__link">
+                                <svg class="ic"><use href="img/ic.svg#arrow-left"></use></svg>Назад
+                            </button>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="catalog-list__item">
+                    <button class="catalog-list__btn">Винты
+                        <svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg>
+                    </button>
+                    <ul class="catalog-underlist">
+                        <li class="catalog-underlist__item catalog-underlist__item--back">
+                            <button class="catalog-underlist__link">
+                                <svg class="ic"><use href="img/ic.svg#arrow-left"></use></svg>Назад
+                            </button>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="catalog-list__item">
+                    <button class="catalog-list__btn">Гайки
+                        <svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg>
+                    </button>
+                    <ul class="catalog-underlist">
+                        <li class="catalog-underlist__item catalog-underlist__item--back">
+                            <button class="catalog-underlist__link">
+                                <svg class="ic"><use href="img/ic.svg#arrow-left"></use></svg>Назад
+                            </button>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="catalog-list__item">
+                    <button class="catalog-list__btn">Заклепки
+                        <svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg>
+                    </button>
+                    <ul class="catalog-underlist">
+                        <li class="catalog-underlist__item catalog-underlist__item--back">
+                            <button class="catalog-underlist__link">
+                                <svg class="ic"><use href="img/ic.svg#arrow-left"></use></svg>Назад
+                            </button>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="catalog-list__item">
+                    <button class="catalog-list__btn">Кольца стопорные
+                        <svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg>
+                    </button>
+                    <ul class="catalog-underlist">
+                        <li class="catalog-underlist__item catalog-underlist__item--back">
+                            <button class="catalog-underlist__link">
+                                <svg class="ic"><use href="img/ic.svg#arrow-left"></use></svg>Назад
+                            </button>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="catalog-list__item">
+                    <button class="catalog-list__btn">Саморезы
+                        <svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg>
+                    </button>
+                    <ul class="catalog-underlist">
+                        <li class="catalog-underlist__item catalog-underlist__item--back">
+                            <button class="catalog-underlist__link">
+                                <svg class="ic"><use href="img/ic.svg#arrow-left"></use></svg>Назад
+                            </button>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="catalog-list__item">
+                    <button class="catalog-list__btn">Хомуты, скобы и стяжки
+                        <svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg>
+                    </button>
+                    <ul class="catalog-underlist">
+                        <li class="catalog-underlist__item catalog-underlist__item--back">
+                            <button class="catalog-underlist__link">
+                                <svg class="ic"><use href="img/ic.svg#arrow-left"></use></svg>Назад
+                            </button>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="catalog-list__item">
+                    <button class="catalog-list__btn">Шайбы
+                        <svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg>
+                    </button>
+                    <ul class="catalog-underlist">
+                        <li class="catalog-underlist__item catalog-underlist__item--back">
+                            <button class="catalog-underlist__link">
+                                <svg class="ic"><use href="img/ic.svg#arrow-left"></use></svg>Назад
+                            </button>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="catalog-list__item">
+                    <button class="catalog-list__btn">Шпильки резьбовые
+                        <svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg>
+                    </button>
+                    <ul class="catalog-underlist">
+                        <li class="catalog-underlist__item catalog-underlist__item--back">
+                            <button class="catalog-underlist__link">
+                                <svg class="ic"><use href="img/ic.svg#arrow-left"></use></svg>Назад
+                            </button>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="catalog-list__item">
+                    <button class="catalog-list__btn">Шплинты
+                        <svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg>
+                    </button>
+                    <ul class="catalog-underlist">
+                        <li class="catalog-underlist__item catalog-underlist__item--back">
+                            <button class="catalog-underlist__link">
+                                <svg class="ic"><use href="img/ic.svg#arrow-left"></use></svg>Назад
+                            </button>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="catalog-list__item">
+                    <button class="catalog-list__btn" disabled>Шпонки
+                        <svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg>
+                    </button>
+                </li>
+                <li class="catalog-list__item">
+                    <button class="catalog-list__btn" disabled>Шурупы
+                        <svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg>
+                    </button>
+                </li>
+                <li class="catalog-list__item">
+                    <button class="catalog-list__btn" disabled>Штифты
+                        <svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg>
+                    </button>
+                </li>
+                <li class="catalog-list__item">
+                    <button class="catalog-list__btn" disabled>Приварной крепёж
+                        <svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-oneclick">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
+            </button>
+
+            <h2 class="modal-heading">Купить в 1 клик</h2>
+            <form class="form">
+                <div class="form-group">
+                    <div class="inp-group">
+                        <input type="text" id="oneclick-name" placeholder="Ваше имя" required class="inp-field">
+                        <label for="oneclick-name" class="inp-label">Ваше имя</label>
+                    </div>
+                    <div class="inp-group">
+                        <input type="tel" id="oneclick-tel" placeholder="Ваш телефон" required class="inp-field">
+                        <label for="oneclick-tel" class="inp-label">Ваш телефон</label>
+                    </div>
+                    <div class="inp-group">
+                        <input type="email" id="oneclick-email" placeholder="Ваша почта" class="inp-field">
+                        <label for="oneclick-email" class="inp-label">Ваша почта</label>
+                    </div>
+                    <div class="inp-group">
+                        <textarea name="oneclick-comment" placeholder="Ваш комментарий" id="oneclick-comment"
+                            class="inp-field"></textarea>
+                        <label for="oneclick-comment" class="inp-label">Ваш комментарий</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="inp-checkbox">
+                        <input type="checkbox" required name="checkbox" id="checkbox_3">
+                        <label for="checkbox_3" class="inp-checkbox__label">
+                            Я согласен(а) с обработкой персональных данных в соответствии с <a href="#"
+                                class="c-danger">политикой конфиденциальности.</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+
+                <p class="form-info"><span class="c-danger">*</span> - обязательно к заполнению</p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-oneclick_2">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
+            </button>
+
+            <h2 class="modal-heading">Купить в 1 клик</h2>
+            <form class="form">
+                <div class="form-group">
+                    <div class="modal-product">
+                        <div class="modal-product__img">
+                            <img src="img/poduct.jpg" alt="product">
+                        </div>
+                        <div class="modal-product__title">
+                            <h3 class="modal-product__name">DIN 6921 000000000000000000 000000000000000000000000</h3>
+                            <p class="modal-product__text">Артикул: 12944</p>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="amount" data-change="price__val" data-price-val="18.50 ₽">
+                            <a href="#" class="amount-dec"><svg class="ic"><use href="img/ic.svg#subtract"></use></svg></a>
+                            <input type="number" value="1" min="0" class="amount-input">
+                            <a href="#" class="amount-inc"><svg class="ic"><use href="img/ic.svg#add"></use></svg></a>
+                        </div>
+
+                        <h3 class="modal-product__price" data-price="price__val">18.50 ₽</h3>
+                    </div>
+
+                    <div class="inp-group">
+                        <input type="text" id="oneclick_2-name" placeholder="Ваше имя" class="inp-field">
+                        <label for="oneclick_2-name" class="inp-label">Ваше имя</label>
+                    </div>
+                    <div class="inp-group">
+                        <input type="tel" id="oneclick_2-tel" placeholder="Ваш телефон" required class="inp-field">
+                        <label for="oneclick_2-tel" class="inp-label">Ваш телефон</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="inp-checkbox">
+                        <input type="checkbox" required name="checkbox" id="oneclick_2">
+                        <label for="oneclick_2" class="inp-checkbox__label">
+                            Я согласен(а) с обработкой персональных данных в соответствии с <a href="#"
+                                class="c-danger">политикой конфиденциальности.</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+
+                <p class="form-info"><span class="c-danger">*</span> - обязательно к заполнению</p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-call_request">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
+            </button>
+    
+            <h2 class="modal-heading">Заказать звонок</h2>
+            <form class="form">
+                <div class="form-group form-group--lg">
+                    <div class="inp-group">
+                        <input type="text" id="call_request-name" placeholder="Ваше имя" required class="inp-field">
+                        <label for="call_request-name" class="inp-label">Ваше имя</label>
+                    </div>
+                    <div class="inp-group">
+                        <input type="tel" id="call_request-tel" placeholder="+7 (___) ___-__-__" required
+                            class="inp-field">
+                        <label for="call_request-tel" class="inp-label">+7 (___) ___-__-__</label>
+                    </div>
+                    <select>
+                        <option hidden>Удобное время для звонка</option>
+                        <option value="c 8:00 до 17:00">c 8:00 до 17:00</option>
+                        <option value="c 9:00 до 17:00">c 9:00 до 17:00</option>
+                        <option value="c 9:00 до 17:00">c 12:00 до 16:00</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="inp-checkbox inp-checkbox--sm">
+                        <input type="checkbox" required name="checkbox" id="checkbox_call">
+                        <label for="checkbox_call" class="inp-checkbox__label">
+                            Я согласен(а) с обработкой персональных данных в соответствии с <a href="#"
+                                class="c-danger">политикой конфиденциальности.</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+
+                <p class="form-info"><span class="c-danger">*</span> - обязательно к заполнению</p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-login">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
+            </button>
+
+            <h2 class="modal-heading">Вход</h2>
+            <form class="form">
+                <p class="form-descr">
+                    Нет аккаунта?
+                    <a href="#modal-signup" class="form-link">Регистрация</a>
+                </p>
+                <div class="form-group form-group--lg">
+                    <div class="inp-group">
+                        <input type="text" id="login" placeholder="Ваша почта или телефон" required class="inp-field">
+                        <label for="login" class="inp-label">Ваша почта или телефон</label>
+                    </div>
+                    <div class="inp-group">
+                        <input type="password" id="password" placeholder="Пароль" required class="inp-field">
+                        <label for="password" class="inp-label">Пароль</label>
+                    </div>
+                    <div class="form-row">
+                        <div class="inp-checkbox">
+                            <input type="checkbox" name="remember" id="remember">
+                            <label for="remember" class="inp-checkbox__label c-gray">Запомнить меня</label>
+                        </div>
+                        <a href="#" class="form-link c-dark">Забыли пароль?</a>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="inp-checkbox">
+                        <input type="checkbox" required name="checkbox" id="checkbox_5">
+                        <label for="checkbox_5" class="inp-checkbox__label">
+                            Я согласен(а) с обработкой персональных данных в соответствии с <a href="#"
+                                class="c-danger">политикой конфиденциальности.</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+
+                <p class="form-info"><span class="c-danger">*</span> - обязательно к заполнению</p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-signup">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
+            </button>
+
+            <h2 class="modal-heading">Регистрация</h2>
+            <form class="form">
+                <p class="form-descr">
+                    Есть регистрация?
+                    <a href="#modal-login" class="form-link">Войти</a>
+                </p>
+                <div class="form-group form-group--lg">
+                    <div class="inp-group">
+                        <input type="password" id="signup_name" placeholder="Ваше имя" required class="inp-field">
+                        <label for="signup_name" class="inp-label">Ваше имя</label>
+                    </div>
+                    <div class="inp-group">
+                        <input type="text" id="signup" placeholder="Ваша почта или телефон" required class="inp-field">
+                        <label for="signup" class="inp-label">Ваша почта или телефон</label>
+                    </div>
+                    <div class="inp-group">
+                        <input type="password" id="signup_password" placeholder="Пароль" required class="inp-field">
+                        <label for="signup_password" class="inp-label">Пароль</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="inp-checkbox">
+                        <input type="checkbox" required name="checkbox" id="checkbox_4">
+                        <label for="checkbox_4" class="inp-checkbox__label">
+                            Я согласен(а) с обработкой персональных данных в соответствии с <a href="#"
+                                class="c-danger">политикой конфиденциальности.</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+
+                <p class="form-info"><span class="c-danger">*</span> - обязательно к заполнению</p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-req">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
+            </button>
+
+            <h2 class="modal-heading">Запросить расчет</h2>
+            <form class="form">
+                <div class="form-group">
+                    <div class="inp-group">
+                        <input type="text" id="name" placeholder="Ваше имя" required class="inp-field">
+                        <label for="name" class="inp-label">Ваше имя</label>
+                    </div>
+                    <div class="inp-group">
+                        <input type="email" id="email" placeholder="Ваш email" required class="inp-field">
+                        <label for="email" class="inp-label">Ваш email</label>
+                    </div>
+                    <div class="inp-group">
+                        <textarea id="message_2" placeholder="Ваше сообщение" required class="inp-field"></textarea>
+                        <label for="message_2" class="inp-label">Ваше сообщение</label>
+                    </div>
+                    <select>
+                        <option hidden>Предпочтительный вариант ответа</option>
+                        <option value="Предпочтительный вариант ответа">Предпочтительный вариант ответа</option>
+                        <option value="Предпочтительный вариант ответа">Предпочтительный вариант ответа</option>
+                    </select>
+
+                    <div class="inp-file">
+                        <input type="file" name="file" id="file">
+                        <label for="file" class="inp-file__label">
+                            <svg class="ic">
+                                <use href="img/ic.svg#paperclip"></use>
+                            </svg>
+                            <span>Прикрепить файл</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="inp-checkbox">
+                        <input type="checkbox" required name="checkbox" id="checkbox">
+                        <label for="checkbox" class="inp-checkbox__label">
+                            Я согласен(а) с обработкой персональных данных в соответствии с <a href="#"
+                                class="c-danger">политикой конфиденциальности.</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+
+                <p class="form-info"><span class="c-danger">*</span> - обязательно к заполнению</p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-req-2">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
+            </button>
+
+            <h2 class="modal-heading">Запросить расчет</h2>
+            <form class="form">
+                <div class="form-group">
+                    <div class="form-row">
+                        <span class="form-label">Введите ваши основные данные, или</span>
+                        <a href="#" class="form-link">Регистрация</a>
+                    </div>
+                    <div class="inp-group">
+                        <input type="text" id="name_2" placeholder="Ваше имя" required class="inp-field">
+                        <label for="name_2" class="inp-label">Ваше имя</label>
+                    </div>
+                    <div class="inp-group">
+                        <input type="tel" id="tel" placeholder="Телефон" required class="inp-field">
+                        <label for="tel" class="inp-label">Телефон</label>
+                    </div>
+                    <div class="inp-group">
+                        <input type="email" id="email_2" placeholder="Ваш email" required class="inp-field">
+                        <label for="email_2" class="inp-label">Ваш email</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-row">
+                        <span class="form-label">Введите детали заказа, или</span>
+                        <div class="inp-file c-danger">
+                            <input type="file" name="file" id="file_2">
+                            <label for="file_2" class="inp-file__label">
+                                <svg class="ic">
+                                    <use href="img/ic.svg#paperclip"></use>
+                                </svg>
+                                <span>Прикрепить файл</span>
+                            </label>
+                        </div>
+                    </div>
+                    <select>
+                        <option hidden>Выбрать тип крепежа</option>
+                        <option value="Тип крепежа 1">Тип крепежа 1</option>
+                        <option value="Тип крепежа 2">Тип крепежа 2</option>
+                        <option value="Тип крепежа 3">Тип крепежа 3</option>
+                    </select>
+                    <div class="inp-group">
+                        <input type="text" id="amount_1" placeholder="Введите количество" class="inp-field">
+                        <label for="amount_1" class="inp-label">Введите количество</label>
+                    </div>
+                    <div class="inp-file ml-auto">
+                        <input type="file" name="file" id="file_3">
+                        <label for="file_3" class="inp-file__label">
+                            <span>Добавить товар</span>
+                            <svg class="ic">
+                                <use href="img/ic.svg#add"></use>
+                            </svg>
+                        </label>
+                    </div>
+                    <select>
+                        <option hidden>Способ доставки</option>
+                        <option value="Способ доставки">Способ 1</option>
+                        <option value="Способ доставки">Способ 2</option>
+                        <option value="Способ доставки">Способ 3</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="inp-group">
+                        <textarea id="message_3" placeholder="Ваш комментарий" class="inp-field"></textarea>
+                        <label for="message_3" class="inp-label">Ваш комментарий</label>
+                    </div>
+                    <select>
+                        <option hidden>Предпочтительный вариант ответа</option>
+                        <option value="Вариант ответа 1">Вариант ответа 1</option>
+                        <option value="Вариант ответа 2">Вариант ответа 2</option>
+                        <option value="Вариант ответа 3">Вариант ответа 3</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <div class="inp-checkbox">
+                        <input type="checkbox" required name="checkbox" id="req-2_checkbox">
+                        <label for="req-2_checkbox" class="inp-checkbox__label">
+                            Я согласен(а) с обработкой персональных данных в соответствии с <a href="#"
+                                class="c-danger">политикой конфиденциальности.</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+
+                <p class="form-info"><span class="c-danger">*</span> - обязательно к заполнению</p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-req-3">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
+            </button>
+
+            <h2 class="modal-heading">Запросить расчет</h2>
+            <form class="form">
+                <div class="form-group">
+                    <div class="form-row">
+                        <span class="form-label">Введите детали заказа, или</span>
+                        <div class="inp-file c-danger">
+                            <input type="file" name="file" id="req-3_file">
+                            <label for="req-3_file" class="inp-file__label">
+                                <svg class="ic">
+                                    <use href="img/ic.svg#paperclip"></use>
+                                </svg>
+                                <span>Прикрепить файл</span>
+                            </label>
+                        </div>
+                    </div>
+                    <select>
+                        <option hidden>Выбрать тип крепежа</option>
+                        <option value="Тип крепежа 1">Тип крепежа 1</option>
+                        <option value="Тип крепежа 2">Тип крепежа 2</option>
+                        <option value="Тип крепежа 3">Тип крепежа 3</option>
+                    </select>
+                    <div class="inp-group">
+                        <input type="text" id="amount" placeholder="Введите количество" class="inp-field">
+                        <label for="amount" class="inp-label">Введите количество</label>
+                    </div>
+                    <div class="inp-file ml-auto">
+                        <input type="file" name="file" id="file_4">
+                        <label for="file_4" class="inp-file__label">
+                            <span>Добавить товар</span>
+                            <svg class="ic">
+                                <use href="img/ic.svg#add"></use>
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="inp-file c-danger ml-auto">
+                        <input type="file" name="file" id="file_5">
+                        <label for="file_5" class="inp-file__label">
+                            <span>Добавить товар из корзины</span>
+                            <svg class="ic">
+                                <use href="img/ic.svg#add"></use>
+                            </svg>
+                        </label>
+                    </div>
+                    <select>
+                        <option hidden>Способ доставки</option>
+                        <option value="Способ 1">Способ 1</option>
+                        <option value="Способ 2">Способ 2</option>
+                        <option value="Способ 3">Способ 3</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="inp-group">
+                        <textarea id="message_1" placeholder="Ваш комментарий" class="inp-field"></textarea>
+                        <label for="message_1" class="inp-label">Ваш комментарий</label>
+                    </div>
+                    <select>
+                        <option hidden>Предпочтительный вариант ответа</option>
+                        <option value="Вариант ответа 1">Вариант ответа 1</option>
+                        <option value="Вариант ответа 2">Вариант ответа 2</option>
+                        <option value="Вариант ответа 3">Вариант ответа 3</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <div class="inp-checkbox">
+                        <input type="checkbox" required name="checkbox" id="checkbox_2">
+                        <label for="checkbox_2" class="inp-checkbox__label">
+                            Я согласен(а) с обработкой персональных данных в соответствии с <a href="#"
+                                class="c-danger">политикой конфиденциальности.</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+
+                <p class="form-info"><span class="c-danger">*</span> - обязательно к заполнению</p>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

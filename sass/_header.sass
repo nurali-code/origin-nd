@@ -578,7 +578,7 @@
                                 visibility: visible
                                 transform: translateX(0%)
 
-            &__btn 
+            &__btn
                 padding: 9.5px 10px 9.5px 20px
 
 .navbar
@@ -589,7 +589,7 @@
         position: fixed
         bottom: 0
         left: 0
-        z-index: 99999
+        z-index: 9999
         width: 100%
         padding: 8px var(--bs-gutter-x)
         background-color: $light
@@ -617,6 +617,7 @@
                 opacity: 1 !important
                 &.active .ic
                     fill: $primary
+
         button
             .ic
                 margin-bottom: 1px
@@ -629,9 +630,36 @@
             padding: 1.6px
             min-width: 13px
 
+        &-order
+            margin-bottom: 8px
+            &__price
+                font-size: $font-md-fx
+            &__stock
+                font-size: $font-md-fx
+                lgh: 113%
+                gap: 4px
+
+            &__action
+                width: 100%
+                max-width: 140px
+                &>*
+                    width: 100%
+
         @media screen and ( max-width: 372px )
             &-list
                 gap: 0
                 justify-content: space-between
                 &>*:nth-child(2)
                     display: none
+
+            &-order
+                margin-bottom: 8px
+                &__action
+                    max-width: 120px
+
+                &__price
+                    font-size: $font-md
+                &__stock
+                    font-size: $font-md
+                    .ic
+                        --ic-width: 16px

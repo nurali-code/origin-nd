@@ -325,6 +325,7 @@
                 height: 24px
 
 .link-contact
+    white-space: nowrap
     width: fit-content
     gap: 8px
     font-size: $font-md-fx
@@ -339,6 +340,9 @@
 
 .form
     gap: 32px
+    &--sm
+        gap: 12px
+
     &-link
         text-decoration: underline
         color: $primary
@@ -418,10 +422,108 @@
             animation: cart 1.5s forwards
 
 .bg
+    &-ligth
+        background-color: var(--light) !important
+        border-color: var(--light) !important
     &-gray
         background-color: var(--light-gray)
     &-grayish
         background-color: var(--lighter-gray)
+
+.list
+    &-disc
+        padding-left: 0
+        list-style: none
+        font-size: $font-sm-fx
+        li
+            padding-left: 25px
+            position: relative
+            z-index: 1
+            margin-bottom: 4px
+            // text-wrap: balance
+            &:last-child
+                margin-bottom: 0
+            &::before
+                content: ''
+                display: block
+                width: 4px
+                height: 4px
+                border-radius: 50%
+                position: absolute
+                top: 8px
+                left: 10px
+
+                background-color: $dark
+
+            &.c-gray
+                &::before
+                    background-color: var(--text-gray)
+
+.info
+    display: inline-block
+    position: relative
+    z-index: 222
+    .ic
+        fill: var(--text-gray)
+
+    &__text
+        font-size: $font-md
+        text-wrap: balance
+        font-weight: normal
+        position: absolute
+        top: 100%
+        padding: 16px
+        width: 300px
+        line-height: 113%
+        z-index: 111
+        max-width: 96vw
+        background-color: var(--light-gray)
+        border-radius: $b-rad
+        transition-property: transform, visibility, opacity
+        transition-duration: .3s
+        transition-timing-function: ease
+        opacity: 0
+        visibility: hidden
+        transform: translateY(10px)
+        pointer-events: none
+        &>*
+            font-size: $font-md
+
+    &.--show
+        .ic
+            fill: $dark
+
+        .info__text
+            pointer-events: unset
+            visibility: visible
+            opacity: 1
+            transform: translateY(0)
+
+.hiding
+    display: block
+    width: fit-content
+    color: var(--link-color)
+    font-weight: 400
+    font-size: $font-md-fx
+    line-height: 100%
+    text-decoration: underline
+    text-decoration-style: solid
+    text-decoration-skip-ink: auto
+
+[data-hiding-item]
+    animation: fadeIn .3s ease forwards
+    &:not(.--show)
+        display: none !important
+
+[data-card-catcher]
+    .btn:not(.btn-md) ~ * 
+        height: 44px
+
+    [data-card-amount]
+        &:not(.active)
+            display: none
+        &.active
+            animation: fadeIn .3s ease forwards
 
 @keyframes cart
     0%, 100%

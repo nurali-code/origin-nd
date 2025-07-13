@@ -1,0 +1,370 @@
+.product
+    overflow: hidden
+    &-wrap
+        margin-bottom: 16px
+
+    &-wrap,
+    &-description
+        gap: $gap
+        &>*
+            width: calc( (100% - $gap) / 2 )
+
+    &-img
+        gap: 6px
+
+    &-nav
+        width: 103px
+        left: 0
+        min-width: 97px
+
+        display: block
+        padding: 0
+        &-slide
+            position: relative
+            z-index: 1
+            width: 100%
+            cursor: pointer
+
+        .slick
+            &-track,
+            &-list
+                padding-right: 10px
+                display: block
+
+            &-arrow
+                position: static
+                transform: none
+                margin: 0 auto
+
+            &-prev
+                margin-bottom: 24px
+
+            &-next
+                margin-top: 24px
+
+            &-current
+                z-index: 222
+                img
+                    box-shadow: var(--card-shadow)
+
+        &:not(.slick-initialized)
+            &>:nth-child(n+4)
+                display: none
+                &:first-child
+                    display: block
+
+        &-item
+            margin: 4px 0
+            cursor: pointer
+
+        img
+            border-radius: $b-rad
+            width: 100%
+            object-fit: cover
+            aspect-ratio: 1
+
+    &-slider
+        width: calc( 100% - 113px )
+        left: 0
+        &:not(.slick-initialized)
+            &>*
+                display: none
+                &:first-child
+                    display: block
+
+        img
+            width: 100%
+
+    &-row
+        &>*
+            width: calc( (100% - 4px) / 2 )
+
+    &-main
+        gap: 0
+        padding: 8px 16px 16px
+        border-radius: $b-rad
+        box-shadow: var(--card-shadow)
+
+    &-art
+        font-size: $font-sm
+        margin: 0 0 24px
+        &__id
+            font-size: $font-md
+
+    &-fav
+        margin-left: auto
+        .ic
+            fill: $primary
+
+    &-row
+        display: flex
+        &>*
+            width: calc( (100% - 4px) / 2 )
+
+    &-price
+        &__val
+            color: rgba(var(--dark), .8)
+            margin: 0 0 4px
+
+        &__descr
+            color: var(--text-gray)
+            line-height: 113%
+            font-size: $font-md
+
+    &-stock
+        gap: 4px
+        margin: 24px 0
+        &__text
+            font-size: $font-sm
+
+        &__descr
+            font-size: $font-md
+
+    &-btns
+        margin-top: auto
+        &>*
+            width: 100%
+
+        .card-action
+            min-height: 44px
+            background-color: $light
+
+    &-delivery
+        margin-left: auto
+        gap: 0
+        .link-contact
+            gap: 4px
+
+        &__item
+            padding: 17px 16px
+            box-shadow: var(--card-shadow)
+            border-radius: $b-rad
+            margin-bottom: 4px
+            flex: 1
+            &:last-child
+                margin-bottom: 0
+
+        &__heading
+            gap: 8px
+            font-size: $font-md-fx
+            font-weight: 700
+            margin: 0 0 8px
+
+        &__list
+            font-size: $font-sm-fx
+
+        &__text
+            font-size: $font-sm
+            line-height: 113%
+            margin-bottom: 16px
+
+        &__contact
+            margin-top: auto
+            max-width: 233px
+            .social
+                margin-left: auto
+
+    &-feature
+        gap: 8px
+        padding: 20px 8px
+        border-radius: $b-rad
+        box-shadow: var(--card-shadow)
+        &__icon
+            --f-icon: 50px
+            width: var(--f-icon)
+            min-width: var(--f-icon)
+            object-fit: contain
+            object-position: center center
+
+        &__heading
+            text-transform: uppercase
+            font-size: $font-md
+            line-height: 131%
+
+        &__text
+            font-size: $font-sm
+            line-height: 113%
+
+    &-features
+        &>*
+            width: calc( (100% - 4px) / 2 )
+
+    &-description
+        &__heading
+            font-weight: normal
+            padding-bottom: 4px
+            font-size: $font-md-fx
+
+    &-tab
+        margin-bottom: 15px
+        gap: $gap
+
+    &-subheading
+        font-weight: normal
+        padding-bottom: 4px
+        margin-bottom: 4px
+        border-bottom: 2px solid rgba(0, 0, 0, 0)
+
+    &-list
+        padding: 0
+        &__li
+            padding-top: 11px
+            font-size: $font-md-fx
+            margin: 0 0 4px
+            border-bottom: 1px solid var(--dark-gray)
+
+        &__heading
+            color: var(--text-gray)
+
+        &__text
+            margin-left: auto
+            width: 48%
+
+    &-contact
+        &__text
+            text-wrap: balance
+            &>*
+                display: block
+                text-wrap: balance
+
+        &__wrap
+            gap: 24px
+            margin: 32px 0 0
+
+        &__form
+            padding: 16px
+            background-color: var(--light-gray)
+
+        &__content
+            padding: 32px 24px
+            background-color: var(--light-gray)
+
+    @media screen and ( max-width: 1199px )
+        &-wrap
+            &>*
+                &:first-child
+                    width: 60%
+
+                &:last-child
+                    width: 40%
+
+        &-img
+            flex-direction: column-reverse
+            justify-content: start
+
+        &-nav
+            width: 100%
+            display: flex
+            align-items: center
+            gap: $gap
+            .slick
+                &-tarck
+                    padding: 0
+                &-arrow
+                    transform: rotate(-90deg)
+                    margin: 0
+
+            &-item
+                margin: 0 4px 6px
+
+        &-slider
+            width: 100%
+
+        &-delivery
+            width: 100%
+
+        &-feature
+            width: 100%
+
+        &-main
+            width: 100%
+
+        &-contact
+            &__links
+                width: 100%
+                max-width: 280px
+                gap: 20px
+                flex-direction: row-reverse
+                justify-content: space-between
+                .social
+                    gap: 24px
+
+    @media screen and ( max-width: 991px )
+        padding-bottom: 56px
+        &-description
+            display: block
+            &>*
+                width: 100% !important
+
+        &-tab
+            &__content
+                margin-bottom: 15px
+                &:last-child
+                    margin-bottom: 0
+        
+        &-info
+            margin-bottom: 16px
+
+        &-contact
+            &__content
+                padding: 16px
+            &__wrap 
+                margin-top: 16px
+
+
+    @media screen and ( max-width: 767px )
+        padding-bottom: 64px
+
+        &-wrap
+            display: block
+            &>*
+                width: 100% !important
+
+        &-nav
+            display: none
+
+        &-description
+            [data-tab-content]:not(.active)
+                display: block
+
+        &-features
+            &>*
+                width: calc((100% - 4px) / 2)
+
+        &-main
+            padding-bottom: 8px
+            margin-bottom: 16px
+
+        &-art
+            margin-bottom: 8px
+
+        &-delivery
+            margin-bottom: 16px
+            &__text,
+            &__list
+                font-size: $font-md-fx
+
+        &-stock
+            margin: 8px 0
+
+        &-tab
+            display: none
+
+        &-contact
+            &__content 
+                margin-bottom: 16px
+
+    @media screen and ( max-width: 575px )
+        padding-bottom: 68px
+
+        &-slider
+            .slick
+                &-dots
+                    position: absolute
+                    bottom: 4px
+                    left: 0
+                    width: 100%
+
+        &-features
+            &>*
+                width: 100%
