@@ -45,8 +45,9 @@ $(document).ready(function () {
             offsetLeft = -overflowX - 20; // 10px запас от края
         }
 
+        
         if (overflowY > 0) {
-            offsetTop = -overflowY - 20;
+            offsetTop = -overflowY - $('header .navbar').outerHeight();;
         }
 
         // Получаем текущее значение left и top в числах
