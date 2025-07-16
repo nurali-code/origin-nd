@@ -198,6 +198,15 @@
     &-tab
         margin-bottom: 15px
         gap: $gap
+        &__content 
+            p 
+                margin-bottom: 14px
+                &:last-child
+                    margin-bottom: 0
+
+            img 
+                width: 80%
+                margin: 20px auto
 
     &-subheading
         font-weight: normal
@@ -311,7 +320,6 @@
             &__wrap 
                 margin-top: 16px
 
-
     @media screen and ( max-width: 767px )
         padding-bottom: 64px
 
@@ -366,5 +374,27 @@
                     width: 100%
 
         &-features
-            &>*
-                width: 100%
+            // &>*
+            //     width: 100%
+
+        &-feature
+            padding: 12px 8px
+            &__heading 
+                max-width: 90%
+                // text-transform: none
+                line-height: 113%
+                text-wrap: balance
+
+            &__icon 
+                --f-icon: 40px
+
+            &__text 
+                display: none
+
+    @media screen and ( max-width: 370px )
+        &-feature
+            padding: 8px 8px
+            &__heading 
+                text-transform: none
+
+    
