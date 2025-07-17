@@ -4,14 +4,13 @@ $(document).ready(function () {
         const scrollTop = $(this).scrollTop();
         const $headerFixed = $('.header-fixed');
         var $scrollbarWidth = window.innerWidth - $(document).width();
+        $($headerFixed).css('padding-right', $scrollbarWidth);
 
         if (scrollTop > headerHeight) {
             $headerFixed.addClass('active');
-            $($headerFixed).css('padding-right', $scrollbarWidth);
         }
         else {
             $headerFixed.removeClass('active');
-            $($headerFixed).css('padding-right', '0');
         }
     });
 });
