@@ -12,23 +12,90 @@
     &-content
         gap: 40px
 
+    @media screen and ( max-width:  991px)
+        &-filter
+            display: none
+        &-content
+            width: 100%
+
+.type
+    border-radius: $b-rad
+    box-shadow: var(--card-shadow)
+    &-img
+        --tw: 80px
+        width: var(--tw)
+        min-width: var(--tw)
+        height: var(--tw)
+        object-fit: cover
+        border-radius: $b-rad
+
+    &-descr
+        padding: 8px 16px
+        font-size: $font-sm
+
+    &-wrap
+        gap: $gap
+        &>*
+            width: calc( (100% - $gap * 2) / 3 )
+
+    @media screen and ( max-width: 1199px )
+        &-img
+            --tw: 50px
+
+        &-descr
+            padding: 8px
+
+        &-wrap
+            gap: $gap 8px
+            &>*
+                --base-gap: 8px
+
+    @media screen and ( max-width: 767px )
+        &-wrap
+            &>*
+                width: calc( (100% - $gap) / 2 )
+
+.fieldset
+    border-radius: $b-rad
+    display: block
+    overflow: hidden
+    border: 1px solid var(--light-gray)
+    &-legend
+        width: 100%
+        padding: 11.5px 16px
+        background-color: var(--light-gray)
+        .ic
+            margin-left: auto
+
+    &-content
+        padding: 16px
+        gap: $gap 8px
+        &>*
+            width: calc( (100% - 8px) / 2 )
+
+    @media screen and ( max-width: 1199px )
+        &-content
+            &>*
+                width: 100%
+
 table
     width: 100%
     td, th
         font-weight: normal
-        font-size: $font-md-fx
+        font-size: $font-md
         padding: 13.5px 12px
         padding: 11px 12px
         text-align: left
-        min-height: 40px
 
-    .fx 
+    .fx
         gap: 4px
-        &-lg 
+        &-lg
             gap: 16px
 
     thead
         th
+            white-space: nowrap
+            font-size: $font-md-fx
             color: $light
             background-color: $primary
             &:first-child
@@ -42,7 +109,7 @@ table
             .ic
                 fill: $light !important
 
-            &__text 
+            &__text
                 color: $dark
 
     tbody
@@ -50,16 +117,45 @@ table
             &:nth-child(even) td
                 background-color: var(--light-gray)
 
-        .fx 
-            .ic 
+        .fx
+            .ic
                 --ic-width: 14px
 
-    .amount 
+    .amount
         max-width: 80px
-        &-input 
+        &-input
             min-height: 20px
         &-inc,
-        &-dec 
+        &-dec
             padding: 3px
             width: 20px
             height: 20px
+
+    @media screen and ( max-width: 767px )
+        background-color: var(--light-gray)
+        box-shadow: 0 0 0 100vmax var(--light-gray)
+        clip-path: inset(0 -100vmax)
+        padding: 16px 0
+        display: block
+        thead
+            display: none
+
+        tr
+            padding: 8px
+            display: flex
+            border-radius: $b-rad
+            background-color: $light
+            flex-wrap: wrap
+            margin-bottom: 4px
+            &:last-child
+                margin-bottom: 0
+
+        td
+            padding: 9.5px
+            background-color: rgba(0, 0, 0, 0) !important
+            &:first-child
+                width: 100%
+
+            &:last-child
+                padding: 0
+                width: 100%

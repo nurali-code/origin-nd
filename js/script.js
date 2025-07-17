@@ -3,9 +3,7 @@ $(document).ready(function () {
         const headerHeight = $('header').outerHeight();
         const scrollTop = $(this).scrollTop();
         const $headerFixed = $('.header-fixed');
-        var $scrollbarWidth = window.innerWidth - $(document).width();
-        $($headerFixed).css('padding-right', $scrollbarWidth);
-
+        
         if (scrollTop > headerHeight) {
             $headerFixed.addClass('active');
         }
@@ -13,13 +11,20 @@ $(document).ready(function () {
             $headerFixed.removeClass('active');
         }
     });
+
+    function setHeaderMargin() {
+        var $scrollbarWidth = window.innerWidth - $(document).width();
+        $('.header-fixed').css('padding-right', $scrollbarWidth);
+    }
+    setHeaderMargin()
+    $(window).on('resize', setHeaderMargin);
 });
 
 $(document).ready(function () {
     $('.info').on('mouseenter', function () {
-        const $info = $(this).addClass('--show');
+        const $info = $(this).addClass('--show')
         const $tooltip = $info.find('.info__text');
-
+        $tooltip.fadeIn(250)
         // Сброс позиции
         $tooltip.css({
             left: '',
@@ -61,7 +66,7 @@ $(document).ready(function () {
     });
 
     $('.info').on('mouseleave', function () {
-        $(this).removeClass('--show');
+        $(this).removeClass('--show').find('.info__text').fadeOut(250);
     });
 });
 

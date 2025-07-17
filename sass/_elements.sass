@@ -250,6 +250,10 @@
                 left: -2px
                 opacity: 0
 
+        a
+            position: relative
+            z-index: 11
+
         input,
         &__label::before
             cursor: pointer
@@ -263,6 +267,8 @@
             position: absolute
 
         input
+            width: 100%
+            height: 100%
             z-index: 11
             opacity: 0
             &:checked + *
@@ -479,13 +485,9 @@
         max-width: 96vw
         background-color: var(--light-gray)
         border-radius: $b-rad
-        transition-property: transform, visibility, opacity
-        transition-duration: .3s
-        transition-timing-function: ease
-        opacity: 0
-        visibility: hidden
-        transform: translateY(10px)
+
         pointer-events: none
+        display: none
         &>*
             font-size: $font-md
 
@@ -495,9 +497,6 @@
 
         .info__text
             pointer-events: unset
-            visibility: visible
-            opacity: 1
-            transform: translateY(0)
 
 .hiding
     display: block
@@ -516,7 +515,7 @@
         display: none !important
 
 [data-card-catcher]
-    .btn:not(.btn-md) ~ * 
+    .btn:not(.btn-md) ~ *
         height: 44px
 
     [data-card-amount]
@@ -536,6 +535,16 @@
         transform: translateX(150%) rotate(-26deg)
     50.01%
         transform: translateX(-150%) rotate(-16deg)
+
+@media screen and ( max-width: 1199px ) and ( min-width: 768px )
+    .quicksearch
+        &--lg
+            .quicksearch
+                &__form
+                    flex-wrap: wrap
+                    gap: 16px 8px
+                    &>*:nth-child(-n+4)
+                        width: calc( (100% - 16px) / 3 )
 
 @media screen and ( max-width: 991px )
     .quicksearch
