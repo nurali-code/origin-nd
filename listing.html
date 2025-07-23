@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Origin | Интернет-магазин крепежа</title>
     <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="css/rSlider.min.css">
     <link rel="stylesheet" href="css/style.css">
     
     <script defer src="js/jquery.min.js"></script>
     <script defer src="js/slick.min.js"></script>
     <script defer src="js/jquery.maskedinput.min.js"></script>
+    <script defer src="js/rSlider.min.js"></script>
     <script defer src="js/script.js"></script>
 </head>
 
@@ -298,73 +300,428 @@
 
     <section class="listing">
         <div class="container">
+            <ul class="breadcumbs">
+                <li class="breadcumbs-li">
+                    <a href="#" class="breadcumbs-link">Главная</a>
+                    <svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg>
+                </li>
+                <li class="breadcumbs-li">
+                    <a href="#" class="breadcumbs-link">Каталог</a>
+                    <svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg>
+                </li>
+                <li class="breadcumbs-li">
+                    <a href="#" class="breadcumbs-link">Болты</a>
+                    <svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg>
+                </li>
+                <li class="breadcumbs-li">
+                    <a href="#" class="breadcumbs-link">DIN 561 A Болт установочный</a>
+                    <svg class="ic"><use href="img/ic.svg#arrow-right"></use></svg>
+                </li>
+            </ul>
+            <h1>DIN 561 A Болт установочный <span>(1 000 товаров)</span></h1>
+
             <div class="listing-wrap">
                 <div class="listing-filter">
                     <fieldset class="fieldset">
-                        <p class="fieldset-legend">Длина (мм.):
+                        <p class="fieldset-legend">Диаметр (М):
                             <svg class="ic ic-md"><use href="img/ic.svg#arrow-down"></use></svg>
                         </p>
 
                         <div class="fieldset-content">
                             <div class="inp-checkbox">
-                                <input type="checkbox" required name="checkbox" checked>
+                                <input type="checkbox" name="checkbox" checked id="M1">
                                 <label class="inp-checkbox__label">
-                                    M1 <span class="c-gray">(100)</span>
+                                    <span class="value">M1</span>
+                                    <span class="c-gray">(100)</span>
                                 </label>
                             </div>
                             <div class="inp-checkbox">
-                                <input type="checkbox" required name="checkbox">
+                                <input type="checkbox" name="checkbox" id="M1.4">
                                 <label class="inp-checkbox__label">
-                                    M1.4 <span class="c-gray">(100)</span>
+                                    <span class="value">M1.4</span>
+                                    <span class="c-gray">(100)</span>
                                 </label>
                             </div>
                             <div class="inp-checkbox">
-                                <input type="checkbox" required name="checkbox">
+                                <input type="checkbox" name="checkbox" id="M1.7">
                                 <label class="inp-checkbox__label">
-                                    M1.7 <span class="c-gray">(100)</span>
+                                    <span class="value">M1.7</span>
+                                    <span class="c-gray">(100)</span>
                                 </label>
                             </div>
                             <div class="inp-checkbox">
-                                <input type="checkbox" required name="checkbox">
+                                <input type="checkbox" name="checkbox" id="M2">
                                 <label class="inp-checkbox__label">
-                                    M2 <span class="c-gray">(100)</span>
+                                    <span class="value">M2</span>
+                                    <span class="c-gray">(100)</span>
                                 </label>
                             </div>
                             <div class="inp-checkbox">
-                                <input type="checkbox" required name="checkbox">
+                                <input type="checkbox" name="checkbox" id="M2.5">
                                 <label class="inp-checkbox__label">
-                                    M2.5 <span class="c-gray">(100)</span>
+                                    <span class="value">M2.5</span>
+                                    <span class="c-gray">(100)</span>
                                 </label>
                             </div>
                             <div class="inp-checkbox">
-                                <input type="checkbox" required name="checkbox">
+                                <input type="checkbox" name="checkbox" id="M3">
                                 <label class="inp-checkbox__label">
-                                    M3 <span class="c-gray">(100)</span>
+                                    <span class="value">M3</span>
+                                    <span class="c-gray">(100)</span>
                                 </label>
                             </div>
                             <div class="inp-checkbox">
-                                <input type="checkbox" required name="checkbox">
+                                <input type="checkbox" name="checkbox" id="M4">
                                 <label class="inp-checkbox__label">
-                                    M4 <span class="c-gray">(100)</span>
+                                    <span class="value">M4</span>
+                                    <span class="c-gray">(100)</span>
                                 </label>
                             </div>
                             <div class="inp-checkbox">
-                                <input type="checkbox" required name="checkbox">
+                                <input type="checkbox" name="checkbox" id="M6">
                                 <label class="inp-checkbox__label">
-                                    M6 <span class="c-gray">(100)</span>
+                                    <span class="value">M6</span>
+                                    <span class="c-gray">(100)</span>
                                 </label>
                             </div>
                             <div class="inp-checkbox">
-                                <input type="checkbox" required name="checkbox">
+                                <input type="checkbox" name="checkbox" id="M10">
                                 <label class="inp-checkbox__label">
-                                    M10 <span class="c-gray">(100)</span>
+                                    <span class="value">M10</span>
+                                    <span class="c-gray">(100)</span>
                                 </label>
                             </div>
                         </div>
                     </fieldset>
+
+                    <fieldset class="fieldset">
+                        <p class="fieldset-legend">Длина (мм.):
+                            <svg class="ic ic-md"><use href="img/ic.svg#arrow-down"></use></svg>
+                        </p>
+
+                        <input type="text" class="fieldset-search" placeholder="Я ищу ...">
+
+                        <div class="fieldset-content">
+                            <div class="inp-checkbox">
+                                <input type="checkbox" name="checkbox" checked id="ch-2" value="2">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">2</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" name="checkbox" id="ch-3" value="3">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">3</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" rename="checkbox" id="ch-3.5" value="3.5">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">3.5</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" name="checkbox" id="ch-4" value="4">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">4</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" name="checkbox" id="ch-5" value="5">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">5</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" name="checkbox" id="ch-6" value="6">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">6</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" name="checkbox" id="ch-8" value="8">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">8</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" rname="checkbox" id="ch-10" value="10">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">10</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" rname="checkbox" id="ch-12" value="12">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">12</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" rname="checkbox" id="ch-14" value="14">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">14</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" rname="checkbox" id="ch-16" value="16">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">16</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" rname="checkbox" id="ch-18" value="18">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">18</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" rname="checkbox" id="ch-20" value="20">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">20</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" rname="checkbox" id="ch-22" value="22">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">22</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" rname="checkbox" id="ch-25" value="25">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">25</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" rname="checkbox" id="ch-28" value="28">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">28</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" rname="checkbox" id="ch-30" value="30">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">30</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" rname="checkbox" id="ch-35" value="35">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">35</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" rname="checkbox" id="ch-40" value="40">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">40</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" rname="checkbox" id="ch-45" value="45">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">45</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox" data-hide="more">
+                                <input type="checkbox" rname="checkbox" id="ch-50" value="50">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">50</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox" data-hide="more">
+                                <input type="checkbox" rname="checkbox" id="ch-55" value="55">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">55</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox" data-hide="more">
+                                <input type="checkbox" rname="checkbox" id="ch-60" value="60">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">60</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox" data-hide="more">
+                                <input type="checkbox" rname="checkbox" id="ch-65" value="65">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">65</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox" data-hide="more">
+                                <input type="checkbox" rname="checkbox" id="ch-70" value="70">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">70</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox" data-hide="more">
+                                <input type="checkbox" rname="checkbox" id="ch-75" value="75">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">75</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                        </div>
+                        <button type="button" class="show-more" data-show="more">
+                            <svg class="ic ic-md"><use href="img/ic.svg#arrow-down"></use></svg>
+                            Ещё 13
+                        </button>
+                    </fieldset>
+
+                    <fieldset class="fieldset">
+                        <p class="fieldset-legend">Класс прочности
+                            <svg class="ic ic-md"><use href="img/ic.svg#arrow-down"></use></svg>
+                        </p>
+
+                        <div class="fieldset-content">
+                            <div class="inp-checkbox">
+                                <input type="checkbox" name="checkbox" id="4.8">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">4.8</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" name="checkbox" id="8.8">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">8.8</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" name="checkbox" id="A2">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">A2</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" name="checkbox" id="A4">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">A4</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="fieldset">
+                        <p class="fieldset-legend">Класс прочности
+                            <svg class="ic ic-md"><use href="img/ic.svg#arrow-down"></use></svg>
+                        </p>
+
+                        <div class="fieldset-content fieldset-content--single">
+                            <div class="inp-checkbox">
+                                <input type="checkbox" name="checkbox" id="mt_1">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">Без покрытия</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" name="checkbox" id="mt_2">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">Желтый цинк</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" name="checkbox" id="mt_3">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">Латунь</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" name="checkbox" id="mt_4">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">Нержавеющая сталь</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" name="checkbox" id="mt_5">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">Никелированная сталь</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" name="checkbox" id="mt_6">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">Оцинкованная сталь</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                            <div class="inp-checkbox">
+                                <input type="checkbox" name="checkbox" id="mt_7">
+                                <label class="inp-checkbox__label">
+                                    <span class="value">Полиамид</span>
+                                    <span class="c-gray">(100)</span>
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="fieldset">
+                        <p class="fieldset-legend">Цена, ₽
+                            <svg class="ic ic-md"><use href="img/ic.svg#arrow-down"></use></svg>
+                        </p>
+
+                        <div class="fieldset-content fieldset-content--single">
+                            <div class="range-valls">
+                                <div class="range-col">
+                                    <span class="range-valls__label">От</span>
+                                    <input type="text" class="range_from">
+                                </div>
+                                <div class="range-col">
+                                    <span class="range-valls__label">До</span>
+                                    <input type="text" class="range_to">
+                                </div>
+                                <input type="tel" inputmode="numeric" value="250, 2500" min="250" max="4500" class="range-double">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="fieldset-row">
+                        <div class="inp-btn">
+                            <input type="checkbox" id="ch_btn-1">
+                            <label class="inp-btn__label btn btn-outline-dark-gray">В наличии</label>
+                        </div>
+                        <div class="inp-btn">
+                            <input type="checkbox" id="ch_btn-2">
+                            <label class="inp-btn__label btn btn-outline-dark-gray">Скидка</label>
+                        </div>
+                    </div>
                 </div>
                 <div class="listing-content">
-                    <div class="type-wrap">
+                    <div class="listing-selected">
+                        <button type="reset" class="btn btn-outline-secondary">Сбросить</button>
+                    </div>
+                    <div class="type-wrap md-hide">
                         <div class="type">
                             <img src="img/poduct.jpg" alt="pr" class="type-img">
                             <a href="#" class="type-descr">DIN 444 B Болт откидной Латунь</a>
@@ -391,7 +748,7 @@
                         </div>
                     </div>
 
-                    <div class="quicksearch quicksearch--lg">
+                    <div class="quicksearch quicksearch--lg md-hide">
                         <h2 class="quicksearch__heading">Быстрый поиск</h2>
                         <form class="form quicksearch__form">
                             <div class="inp-wrap">
@@ -461,75 +818,107 @@
                                 <td>Болт DIN 6921 M 5x 10 кл.пр. 5.8 оцинк П/Р (500)</td>
                                 <td>80.50 ₽</td>
                                 <td>
-                                    <span class="fx">
+                                    <div class="fx">
                                         <svg class="ic ic-md"><use href="img/ic.svg#instock"></use></svg>
                                         В наличии (10000000)
-                                   </span>
+                                   </div>
                                 </td>
                                 <td>
-                                    <span class="fx fx-lg">
+                                    <div class="fx fx-lg">
                                         <span class="amount">
                                             <a href="#" class="amount-dec"><svg class="ic"><use href="img/ic.svg#subtract"></use></svg></a>
-                                            <input type="number" value="1" min="0" class="amount-input">
+                                            <input type="number" value="100" min="0" class="amount-input">
                                             <a href="#" class="amount-inc"><svg class="ic"><use href="img/ic.svg#add"></use></svg></a>
                                         </span>
-                                        <button class="btn btn-icon btn-sm btn-primary">
-                                            <svg><use href="img/ic.svg#cart"></use></svg>
-                                        </button>
-                                        <button class="btn btn-icon btn-sm btn-primary">
-                                            <svg><use href="img/ic.svg#lightning"></use></svg>
-                                        </button>
-                                    </span>
+                                        <div class="md-hide fx fx-lg">
+                                            <button data-shop class="btn btn-icon btn-sm btn-primary">
+                                                <svg><use href="img/ic.svg#cart"></use></svg>
+                                            </button>
+                                            <a href="#modal-oneclick_2" class="btn btn-icon btn-sm btn-primary">
+                                                <svg><use href="img/ic.svg#lightning"></use></svg>
+                                            </a>
+                                        </div>
+                                        <div class="md-show fx">
+                                            <button data-shop class="btn btn-icon btn-md btn-primary">
+                                                <svg><use href="img/ic.svg#cart"></use></svg>
+                                            </button>
+                                            <a href="#modal-oneclick_2" class="btn btn-md btn-secondary">
+                                                <svg><use href="img/ic.svg#lightning"></use></svg>
+                                                Купить в 1 клик
+                                            </a>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>Болт DIN 6921 M 5x 10 кл.пр. 5.8 оцинк П/Р (500)</td>
                                 <td>80.50 ₽</td>
                                 <td>
-                                   <span class="fx">
+                                   <div class="fx">
                                         <svg class="ic ic-md"><use href="img/ic.svg#instock"></use></svg>
                                         В наличии (10000000)
-                                   </span>
+                                   </div>
                                 </td>
                                 <td>
-                                    <span class="fx fx-lg">
+                                    <div class="fx fx-lg">
                                         <span class="amount">
                                             <a href="#" class="amount-dec"><svg class="ic"><use href="img/ic.svg#subtract"></use></svg></a>
-                                            <input type="number" value="1" min="0" class="amount-input">
+                                            <input type="number" value="100" min="0" class="amount-input">
                                             <a href="#" class="amount-inc"><svg class="ic"><use href="img/ic.svg#add"></use></svg></a>
                                         </span>
-                                        <button class="btn btn-icon btn-sm btn-primary">
-                                            <svg><use href="img/ic.svg#cart"></use></svg>
-                                        </button>
-                                        <button class="btn btn-icon btn-sm btn-primary">
-                                            <svg><use href="img/ic.svg#lightning"></use></svg>
-                                        </button>
-                                    </span>
+                                        <div class="md-hide fx fx-lg">
+                                            <button data-shop class="btn btn-icon btn-sm btn-primary">
+                                                <svg><use href="img/ic.svg#cart"></use></svg>
+                                            </button>
+                                            <a href="#modal-oneclick_2" class="btn btn-icon btn-sm btn-primary">
+                                                <svg><use href="img/ic.svg#lightning"></use></svg>
+                                            </a>
+                                        </div>
+                                        <div class="md-show fx">
+                                            <button data-shop class="btn btn-icon btn-md btn-primary">
+                                                <svg><use href="img/ic.svg#cart"></use></svg>
+                                            </button>
+                                            <a href="#modal-oneclick_2" class="btn btn-md btn-secondary">
+                                                <svg><use href="img/ic.svg#lightning"></use></svg>
+                                                Купить в 1 клик
+                                            </a>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>Болт DIN 6921 M 5x 10 кл.пр. 5.8 оцинк П/Р (500)</td>
+                                <td>Штифт DIN 7 1,5x 14 нерж 1.4305 (A1) / ~ ГОСТ 3128-70 исп. 1 (500)</td>
                                 <td>80.50 ₽</td>
                                 <td>
-                                    <span class="fx">
-                                        <svg class="ic ic-md"><use href="img/ic.svg#instock"></use></svg>
-                                        В наличии (10000000)
-                                   </span>
+                                    <div class="fx">
+                                        <svg class="ic ic-md"><use href="img/ic.svg#not-instock"></use></svg>
+                                        Под заказ
+                                   </div>
                                 </td>
                                 <td>
-                                    <span class="fx fx-lg">
-                                        <span class="amount">
+                                    <div class="fx fx-lg">
+                                        <span class="amount md-hide">
                                             <a href="#" class="amount-dec"><svg class="ic"><use href="img/ic.svg#subtract"></use></svg></a>
-                                            <input type="number" value="1" min="0" class="amount-input">
+                                            <input type="number" value="100" min="0" class="amount-input">
                                             <a href="#" class="amount-inc"><svg class="ic"><use href="img/ic.svg#add"></use></svg></a>
                                         </span>
-                                        <button class="btn btn-icon btn-sm btn-primary">
-                                            <svg><use href="img/ic.svg#cart"></use></svg>
-                                        </button>
-                                        <button class="btn btn-icon btn-sm btn-primary">
-                                            <svg><use href="img/ic.svg#lightning"></use></svg>
-                                        </button>
-                                    </span>
+                                        <div class="md-hide fx fx-lg">
+                                            <button data-shop class="btn btn-icon btn-sm btn-primary">
+                                                <svg><use href="img/ic.svg#cart"></use></svg>
+                                            </button>
+                                            <a href="#modal-oneclick_2" class="btn btn-icon btn-sm btn-primary">
+                                                <svg><use href="img/ic.svg#lightning"></use></svg>
+                                            </a>
+                                        </div>
+                                        <div class="md-show fx">
+                                            <button class="btn btn-md btn-primary">
+                                                Под заказ
+                                            </button>
+                                            <a href="#modal-gotinstock" class="btn btn-md btn-secondary">
+                                                Сообщить о поступлении товара
+                                            </a>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
@@ -653,6 +1042,46 @@
             </p>
         </div>
     </footer>
+
+    <div class="modal" id="modal-gotinstock">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
+            </button>
+
+            <h2 class="modal-heading">
+                Сообщить <br>
+                о поступлении товара
+            </h2>
+            <form class="form">
+                <div class="form-group">
+                    <div class="inp-group">
+                        <input type="email" required id="gotinstock-name" placeholder="Ваша почта" class="inp-field">
+                        <label for="gotinstock-name" class="inp-label">Ваша почта</label>
+                    </div>
+                    <select>
+                        <option hidden>Актуальность</option>
+                        <option>7 дней</option>
+                        <option>10 дней</option>
+                        <option>30 дней </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="inp-checkbox">
+                        <input type="checkbox" required name="checkbox" id="gotinstock_2">
+                        <label for="gotinstock_2" class="inp-checkbox__label">
+                            Я согласен(а) с обработкой персональных данных в соответствии с <a href="#"
+                                class="c-danger">политикой конфиденциальности.</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+
+                <p class="form-info"><span class="c-danger">*</span> - обязательно к заполнению</p>
+            </form>
+        </div>
+    </div>
 
     <div class="modal modal-lg" id="modal-search">
         <div class="modal-content">
@@ -1066,7 +1495,7 @@
                     <div class="form-row">
                         <div class="amount" data-change="price__val" data-price-val="18.50 ₽">
                             <a href="#" class="amount-dec"><svg class="ic"><use href="img/ic.svg#subtract"></use></svg></a>
-                            <input type="number" value="1" min="0" class="amount-input">
+                            <input type="number" value="100" min="0" class="amount-input">
                             <a href="#" class="amount-inc"><svg class="ic"><use href="img/ic.svg#add"></use></svg></a>
                         </div>
 

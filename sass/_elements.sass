@@ -233,10 +233,12 @@
                 border-radius: $b-rad
                 border: 1px solid $b-color
                 background-color: var(--light)
+                pointer-events: none
                 margin-right: 10px
 
             &::after
                 content: ''
+                pointer-events: none
                 display: block
                 z-index: 11
                 width: calc( var(--fild-width) + 4px )
@@ -257,6 +259,7 @@
         input,
         &__label::before
             cursor: pointer
+            position: absolute
             z-index: 1
             left: 0
             top: 0
@@ -264,7 +267,6 @@
             min-height: var(--fild-width)
             height: var(--fild-width)
             box-sizing: border-box
-            position: absolute
 
         input
             width: 100%
@@ -287,6 +289,49 @@
             display: block
             width: 100%
             margin: 0 0 4px
+
+    &-btn
+        position: relative
+        z-index: 1
+        &__label
+            position: relative
+            z-index: -1
+
+        input
+            cursor: pointer
+            position: absolute
+            z-index: 1
+            left: 0
+            top: 0
+            width: 100%
+            height: 100%
+            z-index: 11
+            opacity: 0
+            &:checked + *
+                color: var(--primary)
+                background-color: var(--secondary)
+                border-color: var(--secondary)
+
+                .ic
+                    fill: $light
+
+.range
+    &-group
+    &-valls
+        gap: 16px 4px
+        &__label
+            position: absolute
+            top: 50%
+            left: 8px
+            transform: translateY(-50%)
+
+        input
+            padding-left: 35px
+
+    &-col
+        width: calc( (100% - 4px) / 2 )
+        position: relative
+        z-index: 1
 
 .amount
     display: flex

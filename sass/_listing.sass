@@ -12,6 +12,9 @@
     &-content
         gap: 40px
 
+    &-selected 
+        gap: 10px
+
     @media screen and ( max-width:  991px)
         &-filter
             display: none
@@ -60,6 +63,7 @@
     display: block
     overflow: hidden
     border: 1px solid var(--light-gray)
+    margin-bottom: 8px
     &-legend
         width: 100%
         padding: 11.5px 16px
@@ -67,11 +71,25 @@
         .ic
             margin-left: auto
 
+    &-search
+        margin: 4px auto 0
+        max-width: calc( 100% - 32px )
+        padding: 0 16px
+        min-height: 38px
+        border-color: var(--dark-gray)
+
     &-content
         padding: 16px
         gap: $gap 8px
         &>*
             width: calc( (100% - 8px) / 2 )
+
+        &--single
+            &>*
+                width: 100%
+
+    &-row 
+        gap: 8px
 
     @media screen and ( max-width: 1199px )
         &-content
@@ -86,6 +104,11 @@ table
         padding: 13.5px 12px
         padding: 11px 12px
         text-align: left
+        // width: 10%
+        &:first-child
+            // width: 40%
+
+        &:last-child
 
     .fx
         gap: 4px
@@ -95,7 +118,6 @@ table
     thead
         th
             white-space: nowrap
-            font-size: $font-md-fx
             color: $light
             background-color: $primary
             &:first-child
@@ -113,6 +135,8 @@ table
                 color: $dark
 
     tbody
+        td
+            font-size: $font-sm
         tr
             &:nth-child(even) td
                 background-color: var(--light-gray)
@@ -122,7 +146,7 @@ table
                 --ic-width: 14px
 
     .amount
-        max-width: 80px
+        width: 80px
         &-input
             min-height: 20px
         &-inc,
@@ -130,6 +154,11 @@ table
             padding: 3px
             width: 20px
             height: 20px
+
+    @media screen and ( max-width: 1199px )
+        .fx
+            &-lg
+                gap: 8px
 
     @media screen and ( max-width: 767px )
         background-color: var(--light-gray)
@@ -159,3 +188,25 @@ table
             &:last-child
                 padding: 0
                 width: 100%
+
+        .btn
+            &-primary
+                white-space: nowrap
+            &-sm
+                min-width: 40px
+
+[data-hide]
+    &:not(.--show)
+        display: none
+
+.show
+    &-more
+        text-decoration: underline
+        display: block
+        margin: 0 auto 16px
+        width: 100%
+        max-width: calc( 100% - 32px )
+        color: var(--text-gray)
+        text-align: left
+        .ic
+            fill: var(--text-gray)
