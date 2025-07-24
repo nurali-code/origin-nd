@@ -89,8 +89,6 @@ $(document).ready(function () {
     } setupCheckboxSync();
 });
 
-
-
 // Поле поиска Fieldset
 $(document).ready(function () {
     $('.fieldset-search').on('input', function () {
@@ -304,7 +302,7 @@ $(document).ready(function () {
 
     function hideModals() {
         if ($('.modal.active').length) {
-            $('.modal.active, a[href*="#modal-"]').removeClass('active');
+            $('.modal.active, [data-modal]').removeClass('active');
             $('body').removeAttr('data-modal-show');
             if (!$('body').hasClass('overflow')) {
                 compensateForScrollbar(0);
@@ -312,17 +310,17 @@ $(document).ready(function () {
         }
     };
 
-    $('a[href*="#modal-"]').on('click', function (e) {
+    $('[data-modal]').on('click', function (e) {
         $(this).addClass('active')
         e.preventDefault()
-        showModal($(this).attr("href"));
+        showModal($(this).data("modal"));
 
     });
 
     $('.modal-close, [data-modal-close]').on('click', () => { hideModals(); });
 
     $(document).on('click', function (e) {
-        if (!$(e.target).closest('.modal-content, a[href*="#modal-"]').length && $('body').attr('data-modal-show')) {
+        if (!$(e.target).closest('.modal-content, [data-modal]').length && $('body').attr('data-modal-show')) {
             hideModals();
         }
     });
