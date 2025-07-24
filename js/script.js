@@ -21,79 +21,77 @@ $(document).ready(function () {
 });
 
 // Функционал переключения и отображения Чекбоксов
-function setupCheckboxSync() {
-    if (!$('.fieldset').length || !$('.listing-selected').length) return;
+$(document).ready(function () {
+    function setupCheckboxSync() {
+        if (!$('.fieldset').length || !$('.listing-selected').length) return;
+        const $selectChecked = $('.listing-selected');
 
-    const $selectChecked = $('.listing-selected');
+        // 1. Инициализация — отображаем уже выбранные чекбоксы
+        $('.fieldset .inp-checkbox input:checked').each(function () {
+            const $input = $(this);
+            const elId = $input.attr('id');
+            const elText = $input.closest('.inp-checkbox').find('.value').text();
 
-    // 1. Инициализация — отображаем уже выбранные чекбоксы
-    $('.fieldset .inp-checkbox input:checked').each(function () {
-        const $input = $(this);
-        const elId = $input.attr('id');
-        const elText = $input.closest('.inp-checkbox').find('.value').text();
-
-        if ($selectChecked.find(`label[for="${elId}"]`).length === 0) {
-            const elBox = $(`
+            if ($selectChecked.find(`label[for="${elId}"]`).length === 0) {
+                const elBox = $(`
                 <label for="${elId}" class="btn btn-secondary fx-ac">
                     ${elText}<svg class="ic ic-md"><use href="img/ic.svg#close"></use></svg>
                 </label>
             `);
-            elBox.insertBefore($selectChecked.find('button[type="reset"]'));
-        }
-    });
+                elBox.insertBefore($selectChecked.find('button[type="reset"]'));
+            }
+        });
 
-    toggleSelectCheckedVisibility($selectChecked);
+        toggleSelectCheckedVisibility($selectChecked);
 
-    // 2. Обработка изменений чекбоксов
-    $('.fieldset .inp-checkbox input').on('change', function () {
-        const $input = $(this);
-        const elId = $input.attr('id');
-        const elText = $input.closest('.inp-checkbox').find('.value').text();
+        // 2. Обработка изменений чекбоксов
+        $('.fieldset .inp-checkbox input').on('change', function () {
+            const $input = $(this);
+            const elId = $input.attr('id');
+            const elText = $input.closest('.inp-checkbox').find('.value').text();
 
-        if ($input.is(':checked')) {
-            if ($selectChecked.find(`label[for="${elId}"]`).length === 0) {
-                const elBox = $(`
+            if ($input.is(':checked')) {
+                if ($selectChecked.find(`label[for="${elId}"]`).length === 0) {
+                    const elBox = $(`
                     <label for="${elId}" class="btn btn-secondary fx-ac">
                         ${elText}<svg class="ic ic-md"><use href="img/ic.svg#close"></use></svg>
                     </label>
                 `);
-                elBox.insertBefore($selectChecked.find('button[type="reset"]'));
+                    elBox.insertBefore($selectChecked.find('button[type="reset"]'));
+                }
+            } else {
+                $selectChecked.find(`label[for="${elId}"]`).remove();
             }
-        } else {
-            $selectChecked.find(`label[for="${elId}"]`).remove();
+
+            toggleSelectCheckedVisibility($selectChecked);
+        });
+
+        // 3. Обработка кнопки сброса
+        $selectChecked.find('button[type="reset"]').on('click', function (e) {
+            e.preventDefault();
+
+            // Снять все чекбоксы
+            $('.fieldset .inp-checkbox input').prop('checked', false);
+
+            // Удалить все <label> в .listing-selected (кроме кнопки)
+            $selectChecked.find('label').remove();
+
+            // Скрыть блок
+            $selectChecked.hide();
+        });
+
+        // Показать или скрыть блок в зависимости от наличия <label>
+        function toggleSelectCheckedVisibility($container) {
+            const hasLabels = $container.find('label').length > 0;
+            if (hasLabels) { $container.show(); }
+            else { $container.hide(); }
         }
-
-        toggleSelectCheckedVisibility($selectChecked);
-    });
-
-    // 3. Обработка кнопки сброса
-    $selectChecked.find('button[type="reset"]').on('click', function (e) {
-        e.preventDefault();
-
-        // Снять все чекбоксы
-        $('.fieldset .inp-checkbox input').prop('checked', false);
-
-        // Удалить все <label> в .listing-selected (кроме кнопки)
-        $selectChecked.find('label').remove();
-
-        // Скрыть блок
-        $selectChecked.hide();
-    });
-    
-    // Показать или скрыть блок в зависимости от наличия <label>
-    function toggleSelectCheckedVisibility($container) {
-        const hasLabels = $container.find('label').length > 0;
-        if (hasLabels) {$container.show();} 
-        else {$container.hide();}
-    }
-}
-
-
-$(document).ready(function () {setupCheckboxSync();});
+    } setupCheckboxSync();
+});
 
 
 
-// Поле пооиска Fieldset
+// Поле поиска Fieldset
 $(document).ready(function () {
     $('.fieldset-search').on('input', function () {
         const $input = $(this);
@@ -180,7 +178,10 @@ $(document).ready(function () {
         const $this = $(this).hide().wrap('<div class="select-wrap"></div>');
         $this.parent().addClass($this.attr('class'));
 
-        const defaultOption = $this.find('option').eq(0);
+        const defaultOption = $this.find('option:selected').length
+            ? $this.find('option:selected').first()
+            : $this.find('option').first();
+
         const defaultText = defaultOption.text();
 
         const $customSelect = $('<div class="select"></div>')
@@ -208,8 +209,11 @@ $(document).ready(function () {
 
         $optionlist.on('click', 'li', function (e) {
             e.stopPropagation();
+            const selectedValue = $(this).attr('rel');
             $customSelect.find('span').html($(this).text());
-            $this.val($(this).attr('rel')).trigger('change');
+            $this.val(selectedValue).trigger('change');
+            $optionlist.find('li').removeAttr('selected');
+            $(this).attr('selected', 'selected');
             $customSelect.removeClass('active');
             $optionlist.slideUp(300);
         });
@@ -633,64 +637,64 @@ $(document).on('click', '.product-fav', function (e) {
 
 let rangeInstances = []; // Хранилище экзе
 function initializeRanges() {
-	destroyRanges();
-	$('.range-double').each(function () {
-		const $this = $(this);
-		const prt = $this.parent();
-		const [pMin, pMax] = [$this.attr('min') || 0, $this.attr('max') || 100].map(Number);
-		const [start, end] = ($this.val() || `${pMin},${pMax}`).split(",").map(Number);
-		const [rF, rT] = [prt.find('.range_from'), prt.find('.range_to')];
+    destroyRanges();
+    $('.range-double').each(function () {
+        const $this = $(this);
+        const prt = $this.parent();
+        const [pMin, pMax] = [$this.attr('min') || 0, $this.attr('max') || 100].map(Number);
+        const [start, end] = ($this.val() || `${pMin},${pMax}`).split(",").map(Number);
+        const [rF, rT] = [prt.find('.range_from'), prt.find('.range_to')];
 
-		const slider = new rSlider({
-			target: this,
-			values: { min: pMin, max: pMax },
-			range: true,
-			step: 1,
-			labels: false,
-			scale: false,
-			set: [start, end],
-			tooltip: false,
-			onChange: (vals) => {
-				const [val1, val2] = vals.split(",");
-				rF.val(val1.replace(/\B(?=(\d{3})+(?!\d))/g, ' '));
-				rT.val(val2.replace(/\B(?=(\d{3})+(?!\d))/g, ' '));
-			}
-		});
+        const slider = new rSlider({
+            target: this,
+            values: { min: pMin, max: pMax },
+            range: true,
+            step: 1,
+            labels: false,
+            scale: false,
+            set: [start, end],
+            tooltip: false,
+            onChange: (vals) => {
+                const [val1, val2] = vals.split(",");
+                rF.val(val1.replace(/\B(?=(\d{3})+(?!\d))/g, ' '));
+                rT.val(val2.replace(/\B(?=(\d{3})+(?!\d))/g, ' '));
+            }
+        });
 
-		rangeInstances.push(slider);
+        rangeInstances.push(slider);
 
-		const validateAndUpdate = function (isFrom) {
-			return function () {
-				let newValue = parseInt($(this).val().replace(/\s/g, ''), 10);
-				if (!isNaN(newValue)) {
-					if (newValue < pMin) newValue = pMin;
-					if (newValue > pMax) newValue = pMax;
-					$(this).val(newValue);
-					slider.setValues(isFrom ? newValue : null, isFrom ? null : newValue);
-				} else {
-					$(this).val(pMin);
-					slider.setValues(isFrom ? pMin : null, isFrom ? null : pMin);
-				}
-			};
-		};
+        const validateAndUpdate = function (isFrom) {
+            return function () {
+                let newValue = parseInt($(this).val().replace(/\s/g, ''), 10);
+                if (!isNaN(newValue)) {
+                    if (newValue < pMin) newValue = pMin;
+                    if (newValue > pMax) newValue = pMax;
+                    $(this).val(newValue);
+                    slider.setValues(isFrom ? newValue : null, isFrom ? null : newValue);
+                } else {
+                    $(this).val(pMin);
+                    slider.setValues(isFrom ? pMin : null, isFrom ? null : pMin);
+                }
+            };
+        };
 
-		rF.on('input', function () {
-			$(this).val($(this).val().replace(/[^0-9]/g, ''));
-		}).on('blur', validateAndUpdate(true)).on('keydown', function (e) {
-			if (e.key === 'Enter') validateAndUpdate(true).call(this);
-		});
+        rF.on('input', function () {
+            $(this).val($(this).val().replace(/[^0-9]/g, ''));
+        }).on('blur', validateAndUpdate(true)).on('keydown', function (e) {
+            if (e.key === 'Enter') validateAndUpdate(true).call(this);
+        });
 
-		rT.on('input', function () {
-			$(this).val($(this).val().replace(/[^0-9]/g, ''));
-		}).on('blur', validateAndUpdate(false)).on('keydown', function (e) {
-			if (e.key === 'Enter') validateAndUpdate(false).call(this);
-		});
-	});
+        rT.on('input', function () {
+            $(this).val($(this).val().replace(/[^0-9]/g, ''));
+        }).on('blur', validateAndUpdate(false)).on('keydown', function (e) {
+            if (e.key === 'Enter') validateAndUpdate(false).call(this);
+        });
+    });
 }
 
 function destroyRanges() {
-	rangeInstances.forEach(slider => slider.destroy());
-	rangeInstances = [];
+    rangeInstances.forEach(slider => slider.destroy());
+    rangeInstances = [];
 }
 
 initializeRanges(); // Инициализация слайдеров
