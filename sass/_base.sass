@@ -143,6 +143,10 @@ input, textarea, select, .select
     border: 1px solid $b-color
     border-radius: $b-rad
     background-color: var(--light)
+    &:disabled
+        cursor: not-allowed
+        opacity: .6
+        
     &.bg-grayish
         border-color: $text-gray
 

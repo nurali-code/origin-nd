@@ -358,6 +358,9 @@
         width: 40px
         height: 40px
         cursor: pointer
+        &:disabled
+            cursor: not-allowed
+            opacity: .6
         .ic
             display: block
             margin: 0 auto
@@ -635,11 +638,14 @@
 
 @media screen and ( max-width: 576px )
     .quicksearch
-        padding: var(--bs-gutter-x)
+        padding: 0
+        background-color: unset
         border-radius: 0
-        width: calc( 100% + var(--bs-gutter-x) * 2 )
-        position: relative
-        left: calc( 0px - var(--bs-gutter-x) )
+        &:not(.quicksearch--lg)
+            padding: var(--bs-gutter-x)
+            width: calc( 100% + var(--bs-gutter-x) * 2 )
+            position: relative
+            left: calc( 0px - var(--bs-gutter-x) )
         &__form
             gap: 8px
             &>*

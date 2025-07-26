@@ -10,16 +10,36 @@
                 width: calc( (311 / 1290) * 100% )
 
     &-content
-        gap: 40px
+        gap: 40px 8px
 
-    &-selected 
+    &-selected
         gap: 10px
+
+    &-row
+        gap: $gap 8px
+
+    &-togglers
+        gap: 8px
+        &>*
+            width: fit-content !important
 
     @media screen and ( max-width:  991px)
         &-filter
             display: none
+
         &-content
+            gap: 24px
             width: 100%
+
+    @media screen and ( max-width:  767px)
+        &-content
+            gap: $gap
+
+    @media screen and ( max-width: 576px )
+        &-togglers
+            gap: $gap
+            &>*
+                width: 100% !important
 
 .type
     border-radius: $b-rad
@@ -41,7 +61,7 @@
         &>*
             width: calc( (100% - $gap * 2) / 3 )
 
-    @media screen and ( max-width: 1199px )
+    @media screen and ( max-width: 1199px ) and ( min-width: 767px )
         &-img
             --tw: 50px
 
@@ -54,9 +74,20 @@
                 --base-gap: 8px
 
     @media screen and ( max-width: 767px )
+        &-img
+            --tw: 74px
+
+        &-descr
+            font-size: $font-md
+
         &-wrap
             &>*
                 width: calc( (100% - $gap) / 2 )
+
+    @media screen and ( max-width: 576px )
+        &-wrap
+            &>*
+                width: 100%
 
 .fieldset
     border-radius: $b-rad
@@ -64,16 +95,30 @@
     overflow: hidden
     border: 1px solid var(--light-gray)
     margin-bottom: 8px
+    &>
+        .fieldset-legend
+            border-radius: 0
+
     &-legend
         width: 100%
+        font-size: $font-md
+        border-radius: $b-rad
         padding: 11.5px 16px
+        gap: 8px
         background-color: var(--light-gray)
         .ic
             margin-left: auto
+            &-lg
+                margin: 0
+
+        &.active
+            .ic:not(.ic-lg)
+                transform: scaleY(-1)
 
     &-search
-        margin: 4px auto 0
-        max-width: calc( 100% - 32px )
+        margin: auto 0
+        max-width: 100%
+        width: 100% !important
         padding: 0 16px
         min-height: 38px
         border-color: var(--dark-gray)
@@ -84,17 +129,38 @@
         &>*
             width: calc( (100% - 8px) / 2 )
 
+        &--fixed
+            &>*
+                width: 100% !important
+
         &--single
             &>*
                 width: 100%
 
-    &-row 
+    &-row
         gap: 8px
 
-    @media screen and ( max-width: 1199px )
+    @media screen and ( min-width: 992px ) and ( max-width: 1199px )
         &-content
             &>*
                 width: 100%
+
+    @media screen and ( min-width: 576px ) and ( max-width: 991px )
+        &-content
+            &:not(.fieldset-content--single)
+                &>*
+                    width: calc((100% - 16px) / 3)
+
+            &--single
+                &>*
+                    width: calc((100% - 8px) / 2)
+
+    @media screen and ( max-width: 991px )
+        &-row
+            padding: 8px 0
+            .btn
+                &-primary
+                    flex: 1
 
 table
     width: 100%
@@ -203,9 +269,9 @@ table
     &-more
         text-decoration: underline
         display: block
-        margin: 0 auto 16px
+        margin: 0 auto
         width: 100%
-        max-width: calc( 100% - 32px )
+        max-width: 100%
         color: var(--text-gray)
         text-align: left
         .ic

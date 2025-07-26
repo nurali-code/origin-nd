@@ -4,48 +4,62 @@ $(document).ready(function () {
         const scrollTop = $(this).scrollTop();
         const $headerFixed = $('.header-fixed');
 
-        if (scrollTop > headerHeight) {
-            $headerFixed.addClass('active');
-        }
-        else {
-            $headerFixed.removeClass('active');
-        }
+        if (scrollTop > headerHeight) { $headerFixed.addClass('active'); }
+        else { $headerFixed.removeClass('active'); }
     });
 
     function setHeaderMargin() {
         var $scrollbarWidth = window.innerWidth - $(document).width();
         $('.header-fixed').css('padding-right', $scrollbarWidth);
-    }
-    setHeaderMargin()
-    $(window).on('resize', setHeaderMargin);
+    } setHeaderMargin();
+
+    let setMargin;
+    $(window).on('resize', function () {
+        clearTimeout(setMargin);
+        setMargin = setTimeout(function () {
+            setHeaderMargin();
+        }, 200);
+    });
 });
 
 // Функционал переключения и отображения Чекбоксов
 $(document).ready(function () {
     function setupCheckboxSync() {
-        if (!$('.fieldset').length || !$('.listing-selected').length) return;
         const $selectChecked = $('.listing-selected');
+        const $fieldsetReset = $('[data-fieldset-reset]');
 
-        // 1. Инициализация — отображаем уже выбранные чекбоксы
-        $('.fieldset .inp-checkbox input:checked').each(function () {
-            const $input = $(this);
-            const elId = $input.attr('id');
-            const elText = $input.closest('.inp-checkbox').find('.value').text();
+        if (!$('.fieldset').length || !$selectChecked.length) return;
 
-            if ($selectChecked.find(`label[for="${elId}"]`).length === 0) {
-                const elBox = $(`
-                <label for="${elId}" class="btn btn-secondary fx-ac">
-                    ${elText}<svg class="ic ic-md"><use href="img/ic.svg#close"></use></svg>
-                </label>
-            `);
-                elBox.insertBefore($selectChecked.find('button[type="reset"]'));
-            }
-        });
+        // Сброс всех и пересоздание списка
+        function initializeSelectedCheckboxes() {
+            $selectChecked.find('label').not('[data-fieldset-reset]').remove();
 
-        toggleSelectCheckedVisibility($selectChecked);
+            $('.fieldset .inp-checkbox input:checked').each(function () {
+                const $input = $(this);
+                const elId = $input.attr('id');
+                const elText = $input.closest('.inp-checkbox').find('.value').text();
 
-        // 2. Обработка изменений чекбоксов
-        $('.fieldset .inp-checkbox input').on('change', function () {
+                if ($selectChecked.find(`label[for="${elId}"]`).length === 0) {
+                    const elBox = $(`
+                        <label for="${elId}" class="btn btn-secondary fx-ac">
+                            ${elText}<svg class="ic ic-md"><use href="img/ic.svg#close"></use></svg>
+                        </label>
+                    `);
+                    elBox.insertBefore($selectChecked.find('[data-fieldset-reset]'));
+                }
+            });
+
+            toggleSelectCheckedVisibility();
+        }
+
+        // Показать или скрыть блок .listing-selected
+        function toggleSelectCheckedVisibility() {
+            const hasLabels = $selectChecked.find('label').not('[data-fieldset-reset]').length > 0;
+            $selectChecked.toggle(hasLabels);
+        }
+
+        // Обработка изменений чекбоксов
+        $(document).off('change.checkboxSync').on('change.checkboxSync', '.fieldset .inp-checkbox input', function () {
             const $input = $(this);
             const elId = $input.attr('id');
             const elText = $input.closest('.inp-checkbox').find('.value').text();
@@ -53,41 +67,80 @@ $(document).ready(function () {
             if ($input.is(':checked')) {
                 if ($selectChecked.find(`label[for="${elId}"]`).length === 0) {
                     const elBox = $(`
-                    <label for="${elId}" class="btn btn-secondary fx-ac">
-                        ${elText}<svg class="ic ic-md"><use href="img/ic.svg#close"></use></svg>
-                    </label>
-                `);
-                    elBox.insertBefore($selectChecked.find('button[type="reset"]'));
+                        <label for="${elId}" class="btn btn-secondary fx-ac">
+                            ${elText}<svg class="ic ic-md"><use href="img/ic.svg#close"></use></svg>
+                        </label>
+                    `);
+                    elBox.insertBefore($selectChecked.find('[data-fieldset-reset]'));
                 }
             } else {
                 $selectChecked.find(`label[for="${elId}"]`).remove();
             }
 
-            toggleSelectCheckedVisibility($selectChecked);
+            toggleSelectCheckedVisibility();
         });
 
-        // 3. Обработка кнопки сброса
-        $selectChecked.find('button[type="reset"]').on('click', function (e) {
-            e.preventDefault();
-
-            // Снять все чекбоксы
+        // Обработка кнопки сброса
+        $fieldsetReset.off('click.reset').on('click.reset', function () {
             $('.fieldset .inp-checkbox input').prop('checked', false);
-
-            // Удалить все <label> в .listing-selected (кроме кнопки)
-            $selectChecked.find('label').remove();
-
-            // Скрыть блок
+            $selectChecked.find('label').not('[data-fieldset-reset]').remove();
+            $('.fieldset-form').each(function () { this.reset(); });
             $selectChecked.hide();
         });
 
-        // Показать или скрыть блок в зависимости от наличия <label>
-        function toggleSelectCheckedVisibility($container) {
-            const hasLabels = $container.find('label').length > 0;
-            if (hasLabels) { $container.show(); }
-            else { $container.hide(); }
-        }
-    } setupCheckboxSync();
+        initializeSelectedCheckboxes();
+    }
+
+    function filtersPlacement() {
+        $('[data-replace-from]').each(function () {
+            const $replaceFrom = $(this);
+            const replaceId = $replaceFrom.data('replace-from');
+            const $replaceTo = $(`[data-replace-to="${replaceId}"]`);
+
+            if (!$replaceFrom.data('original-content')) {
+                $replaceFrom.data('original-content', $replaceFrom.children());
+            }
+
+            const isMobile = window.innerWidth <= 991;
+            const isAlreadyMoved = $replaceTo.data('has-content');
+
+            let moved = false;
+
+            if (isMobile && !isAlreadyMoved) {
+                const $content = $replaceFrom.children().detach();
+                $replaceTo.append($content);
+                $replaceTo.data('has-content', true);
+                moved = true;
+            }
+
+            if (!isMobile && isAlreadyMoved) {
+                const $content = $replaceTo.children().detach();
+                $replaceFrom.append($content);
+                $replaceTo.data('has-content', false);
+                moved = true;
+                $('#modal-filter, [data-modal]').removeClass('active');
+                $('body').removeAttr('data-modal-show');
+            }
+
+            // Только теперь — безопасно вызвать destroy + init
+            // destroyRanges();
+            initializeRanges();
+        });
+        setupCheckboxSync?.();
+    }
+
+    filtersPlacement();
+    setupCheckboxSync();
+
+    let resizeTimer;
+    $(window).on('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
+            filtersPlacement();
+        }, 200);
+    });
 });
+
 
 // Поле поиска Fieldset
 $(document).ready(function () {
@@ -298,6 +351,7 @@ $(document).ready(function () {
         compensateForScrollbar()
         $(id).addClass('active');
         $('body').attr('data-modal-show', true)
+        initializeRanges();
     }
 
     function hideModals() {
@@ -633,15 +687,20 @@ $(document).on('click', '.product-fav', function (e) {
     }
 });
 
-let rangeInstances = []; // Хранилище экзе
+let rangeInstances = [];
 function initializeRanges() {
     destroyRanges();
+
     $('.range-double').each(function () {
-        const $this = $(this);
-        const prt = $this.parent();
-        const [pMin, pMax] = [$this.attr('min') || 0, $this.attr('max') || 100].map(Number);
-        const [start, end] = ($this.val() || `${pMin},${pMax}`).split(",").map(Number);
-        const [rF, rT] = [prt.find('.range_from'), prt.find('.range_to')];
+        const $rangeInput = $(this);
+        const prt = $rangeInput.parent();
+        const [pMin, pMax] = [$rangeInput.attr('min') || 0, $rangeInput.attr('max') || 100].map(Number);
+
+        // Берём только из value="" (HTML атрибут)
+        const valStr = $rangeInput.val() || $rangeInput.attr('value') || `${pMin},${pMax}`;
+        const [start, end] = valStr.split(",").map(str => parseInt(str.trim(), 10));
+        const rF = prt.find('.range_from');
+        const rT = prt.find('.range_to');
 
         const slider = new rSlider({
             target: this,
@@ -653,47 +712,48 @@ function initializeRanges() {
             set: [start, end],
             tooltip: false,
             onChange: (vals) => {
-                const [val1, val2] = vals.split(",");
-                rF.val(val1.replace(/\B(?=(\d{3})+(?!\d))/g, ' '));
-                rT.val(val2.replace(/\B(?=(\d{3})+(?!\d))/g, ' '));
+                const [val1, val2] = vals.split(',').map(v => parseInt(v, 10));
+                rF.val(val1.toLocaleString('ru-RU'));
+                rT.val(val2.toLocaleString('ru-RU'));
+
+                const result = `${val1},${val2}`;
+                $rangeInput.val(result); // обновляем DOM
+                $rangeInput.attr('value', result); // обновляем HTML value=""
             }
         });
 
-        rangeInstances.push(slider);
+        function sanitizeAndParse($el) {
+            return parseInt($el.val().replace(/\s/g, ''), 10) || 0;
+        }
 
-        const validateAndUpdate = function (isFrom) {
-            return function () {
-                let newValue = parseInt($(this).val().replace(/\s/g, ''), 10);
-                if (!isNaN(newValue)) {
-                    if (newValue < pMin) newValue = pMin;
-                    if (newValue > pMax) newValue = pMax;
-                    $(this).val(newValue);
-                    slider.setValues(isFrom ? newValue : null, isFrom ? null : newValue);
-                } else {
-                    $(this).val(pMin);
-                    slider.setValues(isFrom ? pMin : null, isFrom ? null : pMin);
-                }
-            };
-        };
+        function updateSliderFromInputs() {
+            const fromVal = sanitizeAndParse(rF);
+            const toVal = sanitizeAndParse(rT);
+
+            slider.setValues(fromVal, toVal);
+            const result = `${fromVal},${toVal}`;
+            $rangeInput.val(result);
+            $rangeInput.attr('value', result);
+        }
 
         rF.on('input', function () {
             $(this).val($(this).val().replace(/[^0-9]/g, ''));
-        }).on('blur', validateAndUpdate(true)).on('keydown', function (e) {
-            if (e.key === 'Enter') validateAndUpdate(true).call(this);
+        }).on('blur', updateSliderFromInputs).on('keydown', function (e) {
+            if (e.key === 'Enter') updateSliderFromInputs();
         });
 
         rT.on('input', function () {
             $(this).val($(this).val().replace(/[^0-9]/g, ''));
-        }).on('blur', validateAndUpdate(false)).on('keydown', function (e) {
-            if (e.key === 'Enter') validateAndUpdate(false).call(this);
+        }).on('blur', updateSliderFromInputs).on('keydown', function (e) {
+            if (e.key === 'Enter') updateSliderFromInputs();
         });
+
+        rangeInstances.push(slider);
     });
 }
-
+// Удаляем все слайдеры
 function destroyRanges() {
     rangeInstances.forEach(slider => slider.destroy());
     rangeInstances = [];
 }
-
-initializeRanges(); // Инициализация слайдеров
-// destroyRanges(); // Полное уничтожение слайдеров
+initializeRanges();

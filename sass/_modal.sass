@@ -100,7 +100,25 @@
             transform: translateY(0%)
 
     @media screen and ( max-width: 991px )
-        &-lg
-            .modal
-                &-close
-                    right: 20px
+        &#modal-catalog
+            .modal-close
+                right: 20px
+
+    @media screen and ( max-width: 576px )
+        padding: 20px 0
+        &-close
+            top: 2px
+            right: 6px
+
+        &-content
+            border-radius: 12px
+            padding: 12px 16px
+        &-heading
+            color: $dark
+            font-size: $font-md-fx
+            line-height: 21px
+            margin-bottom: 28px
+
+        &#modal-catalog
+            .modal-close
+                right: 16px
