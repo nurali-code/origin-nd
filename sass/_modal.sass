@@ -9,14 +9,9 @@
     padding: 20px calc(var(--bs-gutter-x) * 0.5)
     box-sizing: border-box
     overflow-y: scroll
-    display: flex
     align-items: center
     justify-content: center
-
-    transition: all ease .3s
-    opacity: 0
-    visibility: hidden
-    animation: modalHide .3s ease forwards
+    display: none
 
     &-content
         width: 100%
@@ -90,12 +85,8 @@
             &-content
                 max-width: 700px
 
-    &:not(.active)
-        pointer-events: none
-
     &.active
-        opacity: 1
-        visibility: visible
+        display: flex
         &>*
             transform: translateY(0%)
 

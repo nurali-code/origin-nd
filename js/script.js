@@ -117,6 +117,7 @@ $(document).ready(function () {
                 $replaceFrom.append($content);
                 $replaceTo.data('has-content', false);
                 moved = true;
+                $('#modal-filter').fadeOut(300)
                 $('#modal-filter, [data-modal]').removeClass('active');
                 $('body').removeAttr('data-modal-show');
             }
@@ -343,16 +344,18 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
+    $('.modal').css('display', 'flex').hide();
     function showModal(id) {
         hideModals()
         compensateForScrollbar()
-        $(id).addClass('active');
+        $(id).fadeIn(300).addClass('active');
         $('body').attr('data-modal-show', true)
         initializeRanges();
     }
 
     function hideModals() {
         if ($('.modal.active').length) {
+            $('.modal.active').fadeOut(300)
             $('.modal.active, [data-modal]').removeClass('active');
             $('body').removeAttr('data-modal-show');
             if (!$('body').hasClass('overflow')) {
