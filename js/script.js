@@ -79,7 +79,8 @@ $(document).ready(function () {
         });
 
         // Обработка кнопки сброса
-        $fieldsetReset.off('click.reset').on('click.reset', function () {
+        $fieldsetReset.off('click.reset').on('click.reset', function (e) {
+            e.preventDefault();
             $('.fieldset-form').each(function () { this.reset(); });
             $('.fieldset .inp-checkbox input').prop('checked', false);
             $selectChecked.find('label').not('[data-fieldset-reset]').remove();
