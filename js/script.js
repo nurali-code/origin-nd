@@ -73,18 +73,16 @@ $(document).ready(function () {
                     `);
                     elBox.insertBefore($selectChecked.find('[data-fieldset-reset]'));
                 }
-            } else {
-                $selectChecked.find(`label[for="${elId}"]`).remove();
-            }
+            } else { $selectChecked.find(`label[for="${elId}"]`).remove(); }
 
             toggleSelectCheckedVisibility();
         });
 
         // Обработка кнопки сброса
         $fieldsetReset.off('click.reset').on('click.reset', function () {
+            $('.fieldset-form').each(function () { this.reset(); });
             $('.fieldset .inp-checkbox input').prop('checked', false);
             $selectChecked.find('label').not('[data-fieldset-reset]').remove();
-            $('.fieldset-form').each(function () { this.reset(); });
             $selectChecked.hide();
         });
 
@@ -122,7 +120,6 @@ $(document).ready(function () {
                 $('body').removeAttr('data-modal-show');
             }
 
-            // Только теперь — безопасно вызвать destroy + init
             // destroyRanges();
             initializeRanges();
         });
@@ -140,7 +137,6 @@ $(document).ready(function () {
         }, 200);
     });
 });
-
 
 // Поле поиска Fieldset
 $(document).ready(function () {
