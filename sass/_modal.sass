@@ -56,6 +56,11 @@
             width: 24px
             height: 24px
 
+        &--left
+            padding-left: 0
+            right: auto
+            left: 10px
+
     &-product
         display: flex
         align-items: center
@@ -98,8 +103,11 @@
     @media screen and ( max-width: 576px )
         padding: 20px 0
         &-close
-            top: 2px
+            top: 3px
             right: 6px
+            &--left
+                right: auto
+                left: 16px
 
         &-content
             border-radius: 12px
@@ -113,3 +121,6 @@
         &#modal-catalog
             .modal-close
                 right: 16px
+                &--left
+                    right: auto
+                    left: 16px

@@ -345,13 +345,19 @@
         font-size: $font-md-fx
         border: none
         text-align: center
+        -moz-appearance: textfield
         /* Remove spinner arrows in number input */
         &::-webkit-inner-spin-button,
         &::-webkit-outer-spin-button
-            -webkit-appearance: none
-            margin: 0
-
             -moz-appearance: textfield
+            -webkit-appearance: none
+            appearance: none
+            margin: 0
+        &:hover,
+        &:focus
+            -webkit-appearance: none
+            -moz-appearance: textfield
+            appearance: none
 
     &-dec,
     &-inc
@@ -516,6 +522,7 @@
 
 .info
     display: inline-block
+    text-align: left
     position: relative
     z-index: 222
     .ic

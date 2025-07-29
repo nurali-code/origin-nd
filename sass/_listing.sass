@@ -1,4 +1,7 @@
 .listing
+    @media screen and ( min-width: 992px )
+        padding-top: 24px
+
     &-wrap
         gap: $gap
         &>*
@@ -10,7 +13,7 @@
                 width: calc( (311 / 1290) * 100% )
 
     &-content
-        gap: 40px 8px
+        gap: 26px 8px
 
     &-selected
         gap: 10px
@@ -23,8 +26,8 @@
         &>*
             width: fit-content !important
 
-    &-heading 
-        &__count 
+    &-heading
+        &__count
             font-size: $font-md
             font-weight: normal
 
@@ -33,7 +36,7 @@
             display: none
 
         &-content
-            gap: 24px
+            gap: 22px
             width: 100%
 
     @media screen and ( max-width:  767px)
@@ -41,17 +44,15 @@
             gap: $gap
 
     @media screen and ( max-width: 576px )
-        &-heading 
+        &-heading
             margin-bottom: 16px
-            &__count 
+            &__count
                 display: block
                 color: var(--link-color)
         &-togglers
             gap: $gap
             &>*
                 width: 100% !important
-
-
 
 .type
     border-radius: $b-rad
@@ -181,15 +182,19 @@ table
         font-size: $font-md
         padding: 13.5px 12px
         padding: 11px 12px
-        text-align: left
         // width: 10%
+        text-align: center
         &:first-child
+            text-align: left
             // width: 40%
 
         &:last-child
 
     .fx
         gap: 4px
+        display: inline-flex
+        text-wrap: balance
+        width: fit-content
         &-lg
             gap: 16px
 
@@ -263,7 +268,11 @@ table
             &:first-child
                 width: 100%
 
+            &:nth-child(2)
+                font-weight: bold
+
             &:last-child
+                text-align: left
                 padding: 0
                 width: 100%
 
@@ -276,12 +285,12 @@ table
 .pagination
     list-style: none
     gap: 12px
-    margin: 0 auto 
+    margin: 0 auto
     padding: 0
-    li 
+    li
         margin: 0
 
-    .btn 
+    .btn
         color: $primary
 
     .ic

@@ -106,12 +106,12 @@
                     <svg class="ic"><use href="img/ic.svg#search"></use></svg>
                 </button>
                 <a href="#" class="ic-btn">
-                    <span class="badge badge--sm badge-primary">0</span>
+                    <span class="badge badge--sm badge-primary" data-badge="fav"></span>
                     <svg class="ic ic-xl"><use href="img/ic.svg#fav"></use></svg>
                     <span class="ic-btn__text">Избранное</span> 
                 </a>
                 <a href="#" class="ic-btn">
-                    <span class="badge badge--sm badge-primary">0</span>
+                    <span class="badge badge--sm badge-primary" data-badge="cart">1</span>
                     <svg class="ic ic-xl"><use href="img/ic.svg#cart"></use></svg>
                     <span class="ic-btn__text">Корзина</span> 
                 </a>
@@ -168,12 +168,12 @@
                     </div>
                 </div>
                 <a href="#" class="ic-btn">
-                    <span class="badge badge--sm badge-primary">0</span>
+                    <span class="badge badge--sm badge-primary" data-badge="fav"></span>
                     <svg class="ic ic-xl"><use href="img/ic.svg#fav"></use></svg>
                     <span class="ic-btn__text">Избранное</span> 
                 </a>
                 <a href="#" class="ic-btn">
-                    <span class="badge badge--sm badge-primary">0</span>
+                    <span class="badge badge--sm badge-primary" data-badge="cart">1</span>
                     <svg class="ic ic-xl"><use href="img/ic.svg#cart"></use></svg>
                     <span class="ic-btn__text">Корзина</span> 
                 </a>
@@ -262,6 +262,26 @@
         </div>
 
         <nav class="navbar">
+            <div class="navbar-order">
+                <span class="navbar-order__price" data-price="navbar__val">13.00 ₽</span>
+                <span class="navbar-order__stock">
+                    <svg class="ic">
+                        <use href="img/ic.svg#instock"></use>
+                    </svg>
+                    <span class="navbar-order__text">В наличии: <br> 1 000 шт</span>
+                </span>
+                <div class="navbar-order__action" data-card-catcher>
+                    <button class="btn btn-secondary" data-card-add>
+                        <svg><use href="img/ic.svg#cart"></use></svg> В корзину
+                    </button>
+
+                    <div class="navbar-order__amount amount" data-price-val="13.00 ₽" data-card-amount data-change="navbar__val">
+                        <button class="amount-dec"><svg class="ic"><use href="img/ic.svg#subtract"></use></svg></button>
+                        <input type="number" inputmode="numeric" value="1" min="0" class="amount-input">
+                        <button class="amount-inc"><svg class="ic"><use href="img/ic.svg#add"></use></svg></button>
+                    </div>
+                </div>
+            </div>
             <ul class="navbar-list">
                 <li>
                     <a href="main.html" class="ic-btn">
@@ -280,13 +300,13 @@
                 </li>
                 <li>
                     <a href="#" class="ic-btn">
-                        <span class="badge badge--sm badge-primary">0</span>
+                        <span class="badge badge--sm badge-primary" data-badge="fav"></span>
                         <svg class="ic ic-xl"><use href="img/ic.svg#fav"></use></svg> Избранное
                     </a>
                 </li>
                 <li>
                     <a href="#" class="ic-btn">
-                        <span class="badge badge--sm badge-primary">0</span>
+                        <span class="badge badge--sm badge-primary" data-badge="cart">1</span>
                         <svg class="ic ic-xl"><use href="img/ic.svg#cart"></use></svg> Корзина
                     </a>
                 </li>
@@ -960,13 +980,10 @@
             </form>
         </div>
     </div>
-    
+
     <div class="modal modal-lg" id="modal-catalog">
         <div class="modal-content">
-            <button class="modal-close" title="Закрыть">
-                <svg class="ic"><use href="img/ic.svg#close"></use></svg>
-            </button>
-
+            <button class="modal-close" title="Закрыть"><svg class="ic"><use href="img/ic.svg#close"></use></svg></button>
             <h2 class="modal-heading modal-heading--alt">Каталог</h2>
 
             <ul class="catalog-list catalog-list--hover" data-catalog-hover>

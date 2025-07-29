@@ -151,9 +151,12 @@ $(document).ready(function () {
             const $checkbox = $(this);
             const text = $checkbox.find('.value').text().toLowerCase();
 
-            if (text.includes(query)) { $(this).fadeIn(200); }
-            else { $(this).fadeOut(200); }
+            if (text.includes(query)) { $(this).fadeIn(150); }
+            else { $(this).fadeOut(150).removeAttr('data-hide'); }
         });
+
+        $('[data-show]').fadeOut(150);
+        // $('[data-hide]')
     });
 });
 
@@ -408,6 +411,7 @@ $(document).on('click input', '.amount-dec, .amount-inc, .amount-input', functio
         const $cardAction = $amount.closest('[data-card-catcher]');
         $cardAction.find('[data-card-add]').show();
         $amount.removeClass('active');
+        badgeCounter('cart', 'remove')
     }
 });
 
@@ -642,6 +646,7 @@ $(document).on('click', '[data-card-add]', function (e) {
     const $cardAction = $(this).closest('[data-card-catcher]');
     $(this).hide();
     $cardAction.find('[data-card-amount]').addClass('active').find('.amount-input').val(1);
+    badgeCounter('cart', 'add')
 });
 
 $(document).ready(function () {
@@ -672,7 +677,7 @@ function badgeCounter(badge, action) {
     });
 }
 
-$(document).on('click', '.product-fav', function (e) {
+$(document).on('click', '[data-fav]', function (e) {
     e.preventDefault();
     const $btn = $(this);
     const $icon = $btn.find('use');

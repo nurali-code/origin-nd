@@ -116,12 +116,12 @@
                     <svg class="ic"><use href="img/ic.svg#search"></use></svg>
                 </button>
                 <a href="#" class="ic-btn">
-                    <span class="badge badge--sm badge-primary">0</span>
+                    <span class="badge badge--sm badge-primary" data-badge="fav"></span>
                     <svg class="ic ic-xl"><use href="img/ic.svg#fav"></use></svg>
                     <span class="ic-btn__text">Избранное</span> 
                 </a>
                 <a href="#" class="ic-btn">
-                    <span class="badge badge--sm badge-primary">0</span>
+                    <span class="badge badge--sm badge-primary" data-badge="cart"></span>
                     <svg class="ic ic-xl"><use href="img/ic.svg#cart"></use></svg>
                     <span class="ic-btn__text">Корзина</span> 
                 </a>
@@ -178,12 +178,12 @@
                     </div>
                 </div>
                 <a href="#" class="ic-btn">
-                    <span class="badge badge--sm badge-primary">0</span>
+                    <span class="badge badge--sm badge-primary" data-badge="fav"></span>
                     <svg class="ic ic-xl"><use href="img/ic.svg#fav"></use></svg>
                     <span class="ic-btn__text">Избранное</span> 
                 </a>
                 <a href="#" class="ic-btn">
-                    <span class="badge badge--sm badge-primary">0</span>
+                    <span class="badge badge--sm badge-primary" data-badge="cart"></span>
                     <svg class="ic ic-xl"><use href="img/ic.svg#cart"></use></svg>
                     <span class="ic-btn__text">Корзина</span> 
                 </a>
@@ -194,7 +194,7 @@
                 <button data-menu-btn class="btn btn-icon btn-gray header-fixed__menu"><svg class="ic ic-lg"><use href="img/ic.svg#menu"></use></svg></button>
             </div>
         </div>
-
+        
         <div class="menu-wrap" data-menu-content>
             <div class="menu" data-menu-content>
                 <div class="menu-header">
@@ -272,6 +272,38 @@
         </div>
 
         <nav class="navbar">
+            <div class="navbar-order">
+                <span class="navbar-order__price" data-price="navbar__val">13.00 ₽</span>
+                <span class="navbar-order__stock">
+                    <svg class="ic">
+                        <use href="img/ic.svg#not-instock"></use>
+                    </svg>
+                    <span class="navbar-order__text c-gray">Нет в наличии</span>
+                </span>
+                <div class="navbar-order__action">
+                    <button data-modal="#modal-gotinstock" class="btn btn-secondary">Под заказ</button>
+                </div>
+            </div>
+            <div class="navbar-order">
+                <span class="navbar-order__price" data-price="navbar__val">13.00 ₽</span>
+                <span class="navbar-order__stock">
+                    <svg class="ic">
+                        <use href="img/ic.svg#instock"></use>
+                    </svg>
+                    <span class="navbar-order__text">В наличии: <br> 1 000 шт</span>
+                </span>
+                <div class="navbar-order__action" data-card-catcher>
+                    <button class="btn btn-secondary" data-card-add>
+                        <svg><use href="img/ic.svg#cart"></use></svg> В корзину
+                    </button>
+
+                    <div class="navbar-order__amount amount" data-price-val="13.00 ₽" data-card-amount data-change="navbar__val">
+                        <button class="amount-dec"><svg class="ic"><use href="img/ic.svg#subtract"></use></svg></button>
+                        <input type="number" inputmode="numeric" value="1" min="0" class="amount-input">
+                        <button class="amount-inc"><svg class="ic"><use href="img/ic.svg#add"></use></svg></button>
+                    </div>
+                </div>
+            </div>
             <ul class="navbar-list">
                 <li>
                     <a href="main.html" class="ic-btn">
@@ -290,13 +322,13 @@
                 </li>
                 <li>
                     <a href="#" class="ic-btn">
-                        <span class="badge badge--sm badge-primary">0</span>
+                        <span class="badge badge--sm badge-primary" data-badge="fav"></span>
                         <svg class="ic ic-xl"><use href="img/ic.svg#fav"></use></svg> Избранное
                     </a>
                 </li>
                 <li>
                     <a href="#" class="ic-btn">
-                        <span class="badge badge--sm badge-primary">0</span>
+                        <span class="badge badge--sm badge-primary" data-badge="cart">1</span>
                         <svg class="ic ic-xl"><use href="img/ic.svg#cart"></use></svg> Корзина
                     </a>
                 </li>
@@ -774,13 +806,13 @@
 
             <div class="card-slider" data-tab-content="popular">
                 <div class="card">
-                    <a href="#" class="card-header">
+                    <a href="card.html" class="card-header">
                         <div class="card-badges">
                             <span class="badge badge-success">хит</span>
                         </div>
                         <img src="img/poduct.jpg" class="card-img" alt="i" loading="lazy">
                     </a>
-                    <a href="#" class="card-body">
+                    <a href="card.html" class="card-body">
                         <h3 class="card__heading">
                             DIN 6921 000000000000000000 000000000000000000000000
                         </h3>
@@ -819,13 +851,13 @@
                     </div>
                 </div>
                 <div class="card">
-                    <a href="#" class="card-header">
+                    <a href="card.html" class="card-header">
                         <div class="card-badges">
                             <span class="badge badge-success">хит</span>
                         </div>
                         <img src="img/poduct.jpg" class="card-img" alt="i" loading="lazy">
                     </a>
-                    <a href="#" class="card-body">
+                    <a href="card.html" class="card-body">
                         <h3 class="card__heading">
                             DIN 6921 000000000000000000 000000000000000000000000
                         </h3>
@@ -864,13 +896,13 @@
                     </div>
                 </div>
                 <div class="card">
-                    <a href="#" class="card-header">
+                    <a href="card.html" class="card-header">
                         <div class="card-badges">
                             <span class="badge badge-success">хит</span>
                         </div>
                         <img src="img/poduct.jpg" class="card-img" alt="i" loading="lazy">
                     </a>
-                    <a href="#" class="card-body">
+                    <a href="card.html" class="card-body">
                         <h3 class="card__heading">
                             DIN 6921 000000000000000000 000000000000000000000000
                         </h3>
@@ -909,13 +941,13 @@
                     </div>
                 </div>
                 <div class="card">
-                    <a href="#" class="card-header">
+                    <a href="card.html" class="card-header">
                         <div class="card-badges">
                             <span class="badge badge-success">хит</span>
                         </div>
                         <img src="img/poduct.jpg" class="card-img" alt="i" loading="lazy">
                     </a>
-                    <a href="#" class="card-body">
+                    <a href="card.html" class="card-body">
                         <h3 class="card__heading">
                             DIN 6921 000000000000000000 000000 00000 0000000000000
                         </h3>
@@ -954,13 +986,13 @@
                     </div>
                 </div>
                 <div class="card">
-                    <a href="#" class="card-header">
+                    <a href="card.html" class="card-header">
                         <div class="card-badges">
                             <span class="badge badge-success">хит</span>
                         </div>
                         <img src="img/poduct.jpg" class="card-img" alt="i" loading="lazy">
                     </a>
-                    <a href="#" class="card-body">
+                    <a href="card.html" class="card-body">
                         <h3 class="card__heading">
                             DIN 6921 000000000000000000 000000000000000000000000
                         </h3>
@@ -999,13 +1031,13 @@
                     </div>
                 </div>
                 <div class="card">
-                    <a href="#" class="card-header">
+                    <a href="card.html" class="card-header">
                         <div class="card-badges">
                             <span class="badge badge-success">хит</span>
                         </div>
                         <img src="img/poduct.jpg" class="card-img" alt="i" loading="lazy">
                     </a>
-                    <a href="#" class="card-body">
+                    <a href="card.html" class="card-body">
                         <h3 class="card__heading">
                             DIN 6921 000000000000000000 000000000000000000000000
                         </h3>
@@ -1047,13 +1079,13 @@
             
             <div class="card-slider" data-tab-content="new">
                 <div class="card">
-                    <a href="#" class="card-header">
+                    <a href="card.html" class="card-header">
                         <div class="card-badges">
                             <span class="badge badge-primary">Новинки</span>
                         </div>
                         <img src="img/poduct.jpg" class="card-img" alt="i" loading="lazy">
                     </a>
-                    <a href="#" class="card-body">
+                    <a href="card.html" class="card-body">
                         <h3 class="card__heading">
                             DIN 6921 000000000000000000 000000000000000000000000
                         </h3>
@@ -1092,13 +1124,13 @@
                     </div>
                 </div>
                 <div class="card">
-                    <a href="#" class="card-header">
+                    <a href="card.html" class="card-header">
                         <div class="card-badges">
                             <span class="badge badge-primary">Новинки</span>
                         </div>
                         <img src="img/poduct.jpg" class="card-img" alt="i" loading="lazy">
                     </a>
-                    <a href="#" class="card-body">
+                    <a href="card.html" class="card-body">
                         <h3 class="card__heading">
                             DIN 6921 000000000000000000 000000000000000000000000
                         </h3>
@@ -1137,13 +1169,13 @@
                     </div>
                 </div>
                 <div class="card">
-                    <a href="#" class="card-header">
+                    <a href="card.html" class="card-header">
                         <div class="card-badges">
                             <span class="badge badge-primary">Новинки</span>
                         </div>
                         <img src="img/poduct.jpg" class="card-img" alt="i" loading="lazy">
                     </a>
-                    <a href="#" class="card-body">
+                    <a href="card.html" class="card-body">
                         <h3 class="card__heading">
                             DIN 6921 000000000000000000 000000000000000000000000
                         </h3>
@@ -1182,13 +1214,13 @@
                     </div>
                 </div>
                 <div class="card">
-                    <a href="#" class="card-header">
+                    <a href="card.html" class="card-header">
                         <div class="card-badges">
                             <span class="badge badge-primary">Новинки</span>
                         </div>
                         <img src="img/poduct.jpg" class="card-img" alt="i" loading="lazy">
                     </a>
-                    <a href="#" class="card-body">
+                    <a href="card.html" class="card-body">
                         <h3 class="card__heading">
                             DIN 6921 000000000000000000 000000 00000 0000000000000
                         </h3>
@@ -1227,13 +1259,13 @@
                     </div>
                 </div>
                 <div class="card">
-                    <a href="#" class="card-header">
+                    <a href="card.html" class="card-header">
                         <div class="card-badges">
                             <span class="badge badge-primary">Новинки</span>
                         </div>
                         <img src="img/poduct.jpg" class="card-img" alt="i" loading="lazy">
                     </a>
-                    <a href="#" class="card-body">
+                    <a href="card.html" class="card-body">
                         <h3 class="card__heading">
                             DIN 6921 000000000000000000 000000000000000000000000
                         </h3>
@@ -1272,13 +1304,13 @@
                     </div>
                 </div>
                 <div class="card">
-                    <a href="#" class="card-header">
+                    <a href="card.html" class="card-header">
                         <div class="card-badges">
                             <span class="badge badge-primary">Новинки</span>
                         </div>
                         <img src="img/poduct.jpg" class="card-img" alt="i" loading="lazy">
                     </a>
-                    <a href="#" class="card-body">
+                    <a href="card.html" class="card-body">
                         <h3 class="card__heading">
                             DIN 6921 000000000000000000 000000000000000000000000
                         </h3>
@@ -1320,13 +1352,13 @@
             
             <div class="card-slider" data-tab-content="sale">
                 <div class="card" data-slick-filter="sale">
-                    <a href="#" class="card-header">
+                    <a href="card.html" class="card-header">
                         <div class="card-badges">
                             <span class="badge badge-secondary">Акция</span>
                         </div>
                         <img src="img/poduct.jpg" class="card-img" alt="i" loading="lazy">
                     </a>
-                    <a href="#" class="card-body">
+                    <a href="card.html" class="card-body">
                         <h3 class="card__heading">
                             DIN 6921 000000000000000000 000000000000000000000000
                         </h3>
@@ -1365,13 +1397,13 @@
                     </div>
                 </div>
                 <div class="card" data-slick-filter="sale">
-                    <a href="#" class="card-header">
+                    <a href="card.html" class="card-header">
                         <div class="card-badges">
                             <span class="badge badge-secondary">Акция</span>
                         </div>
                         <img src="img/poduct.jpg" class="card-img" alt="i" loading="lazy">
                     </a>
-                    <a href="#" class="card-body">
+                    <a href="card.html" class="card-body">
                         <h3 class="card__heading">
                             DIN 6921 000000000000000000 000000000000000000000000
                         </h3>
@@ -1410,13 +1442,13 @@
                     </div>
                 </div>
                 <div class="card" data-slick-filter="sale">
-                    <a href="#" class="card-header">
+                    <a href="card.html" class="card-header">
                         <div class="card-badges">
                             <span class="badge badge-secondary">Акция</span>
                         </div>
                         <img src="img/poduct.jpg" class="card-img" alt="i" loading="lazy">
                     </a>
-                    <a href="#" class="card-body">
+                    <a href="card.html" class="card-body">
                         <h3 class="card__heading">
                             DIN 6921 000000000000000000 000000000000000000000000
                         </h3>
@@ -1455,13 +1487,13 @@
                     </div>
                 </div>
                 <div class="card" data-slick-filter="sale">
-                    <a href="#" class="card-header">
+                    <a href="card.html" class="card-header">
                         <div class="card-badges">
                             <span class="badge badge-secondary">Акция</span>
                         </div>
                         <img src="img/poduct.jpg" class="card-img" alt="i" loading="lazy">
                     </a>
-                    <a href="#" class="card-body">
+                    <a href="card.html" class="card-body">
                         <h3 class="card__heading">
                             DIN 6921 000000000000000000 000000 00000 0000000000000
                         </h3>
@@ -1500,13 +1532,13 @@
                     </div>
                 </div>
                 <div class="card" data-slick-filter="sale">
-                    <a href="#" class="card-header">
+                    <a href="card.html" class="card-header">
                         <div class="card-badges">
                             <span class="badge badge-secondary">Акция</span>
                         </div>
                         <img src="img/poduct.jpg" class="card-img" alt="i" loading="lazy">
                     </a>
-                    <a href="#" class="card-body">
+                    <a href="card.html" class="card-body">
                         <h3 class="card__heading">
                             DIN 6921 000000000000000000 000000000000000000000000
                         </h3>
@@ -1545,13 +1577,13 @@
                     </div>
                 </div>
                 <div class="card" data-slick-filter="sale">
-                    <a href="#" class="card-header">
+                    <a href="card.html" class="card-header">
                         <div class="card-badges">
                             <span class="badge badge-secondary">Акция</span>
                         </div>
                         <img src="img/poduct.jpg" class="card-img" alt="i" loading="lazy">
                     </a>
-                    <a href="#" class="card-body">
+                    <a href="card.html" class="card-body">
                         <h3 class="card__heading">
                             DIN 6921 000000000000000000 000000000000000000000000
                         </h3>
@@ -2371,6 +2403,302 @@
                 </a>
                 <button data-modal="#modal-req-3" class="btn btn-outline-secondary">Запросить расчет</a>
             </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Наименование
+                            <span class="info">
+                                <svg class="ic ic-md">
+                                    <use href="img/ic.svg#info"></use>
+                                </svg>
+                                <span class="info__text">   
+                                    Цена указана за минимальную партию. При заказе на сумму более 50 000 руб. действует индивидуальная скидка. Для товаров "под заказ" указана последняя продажная цена.
+                                </span>
+                            </span>
+                        </th>
+                        <th>Цена (1 шт)
+                            <span class="info">
+                                <svg class="ic ic-md">
+                                    <use href="img/ic.svg#info"></use>
+                                </svg>
+                                <span class="info__text">   
+                                    Цена указана за минимальную партию. При заказе на сумму более 50 000 руб. действует индивидуальная скидка. Для товаров "под заказ" указана последняя продажная цена.
+                                </span>
+                            </span>
+                        </th>
+                        <th>Статус</th>
+                        <th>Количество
+                            <span class="info">
+                                <svg class="ic ic-md">
+                                    <use href="img/ic.svg#info"></use>
+                                </svg>
+                                <span class="info__text">   
+                                    Цена указана за минимальную партию. При заказе на сумму более 50 000 руб. действует индивидуальная скидка. Для товаров "под заказ" указана последняя продажная цена.
+                                </span>
+                            </span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Болт DIN 6921 M 5x 10 кл.пр. 5.8 оцинк П/Р (500)</td>
+                        <td>80.50 ₽</td>
+                        <td>
+                            <div class="fx">
+                                <svg class="ic ic-md"><use href="img/ic.svg#instock"></use></svg>
+                                В наличии (10000000)
+                            </div>
+                        </td>
+                        <td>
+                            <div class="fx fx-lg">
+                                <span class="amount">
+                                    <button type="button" class="amount-dec"><svg class="ic"><use href="img/ic.svg#subtract"></use></svg></button>
+                                    <input type="number" value="100" min="0" class="amount-input">
+                                    <button type="button" class="amount-inc"><svg class="ic"><use href="img/ic.svg#add"></use></svg></button>
+                                </span>
+                                <div class="md-hide fx fx-lg">
+                                    <button data-shop class="btn btn-icon btn-sm btn-primary">
+                                        <svg><use href="img/ic.svg#cart"></use></svg>
+                                    </button>
+                                    <button data-modal="#modal-oneclick_2" class="btn btn-icon btn-sm btn-primary">
+                                        <svg><use href="img/ic.svg#lightning"></use></svg>
+                                    </button>
+                                </div>
+                                <div class="md-show fx">
+                                    <button data-shop class="btn btn-icon btn-md btn-primary">
+                                        <svg><use href="img/ic.svg#cart"></use></svg>
+                                    </button>
+                                    <button data-modal="#modal-oneclick_2" class="btn btn-md btn-secondary">
+                                        <svg><use href="img/ic.svg#lightning"></use></svg>
+                                        Купить в 1 клик
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Болт DIN 6921 M 5x 10 кл.пр. 5.8 оцинк П/Р (500)</td>
+                        <td>80.50 ₽</td>
+                        <td>
+                            <div class="fx">
+                                <svg class="ic ic-md"><use href="img/ic.svg#instock"></use></svg>
+                                В наличии (10000000)
+                            </div>
+                        </td>
+                        <td>
+                            <div class="fx fx-lg">
+                                <span class="amount">
+                                    <button type="button" class="amount-dec"><svg class="ic"><use href="img/ic.svg#subtract"></use></svg></button>
+                                    <input type="number" value="100" min="0" class="amount-input">
+                                    <button type="button" class="amount-inc"><svg class="ic"><use href="img/ic.svg#add"></use></svg></button>
+                                </span>
+                                <div class="md-hide fx fx-lg">
+                                    <button data-shop class="btn btn-icon btn-sm btn-primary">
+                                        <svg><use href="img/ic.svg#cart"></use></svg>
+                                    </button>
+                                    <button data-modal="#modal-oneclick_2" class="btn btn-icon btn-sm btn-primary">
+                                        <svg><use href="img/ic.svg#lightning"></use></svg>
+                                    </button>
+                                </div>
+                                <div class="md-show fx">
+                                    <button data-shop class="btn btn-icon btn-md btn-primary">
+                                        <svg><use href="img/ic.svg#cart"></use></svg>
+                                    </button>
+                                    <button data-modal="#modal-oneclick_2" class="btn btn-md btn-secondary">
+                                        <svg><use href="img/ic.svg#lightning"></use></svg>
+                                        Купить в 1 клик
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Штифт DIN 7 1,5x 14 нерж 1.4305 (A1) / ~ ГОСТ 3128-70 исп. 1 (500)</td>
+                        <td>80.50 ₽</td>
+                        <td>
+                            <div class="fx">
+                                <svg class="ic ic-md"><use href="img/ic.svg#not-instock"></use></svg>
+                                Под заказ
+                            </div>
+                        </td>
+                        <td>
+                            <div class="fx fx-lg">
+                                <span class="amount">
+                                    <button disabled type="button" class="amount-dec"><svg class="ic"><use href="img/ic.svg#subtract"></use></svg></button>
+                                    <input disabled type="number" value="100" min="0" class="amount-input">
+                                    <button disabled type="button" class="amount-inc"><svg class="ic"><use href="img/ic.svg#add"></use></svg></button>
+                                </span>
+                                <div class="md-hide fx fx-lg">
+                                    <button disabled data-shop class="btn btn-icon btn-sm btn-primary">
+                                        <svg><use href="img/ic.svg#cart"></use></svg>
+                                    </button>
+                                    <button disabled data-modal="#modal-oneclick_2" class="btn btn-icon btn-sm btn-primary">
+                                        <svg><use href="img/ic.svg#lightning"></use></svg>
+                                    </button>
+                                </div>
+                                <div class="md-show fx">
+                                    <button disabled data-shop class="btn btn-icon btn-md btn-primary">
+                                        <svg><use href="img/ic.svg#cart"></use></svg>
+                                    </button>
+                                    <button disabled data-modal="#modal-oneclick_2" class="btn btn-md btn-secondary">
+                                        <svg><use href="img/ic.svg#lightning"></use></svg>
+                                        Купить в 1 клик
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Штифт DIN 7 1,5x 14 нерж 1.4305 (A1) / ~ ГОСТ 3128-70 исп. 1 (500)</td>
+                        <td>80.50 ₽</td>
+                        <td>
+                            <div class="fx">
+                                <svg class="ic ic-md"><use href="img/ic.svg#p-stock"></use></svg>
+                                Частично в наличии
+                            </div>
+                        </td>
+                        <td>
+                            <div class="fx fx-lg">
+                                <span class="amount">
+                                    <button type="button" class="amount-dec"><svg class="ic"><use href="img/ic.svg#subtract"></use></svg></button>
+                                    <input type="number" value="100" min="0" class="amount-input">
+                                    <button type="button" class="amount-inc"><svg class="ic"><use href="img/ic.svg#add"></use></svg></button>
+                                </span>
+                                <div class="md-hide fx fx-lg">
+                                    <button data-shop class="btn btn-icon btn-sm btn-primary">
+                                        <svg><use href="img/ic.svg#cart"></use></svg>
+                                    </button>
+                                    <button data-modal="#modal-oneclick_2" class="btn btn-icon btn-sm btn-primary">
+                                        <svg><use href="img/ic.svg#lightning"></use></svg>
+                                    </button>
+                                </div>
+                                <div class="md-show fx">
+                                    <button data-shop class="btn btn-icon btn-md btn-primary">
+                                        <svg><use href="img/ic.svg#cart"></use></svg>
+                                    </button>
+                                    <button data-modal="#modal-oneclick_2" class="btn btn-md btn-secondary">
+                                        <svg><use href="img/ic.svg#lightning"></use></svg>
+                                        Купить в 1 клик
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Болт DIN 6921 M 5x 10 кл.пр. 5.8 оцинк П/Р (500)</td>
+                        <td>80.50 ₽</td>
+                        <td>
+                            <div class="fx">
+                                <svg class="ic ic-md"><use href="img/ic.svg#instock"></use></svg>
+                                В наличии (10000000)
+                            </div>
+                        </td>
+                        <td>
+                            <div class="fx fx-lg">
+                                <span class="amount">
+                                    <button type="button" class="amount-dec"><svg class="ic"><use href="img/ic.svg#subtract"></use></svg></button>
+                                    <input type="number" value="100" min="0" class="amount-input">
+                                    <button type="button" class="amount-inc"><svg class="ic"><use href="img/ic.svg#add"></use></svg></button>
+                                </span>
+                                <div class="md-hide fx fx-lg">
+                                    <button data-shop class="btn btn-icon btn-sm btn-primary">
+                                        <svg><use href="img/ic.svg#cart"></use></svg>
+                                    </button>
+                                    <button data-modal="#modal-oneclick_2" class="btn btn-icon btn-sm btn-primary">
+                                        <svg><use href="img/ic.svg#lightning"></use></svg>
+                                    </button>
+                                </div>
+                                <div class="md-show fx">
+                                    <button data-shop class="btn btn-icon btn-md btn-primary">
+                                        <svg><use href="img/ic.svg#cart"></use></svg>
+                                    </button>
+                                    <button data-modal="#modal-oneclick_2" class="btn btn-md btn-secondary">
+                                        <svg><use href="img/ic.svg#lightning"></use></svg>
+                                        Купить в 1 клик
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Штифт DIN 7 1,5x 14 нерж 1.4305 (A1) / ~ ГОСТ 3128-70 исп. 1 (500)</td>
+                        <td>80.50 ₽</td>
+                        <td>
+                            <div class="fx">
+                                <svg class="ic ic-md"><use href="img/ic.svg#not-instock"></use></svg>
+                                Под заказ
+                            </div>
+                        </td>
+                        <td>
+                            <div class="fx fx-lg">
+                                <span class="amount">
+                                    <button disabled type="button" class="amount-dec"><svg class="ic"><use href="img/ic.svg#subtract"></use></svg></button>
+                                    <input disabled type="number" value="100" min="0" class="amount-input">
+                                    <button disabled type="button" class="amount-inc"><svg class="ic"><use href="img/ic.svg#add"></use></svg></button>
+                                </span>
+                                <div class="md-hide fx fx-lg">
+                                    <button disabled data-shop class="btn btn-icon btn-sm btn-primary">
+                                        <svg><use href="img/ic.svg#cart"></use></svg>
+                                    </button>
+                                    <button disabled data-modal="#modal-oneclick_2" class="btn btn-icon btn-sm btn-primary">
+                                        <svg><use href="img/ic.svg#lightning"></use></svg>
+                                    </button>
+                                </div>
+                                <div class="md-show fx">
+                                    <button disabled data-shop class="btn btn-icon btn-md btn-primary">
+                                        <svg><use href="img/ic.svg#cart"></use></svg>
+                                    </button>
+                                    <button disabled data-modal="#modal-oneclick_2" class="btn btn-md btn-secondary">
+                                        <svg><use href="img/ic.svg#lightning"></use></svg>
+                                        Купить в 1 клик
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Штифт DIN 7 1,5x 14 нерж 1.4305 (A1) / ~ ГОСТ 3128-70 исп. 1 (500)</td>
+                        <td>80.50 ₽</td>
+                        <td>
+                            <div class="fx">
+                                <svg class="ic ic-md"><use href="img/ic.svg#p-stock"></use></svg>
+                                Частично в наличии
+                            </div>
+                        </td>
+                        <td>
+                            <div class="fx fx-lg">
+                                <span class="amount">
+                                    <button type="button" class="amount-dec"><svg class="ic"><use href="img/ic.svg#subtract"></use></svg></button>
+                                    <input type="number" value="100" min="0" class="amount-input">
+                                    <button type="button" class="amount-inc"><svg class="ic"><use href="img/ic.svg#add"></use></svg></button>
+                                </span>
+                                <div class="md-hide fx fx-lg">
+                                    <button data-shop class="btn btn-icon btn-sm btn-primary">
+                                        <svg><use href="img/ic.svg#cart"></use></svg>
+                                    </button>
+                                    <button data-modal="#modal-oneclick_2" class="btn btn-icon btn-sm btn-primary">
+                                        <svg><use href="img/ic.svg#lightning"></use></svg>
+                                    </button>
+                                </div>
+                                <div class="md-show fx">
+                                    <button data-shop class="btn btn-icon btn-md btn-primary">
+                                        <svg><use href="img/ic.svg#cart"></use></svg>
+                                    </button>
+                                    <button data-modal="#modal-oneclick_2" class="btn btn-md btn-secondary">
+                                        <svg><use href="img/ic.svg#lightning"></use></svg>
+                                        Купить в 1 клик
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
