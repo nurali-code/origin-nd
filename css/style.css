@@ -662,6 +662,9 @@ textarea {
 }
 
 .btn {
+    --btn-c: var(--light);
+    background-color: var(--btn-c);
+    border-color: var(--btn-c);
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
@@ -681,7 +684,6 @@ textarea {
     -ms-flex-pack: center;
     justify-content: center;
     min-height: 44px;
-    background-color: var(--light);
     gap: 8px;
     padding: 2px 20px;
     -webkit-border-radius: var(--border-radius);
@@ -747,7 +749,7 @@ textarea {
 }
 
 .btn-primary {
-    background-color: var(--primary);
+    --btn-c: var(--primary);
     color: var(--light) !important
 }
 
@@ -757,15 +759,15 @@ textarea {
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-hover)
+    --btn-c: var(--primary-hover)
 }
 
 .btn-primary:active {
-    background-color: var(--primary-active)
+    --btn-c: var(--primary-active)
 }
 
 .btn-secondary {
-    background-color: var(--secondary);
+    --btn-c: var(--secondary);
     color: var(--primary)
 }
 
@@ -774,15 +776,15 @@ textarea {
 }
 
 .btn-secondary:hover {
-    background-color: var(--secondary-hover)
+    --btn-c: var(--secondary-hover)
 }
 
 .btn-secondary:active {
-    background-color: var(--secondary-active)
+    --btn-c: var(--secondary-active)
 }
 
 .btn-gray {
-    background-color: var(--light-gray)
+    --btn-c: var(--light-gray)
 }
 
 .btn-gray .ic-menu {
@@ -790,24 +792,24 @@ textarea {
 }
 
 .btn-gray:hover {
-    background-color: var(--secondary-hover)
+    --btn-c: var(--secondary-hover)
 }
 
 .btn-gray:active {
-    background-color: var(--secondary-active)
+    --btn-c: var(--secondary-active)
 }
 
 .btn-success {
-    background-color: var(--success);
+    --btn-c: var(--success);
     color: var(--light)
 }
 
 .btn-success:hover {
-    background-color: var(--success-hover)
+    --btn-c: var(--success-hover)
 }
 
 .btn-success:active {
-    background-color: var(--success-active)
+    --btn-c: var(--success-active)
 }
 
 .btn-outline {

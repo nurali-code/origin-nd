@@ -1,11 +1,13 @@
 .btn
+    --btn-c: var(--light)
+    background-color: var(--btn-c)
+    border-color: var(--btn-c)
     width: fit-content
     display: flex
     align-items: center
     justify-content: center
     min-height: 44px
     // white-space: nowrap
-    background-color: $light
     gap: 8px
     padding: 2px 20px
     border-radius: $b-rad
@@ -47,45 +49,47 @@
             background-color: $primary-active
 
     &-primary
-        background-color: $primary
+        --btn-c: var(--primary)
         color: $light !important
         svg
             fill: $light
             stroke: $light
 
         &:hover
-            background-color: $primary-hover
+            --btn-c: var(--primary-hover)
 
         &:active
-            background-color: $primary-active
+            --btn-c: var(--primary-active)
 
     &-secondary
-        background-color: $secondary
+        --btn-c: var(--secondary)
         color: $primary
         svg
             fill: $primary-active
         &:hover
-            background-color: $secondary-hover
+            --btn-c: var(--secondary-hover)
         &:active
-            background-color: $secondary-active
+            --btn-c: var(--secondary-active)
 
     &-gray
-        background-color: var(--light-gray)
+        --btn-c: var(--light-gray)
+
         .ic-menu
             --menu-color: rgba(var(--dark), 1)
 
         &:hover
-            background-color: $secondary-hover
+            --btn-c: var(--secondary-hover)
         &:active
-            background-color: $secondary-active
+            --btn-c: var(--secondary-active)
 
     &-success
-        background-color: $success
+        --btn-c: var(--success)
         color: $light
         &:hover
-            background-color: $success-hover
+            --btn-c: var(--success-hover)
+            
         &:active
-            background-color: $success-active
+            --btn-c: var(--success-active)
 
     &-outline
         border: 1px solid var(--text-gray)
