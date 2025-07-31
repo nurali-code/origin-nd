@@ -182,13 +182,19 @@ table
         font-size: $font-md
         padding: 13.5px 12px
         padding: 11px 12px
-        // width: 10%
-        text-align: center
+        text-align: left
         &:first-child
-            text-align: left
-            // width: 40%
 
         &:last-child
+        &:nth-child(2)
+            text-align: center
+
+    th
+        &:nth-child(3)
+            text-align: center
+
+    td
+        font-size: $font-sm
 
     .fx
         gap: 4px
@@ -218,8 +224,6 @@ table
                 color: $dark
 
     tbody
-        td
-            font-size: $font-sm
         tr
             &:nth-child(even) td
                 background-color: var(--light-gray)
@@ -276,11 +280,31 @@ table
                 padding: 0
                 width: 100%
 
+        .fx
+            width: 100%
+            &-lg
+                gap: 4px
+
         .btn
             &-primary
                 white-space: nowrap
+
             &-sm
                 min-width: 40px
+
+            &-secondary:not(.btn-icon)
+                flex: 1
+                padding: 2px 8px
+
+        .amount
+            min-width: 112px
+            width: 112px
+            &-inc,
+            &-dec
+                width: 24px
+                height: 40px
+            &-input
+                width: 48px
 
 .pagination
     list-style: none
