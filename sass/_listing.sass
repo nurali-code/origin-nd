@@ -13,7 +13,7 @@
                 width: calc( (311 / 1290) * 100% )
 
     &-content
-        gap: 26px 8px
+        gap: $gap 8px
 
     &-selected
         gap: 10px
@@ -36,7 +36,6 @@
             display: none
 
         &-content
-            gap: 22px
             width: 100%
 
     @media screen and ( max-width:  767px)
@@ -44,13 +43,17 @@
             gap: $gap
 
     @media screen and ( max-width: 576px )
+        &-content
+            gap: 12px
+
         &-heading
             margin-bottom: 16px
             &__count
                 display: block
                 color: var(--link-color)
+        
         &-togglers
-            gap: $gap
+            gap: 8px
             &>*
                 width: 100% !important
 
