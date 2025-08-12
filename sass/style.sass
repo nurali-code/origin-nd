@@ -426,16 +426,30 @@
         &-wraper
             --amount: 2
 
-    @media screen and ( max-width: 576px )
+    @media screen and ( max-width: 575px )
         &-wraper
             &>*:nth-child(n+5)
                 display: none
 
-        
+        &-footer
+            .btn
+                &-secondary
+                    gap: 6px
+                    padding: 0
+                    span
+
+    @media screen and ( max-width: 390px )
         .amount
             &-inc,
-            &-dec 
+            &-dec
                 display: none
+                
+    @media screen and ( max-width: 370px )
+        &-footer
+            .btn
+                &-secondary
+                    span
+                        display: none
 
 .tab
     &-nav,
@@ -896,7 +910,6 @@
     @media screen and ( max-width: 991px )
         --base-gap: 4px
         margin: 0 0 16px
-
 
 @import 'footer'
 @import 'modal'
