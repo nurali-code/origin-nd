@@ -417,12 +417,15 @@ $(document).on('click input', '.amount-dec, .amount-inc, .amount-input', functio
 
 $(document).ready(function () {
     $(document).on('mouseenter', '[data-catalog-hover] .catalog-list__btn', function () {
-        if (window.innerWidth >= 992) {
+        if (window.innerWidth >= 991) {
             $(this).parent().addClass('active').siblings().removeClass('active');
         }
     });
-    $(document).on('click', '[data-catalog-hover] .catalog-list__btn', function () {
-        $(this).parent().addClass('active').siblings().removeClass('active');
+    $(document).on('click', '[data-catalog-hover] .catalog-list__btn', function (e) {
+        if (window.innerWidth <= 992) {
+               e.preventDefault();
+            $(this).parent().addClass('active').siblings().removeClass('active');
+        }
     });
 
     $(document).on('click', '.catalog-underlist__item--back', function () {

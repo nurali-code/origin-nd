@@ -416,6 +416,7 @@
             margin: 0 0 4px
 
         &__item
+
             &--back
                 display: none
                 width: 100% !important
@@ -426,6 +427,11 @@
                 border-bottom: 1px solid $light
                 .ic
                     margin-right: 4px
+                
+                &>* 
+                    border-radius: 0 !important
+                    &:last-child
+                        text-align: right
 
         &__link
             width: 100%
@@ -569,7 +575,8 @@
 
                         &__item
                             &--back
-                                display: block
+                                display: flex
+
 
                     &-list
                         &__item.active
@@ -636,7 +643,7 @@
             margin-bottom: 8px
             &__price
                 font-size: $font-md-fx
-            
+
             &__stock
                 font-size: $font-md-fx
                 lgh: 113%
