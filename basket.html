@@ -410,7 +410,7 @@
                                 </label>
                             </div>
                             <div class="basket-buttons">
-                                <button class="basket-btn">В корзине: <b>6 товаров</b></button>
+                                <button class="basket-btn">В корзине: <b data-basket-count>6 товаров</b></button>
                                 <button class="c-danger basket-btn">Недоступных: 1</button>
                                 <button class="btn btn-xsm btn-outline">
                                     <svg class="ic">
@@ -419,6 +419,7 @@
                                 </button>
                             </div>
                         </div>
+
                         <div class="basket-items">
                             <table class="basket-table">
                                 <tr>
@@ -453,7 +454,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="amount basket-amount">
+                                        <div class="amount basket-amount" data-change="price__val-1" data-price-val="3.96 ₽">
                                             <button type="button" class="amount-dec"><svg class="ic">
                                                     <use href="img/ic.svg#subtract"></use>
                                                 </svg></button>
@@ -465,12 +466,12 @@
                                     </td>
                                     <td>
                                         <p class="basket-price">
-                                            <b>39.6 ₽</b>
+                                            <b data-price="price__val-1">39.6 ₽</b>
                                             <span class="c-gray">3.96 ₽/шт</span>
                                         </p>
                                     </td>
                                     <td>
-                                        <button><svg class="ic ic-lg">
+                                        <button><svg class="ic ic-lg" data-basket-remove>
                                                 <use href="img/ic.svg#close"></use>
                                             </svg></button>
                                     </td>
@@ -506,7 +507,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="amount basket-amount">
+                                        <div class="amount basket-amount" data-change="price__val-2" data-price-val="3.96 ₽">
                                             <button type="button" class="amount-dec"><svg class="ic">
                                                     <use href="img/ic.svg#subtract"></use>
                                                 </svg></button>
@@ -518,12 +519,12 @@
                                     </td>
                                     <td>
                                         <p class="basket-price">
-                                            <b>39.6 ₽</b>
+                                            <b data-price="price__val-2">39.6 ₽</b>
                                             <span class="c-gray">3.96 ₽/шт</span>
                                         </p>
                                     </td>
                                     <td>
-                                        <button><svg class="ic ic-lg">
+                                        <button><svg class="ic ic-lg" data-basket-remove>
                                                 <use href="img/ic.svg#close"></use>
                                             </svg></button>
                                     </td>
@@ -572,7 +573,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="amount basket-amount">
+                                        <div class="amount basket-amount" data-change="price__val-3" data-price-val="3.96 ₽">
                                             <button type="button" class="amount-dec"><svg class="ic">
                                                     <use href="img/ic.svg#subtract"></use>
                                                 </svg></button>
@@ -584,12 +585,12 @@
                                     </td>
                                     <td>
                                         <p class="basket-price">
-                                            <b>39.6 ₽</b>
+                                            <b data-price="price__val-3">39.6 ₽</b>
                                             <span class="c-gray">3.96 ₽/шт</span>
                                         </p>
                                     </td>
                                     <td>
-                                        <button><svg class="ic ic-lg">
+                                        <button><svg class="ic ic-lg" data-basket-remove>
                                                 <use href="img/ic.svg#close"></use>
                                             </svg></button>
                                     </td>
@@ -626,7 +627,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="amount basket-amount">
+                                        <div class="amount basket-amount" data-change="price__val-4" data-price-val="3.96 ₽">
                                             <button type="button" class="amount-dec"><svg class="ic">
                                                     <use href="img/ic.svg#subtract"></use>
                                                 </svg></button>
@@ -638,12 +639,12 @@
                                     </td>
                                     <td>
                                         <p class="basket-price">
-                                            <b>39.6 ₽</b>
+                                            <b data-price="price__val-4">39.6 ₽</b>
                                             <span class="c-gray">3.96 ₽/шт</span>
                                         </p>
                                     </td>
                                     <td>
-                                        <button><svg class="ic ic-lg">
+                                        <button><svg class="ic ic-lg" data-basket-remove>
                                                 <use href="img/ic.svg#close"></use>
                                             </svg></button>
                                     </td>
@@ -680,7 +681,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="amount basket-amount">
+                                        <div class="amount basket-amount" data-change="price__val-5" data-price-val="3.96 ₽">
                                             <button type="button" class="amount-dec"><svg class="ic">
                                                     <use href="img/ic.svg#subtract"></use>
                                                 </svg></button>
@@ -692,40 +693,20 @@
                                     </td>
                                     <td>
                                         <p class="basket-price">
-                                            <b>39.6 ₽</b>
+                                            <b data-price="price__val-5">39.6 ₽</b>
                                             <span class="c-gray">3.96 ₽/шт</span>
                                         </p>
                                     </td>
                                     <td>
-                                        <button><svg class="ic ic-lg">
+                                        <button><svg class="ic ic-lg" data-basket-remove>
                                                 <use href="img/ic.svg#close"></use>
                                             </svg></button>
                                     </td>
                                 </tr>
                             </table>
-                            <div class="basket-deleted__wrap">
-                                <div class="basket-deleted">
-                                    <p class="basket-deleted__text">
-                                        <span class="c-gray">Штифт DIN 7 1,5x 14 нерж 1.4305 (A1) / ~ ГОСТ 3128-70 исп.
-                                            1 (500)</span> удалён из корзины.
-                                    </p>
-                                    <button class="basket-btn c-danger">Восстановить</button>
-                                    <button class="basket-deleted__dell"><svg class="ic ic-md">
-                                            <use href="img/ic.svg#close"></use>
-                                        </svg></button>
-                                </div>
-                                <div class="basket-deleted">
-                                    <p class="basket-deleted__text">
-                                        <span class="c-gray">Штифт DIN 7 1,5x 14 нерж 1.4305 (A1) / ~ ГОСТ 3128-70 исп.
-                                            1 (500)</span> удалён из корзины.
-                                    </p>
-                                    <button class="basket-btn c-danger">Восстановить</button>
-                                    <button class="basket-deleted__dell"><svg class="ic ic-md">
-                                            <use href="img/ic.svg#close"></use>
-                                        </svg></button>
-                                </div>
-                            </div>
+                            <div class="basket-deleted__wrap" data-basket-deleted=""></div>
                         </div>
+
                         <div class="att">
                             <svg class="ic ic-md">
                                 <use href="img/ic.svg#info"></use>
@@ -736,6 +717,7 @@
                                 обработки заказа
                             </p>
                         </div>
+
                         <div class="inp-group">
                             <textarea name="basket-comment" placeholder="Коментарий к заказу" id="basket-comment"
                                 class="inp-field">Здесь укажите требования к заказу, к примеру весь заказ нужен в белом цинке</textarea>
@@ -900,20 +882,20 @@
                             <div class="basket-info">
                                 <ul class="list-dotted">
                                     <li>
-                                        <span class="head">Товары в корзине:</span>
-                                        <span class="val">5</span>
+                                        <span class="head">Количество:</span>
+                                        <span class="val" data-basket-count>5</span>
                                     </li>
                                     <li>
                                         <span class="head">Товаров на: </span>
-                                        <span class="val">5 000 ₽</span>
+                                        <span class="val" data-basket-total>5 000 ₽</span>
                                     </li>
                                     <li>
                                         <span class="head">Доставка</span>
-                                        <span class="val">1 000 ₽</span>
+                                        <span class="val" data-basket-delivery>1 000 ₽</span>
                                     </li>
                                     <li class="list-dotted__footer">
                                         <span class="head">Итого:</span>
-                                        <span class="val">6 000 ₽</span>
+                                        <span class="val" data-basket-total>6 000 ₽</span>
                                     </li>
                                 </ul>
                                 <a href="#" class="btn btn-primary w-full">Оформить заказ</a>
@@ -934,20 +916,20 @@
                             <div class="basket-info">
                                 <ul class="list-dotted">
                                     <li>
-                                        <span class="head">Товары в корзине:</span>
-                                        <span class="val">5</span>
+                                        <span class="head">Количество:</span>
+                                        <span class="val" data-basket-count>5</span>
                                     </li>
                                     <li>
                                         <span class="head">Товаров на: </span>
-                                        <span class="val">5 000 ₽</span>
+                                        <span class="val" data-basket-total>5 000 ₽</span>
                                     </li>
                                     <li>
                                         <span class="head">Доставка</span>
-                                        <span class="val">1 000 ₽</span>
+                                        <span class="val" data-basket-delivery>1 000 ₽</span>
                                     </li>
                                     <li class="list-dotted__footer">
                                         <span class="head">Итого:</span>
-                                        <span class="val">6 000 ₽</span>
+                                        <span class="val" data-basket-total>6 000 ₽</span>
                                     </li>
                                 </ul>
                                 <a href="#" class="btn btn-primary w-full">Оформить заказ</a>

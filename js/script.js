@@ -395,6 +395,7 @@ $(document).on('click input', '.amount-dec, .amount-inc, .amount-input', functio
     if ($(this).is('.amount-input') && currentValue < 0) currentValue = 0;
 
     $input.val(currentValue);
+    $input.trigger('change')
 
     if (hasDataAttributes) {
         const $priceElement = $(`[data-price="${$amount.data('change')}"]`);
