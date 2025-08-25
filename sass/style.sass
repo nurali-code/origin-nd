@@ -9,6 +9,7 @@
 @import 'header'
 @import 'product'
 @import 'listing'
+@import 'basket'
 
 .hero
     padding-top: 0
@@ -472,6 +473,14 @@
             font-weight: 700
             &.active
                 border-color: $primary
+
+    &-toggler 
+        margin: 0 0 8px 
+        width: 100%
+        &>*
+            width: calc( 100% / 2 )
+        .btn
+            border-radius: 0
 
     &-navbar
         gap: 20px

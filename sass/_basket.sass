@@ -1,0 +1,254 @@
+.basket
+    &-wrap
+        position: relative
+        z-index: 1
+        gap: $gap
+        &>*
+            &:last-child
+                flex: 1
+                width: calc( (311 / 1290) * 100% )
+
+            &:first-child
+                width: calc( (931 / 1290) * 100% )
+
+    &-content
+        gap: $gap
+
+    &-nav
+        position: sticky
+        top: 0
+        right: 0
+        margin-left: auto
+        .btn
+            margin-top: 20px
+            width: 100%
+
+        .inp-checkbox
+            a
+                text-decoration: underline
+
+    &-info
+        padding: 16px
+        border-radius: $b-rad
+        background-color: var(--light-gray)
+        margin-bottom: 16px
+
+    &-header
+        padding: 0 8px 16px
+        border-bottom: 1px solid var(--border-color)
+        .btn
+            margin-left: auto
+
+    &-btn
+        font-size: $font-sm
+
+    &-buttons
+        gap: 32px
+
+    &-table
+        td
+            padding: 8px
+            &:first-child
+                border-top-left-radius: 4px
+                border-bottom-left-radius: 4px
+
+            &:last-child
+                border-top-right-radius: 4px
+                border-bottom-right-radius: 4px
+
+            &:nth-child(2)
+                text-align: left
+
+        tr
+            &:nth-child(even) td
+                background-color: var(--lighter-gray)
+
+        .ic
+            fill: var(--text-gray)
+
+    &-amount
+        margin: 0 auto
+        width: 120px !important
+        border-radius: $b-rad
+        background-color: var(--lighter-gray)
+        &>*
+            min-height: 38px
+
+        button
+            width: unset
+            height: unset
+            padding: 13px 8px
+
+    &-item
+        gap: $gap
+        max-width: 430px
+        &__img
+            min-width: 66px
+            width: 66px
+            object-fit: cover
+            aspect-ratio: 1
+            border-radius: $b-rad
+            border: 1px solid var(--border-color)
+
+        &__heading
+            text-wrap: balance
+            font-weight: normal
+            font-size: $font-sm
+            &:hover a 
+                text-decoration: underline
+
+        .inp
+            &-checkbox
+                padding-left: var(--fild-width)
+
+    &-stock
+        text-align: left
+        line-height: 100%
+
+    &-price
+        text-align: right
+        &>*
+            white-space: nowrap
+            display: block
+
+    &-deleted
+        gap: 32px
+        padding: 10px 8px
+        border-top: 1px solid var(--border-color)
+        &__wrap
+            padding-top: 16px
+
+        &__text
+            text-wrap: balance
+            font-size: var(--font-sm)
+            margin-right: auto
+
+        &__dell
+            .ic
+                fill: var(--text-gray)
+
+    &-information
+        padding: 24px 16px
+        border-radius: $b-rad
+        background-color: var(--lighter-gray)
+        h2
+            margin-bottom: 16px
+
+    &-subheading
+        font-weight: 700
+        font-size: 16px
+        line-height: 100%
+        text-transform: uppercase
+        margin: 0 0 16px
+
+    &-delivery
+        h2
+            margin: 0 0 16px
+
+        &__map
+            overflow: hidden
+            border-radius: 4px
+            background-color: var(--light)
+            width: 100% !important
+            height: 314px !important
+
+        &__content
+            padding: 24px 16px
+            border-radius: $b-rad
+            background-color: var(--lighter-gray)
+            &>*
+                margin: 0 0 16px
+                &:last-child
+                    margin-bottom: 0
+
+        &__tk 
+            border-radius: 4px
+            padding: 16px
+            background-color: var(--light)
+
+    @media screen and ( max-width: 1199px )
+        &-wrap
+            &>*
+                &:first-child
+                    width: 100%
+
+        &-aside
+            display: none
+
+    @media screen and ( max-width: 991px )
+        &-buttons
+            gap: $gap
+
+        &-deleted
+            gap: $gap
+
+    @media screen and ( max-width: 767px )
+        &-content
+            .inp-checkbox
+                --fild-width: 16px
+
+        &-header
+            border: none
+            gap: 8px
+            padding: 0
+            padding-bottom: 0
+            .btn
+                margin-left: auto
+
+        &-buttons
+            width: 100%
+
+        &-item
+            max-width: 100%
+
+        &-table
+            tr
+                gap: 8px 16px
+                align-items: center
+            td
+                padding: 0
+                &:nth-child(2)
+                    font-weight: normal
+                    width: 100%
+
+                &:last-child
+                    margin-left: auto
+                    width: unset
+                    align-self: end
+
+        &-item
+            gap: 8px
+            &__img
+                min-width: 54px
+                width: 54px
+
+        &-price
+            text-align: left
+
+        &-deleted
+            padding: 8px 0
+            &__wrap
+                padding-top: 0
+                background-color: var(--light-gray)
+                box-shadow: 0 0 0 100vmax var(--light-gray)
+                clip-path: inset(0 -100vmax)
+
+    @media screen and ( max-width: 575px )
+        &-deleted
+            z-index: 1
+            display: block
+            position: relative
+            min-width: 24px
+            padding-right: 24px
+            &__dell
+                z-index: 1
+                position: absolute
+                top: 50%
+                right: 0
+                transform: translateY(-50%)
+
+        &-information
+            padding: 16px
+
+        &-pickup
+            padding: 16px

@@ -159,6 +159,7 @@
 
     &-field
         min-height: 46px
+        background-color: var(--inp-bg)
         &::placeholder
             color: rgba(0, 0, 0, 0)
 
@@ -166,7 +167,7 @@
         &:focus
             & ~ label
                 top: -5px
-                background-color: var(--light)
+                background-color: var(--inp-bg)
                 transform: translateX(0)
 
         &:required
@@ -183,6 +184,7 @@
         position: relative
         z-index: 1
         margin: 0
+        --inp-bg: var(--light)
         textarea
             & + label
                 top: 12px
@@ -297,6 +299,7 @@
         &__label
             position: relative
             z-index: -1
+            width: 100%
 
         input
             cursor: pointer
@@ -314,7 +317,7 @@
                 border-color: var(--secondary)
 
                 .ic
-                    fill: $light
+                    fill: var(--primary-active)
 
 .range
     &-group
@@ -392,6 +395,9 @@
     font-size: $font-md-fx
 
 .form,
+.form-float,
+.form-tripple,
+.form-double,
 .form-group,
 .form-row
     display: flex
@@ -415,16 +421,41 @@
 
     &-label
         display: block
+
+    &-float
+        gap: 12px $gap
+
+    &-tripple
+        gap: 12px 8px
+        &>*
+            width: 100%
+            @media screen and ( min-width: 768px )
+                &:nth-child(-n+3)
+                    width: calc( (100% - 16px) / 3 )
+
+    &-row,
+    &-tripple,
+    &-float,
+    &-double
+        flex-wrap: wrap
+        flex-direction: row
+        align-items: center
+
     &-row
         gap: 8px
         justify-content: space-between
-        align-items: center
-        flex-direction: row
-        flex-wrap: wrap
         & > *
             font-size: $font-sm-fx
+
+    &-double
+        gap: $gap
+        @media screen and ( min-width: 768px )
+            &>*
+                width: calc( (100% - $gap) / 2 )
+
     &-info
         color: $text-gray
+
     &-group
         gap: 8px
         &>*
@@ -488,7 +519,10 @@
         border-color: var(--light) !important
     &-gray
         background-color: var(--light-gray)
+        --inp-bg: var(--light-gray)
+
     &-grayish
+        --inp-bg: var(--lighter-gray)
         background-color: var(--lighter-gray)
 
 .list
@@ -519,6 +553,45 @@
             &.c-gray
                 &::before
                     background-color: var(--text-gray)
+
+    &-dotted
+        padding: 0
+        list-style: none
+        li
+            z-index: 1
+            position: relative
+            font-size: var(--font-sm-fx)
+            margin-bottom: 4px
+            &::before
+                content: ''
+                height: 1px
+                width: 100%
+                display: block
+                border-bottom: 1px dashed #CCCCCC
+                position: absolute
+                z-index: -1
+                top: 50%
+                left: 50%
+                transform: translate(-50%, -50%)
+
+            &>*
+                display: inline-block
+                background-color: var(--light-gray)
+
+        .head
+            color: var(--text-gray)
+            padding-right: 4px
+
+        .val
+            padding-left: 4px
+            margin-left: auto
+
+        &__footer
+            margin-top: 20px
+            &>*
+                color: $dark !important
+                font-weight: bold
+                font-size: var(--h2)
 
 .info
     display: inline-block
@@ -554,6 +627,16 @@
         .info__text
             pointer-events: unset
 
+.att
+    padding: 16px
+    border-radius: 4px
+    gap: $gap
+    background-color: var(--dark-gray)
+    .ic
+        fill: var(--text-gray)
+    &-text
+        font-size: $font-sm-fx
+
 .hiding
     display: block
     width: fit-content
@@ -580,15 +663,22 @@
         &.active
             animation: fadeIn .3s ease forwards
 
-.text 
-    &-center 
+.text
+    &-center
         text-align: center !important
-    
-    &-start 
+
+    &-start
         text-align: left !important
 
     &-end
         text-align: right !important
+
+main
+    padding-bottom: 24px
+    &>*
+        @media screen and ( min-width: 992px )
+            &:first-child
+                padding-top: 16px
 
 @keyframes cart
     0%, 100%
@@ -654,6 +744,11 @@
                 &.btn-primary
                     flex: 1
 
+    .form
+        &-double
+            &>*
+                width: 100%
+
 @media screen and ( max-width: 576px )
     .quicksearch
         padding: 0
@@ -671,3 +766,16 @@
                     order: 1
                     width: 100%
 
+    .form
+        &-double
+            gap: 12px
+
+    .att,
+    .basket-delivery__content,
+    .basket-information
+        gap: 8px
+        z-index: 1
+        position: relative
+        border-radius: 0
+        left: calc( 0px - var(--bs-gutter-x) )
+        width: calc( 100% + (var(--bs-gutter-x) * 2) )
