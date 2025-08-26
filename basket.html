@@ -400,7 +400,7 @@
 				</ul>
 				<h1 class="basket-heading">Корзина</h1>
 
-				<div class="basket-wrap">
+				<form action="#" class="basket-wrap">
 					<div class="basket-content">
 						<div class="basket-header">
 							<div class="inp-checkbox">
@@ -410,9 +410,9 @@
 								</label>
 							</div>
 							<div class="basket-buttons">
-								<button class="basket-btn" data-basket-all>В корзине: <b data-basket-count>0 товаров</b></button>
-								<button class="c-danger basket-btn" data-basket-unavailable>Недоступных: <span data-basket-unavailable-count>0</span></button>
-								<button class="btn btn-xsm btn-outline" data-basket-clear>
+								<button type="button" class="basket-btn" data-basket-all>В корзине: <b data-basket-count>0 товаров</b></button>
+								<button type="button" class="c-danger basket-btn" data-basket-unavailable>Недоступных: <span data-basket-unavailable-count>0</span></button>
+								<button type="button" class="btn btn-xsm btn-outline" data-basket-clear>
 									<svg class="ic">
 										<use href="img/ic.svg#close"></use>
 									</svg>Очистить
@@ -472,7 +472,7 @@
 										</p>
 									</td>
 									<td>
-										<button><svg class="ic ic-lg" data-basket-remove>
+										<button><svg class="ic ic-lg" type="button" data-basket-remove>
 												<use href="img/ic.svg#close"></use>
 											</svg></button>
 									</td>
@@ -526,7 +526,7 @@
 										</p>
 									</td>
 									<td>
-										<button><svg class="ic ic-lg" data-basket-remove>
+										<button><svg class="ic ic-lg" type="button" data-basket-remove>
 												<use href="img/ic.svg#close"></use>
 											</svg></button>
 									</td>
@@ -593,7 +593,7 @@
 										</p>
 									</td>
 									<td>
-										<button><svg class="ic ic-lg" data-basket-remove>
+										<button><svg class="ic ic-lg" type="button" data-basket-remove>
 												<use href="img/ic.svg#close"></use>
 											</svg></button>
 									</td>
@@ -648,7 +648,7 @@
 										</p>
 									</td>
 									<td>
-										<button><svg class="ic ic-lg" data-basket-remove>
+										<button><svg class="ic ic-lg" type="button" data-basket-remove>
 												<use href="img/ic.svg#close"></use>
 											</svg></button>
 									</td>
@@ -703,7 +703,7 @@
 										</p>
 									</td>
 									<td>
-										<button><svg class="ic ic-lg" data-basket-remove>
+										<button><svg class="ic ic-lg" type="button" data-basket-remove>
 												<use href="img/ic.svg#close"></use>
 											</svg></button>
 									</td>
@@ -738,10 +738,6 @@
 									<label for="basket-name" class="inp-label">Ваше имя</label>
 								</div>
 								<div class="inp-group bg-grayish">
-									<input type="email" id="basket-email" placeholder="Ваша почта" class="inp-field">
-									<label for="basket-email" class="inp-label">Ваша почта</label>
-								</div>
-								<div class="inp-group bg-grayish">
 									<input type="tel" id="basket-tel" placeholder="Ваш телефон" required
 										class="inp-field">
 									<label for="basket-tel" class="inp-label">Ваш телефон</label>
@@ -750,6 +746,10 @@
 									<input type="text" id="basket-inn" required placeholder="ИНН организации/ИП"
 										class="inp-field">
 									<label for="basket-inn" class="inp-label">ИНН организации/ИП</label>
+								</div>
+								<div class="inp-group bg-grayish">
+									<input type="email" id="basket-email" placeholder="Ваша почта" class="inp-field">
+									<label for="basket-email" class="inp-label">Ваша почта</label>
 								</div>
 								<div class="inp-file">
 									<input type="file" name="file" id="file">
@@ -766,7 +766,7 @@
 							<h2>Доставка</h2>
 
 							<div class="tab-toggler" data-tab-active="active">
-								<div data-tab="delivery" class="inp-btn active">
+								<div data-tab="pickup" class="inp-btn active">
 									<input type="radio" checked name="delivery" value="Самовывоз">
 									<label class="inp-btn__label btn btn-outline-secondary">
 										<svg class="ic ic-lg">
@@ -774,7 +774,7 @@
 										</svg> Самовывоз
 									</label>
 								</div>
-								<div data-tab="pickup" class="inp-btn">
+								<div data-tab="delivery" class="inp-btn">
 									<input type="radio" name="delivery" value="Курьером">
 									<label class="inp-btn__label btn btn-outline-secondary">
 										<svg class="ic ic-lg">
@@ -784,7 +784,7 @@
 								</div>
 							</div>
 
-							<div data-tab-content="delivery" class="basket-delivery__content">
+							<div data-tab-content="pickup" class="basket-delivery__content">
 								<p class="product-contact__text">
 									Самовывоз доступен после предварительного согласования по адресу: <br>
 									<b>Московская область, г. Долгопрудный, Береговой проезд, 9.</b>
@@ -819,12 +819,12 @@
 								<iframe src="" class="basket-delivery__map" frameborder="0"></iframe>
 							</div>
 
-							<div data-tab-content="pickup" class="basket-delivery__content">
+							<div data-tab-content="delivery" class="basket-delivery__content">
 								<div class="basket-delivery__tk">
 									<h3 class="basket-subheading">Транспортные компании (ТК)</h3>
 									<div class="form-float">
 										<div class="inp-checkbox">
-											<input type="radio" name="tk" id="tc-2">
+											<input type="radio" required name="tk" id="tc-2">
 											<label class="inp-checkbox__label" for="tc-2">ПЭК</label>
 										</div>
 										<div class="inp-checkbox">
@@ -853,14 +853,14 @@
 										<label for="basket-name" class="inp-label">Ваше имя</label>
 									</div>
 									<div class="inp-group bg-grayish">
-										<input type="email" id="basket-email" placeholder="Ваша почта"
-											class="inp-field">
-										<label for="basket-email" class="inp-label">Ваша почта</label>
-									</div>
-									<div class="inp-group bg-grayish">
 										<input type="tel" id="basket-tel" placeholder="Ваш телефон" required
 											class="inp-field">
 										<label for="basket-tel" class="inp-label">Ваш телефон</label>
+									</div>
+									<div class="inp-group bg-grayish">
+										<input type="email" id="basket-email" placeholder="Ваша почта"
+											class="inp-field">
+										<label for="basket-email" class="inp-label">Ваша почта</label>
 									</div>
 									<div class="inp-group bg-grayish">
 										<textarea id="message_3" placeholder="Ваш комментарий"
@@ -905,10 +905,10 @@
 										<span class="val" data-basket-total>6 000 ₽</span>
 									</li>
 								</ul>
-								<a href="#" data-basket-submit class="btn btn-disabled w-full">Оформить заказ</a>
+								<button type="submit" data-basket-submit class="btn btn-disabled w-full">Оформить заказ</button>
 							</div>
 							<div class="inp-checkbox">
-								<input type="checkbox" checked required>
+								<input type="checkbox" data-basket-agreement checked required>
 								<label class="inp-checkbox__label c-gray">
 									Я даю своё Согласие на <a href="#">обработку персональных данных</a> и соглашаюсь с
 									условиями <a href="#">Политики конфиденциальности</a>, <a href="#">Пользовательского
@@ -939,10 +939,10 @@
 										<span class="val" data-basket-total>6 000 ₽</span>
 									</li>
 								</ul>
-								<a href="#" data-basket-submit class="btn btn-disabled w-full">Оформить заказ</a>
+								<button type="submit" data-basket-submit class="btn btn-disabled w-full">Оформить заказ</button>
 							</div>
 							<div class="inp-checkbox">
-								<input type="checkbox" checked required>
+								<input type="checkbox" data-basket-agreement checked required>
 								<label class="inp-checkbox__label c-gray">
 									Я даю своё Согласие на <a href="#">обработку персональных данных</a> и соглашаюсь с
 									условиями <a href="#">Политики конфиденциальности</a>, <a href="#">Пользовательского
@@ -951,7 +951,7 @@
 							</div>
 						</div>
 					</aside>
-				</div>
+				</form>
 			</div>
 		</section>
 	</main>

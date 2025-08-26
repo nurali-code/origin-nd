@@ -143,10 +143,11 @@ input, textarea, select, .select
     border: 1px solid $b-color
     border-radius: $b-rad
     background-color: var(--light)
+    transition: border-color .3s ease 
     &:disabled
         cursor: not-allowed
         opacity: .6
-        
+
     &.bg-grayish
         border-color: $text-gray
 
@@ -154,6 +155,9 @@ input, textarea, select, .select
         -webkit-box-shadow: 0 0 0 1000px var(--light) inset !important
         -webkit-text-fill-color: $dark !important
         background-color: var(--light) !important
+
+    &:focus
+        border-color: $dark
 
 textarea
     height: 100px
