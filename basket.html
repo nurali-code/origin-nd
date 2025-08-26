@@ -410,8 +410,10 @@
 								</label>
 							</div>
 							<div class="basket-buttons">
-								<button type="button" class="basket-btn" data-basket-all>В корзине: <b data-basket-count>0 товаров</b></button>
-								<button type="button" class="c-danger basket-btn" data-basket-unavailable>Недоступных: <span data-basket-unavailable-count>0</span></button>
+								<button type="button" class="basket-btn" data-basket-all>В корзине: <b
+										data-basket-count>0 товаров</b></button>
+								<button type="button" class="c-danger basket-btn" data-basket-unavailable>Недоступных:
+									<span data-basket-unavailable-count>0</span></button>
 								<button type="button" class="btn btn-xsm btn-outline" data-basket-clear>
 									<svg class="ic">
 										<use href="img/ic.svg#close"></use>
@@ -816,7 +818,9 @@
 										</a>
 									</div>
 								</div>
-								<iframe class="basket-delivery__map" loading="lazy" src="https://yandex.ru/map-widget/v1/?um=constructor%3Aba154fe8e8d3b67de00d9dae4f81c961272d357be7496cda0e599945ae15796c&amp;source=constructor" frameborder="0"></iframe>
+								<iframe class="basket-delivery__map" loading="lazy"
+									src="https://yandex.ru/map-widget/v1/?um=constructor%3Aba154fe8e8d3b67de00d9dae4f81c961272d357be7496cda0e599945ae15796c&amp;source=constructor"
+									frameborder="0"></iframe>
 							</div>
 
 							<div data-tab-content="delivery" class="basket-delivery__content">
@@ -905,14 +909,19 @@
 										<span class="val" data-basket-total>6 000 ₽</span>
 									</li>
 								</ul>
-								<button type="submit" data-basket-submit class="btn btn-disabled w-full">Оформить заказ</button>
+								<button type="submit" data-basket-submit class="btn btn-disabled w-full">Оформить
+									заказ</button>
 							</div>
 							<div class="inp-checkbox">
 								<input type="checkbox" data-basket-agreement checked required>
 								<label class="inp-checkbox__label c-gray">
-									Я даю своё Согласие на <a href="#">обработку персональных данных</a> и соглашаюсь с
-									условиями <a href="#">Политики конфиденциальности</a>, <a href="#">Пользовательского
-										соглашения</a> и <a href="#">Согласия на получение информационных оповещений</a>
+									Я даю своё Согласие на
+									<a href="#" data-modal="#modal-personalData">обработку персональных данных</a>
+									и соглашаюсь с условиями
+									<a href="#" data-modal="#modal-personalData">Политики конфиденциальности</a>,
+									<a href="#" data-modal="#modal-policy">Пользовательского соглашения</a> и
+									<a href="#" data-modal="#modal-mailchimp">Согласия на получение информационных
+										оповещений</a>
 								</label>
 							</div>
 						</div>
@@ -939,14 +948,19 @@
 										<span class="val" data-basket-total>6 000 ₽</span>
 									</li>
 								</ul>
-								<button type="submit" data-basket-submit class="btn btn-disabled w-full">Оформить заказ</button>
+								<button type="submit" data-basket-submit class="btn btn-disabled w-full">Оформить
+									заказ</button>
 							</div>
 							<div class="inp-checkbox">
 								<input type="checkbox" data-basket-agreement checked required>
 								<label class="inp-checkbox__label c-gray">
-									Я даю своё Согласие на <a href="#">обработку персональных данных</a> и соглашаюсь с
-									условиями <a href="#">Политики конфиденциальности</a>, <a href="#">Пользовательского
-										соглашения</a> и <a href="#">Согласия на получение информационных оповещений</a>
+									Я даю своё Согласие на
+									<a href="#" data-modal="#modal-personalData">обработку персональных данных</a>
+									и соглашаюсь с условиями
+									<a href="#" data-modal="#modal-personalData">Политики конфиденциальности</a>,
+									<a href="#" data-modal="#modal-policy">Пользовательского соглашения</a> и
+									<a href="#" data-modal="#modal-mailchimp">Согласия на получение информационных
+										оповещений</a>
 								</label>
 							</div>
 						</div>
@@ -1096,6 +1110,198 @@
 		</div>
 	</footer>
 
+	<div class="modal modal-lg" id="modal-personalData">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2 class="modal-heading modal-heading--alt">Соглашение на обработку персональных данных</h2>
+				<button class="modal-close" title="Закрыть"><svg class="ic ic-md">
+						<use href="img/ic.svg#close"></use>
+					</svg></button>
+			</div>
+			<div class="modal-body">
+				<p><b>Конфиденциальность и защита информации</b></p>
+				<ol>
+					<li>
+						Персональные данные Пользователя/Покупателя обрабатывается в соответствии с ФЗ «О персональных
+						данных» № 152-ФЗ.
+					</li>
+					<li>
+						При регистрации, оформлении заказа на Сайте Пользователь предоставляет следующую информацию:
+						Фамилия, Имя, Отчество, контактный номер телефона, адрес электронной почты, адрес доставки
+						товара,
+						контактный номер телефона получателя.
+					</li>
+					<li>
+						Предоставляя свои персональные данные Продавцу, Посетитель Сайта/Пользователь/Покупатель
+						соглашается
+						на их обработку Продавцом, в том числе в целях выполнения Продавцом обязательств перед
+						Посетителем
+						Сайта/Пользователем/Покупателем в рамках настоящей Публичной оферты , продвижения Продавцом
+						товаров
+						и услуг, проведения электронных и sms опросов, контроля результатов маркетинговых акций,
+						клиентской
+						поддержки, организации доставки товара Покупателям, проведение розыгрышей призов среди
+						Посетителей
+						Сайта/Пользователей/ Покупателей, контроля удовлетворенности Посетителя
+						Сайта/Пользователя/Покупателя, а также качества услуг, оказываемых Продавцом.
+					</li>
+					<li>
+						Под обработкой персональных данных понимается любое действие (операция) или совокупность
+						действий
+						(операций), совершаемых с использованием средств автоматизации или без использования таких
+						средств с
+						персональными данными, включая сбор, запись, систематизацию, накопление, хранение, уточнение
+						(обновление, изменение) извлечение, использование, передачу (в том числе передачу третьим лицам,
+						не
+						исключая трансграничную передачу, если необходимость в ней возникла в ходе исполнения
+						обязательств),
+						обезличивание, блокирование, удаление, уничтожение персональных данных. - Продавец имеет право
+						отправлять информационные, в том числе рекламные сообщения, на электронную почту и мобильный
+						телефон
+						Пользователя/Покупателя с его согласия, выраженного посредством совершения им действий,
+						однозначно
+						идентифицирующих этого абонента и позволяющих достоверно установить его волеизъявление на
+						получение
+						сообщения. Пользователь/Покупатель вправе отказаться от получения рекламной и другой информации
+						без
+						объяснения причин отказа путем информирования о своем отказе по телефону +7 (812) 504-64-54 либо
+						посредством направления соответствующего заявления на электронный адрес
+						Продавца: info@oniks-krep.ru. Сервисные сообщения, информирующие Пользователя/Покупателя о
+						заказе и
+						этапах его обработки, отправляются автоматически и не могут быть отклонены
+						Пользователем/Покупателем. - Отзыв согласия на обработку персональных данных осуществляется
+						путем
+						отзыва акцепта настоящей Публичной оферты по уведомлению на почту info@oniks-krep.ru
+					</li>
+					<li>
+						Продавец вправе использовать технологию «cookies». «Cookies» не содержат конфиденциальную
+						информацию. Посетитель / Пользователь / Покупатель настоящим дает согласие на сбор, анализ и
+						использование cookies, в том числе третьими лицами для целей формирования статистики и
+						оптимизации
+						рекламных сообщений.
+					</li>
+					<li>
+						Продавец получает информацию об ip-адресе посетителя Сайта https://oniks-krep.ru/. Данная
+						информация
+						не используется для установления личности посетителя.
+					</li>
+					<li>
+						Продавец не несет ответственности за сведения, предоставленные Пользователем/Покупателем на
+						Сайте в
+						общедоступной форме.
+					</li>
+					<li>
+						Продавец вправе осуществлять записи телефонных разговоров с Пользователем/Покупателем. При этом
+						Продавец обязуется: предотвращать попытки несанкционированного доступа к информации, полученной
+						в
+						ходе телефонных переговоров, и/или передачу ее третьим лицам, не имеющим непосредственного
+						отношения
+						к исполнению Заказов, в соответствии с п. 4 ст. 16 Федерального закона «Об информации,
+						информационных технологиях и о защите информации»
+					</li>
+				</ol>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="modal modal-lg" id="modal-policy">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2 class="modal-heading modal-heading--alt">Публичная оферта</h2>
+				<button class="modal-close" title="Закрыть"><svg class="ic ic-md">
+						<use href="img/ic.svg#close"></use>
+					</svg></button>
+			</div>
+			<div class="modal-body">
+				<iframe src="img/offerta_omega_oniks-krep.ru.pdf" frameborder="0"></iframe>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal modal-lg" id="modal-mailchimp">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2 class="modal-heading modal-heading--alt">Согласие на получение рекламных рассылок</h2>
+				<button class="modal-close" title="Закрыть"><svg class="ic ic-md">
+						<use href="img/ic.svg#close"></use>
+					</svg></button>
+			</div>
+			<div class="modal-body">
+				<p>
+					Настоящим я, (далее – «Субъект Персональных Данных»), во исполнение требований ч. 1 ст. 18
+					Федерального закона от 13.03.2006 N 38-ФЗ "О рекламе" (с изменениями и дополнениями) свободно, своей
+					волей и в своем интересе даю свое согласие ООО «Омега» (юридический адрес: 192236, Санкт-Петербург
+					г, Белы Куна ул, дом 34, литера А, помещение 14-н №26, ИНН 7816342682, ОГРН 1167847433159), которому
+					принадлежит Сайт www.oniks-krep.ru (далее - Сайт), на получение мною рекламных рассылок и обработку
+					в указанной цели своих персональных данных со следующими условиями:
+					<br>
+					<br>
+					Согласие дается на: 
+					<br>
+					<br>
+					a) получение рекламных рассылок следующими способами:
+				</p>
+				<ul>
+					<li>sms-рассылки;</li>
+					<li>push-сообщения;</li>
+					<li>по электронной почте;</li>
+					<li>по сетям электросвязи, в том числе посредством использования телефонной, факсимильной, подвижной
+						радиотелефонной связи;</li>
+					<li>сообщения в социальных сетях (Вконтакте и мессенджерах WhatsAPP, Telegram, Viber;</li>
+				</ul>
+				<p>б) обработку следующих персональных данных:</p>
+				<ul>
+					<li>фамилия, имя, отчество;</li>
+					<li>адрес электронной почты;</li>
+					<li>номера контактных телефонов, указанные мною как при регистрации на Сайте, так и в последующем
+						при размещении объявления или другой информации на Сайте;</li>
+					<li>сведения о почтовом клиенте;</li>
+					<li>сведения об используемом браузере;</li>
+					<li>сведения о переходах по ссылкам в электронных письмах;</li>
+					<li>сведения о месторасположении;</li>
+					<li>сведения об IP-адресах, с которых пользователь открывает электронное письмо.</li>
+				</ul>
+				<ol>
+					<li>Настоящим я гарантию, что указанные мною на Сайте абонентские номера телефонов принадлежат мне,
+						в случае прекращения использования мною абонентского номера телефона, указанного на Сайте, я
+						обязуюсь проинформировать об этом ООО «Омега». Указывая абонентский номер телефона на Сайте,
+						принадлежащий третьему лицу, я гарантирую, что получил согласие от указанного третьего лица на
+						получение рекламных рассылок от ООО «Омега» в соответствии с настоящим Согласием.</li>
+					<li>Согласие дается на обработку персональных данных, как без использования средств автоматизации,
+						так и с их использованием.</li>
+					<li>Персональные данные не являются общедоступными, персональные данные не являются специальными или
+						биометрическими.</li>
+					<li>Цель обработки персональных данных: осуществление информирования о грядущих мероприятиях и
+						новостях ООО «Омега», рекламных акциях, услугах, товарах и продуктах ООО «Омега».</li>
+					<li>В ходе работы с персональными данными могут быть совершены следующие действия: сбор, запись,
+						систематизация, накопление, хранение, уточнение (обновление, изменение), извлечение,
+						использование, передача (распространение, предоставление, доступ), блокирование, удаление,
+						уничтожение.</li>
+					<li>Для достижения целей обработки, ООО «Омега» поручает нижеуказанным категориям третьих лиц
+						обрабатывать предоставленные персональные данные, настоящим я даю согласие на передачу моих
+						персональных данных указанным третьим лицам:
+						<ul>
+							<li>Операторы сотовой связи;</li>
+							<li>Владельцы социальных сетей;</li>
+							<li>Владельцы мессенджеров.</li>
+						</ul>
+					</li>
+					<li>Рекламная рассылка и обработка персональных данных осуществляется до отписки физического лица от
+						информации путем перехода по специальной ссылке «Отписаться от рассылки» в рассылаемых письмах
+						или путем направления соответствующего запроса на электронную
+						почту info@oniks-krep.ru и mail@info.oniks-krep.ru</li>
+					<li>Согласие может быть отозвано субъектом персональных данных или его представителем путем
+						направления письменного заявления Оператору или его представителю по адресу местонахождения (см.
+						преамбулу Согласия).</li>
+					<li>Согласие действует все время до момента прекращения обработки персональных данных, указанных в
+						пунктах 8 и 9 Согласия.</li>
+				</ol>
+			</div>
+
+		</div>
+	</div>
+
 	<div class="modal modal-lg" id="modal-filter">
 		<div class="modal-content">
 			<button class="modal-close" title="Закрыть"><svg class="ic ic-md">
@@ -1103,119 +1309,6 @@
 				</svg></button>
 			<h2 class="modal-heading">Фильтры</h2>
 			<div data-replace-to="filters"></div>
-		</div>
-	</div>
-
-	<div class="modal modal-lg" id="modal-quicksearch">
-		<div class="modal-content">
-			<button class="modal-close" title="Закрыть"><svg class="ic ic-md">
-					<use href="img/ic.svg#close"></use>
-				</svg></button>
-			<h2 class="modal-heading">Быстрый поиск</h2>
-
-			<div class="quicksearch quicksearch--lg">
-				<form class="form quicksearch__form">
-					<div class="inp-wrap">
-						<label class="inp-wrap__label">DIN/ГОСТ/ISO</label>
-						<input type="text" required>
-					</div>
-					<div class="inp-wrap">
-						<label class="inp-wrap__label">Диаметр</label>
-						<input type="text" required>
-					</div>
-					<div class="inp-wrap">
-						<label class="inp-wrap__label">Длина</label>
-						<input type="text" required>
-					</div>
-					<div class="inp-wrap">
-						<label class="inp-wrap__label">Материал</label>
-						<select>
-							<option hidden></option>
-							<option selected>Материал #1</option>
-							<option>Материал #2</option>
-							<option>Материал #3</option>
-						</select>
-					</div>
-					<button type="submit" class="btn btn-primary">Показать</button>
-					<button type="reset" class="btn btn-secondary">Сбросить</button>
-				</form>
-			</div>
-		</div>
-	</div>
-
-	<div class="modal modal-lg" id="modal-types">
-		<div class="modal-content">
-			<button class="modal-close" title="Закрыть"><svg class="ic ic-md">
-					<use href="img/ic.svg#close"></use>
-				</svg></button>
-			<h2 class="modal-heading">Виды</h2>
-
-			<div class="type-wrap">
-				<div class="type">
-					<img src="img/poduct.jpg" alt="pr" class="type-img">
-					<a href="#" class="type-descr">DIN 444 B Болт откидной Латунь</a>
-				</div>
-				<div class="type">
-					<img src="img/poduct.jpg" alt="pr" class="type-img">
-					<a href="#" class="type-descr">DIN 444 LB Болт откидной Нержавеющий Полная резьба</a>
-				</div>
-				<div class="type">
-					<img src="img/poduct.jpg" alt="pr" class="type-img">
-					<a href="#" class="type-descr">DIN 444 B Болт откидной Нержавеющий</a>
-				</div>
-				<div class="type">
-					<img src="img/poduct.jpg" alt="pr" class="type-img">
-					<a href="#" class="type-descr">DIN 444 B Болт откидной Латунь</a>
-				</div>
-				<div class="type">
-					<img src="img/poduct.jpg" alt="pr" class="type-img">
-					<a href="#" class="type-descr">DIN 444 LB Болт откидной Нержавеющий Полная резьба</a>
-				</div>
-				<div class="type">
-					<img src="img/poduct.jpg" alt="pr" class="type-img">
-					<a href="#" class="type-descr">DIN 444 B Болт откидной Нержавеющий</a>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="modal" id="modal-gotinstock">
-		<div class="modal-content">
-			<button class="modal-close" title="Закрыть"><svg class="ic ic-md">
-					<use href="img/ic.svg#close"></use>
-				</svg></button>
-			<h2 class="modal-heading">
-				Сообщить <br>
-				о поступлении товара
-			</h2>
-
-			<form class="form">
-				<div class="form-group">
-					<div class="inp-group">
-						<input type="email" required id="gotinstock-name" placeholder="Ваша почта" class="inp-field">
-						<label for="gotinstock-name" class="inp-label">Ваша почта</label>
-					</div>
-					<select>
-						<option hidden>Актуальность</option>
-						<option>7 дней</option>
-						<option>10 дней</option>
-						<option>30 дней </option>
-					</select>
-				</div>
-
-				<div class="form-group">
-					<div class="inp-checkbox">
-						<input type="checkbox" required id="gotinstock_2">
-						<label for="gotinstock_2" class="inp-checkbox__label">
-							Я согласен(а) с обработкой персональных данных в соответствии с <a href="#"
-								class="c-danger">политикой конфиденциальности.</a>
-						</label>
-					</div>
-					<button type="submit" class="btn btn-primary">Отправить</button>
-				</div>
-
-				<p class="form-info"><span class="c-danger">*</span> - обязательно к заполнению</p>
-			</form>
 		</div>
 	</div>
 
