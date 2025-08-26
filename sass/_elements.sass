@@ -557,8 +557,10 @@
     &-dotted
         padding: 0
         list-style: none
-        li
-            z-index: 1
+        z-index: 1
+        position: relative
+        z-index: 1
+        li  
             position: relative
             font-size: var(--font-sm-fx)
             margin-bottom: 4px
@@ -567,9 +569,9 @@
                 height: 1px
                 width: 100%
                 display: block
+                z-index: -1
                 border-bottom: 1px dashed #CCCCCC
                 position: absolute
-                z-index: -1
                 top: 50%
                 left: 50%
                 transform: translate(-50%, -50%)
@@ -614,6 +616,7 @@
         max-width: 96vw
         background-color: var(--light-gray)
         border-radius: $b-rad
+        box-shadow: var(--card-shadow)
 
         pointer-events: none
         display: none

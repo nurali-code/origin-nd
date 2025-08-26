@@ -161,7 +161,7 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $('.info').on('mouseenter', function () {
+    $(document).on('mouseenter', '.info', function () {
         const $info = $(this).addClass('--show')
         const $tooltip = $info.find('.info__text');
         $tooltip.fadeIn(250)
@@ -205,7 +205,7 @@ $(document).ready(function () {
         });
     });
 
-    $('.info').on('mouseleave', function () {
+    $(document).on('mouseleave', '.info', function () {
         $(this).removeClass('--show').find('.info__text').fadeOut(250);
     });
 });
@@ -424,7 +424,7 @@ $(document).ready(function () {
     });
     $(document).on('click', '[data-catalog-hover] .catalog-list__btn', function (e) {
         if (window.innerWidth <= 992) {
-               e.preventDefault();
+            e.preventDefault();
             $(this).parent().addClass('active').siblings().removeClass('active');
         }
     });
