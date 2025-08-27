@@ -118,7 +118,6 @@ $(document).ready(function () {
 		totalCounter();
 	});
 
-	$basketAgreement.on('change', function () { basketAgreement() })
 
 	function basketAgreement() {
 		const allChecked = $basketAgreement.length > 0 &&
@@ -126,6 +125,11 @@ $(document).ready(function () {
 		updateSubmitState(allChecked && getCheckedItems().length > 0);
 	}
 
+	$basketAgreement.on('change', function () {
+		const state = $(this).is(':checked');
+		$basketAgreement.prop('checked', state);
+		updateSubmitState(state && getCheckedItems().length > 0);
+	});
 
 
 	$basketBtnUnavailable.on('click', () => getBasketItems().hide());
