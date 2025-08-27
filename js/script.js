@@ -4,8 +4,14 @@ $(document).ready(function () {
         const scrollTop = $(this).scrollTop();
         const $headerFixed = $('.header-fixed');
 
-        if (scrollTop > headerHeight) { $headerFixed.addClass('active'); }
-        else { $headerFixed.removeClass('active'); }
+        if (scrollTop > headerHeight) {
+            $headerFixed.addClass('active');
+            $('html').css('scroll-padding-top', headerHeight)
+        }
+        else {
+            $headerFixed.removeClass('active');
+            $('html').css('scroll-padding-top', '')
+        }
     });
 
     function setHeaderMargin() {
@@ -662,7 +668,11 @@ $(document).ready(function () {
         if (window.innerWidth < 992) {
             const navbarHeight = $('header .navbar').outerHeight();
             $('body').css('padding-bottom', navbarHeight);
-        } else { $('body').css('padding-bottom', ''); }
+            $('html').css('scroll-padding-bottom', navbarHeight);
+        } else {
+            $('body').css('padding-bottom', '');
+            $('html').css('scroll-padding-bottom', '');
+        }
     }
 
     setBodyPaddingForNavbar();
