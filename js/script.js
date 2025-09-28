@@ -7,10 +7,12 @@ $(document).ready(function () {
         if (scrollTop > headerHeight) {
             $headerFixed.addClass('active');
             $('html').css('scroll-padding-top', headerHeight)
+            $('html').css('--header-height', $headerFixed.outerHeight() + "px")
         }
         else {
             $headerFixed.removeClass('active');
             $('html').css('scroll-padding-top', '')
+            $('html').css('--header-height', '')
         }
     });
 
