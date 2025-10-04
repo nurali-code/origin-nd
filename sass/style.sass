@@ -11,6 +11,7 @@
 @import 'listing'
 @import 'basket'
 @import 'blog'
+@import 'article'
 
 .hero
     padding-top: 0
@@ -284,6 +285,37 @@
                 margin: 0
                 br
                     display: none
+
+.breadcumbs
+    list-style: none
+    padding: 0
+    gap: 8px 
+    flex-wrap: wrap
+    margin: 0 0 12px
+    &-link
+        font-size: $font-sm
+        color: $text-gray
+
+    &-li
+        margin: 0
+        gap: 8px
+        &>*
+            vertical-align: middle
+            display: inline-block
+
+        &:last-child
+            .ic
+                display: none
+
+    .ic
+        fill: $text-gray
+
+    @media screen and ( max-width: 1199px )
+        --base-gap: 8px
+
+    @media screen and ( max-width: 991px )
+        --base-gap: 4px
+        margin: 0 0 16px
 
 .card
     width: 245px
@@ -889,37 +921,6 @@
 
         &-img
             display: none
-
-.breadcumbs
-    list-style: none
-    padding: 0
-    gap: 8px 
-    flex-wrap: wrap
-    margin: 0 0 12px
-    &-link
-        font-size: $font-sm
-        color: $text-gray
-
-    &-li
-        margin: 0
-        gap: 8px
-        &>*
-            vertical-align: middle
-            display: inline-block
-
-        &:last-child
-            .ic
-                display: none
-
-    .ic
-        fill: $text-gray
-
-    @media screen and ( max-width: 1199px )
-        --base-gap: 8px
-
-    @media screen and ( max-width: 991px )
-        --base-gap: 4px
-        margin: 0 0 16px
 
 @import 'footer'
 @import 'modal'

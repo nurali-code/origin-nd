@@ -5,6 +5,10 @@
     border: none
     outline: none
 
+html
+    scroll-padding-bottom: var(--navbar-height)
+    scroll-padding-top: var(--header-height)
+
 html, body
     font-family: var(--font-famaly)
     font-weight: 400
@@ -15,6 +19,7 @@ html, body
 body
     gap: 0 !important
     min-height: 100vh
+    padding-bottom: var(--navbar-height)
     &.overflow,
     &[data-modal-show]
         overflow: hidden

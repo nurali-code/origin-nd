@@ -6,12 +6,10 @@ $(document).ready(function () {
 
         if (scrollTop > headerHeight) {
             $headerFixed.addClass('active');
-            $('html').css('scroll-padding-top', headerHeight)
             $('html').css('--header-height', $headerFixed.outerHeight() + "px")
         }
         else {
             $headerFixed.removeClass('active');
-            $('html').css('scroll-padding-top', '')
             $('html').css('--header-height', '')
         }
     });
@@ -669,12 +667,8 @@ $(document).ready(function () {
     function setBodyPaddingForNavbar() {
         if (window.innerWidth < 992) {
             const navbarHeight = $('header .navbar').outerHeight();
-            $('body').css('padding-bottom', navbarHeight);
-            $('html').css('scroll-padding-bottom', navbarHeight);
-        } else {
-            $('body').css('padding-bottom', '');
-            $('html').css('scroll-padding-bottom', '');
-        }
+            $('html').css('--navbar-height', navbarHeight + 'px');
+        } else { $('html').css('--navbar-height', ''); }
     }
 
     setBodyPaddingForNavbar();
