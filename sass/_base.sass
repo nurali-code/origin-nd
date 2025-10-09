@@ -54,7 +54,7 @@ ul, ol
     li
         margin-bottom: 10px
         &:last-child
-            margin-bottom: 0
+            margin-bottom: 0 !important
 
 img
     display: block
@@ -128,6 +128,13 @@ section
             fill: $text-gray !important
             stroke: $text-gray !important
 
+    &-blue
+        color: #0081f1 !important
+
+        svg
+            fill: #0081f1 !important
+            stroke: #0081f1 !important
+
     &-dark
         color: $dark !important
         svg
@@ -148,7 +155,7 @@ input, textarea, select, .select
     border: 1px solid $b-color
     border-radius: $b-rad
     background-color: var(--light)
-    transition: border-color .3s ease 
+    transition: border-color .3s ease
     &:disabled
         cursor: not-allowed
         opacity: .6

@@ -52,7 +52,7 @@
             &__count
                 display: block
                 color: var(--link-color)
-        
+
         &-togglers
             gap: 8px
             &>*
@@ -208,6 +208,10 @@ table
         &-lg
             gap: 16px
 
+    .td
+        &-head
+            display: none
+
     thead
         th
             white-space: nowrap
@@ -283,6 +287,13 @@ table
                 text-align: left
                 padding: 0
                 width: 100%
+
+        .td
+            &-head
+                font-size: var(--font-xsm)
+                color: var(--text-gray)
+                font-weight: normal
+                display: block
 
         .fx
             width: 100%

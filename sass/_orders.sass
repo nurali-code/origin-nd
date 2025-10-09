@@ -1,0 +1,162 @@
+.order,
+.orders
+    .list
+        &-dotted
+            li
+                text-wrap: balance
+                margin-bottom: 8px
+                font-size: var(--font-md)
+
+.order
+    &-wrap
+        position: relative
+        z-index: 1
+        gap: $gap
+        &>*
+            &:last-child
+                flex: 1
+                width: calc( (311 / 1290) * 100% )
+
+            &:first-child
+                width: calc( (931 / 1290) * 100% )
+
+    &-content
+        gap: 32px
+
+    &-head
+        margin-bottom: 16px
+
+    &-heading
+        margin-bottom: 8px
+
+    &-row
+
+    &-inform
+        gap: var(--base-gap)
+        &>*
+            margin: 0
+
+        .btn-primary
+            min-width: 130px
+
+    &-info
+        padding: 16px
+        border-radius: $b-rad
+        background-color: var(--light-gray)
+
+        position: sticky
+        top: calc( var(--header-height) + 14px )
+        right: 0
+        margin-left: auto
+
+    &-table
+        td
+            text-align: left !important
+        th
+            min-width: 90px
+            text-align: left !important
+            // min-width: 120px 
+
+    @media screen and (max-width: 1199px)
+        &-wrap
+            display: block !important
+            &>*
+                width: 100% !important
+
+        &-content
+            margin-bottom: 16px
+
+        &-aside
+
+    @media screen and (max-width: 767px)
+
+        &-table
+            tr
+                gap: 0 24px
+
+            td
+                font-size: var(--font-md)
+                font-weight: normal
+                padding: 4px
+                &:nth-child(2)
+                &:last-child
+                    padding: 4px
+                    width: unset
+
+        .list-dotted li>*
+            &:first-child
+                max-width: 158px
+
+.orders
+    &-header
+        margin-bottom: 32px
+        gap: 4px
+        &>*
+            margin: 0
+            text-wrap: balance
+
+    &-wrap
+        &>*
+            margin-bottom: 16px
+            &:last-child
+                margin-bottom: 0
+
+    &-item
+        padding: 16px
+        gap: var(--base-gap)
+        border: 1px solid var(--border-color)
+        border-radius: var(--border-radius)
+        .orders-row
+            margin-top: 16px
+
+        .btn-primary
+            min-width: 170px
+
+    &-heading
+        text-wrap: balance
+        margin-bottom: 16px
+
+    &-row,
+    &-col
+        gap: var(--base-gap)
+
+    &-col
+        &:last-child
+            margin-left: auto
+
+    @media screen and ( max-width: 575px )
+        &-header
+            margin-bottom: 16px
+
+        &-item
+            z-index: 1
+            border: none
+            width: 100vw
+            position: relative
+            left: -16px
+            background-color: var(--lighter-gray)
+            .btn-primary
+                min-width: unset
+
+            .orders-row
+                gap: 8px
+                flex-direction: column-reverse
+
+            .orders-col
+                gap: 8px
+                flex-direction: column
+                width: 100%
+                &>*
+                    width: 100%
+
+            .list
+                &-dotted
+                    li 
+                        font-size: var(--font-sm)
+                        line-height: 110%
+                        &>* 
+                            max-width: 50%
+
+        &-col
+            &:last-child
+                margin-left: 0

@@ -34,6 +34,15 @@
         fill: $dark
         transition: .3s ease all
 
+    &-link 
+        padding: 5px 0
+        min-height: unset 
+        text-decoration: underline
+        background-color: rgba(0, 0, 0, 0)
+        &:hover
+            opacity: .7
+            text-decoration: none
+
     &-light
         background-color: $main
         color: $primary
@@ -207,6 +216,9 @@
     &-secondary
         color: $primary
         background-color: $secondary
+    &-gray
+        color: var(--text-gray)
+        background-color: var(--light-gray)
 
     &--sm
         font-size: 10px
@@ -219,6 +231,8 @@
 @media screen and ( max-width: 992px )
     .btn
         padding: 2px 16px
+        &-link 
+            padding: 5px 0
 
         &-icon
             padding: 2px

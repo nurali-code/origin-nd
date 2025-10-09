@@ -560,33 +560,35 @@
         z-index: 1
         position: relative
         z-index: 1
-        li  
+        li
             position: relative
             font-size: var(--font-sm-fx)
             margin-bottom: 4px
+            gap: 4px
             &::before
                 content: ''
                 height: 1px
-                width: 100%
+                flex: 1
+                order: 2
                 display: block
                 z-index: -1
                 border-bottom: 1px dashed #CCCCCC
-                position: absolute
-                top: 50%
-                left: 50%
-                transform: translate(-50%, -50%)
+                // width: 100%
+                // position: absolute
+                // top: 50%
+                // left: 50%
+                // transform: translate(-50%, -50%)
 
             &>*
-                display: inline-block
-                background-color: var(--light-gray)
+                max-width: 45%
+                &:first-child
+                    order: 1
+                    color: var(--text-gray)
 
-        .head
-            color: var(--text-gray)
-            padding-right: 4px
+                &:last-child
+                    order: 3
+                    text-align: right
 
-        .val
-            padding-left: 4px
-            margin-left: auto
 
         &__footer
             margin-top: 20px
