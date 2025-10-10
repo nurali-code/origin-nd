@@ -1,0 +1,71 @@
+.contacts
+    &-wrap
+        position: relative
+        z-index: 1
+
+    &-content
+        gap: 42px
+        width: calc( (364 / 1290) * 100% )
+        @media screen and ( min-width: 992px )
+            padding: 16px
+            border-radius: $b-rad
+            background-color: var(--light-gray)
+
+        &>*
+            width: 100%
+
+    &-item
+        gap: 16px
+        max-width: 271px
+        .social
+            margin-left: auto
+
+    &-text
+
+    &-map
+        height: 100% !important
+        border-radius: $b-rad
+        overflow: hidden
+        background-color: var(--light-gray)
+        @media screen and ( min-width: 992px )
+            position: absolute
+            top: 0
+            right: 0
+            width: calc( (911 / 1290) * 100% )
+
+    @media screen and ( max-width: 991px )
+        &-wrap
+            display: block !important
+            &>*
+                width: 100% !important
+
+        &-content 
+            gap: 16px
+
+        &-map
+            height: 400px !important
+
+        &-item
+            flex: 1
+            max-width: unset
+            padding: 16px
+            border-radius: $b-rad
+            background-color: var(--light-gray)
+
+        @media screen and ( min-width: 768px )
+            &-content
+                flex-direction: row
+
+            &-item
+                order: 1
+
+            &-map
+                order: 2
+
+    @media screen and ( max-width: 575px )
+        &-content > *
+            width: 100vw 
+            position: relative
+            left: calc( 0px - var(--bs-gutter-x) )
+
+            
