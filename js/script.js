@@ -354,38 +354,55 @@ $(document).ready(function () {
 
 $(document).ready(function () {
     $('.modal').css('display', 'flex').hide();
-    function showModal(id) {
-        hideModals()
-        compensateForScrollbar()
+
+    function showModal(id, skipUrlUpdate = false) {
+        hideModals();
+        compensateForScrollbar();
         $(id).fadeIn(300).addClass('active');
-        $('body').attr('data-modal-show', true)
+        $('body').attr('data-modal-show', true);
         initializeRanges();
+
+        if (!skipUrlUpdate) history.pushState({ modal: id }, '', id);
     }
 
-    function hideModals() {
+    function hideModals(skipHistory = false) {
         if ($('.modal.active').length) {
-            $('.modal.active').fadeOut(300)
+            $('.modal.active').fadeOut(300);
             $('.modal.active, [data-modal]').removeClass('active');
             $('body').removeAttr('data-modal-show');
-            if (!$('body').hasClass('overflow')) {
-                compensateForScrollbar(0);
-            }
+            if (!$('body').hasClass('overflow')) compensateForScrollbar(0);
+            if (!skipHistory) history.pushState(null, '', location.pathname); 
         }
-    };
+    }
 
     $('[data-modal]').on('click', function (e) {
-        $(this).addClass('active')
-        e.preventDefault()
+        e.preventDefault();
+        $(this).addClass('active');
         showModal($(this).data("modal"));
-
     });
 
-    $('.modal-close, [data-modal-close]').on('click', () => { hideModals(); });
+    $('.modal-close, [data-modal-close]').on('click', () => hideModals());
 
-    $(document).on('click', function (e) {
-        if (!$(e.target).closest('.modal-content, [data-modal]').length && $('body').attr('data-modal-show')) {
-            hideModals();
-        }
+    let insideModal = false;
+    $(document)
+        .on('mousedown', e => insideModal = $(e.target).closest('.modal-content,[data-modal]').length)
+        .on('click', e => {
+            if (!insideModal && $('body').attr('data-modal-show') && !$(e.target).closest('.modal-content,[data-modal]').length)
+                hideModals();
+        });
+
+    // При загрузке страницы — если есть hash, открыть модалку
+    const hash = window.location.hash;
+    if (hash && $(hash).length && $(hash).hasClass('modal')) {
+        showModal(hash, true);
+    }
+
+    // Реакция на кнопку "Назад"/"Вперёд"
+    window.addEventListener('popstate', function () {
+        const hash = window.location.hash;
+        if (hash && $(hash).length && $(hash).hasClass('modal')) {
+            showModal(hash, true);
+        } else { hideModals(true); }
     });
 });
 
