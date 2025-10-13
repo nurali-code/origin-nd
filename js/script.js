@@ -325,6 +325,7 @@ function compensateForScrollbar(inst) {
     else if (scrollbarWidth > 0) { $('body').css('margin-right', scrollbarWidth + 'px'); }
 }
 
+// Мобильное меню
 $(document).ready(function () {
     const $menuContent = $('[data-menu-content]');
 
@@ -352,6 +353,7 @@ $(document).ready(function () {
     });
 });
 
+// Модальные окна
 $(document).ready(function () {
     $('.modal').css('display', 'flex').hide();
 
@@ -371,7 +373,7 @@ $(document).ready(function () {
             $('.modal.active, [data-modal]').removeClass('active');
             $('body').removeAttr('data-modal-show');
             if (!$('body').hasClass('overflow')) compensateForScrollbar(0);
-            if (!skipHistory) history.pushState(null, '', location.pathname); 
+            if (!skipHistory) history.pushState(null, '', location.pathname);
         }
     }
 
@@ -406,6 +408,7 @@ $(document).ready(function () {
     });
 });
 
+// Добавить и убавить количество 
 $(document).on('click input', '.amount-dec, .amount-inc, .amount-input', function (e) {
     e.preventDefault();
     const $amount = $(this).closest('.amount');
@@ -439,6 +442,7 @@ $(document).on('click input', '.amount-dec, .amount-inc, .amount-input', functio
     }
 });
 
+// Каталог при навидении
 $(document).ready(function () {
     $(document).on('mouseenter', '[data-catalog-hover] .catalog-list__btn', function () {
         if (window.innerWidth >= 991) {
@@ -615,6 +619,7 @@ $(document).ready(function () {
     });
 })
 
+// Табы 
 $(document).ready(function () {
     const $defaultTab = $('[data-tab-active]');
     if ($defaultTab.length) {
@@ -659,23 +664,56 @@ $(document).ready(function () {
     });
 });
 
-$(document).on('click', '[data-shop]', function (e) {
-    e.preventDefault();
-    const $this = $(this);
-    $this.toggleClass('active');
-    if ($this.hasClass('active')) {
-        setTimeout(() => { alert('Добавили в корзину'); }, 1500);
-    } else { alert('Убрали из корзины'); }
+// Добавили в корзину
+$(document).ready(function () {
+    $(document).on('click', '[data-shop]', function (e) {
+        e.preventDefault();
+        const $this = $(this);
+        $this.toggleClass('active');
+        if ($this.hasClass('active')) {
+            setTimeout(() => { alert('Добавили в корзину'); }, 1500);
+        } else { alert('Убрали из корзины'); }
+    });
+
+    $(document).on('click', '[data-card-add]', function (e) {
+        e.preventDefault();
+        const $cardAction = $(this).closest('[data-card-catcher]');
+        $(this).hide();
+        $cardAction.find('[data-card-amount]').addClass('active').find('.amount-input').val(1);
+        badgeCounter('cart', 'add')
+    });
 });
 
-$(document).on('click', '[data-card-add]', function (e) {
+// Добавили в избранное
+$(document).on('click', '[data-fav]', function (e) {
     e.preventDefault();
-    const $cardAction = $(this).closest('[data-card-catcher]');
-    $(this).hide();
-    $cardAction.find('[data-card-amount]').addClass('active').find('.amount-input').val(1);
-    badgeCounter('cart', 'add')
+    const $btn = $(this);
+    const $icon = $btn.find('use');
+    if ($btn.attr('data-fav') === 'add') {
+        $btn.attr('data-fav', 'remove');
+        $icon.attr('href', 'img/ic.svg#fav-fill');
+        badgeCounter('fav', 'add')
+    } else {
+        $btn.attr('data-fav', 'add');
+        $icon.attr('href', 'img/ic.svg#fav');
+        badgeCounter('fav', 'remove')
+    }
 });
 
+// Добавить и убавить в badge
+function badgeCounter(badge, action) {
+    $(`[data-badge="${badge}"]`).each(function () {
+        let count = parseInt($(this).text(), 10) || 0;
+        if (action === 'add') { count += 1; }
+        else { count -= 1; }
+        $(this).text(count);
+
+        if (count === 0) { $(this).hide(); }
+        else { $(this).show(); }
+    });
+}
+
+// Маска для телефона
 $(document).ready(function () {
     $('input[type="tel"]').mask("+7-(999)-999-99-99", { placeholder: "+7-(___)-___-__-__" });
 })
@@ -692,33 +730,7 @@ $(document).ready(function () {
     $(window).on('resize', setBodyPaddingForNavbar);
 });
 
-function badgeCounter(badge, action) {
-    $(`[data-badge="${badge}"]`).each(function () {
-        let count = parseInt($(this).text(), 10) || 0;
-        if (action === 'add') { count += 1; }
-        else { count -= 1; }
-        $(this).text(count);
-
-        if (count === 0) { $(this).hide(); }
-        else { $(this).show(); }
-    });
-}
-
-$(document).on('click', '[data-fav]', function (e) {
-    e.preventDefault();
-    const $btn = $(this);
-    const $icon = $btn.find('use');
-    if ($btn.attr('data-fav') === 'add') {
-        $btn.attr('data-fav', 'remove');
-        $icon.attr('href', 'img/ic.svg#fav-fill');
-        badgeCounter('fav', 'add')
-    } else {
-        $btn.attr('data-fav', 'add');
-        $icon.attr('href', 'img/ic.svg#fav');
-        badgeCounter('fav', 'remove')
-    }
-});
-
+// custom range
 let rangeInstances = [];
 function initializeRanges() {
     destroyRanges();
@@ -787,5 +799,4 @@ function initializeRanges() {
 function destroyRanges() {
     rangeInstances.forEach(slider => slider.destroy());
     rangeInstances = [];
-}
-initializeRanges();
+} initializeRanges();

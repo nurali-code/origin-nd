@@ -187,7 +187,7 @@
 
         .catalog-btn
             justify-content: center
-            min-width: 200px
+            min-width: 180px
 
     @media screen and ( min-width: 1199.99px )
         &-bottom
@@ -427,8 +427,8 @@
                 border-bottom: 1px solid $light
                 .ic
                     margin-right: 4px
-                
-                &>* 
+
+                &>*
                     border-radius: 0 !important
                     &:last-child
                         text-align: right
@@ -577,7 +577,6 @@
                             &--back
                                 display: flex
 
-
                     &-list
                         &__item.active
                             .catalog-underlist
@@ -673,3 +672,84 @@
                     font-size: $font-md
                     .ic
                         --ic-width: 16px
+
+.userbar
+    position: relative
+    &-user
+        margin-bottom: 4px
+        .ic
+            fill: var(--primary)
+
+    &-menu
+        width: 250px
+        z-index: 111
+        position: absolute
+        top: 100%
+        padding: 12px 0 16px
+        right: calc( 2px - var(--bs-gutter-x) )
+        background-color: var(--light)
+        border-radius: $b-rad
+        border: 1px solid var(--border-color)
+        box-shadow: 0 0 14px 1px rgba(var(--dark), .1)
+        transform: translateY(5%)
+        transition: .2s ease all
+        opacity: 0
+        visibility: hidden
+        &:hover,
+        &:active,
+        &:focus
+            opacity: 1
+            visibility: visible
+            transform: translateY(0)
+
+        .btn-link
+            width: 100%
+            font-size: var(--font-sm-fx)
+            text-decoration: none
+            border-radius: 0
+            justify-content: flex-start
+
+        a, button
+            padding: 5px 16px
+            &:hover
+                opacity: 1
+                background-color: var(--light-gray)
+
+    &-btn
+        &:hover,
+        &:active,
+        &:focus
+            &~*
+                opacity: 1
+                visibility: visible
+                transform: translateY(0)
+
+    &-list
+        padding: 0
+        list-style: none
+        li
+            margin: 0
+
+    &-link
+        display: block
+
+    &-heading
+        color: var(--text-gray)
+        font-size: var(--font-sm)
+        display: block
+        padding: 0 16px
+        margin: 0 0 4px
+
+    &-org
+        margin-bottom: 4px
+        .ic
+            fill: var(--primary)
+
+    &-bottom
+        padding-top: 10px
+        margin-top: 10px
+        border-top: 1px solid var(--border-color)
+
+    @media screen and ( max-width: 767px )
+        &-menu 
+            top: 110%
