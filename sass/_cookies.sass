@@ -1,0 +1,59 @@
+.cookies
+    position: fixed
+    z-index: 99999
+    bottom: calc( 20px + var(--navbar-height) )
+    left: 0
+    padding: 0 16px
+    width: 100%
+    opacity: 0
+    visibility: hidden
+    transform: translateY(50px)
+    transition: .6s ease all
+    p
+        margin: 0
+        font-size: var(--font-sm)
+
+    &-wrap
+        max-width: 970px
+        gap: 64px
+        border-radius: $b-rad
+        box-shadow: 0px 4px 45.4px 0px rgba(0, 0, 0, .1215686275)
+        padding: 18px 26px
+        background-color: white
+        position: relative
+        z-index: 1
+
+    &.active
+        display: block
+        opacity: 1
+        visibility: visible
+        transform: translateY(0px)
+
+    &-link
+        text-decoration: underline
+
+
+    &-close
+        top: -36px
+        right: -2px
+        padding: 0
+        width: 30px
+        height: 30px
+        min-height: unset
+        position: absolute
+        background-color: rgba(255, 255, 255, .5)
+        border: 1px solid var(--border-color)
+        border-radius: 50%
+        cursor: pointer
+
+    @media screen and (max-width: 767px)
+        .btn-primary
+            width: 100%
+
+        &-wrap
+            display: block
+            padding: 12px 8px 8px
+
+        p 
+            margin-bottom: 10px
+
