@@ -3,7 +3,11 @@ if (!localStorage.getItem('cookiesAccepted')) {
     setTimeout(() => { $('.cookies').addClass('active') }, 2500);
 }
 
-$('.cookies button').on('click', function () {
+$('.cookies-close').on('click', function () {
     $('.cookies').removeClass('active');
-    $(this).hasClass('btn-primary') ? localStorage.setItem('cookiesAccepted', 'true') : false;
+});
+
+$('.cookies .btn-primary').on('click', function () {
+    $('.cookies').removeClass('active');
+    localStorage.setItem('cookiesAccepted', 'true');
 });
