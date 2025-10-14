@@ -5,5 +5,5 @@ if (!localStorage.getItem('cookiesAccepted')) {
 
 $('.cookies button').on('click', function () {
     $('.cookies').removeClass('active');
-    localStorage.setItem('cookiesAccepted', 'true');
+    $(this).hasClass('btn-primary') ? localStorage.setItem('cookiesAccepted', 'true') : false;
 });
