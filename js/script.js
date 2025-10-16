@@ -251,7 +251,7 @@ $(document).ready(function () {
 
         $this.children('option').each(function () {
             $('<li />', {
-                text: $(this).text(),
+                html: $(this).html(),
                 rel: $(this).val(),
                 class: $(this).attr('hidden'),
                 selected: $(this).attr('selected')

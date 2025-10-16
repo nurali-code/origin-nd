@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Origin | Интернет-магазин крепежа</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script defer src="js/jquery.min.js"></script>
+    <script defer src="js/slick.min.js"></script>
+    <script defer src="js/jquery.maskedinput.min.js"></script>
+    <script defer src="js/script.js"></script>
+</head>
+
+<style>
+    .container{ padding-top: 100px; display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap;} .ic{ padding: 2px; border: 1px solid #ccc; border-radius: 4px;}
+</style>
+
+<body>
+    <div class="container" id="innerSprite"></div>
+
+
+    <script>
+        fetch('img/ic.svg')
+            .then(response => response.text())
+            .then(svgText => {
+                const parser = new DOMParser();
+                const svgDoc = parser.parseFromString(svgText, 'image/svg+xml');
+                const symbols = svgDoc.querySelectorAll('symbol');
+                const ids = Array.from(symbols).map(s => s.id);
+                console.log(ids);
+                symbols.forEach(sym => {
+                    console.log('ID:', sym.id);
+                    console.log('HTML:', sym.innerHTML);
+                });
+                const svgNS = "http://www.w3.org/2000/svg";
+
+                symbols.forEach(element => {
+                    const svg = document.createElementNS(svgNS, "svg");
+                    svg.classList.add('ic', 'ic-xl')
+                    svg.innerHTML = `<use xlink:href="img/ic.svg#${element.id}"></use>`;
+                    document.querySelector('#innerSprite').appendChild(svg);
+                });
+            })
+            .catch(console.error);
+    </script>
+
+</body>
+
+</html>
