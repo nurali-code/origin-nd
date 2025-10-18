@@ -240,22 +240,35 @@ $(document).ready(function () {
             ? $this.find('option:selected').first()
             : $this.find('option').first();
 
-        const defaultText = defaultOption.text();
+        const defaultText = iconAdd(defaultOption);
 
+        function iconAdd(item) {
+            const dataIc = item.attr('data-ic');
+            const text = item.text();
+            if (dataIc) {
+                const href = dataIc.startsWith('#') ? `img/ic.svg${dataIc}` : `img/ic.svg#${dataIc}`;
+                return `<svg class="ic ic-lg"><use href="${href}"></use></svg> ${text}`;
+            } else { return text; }
+        }
+        
         const $customSelect = $('<div class="select"></div>')
             .addClass($this.attr('class'))
             .insertAfter($this)
-            .html(`<span>${defaultText}</span> <svg class="ic ic-lg"><use href="img/ic.svg#arrow-down"></use></svg>`);
+            .html(`<span>${defaultText}</span> <svg class="ic ic-lg select-arr"><use href="img/ic.svg#arrow-down"></use></svg>`);
 
         const $optionlist = $('<ul class="select-options"></ul>').insertAfter($customSelect);
 
         $this.children('option').each(function () {
-            $('<li />', {
-                html: $(this).html(),
-                rel: $(this).val(),
-                class: $(this).attr('hidden'),
-                selected: $(this).attr('selected')
-            }).appendTo($optionlist);
+            const $opt = $(this);
+            const text = $opt.text();
+            const rel = $opt.val();
+            const hiddenAttr = $opt.attr('hidden');
+            const isSelected = $opt.is(':selected') || $opt.attr('selected');
+            const $li = $('<li />', { rel });
+            if (hiddenAttr) $li.addClass(hiddenAttr);
+            if (isSelected) $li.attr('selected', 'selected');
+            $li.html(iconAdd($opt));
+            $li.appendTo($optionlist);
         });
 
         $customSelect.click(function (e) {
@@ -268,7 +281,7 @@ $(document).ready(function () {
         $optionlist.on('click', 'li', function (e) {
             e.stopPropagation();
             const selectedValue = $(this).attr('rel');
-            $customSelect.find('span').html($(this).text());
+            $customSelect.find('span').html($(this).html());
             $this.val(selectedValue).trigger('change');
             $optionlist.find('li').removeAttr('selected');
             $(this).attr('selected', 'selected');

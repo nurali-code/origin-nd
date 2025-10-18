@@ -9,7 +9,8 @@
     width: 100%
     text-align: left
     color: $dark
-    .ic
+    gap: 8px
+    &-arr
         fill: $dark
         margin-left: auto
 
@@ -22,6 +23,8 @@
         overflow: hidden
         text-overflow: ellipsis
         white-space: nowrap
+        .ic 
+            margin-right: 4px
 
     &-wrap
         position: relative
@@ -65,7 +68,7 @@
             display: none
 
     &.active
-        .ic
+        .select-arr
             transform: scaleY(-1)
 
 .active_line
