@@ -507,10 +507,7 @@
                     height: 100%
                     padding: 16px
                     border-radius: $b-rad
-                    transition: all ease .3s
-                    opacity: 0
-                    visibility: hidden
-                    transform: translateX(10%)
+                    display: none
 
                 &-list
                     &__item
@@ -549,15 +546,13 @@
                                             visibility: visible
 
                                     &-underlist
-                                        opacity: 1
-                                        visibility: visible
-                                        transform: translateX(0%)
+                                        display: block
 
                         &__btn
                             .ic
                                 opacity: 0
                                 transform: translateX(-5px)
-                                transition: .3s ease all
+                                transition: .2s ease all
 
     @media screen and ( max-width: 991px )
         &-list
@@ -691,16 +686,11 @@
         border-radius: $b-rad
         border: 1px solid var(--border-color)
         box-shadow: 0 0 14px 1px rgba(var(--dark), .1)
-        transform: translateY(5%)
-        transition: .2s ease all
-        opacity: 0
-        visibility: hidden
+        display: none
         &:hover,
         &:active,
         &:focus
-            opacity: 1
-            visibility: visible
-            transform: translateY(0)
+            display: block
 
         .btn-link
             width: 100%
@@ -720,9 +710,7 @@
         &:active,
         &:focus
             &~*
-                opacity: 1
-                visibility: visible
-                transform: translateY(0)
+                display: block
 
     &-list
         padding: 0
