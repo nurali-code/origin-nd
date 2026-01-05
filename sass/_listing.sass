@@ -350,22 +350,3 @@ table
         text-align: left
         .ic
             fill: var(--text-gray)
-
-.fieldset
-    &-checkboxes
-        column-count: 2
-        column-gap: 8px
-        width: 100%
-        &>*
-            width: 100%
-            margin-bottom: 16px
-
-    @media screen and ( min-width: 576px ) and ( max-width: 991px )
-        &-content
-            &:not(.fieldset-content--single)
-                &>*
-                    width: 100% !important
-
-            &:not(.fieldset-content--single)
-                .fieldset-checkboxes
-                    column-count: 3

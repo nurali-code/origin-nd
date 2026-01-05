@@ -8,12 +8,14 @@
     <meta name="robots" content="noindex, nofollow">
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/new.styles.css">
 
     <script defer src="js/jquery.min.js"></script>
     <script defer src="js/slick.min.js"></script>
     <script defer src="js/jquery.maskedinput.min.js"></script>
     <script defer src="js/script.js"></script>
     <script defer src="js/cookies.js"></script>
+    <script defer src="js/new_catalog.js"></script>
 
 </head>
 
@@ -297,12 +299,14 @@
                                     </li>
                                 </ul>
                                 <div class="menu-footer">
-                                    <button data-modal="#modal-req-2" class="btn btn-outline-primary xxl-hide">Запросить расчет
+                                    <button data-modal="#modal-req-2" class="btn btn-outline-primary xxl-hide">Запросить
+                                        расчет
                                         <svg class="ic">
                                             <use href="img/ic.svg#calc"></use>
                                         </svg>
                                     </button>
-                                    <button data-modal="#modal-call_request" class="btn btn-outline-primary xxl-hide">Заказать звонок
+                                    <button data-modal="#modal-call_request"
+                                        class="btn btn-outline-primary xxl-hide">Заказать звонок
                                         <svg class="ic" aria-hidden="true">
                                             <use href="img/ic.svg#phone"></use>
                                         </svg>
@@ -366,7 +370,8 @@
                                         </button>
                                         <ul class="ndc-cat__sub" hidden>
                                             <li class="ndc-sub__item"><a href="#" class="ndc-sub__link">DIN 912</a></li>
-                                            <li class="ndc-sub__item"><a href="#" class="ndc-sub__link">DIN 7985</a></li>
+                                            <li class="ndc-sub__item"><a href="#" class="ndc-sub__link">DIN 7985</a>
+                                            </li>
                                         </ul>
                                     </li>
                                     <li class="ndc-cat__item">
@@ -2682,6 +2687,1023 @@
             </p>
         </div>
     </footer>
+
+    <div class="modal modal-lg" id="modal-filter">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть"><svg class="ic ic-md">
+                    <use href="img/ic.svg#close"></use>
+                </svg></button>
+            <h2 class="modal-heading">Фильтры</h2>
+            <div data-replace-to="filters"></div>
+        </div>
+    </div>
+
+    <div class="modal modal-lg" id="modal-quicksearch">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть"><svg class="ic ic-md">
+                    <use href="img/ic.svg#close"></use>
+                </svg></button>
+            <h2 class="modal-heading">Быстрый поиск</h2>
+
+            <div class="quicksearch quicksearch--lg">
+                <form class="form quicksearch__form">
+                    <div class="inp-wrap">
+                        <label class="inp-wrap__label">DIN/ГОСТ/ISO</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="inp-wrap">
+                        <label class="inp-wrap__label">Диаметр</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="inp-wrap">
+                        <label class="inp-wrap__label">Длина</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="inp-wrap">
+                        <label class="inp-wrap__label">Материал</label>
+                        <select>
+                            <option hidden></option>
+                            <option selected>Материал #1</option>
+                            <option>Материал #2</option>
+                            <option>Материал #3</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Показать</button>
+                    <button type="reset" class="btn btn-secondary">Сбросить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal modal-lg" id="modal-types">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть"><svg class="ic ic-md">
+                    <use href="img/ic.svg#close"></use>
+                </svg></button>
+            <h2 class="modal-heading">Виды</h2>
+
+            <div class="type-wrap">
+                <div class="type">
+                    <img src="img/poduct.jpg" alt="pr" class="type-img">
+                    <a href="#" class="type-descr">DIN 444 B Болт откидной Латунь</a>
+                </div>
+                <div class="type">
+                    <img src="img/poduct.jpg" alt="pr" class="type-img">
+                    <a href="#" class="type-descr">DIN 444 LB Болт откидной Нержавеющий Полная резьба</a>
+                </div>
+                <div class="type">
+                    <img src="img/poduct.jpg" alt="pr" class="type-img">
+                    <a href="#" class="type-descr">DIN 444 B Болт откидной Нержавеющий</a>
+                </div>
+                <div class="type">
+                    <img src="img/poduct.jpg" alt="pr" class="type-img">
+                    <a href="#" class="type-descr">DIN 444 B Болт откидной Латунь</a>
+                </div>
+                <div class="type">
+                    <img src="img/poduct.jpg" alt="pr" class="type-img">
+                    <a href="#" class="type-descr">DIN 444 LB Болт откидной Нержавеющий Полная резьба</a>
+                </div>
+                <div class="type">
+                    <img src="img/poduct.jpg" alt="pr" class="type-img">
+                    <a href="#" class="type-descr">DIN 444 B Болт откидной Нержавеющий</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-gotinstock">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть"><svg class="ic ic-md">
+                    <use href="img/ic.svg#close"></use>
+                </svg></button>
+            <h2 class="modal-heading">
+                Сообщить <br>
+                о поступлении товара
+            </h2>
+
+            <form class="form">
+                <div class="form-group">
+                    <div class="inp-group">
+                        <input type="email" required id="gotinstock-name" placeholder="Ваша почта" class="inp-field">
+                        <label for="gotinstock-name" class="inp-label">Ваша почта</label>
+                    </div>
+                    <select>
+                        <option hidden>Актуальность</option>
+                        <option>7 дней</option>
+                        <option>10 дней</option>
+                        <option>30 дней </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="inp-checkbox">
+                        <input type="checkbox" required id="gotinstock_2">
+                        <label for="gotinstock_2" class="inp-checkbox__label">
+                            Я согласен(а) с обработкой персональных данных в соответствии с <a href="#"
+                                class="c-danger">политикой конфиденциальности.</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+
+                <p class="form-info"><span class="c-danger">*</span> - обязательно к заполнению</p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal modal-lg" id="modal-search">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic">
+                    <use href="img/ic.svg#close"></use>
+                </svg>
+            </button>
+
+            <h2 class="modal-heading modal-heading--alt">Поиск товара</h2>
+            <form class="searchbar">
+                <input type="search" required placeholder="Найти товар" class="searchbar__input">
+                <button class="searchbar__btn"><svg class="ic ic-md">
+                        <use href="img/ic.svg#search"></use>
+                    </svg></button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal modal-lg" id="modal-catalog">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic">
+                    <use href="img/ic.svg#close"></use>
+                </svg>
+            </button>
+
+            <h2 class="modal-heading modal-heading--alt">Каталог</h2>
+
+            <ul class="catalog-list catalog-list--hover" data-catalog-hover>
+                <li class="catalog-list__item">
+                    <a href="#" class="catalog-list__btn">Болты
+                        <svg class="ic">
+                            <use href="img/ic.svg#arrow-right"></use>
+                        </svg>
+                    </a>
+                    <ul class="catalog-underlist">
+                        <li class="catalog-underlist__item catalog-underlist__item--back">
+                            <button class="catalog-underlist__link">
+                                <svg class="ic">
+                                    <use href="img/ic.svg#arrow-left"></use>
+                                </svg>Назад
+                            </button>
+                            <a href="#" class="catalog-underlist__link">Откыть все</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="catalog-list__item">
+                    <a href="#" class="catalog-list__btn">Винты
+                        <svg class="ic">
+                            <use href="img/ic.svg#arrow-right"></use>
+                        </svg>
+                    </a>
+                    <ul class="catalog-underlist">
+                        <li class="catalog-underlist__item catalog-underlist__item--back">
+                            <button class="catalog-underlist__link">
+                                <svg class="ic">
+                                    <use href="img/ic.svg#arrow-left"></use>
+                                </svg>Назад
+                            </button>
+                            <a href="#" class="catalog-underlist__link">Откыть все</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="catalog-list__item">
+                    <a href="#" class="catalog-list__btn">Гайки
+                        <svg class="ic">
+                            <use href="img/ic.svg#arrow-right"></use>
+                        </svg>
+                    </a>
+                    <ul class="catalog-underlist">
+                        <li class="catalog-underlist__item catalog-underlist__item--back">
+                            <button class="catalog-underlist__link">
+                                <svg class="ic">
+                                    <use href="img/ic.svg#arrow-left"></use>
+                                </svg>Назад
+                            </button>
+                            <a href="#" class="catalog-underlist__link">Откыть все</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="catalog-list__item">
+                    <a href="#" class="catalog-list__btn">Заклепки
+                        <svg class="ic">
+                            <use href="img/ic.svg#arrow-right"></use>
+                        </svg>
+                    </a>
+                    <ul class="catalog-underlist">
+                        <li class="catalog-underlist__item catalog-underlist__item--back">
+                            <button class="catalog-underlist__link">
+                                <svg class="ic">
+                                    <use href="img/ic.svg#arrow-left"></use>
+                                </svg>Назад
+                            </button>
+                            <a href="#" class="catalog-underlist__link">Откыть все</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="catalog-list__item">
+                    <a href="#" class="catalog-list__btn">Кольца стопорные
+                        <svg class="ic">
+                            <use href="img/ic.svg#arrow-right"></use>
+                        </svg>
+                    </a>
+                    <ul class="catalog-underlist">
+                        <li class="catalog-underlist__item catalog-underlist__item--back">
+                            <button class="catalog-underlist__link">
+                                <svg class="ic">
+                                    <use href="img/ic.svg#arrow-left"></use>
+                                </svg>Назад
+                            </button>
+                            <a href="#" class="catalog-underlist__link">Откыть все</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="catalog-list__item">
+                    <a href="#" class="catalog-list__btn">Саморезы
+                        <svg class="ic">
+                            <use href="img/ic.svg#arrow-right"></use>
+                        </svg>
+                    </a>
+                    <ul class="catalog-underlist">
+                        <li class="catalog-underlist__item catalog-underlist__item--back">
+                            <button class="catalog-underlist__link">
+                                <svg class="ic">
+                                    <use href="img/ic.svg#arrow-left"></use>
+                                </svg>Назад
+                            </button>
+                            <a href="#" class="catalog-underlist__link">Откыть все</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="catalog-list__item">
+                    <a href="#" class="catalog-list__btn">Хомуты, скобы и стяжки
+                        <svg class="ic">
+                            <use href="img/ic.svg#arrow-right"></use>
+                        </svg>
+                    </a>
+                    <ul class="catalog-underlist">
+                        <li class="catalog-underlist__item catalog-underlist__item--back">
+                            <button class="catalog-underlist__link">
+                                <svg class="ic">
+                                    <use href="img/ic.svg#arrow-left"></use>
+                                </svg>Назад
+                            </button>
+                            <a href="#" class="catalog-underlist__link">Откыть все</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="catalog-list__item">
+                    <a href="#" class="catalog-list__btn">Шайбы
+                        <svg class="ic">
+                            <use href="img/ic.svg#arrow-right"></use>
+                        </svg>
+                    </a>
+                    <ul class="catalog-underlist">
+                        <li class="catalog-underlist__item catalog-underlist__item--back">
+                            <button class="catalog-underlist__link">
+                                <svg class="ic">
+                                    <use href="img/ic.svg#arrow-left"></use>
+                                </svg>Назад
+                            </button>
+                            <a href="#" class="catalog-underlist__link">Откыть все</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="catalog-list__item">
+                    <a href="#" class="catalog-list__btn">Шпильки резьбовые
+                        <svg class="ic">
+                            <use href="img/ic.svg#arrow-right"></use>
+                        </svg>
+                    </a>
+                    <ul class="catalog-underlist">
+                        <li class="catalog-underlist__item catalog-underlist__item--back">
+                            <button class="catalog-underlist__link">
+                                <svg class="ic">
+                                    <use href="img/ic.svg#arrow-left"></use>
+                                </svg>Назад
+                            </button>
+                            <a href="#" class="catalog-underlist__link">Откыть все</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="catalog-list__item">
+                    <a href="#" class="catalog-list__btn">Шплинты
+                        <svg class="ic">
+                            <use href="img/ic.svg#arrow-right"></use>
+                        </svg>
+                    </a>
+                    <ul class="catalog-underlist">
+                        <li class="catalog-underlist__item catalog-underlist__item--back">
+                            <button class="catalog-underlist__link">
+                                <svg class="ic">
+                                    <use href="img/ic.svg#arrow-left"></use>
+                                </svg>Назад
+                            </button>
+                            <a href="#" class="catalog-underlist__link">Откыть все</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                        <li class="catalog-underlist__item">
+                            <a href="#" class="catalog-underlist__link">DIN 315</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="catalog-list__item">
+                    <a href="#" class="catalog-list__btn" disabled>Шпонки
+                        <svg class="ic">
+                            <use href="img/ic.svg#arrow-right"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="catalog-list__item">
+                    <a href="#" class="catalog-list__btn" disabled>Шурупы
+                        <svg class="ic">
+                            <use href="img/ic.svg#arrow-right"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="catalog-list__item">
+                    <a href="#" class="catalog-list__btn" disabled>Штифты
+                        <svg class="ic">
+                            <use href="img/ic.svg#arrow-right"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="catalog-list__item">
+                    <a href="#" class="catalog-list__btn" disabled>Приварной крепёж
+                        <svg class="ic">
+                            <use href="img/ic.svg#arrow-right"></use>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-oneclick">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic">
+                    <use href="img/ic.svg#close"></use>
+                </svg>
+            </button>
+
+            <h2 class="modal-heading">Купить в 1 клик</h2>
+            <form class="form">
+                <div class="form-group">
+                    <div class="inp-group">
+                        <input type="text" id="oneclick-name" placeholder="Ваше имя" required class="inp-field">
+                        <label for="oneclick-name" class="inp-label">Ваше имя</label>
+                    </div>
+                    <div class="inp-group">
+                        <input type="tel" id="oneclick-tel" placeholder="Ваш телефон" required class="inp-field">
+                        <label for="oneclick-tel" class="inp-label">Ваш телефон</label>
+                    </div>
+                    <div class="inp-group">
+                        <input type="email" id="oneclick-email" placeholder="Ваша почта" class="inp-field">
+                        <label for="oneclick-email" class="inp-label">Ваша почта</label>
+                    </div>
+                    <div class="inp-group">
+                        <textarea name="oneclick-comment" placeholder="Ваш комментарий" id="oneclick-comment"
+                            class="inp-field"></textarea>
+                        <label for="oneclick-comment" class="inp-label">Ваш комментарий</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="inp-checkbox">
+                        <input type="checkbox" required id="checkbox_3">
+                        <label for="checkbox_3" class="inp-checkbox__label">
+                            Я согласен(а) с обработкой персональных данных в соответствии с <a href="#"
+                                class="c-danger">политикой конфиденциальности.</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+
+                <p class="form-info"><span class="c-danger">*</span> - обязательно к заполнению</p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-oneclick_2">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic">
+                    <use href="img/ic.svg#close"></use>
+                </svg>
+            </button>
+
+            <h2 class="modal-heading">Купить в 1 клик</h2>
+            <form class="form">
+                <div class="form-group">
+                    <div class="modal-product">
+                        <div class="modal-product__img">
+                            <img src="img/poduct.jpg" alt="product">
+                        </div>
+                        <div class="modal-product__title">
+                            <h3 class="modal-product__name">DIN 6921 000000000000000000 000000000000000000000000</h3>
+                            <p class="modal-product__text">Артикул: 12944</p>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="amount" data-change="price__val" data-price-val="18.50 ₽">
+                            <button type="button" class="amount-dec"><svg class="ic">
+                                    <use href="img/ic.svg#subtract"></use>
+                                </svg></button>
+                            <input type="number" value="100" min="0" class="amount-input">
+                            <button type="button" class="amount-inc"><svg class="ic">
+                                    <use href="img/ic.svg#add"></use>
+                                </svg></button>
+                        </div>
+
+                        <h3 class="modal-product__price" data-price="price__val">18.50 ₽</h3>
+                    </div>
+
+                    <div class="inp-group">
+                        <input type="text" id="oneclick_2-name" placeholder="Ваше имя" class="inp-field">
+                        <label for="oneclick_2-name" class="inp-label">Ваше имя</label>
+                    </div>
+                    <div class="inp-group">
+                        <input type="tel" id="oneclick_2-tel" placeholder="Ваш телефон" required class="inp-field">
+                        <label for="oneclick_2-tel" class="inp-label">Ваш телефон</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="inp-checkbox">
+                        <input type="checkbox" required id="oneclick_2">
+                        <label for="oneclick_2" class="inp-checkbox__label">
+                            Я согласен(а) с обработкой персональных данных в соответствии с <a href="#"
+                                class="c-danger">политикой конфиденциальности.</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+
+                <p class="form-info"><span class="c-danger">*</span> - обязательно к заполнению</p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-call_request">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic">
+                    <use href="img/ic.svg#close"></use>
+                </svg>
+            </button>
+
+            <h2 class="modal-heading">Заказать звонок</h2>
+            <form class="form">
+                <div class="form-group form-group--lg">
+                    <div class="inp-group">
+                        <input type="text" id="call_request-name" placeholder="Ваше имя" required class="inp-field">
+                        <label for="call_request-name" class="inp-label">Ваше имя</label>
+                    </div>
+                    <div class="inp-group">
+                        <input type="tel" id="call_request-tel" placeholder="+7 (___) ___-__-__" required
+                            class="inp-field">
+                        <label for="call_request-tel" class="inp-label">+7 (___) ___-__-__</label>
+                    </div>
+                    <select>
+                        <option hidden>Удобное время для звонка</option>
+                        <option value="c 8:00 до 17:00">c 8:00 до 17:00</option>
+                        <option value="c 9:00 до 17:00">c 9:00 до 17:00</option>
+                        <option value="c 9:00 до 17:00">c 12:00 до 16:00</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="inp-checkbox inp-checkbox--sm">
+                        <input type="checkbox" required id="checkbox_call">
+                        <label for="checkbox_call" class="inp-checkbox__label">
+                            Я согласен(а) с обработкой персональных данных в соответствии с <a href="#"
+                                class="c-danger">политикой конфиденциальности.</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+
+                <p class="form-info"><span class="c-danger">*</span> - обязательно к заполнению</p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-login">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic">
+                    <use href="img/ic.svg#close"></use>
+                </svg>
+            </button>
+
+            <h2 class="modal-heading">Вход</h2>
+            <form class="form">
+                <p class="form-descr">
+                    Нет аккаунта?
+                    <button data-modal="#modal-signup" class="form-link">Регистрация</button>
+                </p>
+                <div class="form-group form-group--lg">
+                    <div class="inp-group">
+                        <input type="text" id="login" placeholder="Ваша почта или телефон" required class="inp-field">
+                        <label for="login" class="inp-label">Ваша почта или телефон</label>
+                    </div>
+                    <div class="inp-group">
+                        <input type="password" id="password" placeholder="Пароль" required class="inp-field">
+                        <label for="password" class="inp-label">Пароль</label>
+                    </div>
+                    <div class="form-row">
+                        <div class="inp-checkbox">
+                            <input type="checkbox" name="remember" id="remember">
+                            <label for="remember" class="inp-checkbox__label c-gray">Запомнить меня</label>
+                        </div>
+                        <a href="#" class="form-link c-dark">Забыли пароль?</a>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="inp-checkbox">
+                        <input type="checkbox" required id="checkbox_5">
+                        <label for="checkbox_5" class="inp-checkbox__label">
+                            Я согласен(а) с обработкой персональных данных в соответствии с <a href="#"
+                                class="c-danger">политикой конфиденциальности.</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+
+                <p class="form-info"><span class="c-danger">*</span> - обязательно к заполнению</p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-signup">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic">
+                    <use href="img/ic.svg#close"></use>
+                </svg>
+            </button>
+
+            <h2 class="modal-heading">Регистрация</h2>
+            <form class="form">
+                <p class="form-descr">
+                    Есть регистрация?
+                    <button data-modal="#modal-login" class="form-link">Войти</button>
+                </p>
+                <div class="form-group form-group--lg">
+                    <div class="inp-group">
+                        <input type="password" id="signup_name" placeholder="Ваше имя" required class="inp-field">
+                        <label for="signup_name" class="inp-label">Ваше имя</label>
+                    </div>
+                    <div class="inp-group">
+                        <input type="text" id="signup" placeholder="Ваша почта или телефон" required class="inp-field">
+                        <label for="signup" class="inp-label">Ваша почта или телефон</label>
+                    </div>
+                    <div class="inp-group">
+                        <input type="password" id="signup_password" placeholder="Пароль" required class="inp-field">
+                        <label for="signup_password" class="inp-label">Пароль</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="inp-checkbox">
+                        <input type="checkbox" required id="checkbox_4">
+                        <label for="checkbox_4" class="inp-checkbox__label">
+                            Я согласен(а) с обработкой персональных данных в соответствии с <a href="#"
+                                class="c-danger">политикой конфиденциальности.</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+
+                <p class="form-info"><span class="c-danger">*</span> - обязательно к заполнению</p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-req">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic">
+                    <use href="img/ic.svg#close"></use>
+                </svg>
+            </button>
+
+            <h2 class="modal-heading">Запросить расчет</h2>
+            <form class="form">
+                <div class="form-group">
+                    <div class="inp-group">
+                        <input type="text" id="name" placeholder="Ваше имя" required class="inp-field">
+                        <label for="name" class="inp-label">Ваше имя</label>
+                    </div>
+                    <div class="inp-group">
+                        <input type="email" id="email" placeholder="Ваш email" required class="inp-field">
+                        <label for="email" class="inp-label">Ваш email</label>
+                    </div>
+                    <div class="inp-group">
+                        <textarea id="message_2" placeholder="Ваше сообщение" required class="inp-field"></textarea>
+                        <label for="message_2" class="inp-label">Ваше сообщение</label>
+                    </div>
+                    <select>
+                        <option hidden>Предпочтительный вариант ответа</option>
+                        <option value="Предпочтительный вариант ответа">Предпочтительный вариант ответа</option>
+                        <option value="Предпочтительный вариант ответа">Предпочтительный вариант ответа</option>
+                    </select>
+
+                    <div class="inp-file">
+                        <input type="file" name="file" id="file">
+                        <label for="file" class="inp-file__label">
+                            <svg class="ic">
+                                <use href="img/ic.svg#paperclip"></use>
+                            </svg>
+                            <span>Прикрепить файл</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="inp-checkbox">
+                        <input type="checkbox" required id="checkbox">
+                        <label for="checkbox" class="inp-checkbox__label">
+                            Я согласен(а) с обработкой персональных данных в соответствии с <a href="#"
+                                class="c-danger">политикой конфиденциальности.</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+
+                <p class="form-info"><span class="c-danger">*</span> - обязательно к заполнению</p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-req-2">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic">
+                    <use href="img/ic.svg#close"></use>
+                </svg>
+            </button>
+
+            <h2 class="modal-heading">Запросить расчет</h2>
+            <form class="form">
+                <div class="form-group">
+                    <div class="form-row">
+                        <span class="form-label">Введите ваши основные данные, или</span>
+                        <a href="#" class="form-link">Регистрация</a>
+                    </div>
+                    <div class="inp-group">
+                        <input type="text" id="name_2" placeholder="Ваше имя" required class="inp-field">
+                        <label for="name_2" class="inp-label">Ваше имя</label>
+                    </div>
+                    <div class="inp-group">
+                        <input type="tel" id="tel" placeholder="Телефон" required class="inp-field">
+                        <label for="tel" class="inp-label">Телефон</label>
+                    </div>
+                    <div class="inp-group">
+                        <input type="email" id="email_2" placeholder="Ваш email" required class="inp-field">
+                        <label for="email_2" class="inp-label">Ваш email</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-row">
+                        <span class="form-label">Введите детали заказа, или</span>
+                        <div class="inp-file c-danger">
+                            <input type="file" name="file" id="file_2">
+                            <label for="file_2" class="inp-file__label">
+                                <svg class="ic">
+                                    <use href="img/ic.svg#paperclip"></use>
+                                </svg>
+                                <span>Прикрепить файл</span>
+                            </label>
+                        </div>
+                    </div>
+                    <select>
+                        <option hidden>Выбрать тип крепежа</option>
+                        <option value="Тип крепежа 1">Тип крепежа 1</option>
+                        <option value="Тип крепежа 2">Тип крепежа 2</option>
+                        <option value="Тип крепежа 3">Тип крепежа 3</option>
+                    </select>
+                    <div class="inp-group">
+                        <input type="text" id="amount_1" placeholder="Введите количество" class="inp-field">
+                        <label for="amount_1" class="inp-label">Введите количество</label>
+                    </div>
+                    <div class="inp-file ml-auto">
+                        <input type="file" name="file" id="file_3">
+                        <label for="file_3" class="inp-file__label">
+                            <span>Добавить товар</span>
+                            <svg class="ic">
+                                <use href="img/ic.svg#add"></use>
+                            </svg>
+                        </label>
+                    </div>
+                    <select>
+                        <option hidden>Способ доставки</option>
+                        <option value="Способ доставки">Способ 1</option>
+                        <option value="Способ доставки">Способ 2</option>
+                        <option value="Способ доставки">Способ 3</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="inp-group">
+                        <textarea id="message_3" placeholder="Ваш комментарий" class="inp-field"></textarea>
+                        <label for="message_3" class="inp-label">Ваш комментарий</label>
+                    </div>
+                    <select>
+                        <option hidden>Предпочтительный вариант ответа</option>
+                        <option value="Вариант ответа 1">Вариант ответа 1</option>
+                        <option value="Вариант ответа 2">Вариант ответа 2</option>
+                        <option value="Вариант ответа 3">Вариант ответа 3</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <div class="inp-checkbox">
+                        <input type="checkbox" required id="req-2_checkbox">
+                        <label for="req-2_checkbox" class="inp-checkbox__label">
+                            Я согласен(а) с обработкой персональных данных в соответствии с <a href="#"
+                                class="c-danger">политикой конфиденциальности.</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+
+                <p class="form-info"><span class="c-danger">*</span> - обязательно к заполнению</p>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" id="modal-req-3">
+        <div class="modal-content">
+            <button class="modal-close" title="Закрыть">
+                <svg class="ic">
+                    <use href="img/ic.svg#close"></use>
+                </svg>
+            </button>
+
+            <h2 class="modal-heading">Запросить расчет</h2>
+            <form class="form">
+                <div class="form-group">
+                    <div class="form-row">
+                        <span class="form-label">Введите детали заказа, или</span>
+                        <div class="inp-file c-danger">
+                            <input type="file" name="file" id="req-3_file">
+                            <label for="req-3_file" class="inp-file__label">
+                                <svg class="ic">
+                                    <use href="img/ic.svg#paperclip"></use>
+                                </svg>
+                                <span>Прикрепить файл</span>
+                            </label>
+                        </div>
+                    </div>
+                    <select>
+                        <option hidden>Выбрать тип крепежа</option>
+                        <option value="Тип крепежа 1">Тип крепежа 1</option>
+                        <option value="Тип крепежа 2">Тип крепежа 2</option>
+                        <option value="Тип крепежа 3">Тип крепежа 3</option>
+                    </select>
+                    <div class="inp-group">
+                        <input type="text" id="amount" placeholder="Введите количество" class="inp-field">
+                        <label for="amount" class="inp-label">Введите количество</label>
+                    </div>
+                    <div class="inp-file ml-auto">
+                        <input type="file" name="file" id="file_4">
+                        <label for="file_4" class="inp-file__label">
+                            <span>Добавить товар</span>
+                            <svg class="ic">
+                                <use href="img/ic.svg#add"></use>
+                            </svg>
+                        </label>
+                    </div>
+                    <div class="inp-file c-danger ml-auto">
+                        <input type="file" name="file" id="file_5">
+                        <label for="file_5" class="inp-file__label">
+                            <span>Добавить товар из корзины</span>
+                            <svg class="ic">
+                                <use href="img/ic.svg#add"></use>
+                            </svg>
+                        </label>
+                    </div>
+                    <select>
+                        <option hidden>Способ доставки</option>
+                        <option value="Способ 1">Способ 1</option>
+                        <option value="Способ 2">Способ 2</option>
+                        <option value="Способ 3">Способ 3</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="inp-group">
+                        <textarea id="message_1" placeholder="Ваш комментарий" class="inp-field"></textarea>
+                        <label for="message_1" class="inp-label">Ваш комментарий</label>
+                    </div>
+                    <select>
+                        <option hidden>Предпочтительный вариант ответа</option>
+                        <option value="Вариант ответа 1">Вариант ответа 1</option>
+                        <option value="Вариант ответа 2">Вариант ответа 2</option>
+                        <option value="Вариант ответа 3">Вариант ответа 3</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <div class="inp-checkbox">
+                        <input type="checkbox" required id="checkbox_2">
+                        <label for="checkbox_2" class="inp-checkbox__label">
+                            Я согласен(а) с обработкой персональных данных в соответствии с <a href="#"
+                                class="c-danger">политикой конфиденциальности.</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+
+                <p class="form-info"><span class="c-danger">*</span> - обязательно к заполнению</p>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>
